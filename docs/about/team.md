@@ -14,15 +14,14 @@ The project board is responsible for the clinical, academic, and governance over
 - Prof Tim Cole, Professor of Medical Statistics, Population, Policy & Practice Department, UCL GOS Institute of Child Health, London.
 - Prof Mary Fewtrell, Professor of Paediatric Nutrition, Population, Policy & Practice Department, UCL GOS Institute of Child Health, London.
 - Victoria Jackson, Project Coordinator, Institute of Health Visiting.
-- Liz Marder, Consultant Paediatrician in Community Child Health and Neurodisability, Nottingham Children's Hospital.
-- Charlotte Weldon.
+- Dr Liz Marder, Consultant Paediatrician in Community Child Health and Neurodisability, Nottingham Children's Hospital.
 - Prof Charlotte Wright, Professor of Community Child Health (Medicine), University of Glasgow.
 
 ## RCPCH Staff
 
 RCPCH internal project staff provided invaluable support from project concept, through initiation and planning, and all the way to pilots and full live deployment. Critical project functions provided by the RCPCH team included project management, commercial modelling and planning, financial governance, design and branding review, web publishing and arranging and chairing meetings.
 
-- Magdalena Umerska, Digital Platform Commercial Manager, RCPCH.
+- Magdalena Umerska, Digital Product Manager, RCPCH.
 - Jonathan Miall, Director of Membership and Development, RCPCH.
 - Alex Brown, Head of Commercial and Corporate Partnerships, RCPCH.
 - Jo Ball, Design and Brand Manager, Content and Brand Team, RCPCH.
