@@ -19,6 +19,6 @@ If you want to integrate the RCPCH dGC API into an application, then start [here
 
 ## API details
 
-The API is written in Python. Mathematical and statistical calculations are made using the [SciPy](https://www.scipy.org/) and [NumPy](https://numpy.org/) libraries. Server middleware used is [Flask](https://flask.palletsprojects.com/en/1.1.x/quickstart/), with autogeneration of the openAPI3 specification documents using the Marshmallow plugin for FLask.
+The API is written in Python. Mathematical and statistical calculations are made using the [SciPy](https://www.scipy.org/) and [NumPy](https://numpy.org/) libraries. Server middleware used is [Flask](https://flask.palletsprojects.com/en/1.1.x/quickstart/), with autogeneration of the openAPI3 specification documents using the Marshmallow plugin for Flask.
 
 We use the Microsoft Azure API Management Platform to handle authorization, rate limits and quotas.
