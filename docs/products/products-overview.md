@@ -3,12 +3,6 @@ title: Products Overview
 reviewers: Dr Marcus Baw
 ---
 
-# *ANCHIT QUERIES*
-- Where should these icons be placed? Should they go under each header (if applicable?)
-  - :octicons-mark-github-16: link to demo
-  - :material-web: link to demo/ pypi (if exists) 
-  - :fontawesome-brands-python:
-  - :fontawesome-brands-npm:
 # Products Overview
 
 These products exist for different use-cases.
@@ -61,3 +55,10 @@ Early version of the Growth Charts which simply combined the client and API with
 ## [Pricing](./pricing.md)
 
 Information about pricing and commercial use.
+=======
+:octicons-mark-github-16: link to code repo
+:material-web: link to demo / pypi (if exists)
+:fontawesome-brands-npm:
+:fontawesome-brands-python:
+
+## API Server

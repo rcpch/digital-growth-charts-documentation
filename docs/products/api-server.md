@@ -11,7 +11,7 @@ reviewers: Dr Marcus Baw
 
 :material-api: [API Gateway BASEURL](https://api.rcpch.ac.uk) (NB: Without API key will always respond with 404)
 
-![api_server_postman](../_assets/api_server_postman.png)
+![api_server_postman](../_assets/_images/api_server_postman.png)
 
 ## Getting Started
 
