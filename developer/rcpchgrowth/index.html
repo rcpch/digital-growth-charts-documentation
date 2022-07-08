@@ -1,0 +1,2262 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="RCPCH Digital Growth Charts API Project Documentation Site">
+      
+      
+        <meta name="author" content="The Royal College of Paediatrics and Child Health">
+      
+      
+        <link rel="canonical" href="https://rcpch.github.io/digital-growth-charts-documentation/developer/rcpchgrowth/">
+      
+      <link rel="icon" href="../../_assets/_images/dynamic-child-favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>RCPCHGrowth Package - RCPCH Digital Growth Charts API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Montserrat";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../_assets/_stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="RCPCH Digital Growth Charts API" class="md-header__button md-logo" aria-label="RCPCH Digital Growth Charts API" data-md-component="logo">
+      
+  <img src="../../_assets/_images/rcpch_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RCPCH Digital Growth Charts API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              RCPCHGrowth Package
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/rcpch/digital-growth-charts-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rcpch/documentation
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/about/" class="md-tabs__link">
+        About
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../products/products-overview/" class="md-tabs__link">
+        Products
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../clinician/how-the-api-works/" class="md-tabs__link">
+        Clinician
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../integrator/getting-started/" class="md-tabs__link">
+        Integrator
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../start-here/" class="md-tabs__link md-tabs__link--active">
+        Contribute
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../safety/overview/" class="md-tabs__link">
+        Safety
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../legal/disclaimer/" class="md-tabs__link">
+        Legal
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../technical/status/" class="md-tabs__link">
+        Technical
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contact/contact/" class="md-tabs__link">
+        Contact Us
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="RCPCH Digital Growth Charts API" class="md-nav__button md-logo" aria-label="RCPCH Digital Growth Charts API" data-md-component="logo">
+      
+  <img src="../../_assets/_images/rcpch_logo.png" alt="logo">
+
+    </a>
+    RCPCH Digital Growth Charts API
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/rcpch/digital-growth-charts-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rcpch/documentation
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          About
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="About" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          About
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/about/" class="md-nav__link">
+        About the dGC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/support/" class="md-nav__link">
+        Support
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/team/" class="md-nav__link">
+        dGC Team
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/acknowledgements/" class="md-nav__link">
+        Acknowledgements
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Products
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Products" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Products
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/products-overview/" class="md-nav__link">
+        Products Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/api-server/" class="md-nav__link">
+        API Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/react-client/" class="md-nav__link">
+        React Demo Client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/react-component/" class="md-nav__link">
+        React Chart Component
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/react-native/" class="md-nav__link">
+        React Native Client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/command-line-client/" class="md-nav__link">
+        Command-line tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/python-library/" class="md-nav__link">
+        Python package
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/google-sheets-plugin/" class="md-nav__link">
+        Google Sheets extension
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/flask%28deprecated%29/" class="md-nav__link">
+        Flask/Python Client (deprecated)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/pricing/" class="md-nav__link">
+        Pricing
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Clinician
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Clinician" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Clinician
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clinician/how-the-api-works/" class="md-nav__link">
+        How the API Works
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clinician/chart-information-families/" class="md-nav__link">
+        Information for Parents
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clinician/chart-information-health-staff/" class="md-nav__link">
+        Information for Health Staff
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clinician/date-age-calculations/" class="md-nav__link">
+        Date and Age Calculations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clinician/growth-references/" class="md-nav__link">
+        Reference Data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clinician/faqs-for-clinicians/" class="md-nav__link">
+        FAQs for Clinicians
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Integrator
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Integrator" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Integrator
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrator/getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrator/api-keys/" class="md-nav__link">
+        Getting API keys
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrator/making-api-calls/" class="md-nav__link">
+        Making API Calls
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrator/api-reference/" class="md-nav__link">
+        API Reference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrator/client-specification/" class="md-nav__link">
+        Client Specification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrator/faqs-for-integrators/" class="md-nav__link">
+        FAQs for Integrators
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrator/whos-using-dgc/" class="md-nav__link">
+        Who's using the dGC Platform?
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Contribute
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contribute" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Contribute
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../start-here/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-python/" class="md-nav__link">
+        Python development
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adding-a-new-api-endpoint/" class="md-nav__link">
+        Adding a new API endpoint
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-docker/" class="md-nav__link">
+        Docker development
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        Contributing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../writing-documentation/" class="md-nav__link">
+        Writing Documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faqs-for-developers/" class="md-nav__link">
+        FAQs for Developers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          RCPCHGrowth Package
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        RCPCHGrowth Package
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-rcpchgrowth" class="md-nav__link">
+    Why RCPCHGrowth?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-structure" class="md-nav__link">
+    Package Structure
+  </a>
+  
+    <nav class="md-nav" aria-label="Package Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constants" class="md-nav__link">
+    Constants
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measurement-class" class="md-nav__link">
+    Measurement Class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-measurement-object" class="md-nav__link">
+    The Measurement Object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-functions" class="md-nav__link">
+    Global Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Global Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#date-functions" class="md-nav__link">
+    Date Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lms-calculations" class="md-nav__link">
+    LMS Calculations
+  </a>
+  
+    <nav class="md-nav" aria-label="LMS Calculations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    Steps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-selection" class="md-nav__link">
+    Reference Selection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#centile-advice-strings" class="md-nav__link">
+    Centile Advice Strings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chart-functions" class="md-nav__link">
+    Chart Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-functions" class="md-nav__link">
+    Other functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Safety
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Safety" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Safety
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safety/overview/" class="md-nav__link">
+        Clinical Safety: Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          Clinical Safety File
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Clinical Safety File" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Clinical Safety File
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safety/csmf/clinical-risk-mgmt-system/" class="md-nav__link">
+        Clinical Risk Management System
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safety/csmf/clinical-risk-mgmt-plan/" class="md-nav__link">
+        Clinical Risk Management Plan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safety/csmf/hazard-log/" class="md-nav__link">
+        Hazard Log
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safety/csmf/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safety/csmf/third-party-tools-safety-assmt/" class="md-nav__link">
+        Third Party Tools Safety
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safety/csmf/license/" class="md-nav__link">
+        CSMS License
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safety/dtac/" class="md-nav__link">
+        DTAC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_4">
+          EU Medical Devices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="EU Medical Devices" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_4">
+          <span class="md-nav__icon md-icon"></span>
+          EU Medical Devices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safety/eu-mdr/doc-api/" class="md-nav__link">
+        Declaration of Conformity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safety/eu-mdr/mdr-technical-docs/" class="md-nav__link">
+        Technical Documentation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7_5" type="checkbox" id="__nav_7_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_5">
+          MHRA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MHRA" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_5">
+          <span class="md-nav__icon md-icon"></span>
+          MHRA
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safety/mhra/" class="md-nav__link">
+        Medical Device Registration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safety/essential-req/" class="md-nav__link">
+        MHRA Essential Requirements
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Legal
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Legal" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Legal
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../legal/disclaimer/" class="md-nav__link">
+        DISCLAIMER
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../legal/licensing-copyright/" class="md-nav__link">
+        Licensing and Copyright
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../legal/data-protection/" class="md-nav__link">
+        Data Protection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../legal/privacy.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Technical
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Technical" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Technical
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/status/" class="md-nav__link">
+        Service Status
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Contact Us
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contact Us" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Contact Us
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/contact/" class="md-nav__link">
+        Contact us
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-rcpchgrowth" class="md-nav__link">
+    Why RCPCHGrowth?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-structure" class="md-nav__link">
+    Package Structure
+  </a>
+  
+    <nav class="md-nav" aria-label="Package Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constants" class="md-nav__link">
+    Constants
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measurement-class" class="md-nav__link">
+    Measurement Class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-measurement-object" class="md-nav__link">
+    The Measurement Object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-functions" class="md-nav__link">
+    Global Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Global Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#date-functions" class="md-nav__link">
+    Date Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lms-calculations" class="md-nav__link">
+    LMS Calculations
+  </a>
+  
+    <nav class="md-nav" aria-label="LMS Calculations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    Steps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-selection" class="md-nav__link">
+    Reference Selection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#centile-advice-strings" class="md-nav__link">
+    Centile Advice Strings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chart-functions" class="md-nav__link">
+    Chart Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-functions" class="md-nav__link">
+    Other functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/rcpch/digital-growth-charts-documentation/blob/live/docs/developer/rcpchgrowth.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+  <h1>RCPCHGrowth Package</h1>
+
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The core of the calculations is performed in the RCPCHGrowth package, written in Python 3.8.3.</p>
+<h3 id="why-rcpchgrowth">Why RCPCHGrowth?<a class="headerlink" href="#why-rcpchgrowth" title="Permanent link">&para;</a></h3>
+<p>There have been several different packages that calculate centiles. The most influential software in growth was produced by Huiqi Pan and Tim Cole, an add-in for Microsoft Excel, called LMSGrowth. It is still freely <a href="https://www.healthforallchildren.com/shop-base/shop/software/lmsgrowth/">downloadable</a> and contains the reference tables as .xls. RCPCHGrowth is intended to supercede LMSGrowth and so the name has been chosen.</p>
+<p>RCPCHGrowth has been primarily built to work with the UK-WHO dataset, but the LMS calculations can in principle work with any LMS data table. In practice, each data table has its own idiosyncracies and is hard to standardise but it is hoped in time that most big references can be included.</p>
+<h3 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h3>
+<p>The references included are:</p>
+<ol>
+<li>UK90 dataset - this runs from 23 weeks to 20 years</li>
+<li>WHO 2006 - this runs from 2 weeks to 4 years</li>
+<li>Down reference</li>
+<li>Turner reference</li>
+</ol>
+<p>Data tables are stored in the <code>data_tables</code> folder. They are stored as <code>.json</code>.
+There is a separate <a href="https://github.com/rcpch/growth-references">repository</a> to store references from across the world. Currently they are stored as <code>.csv</code>, <code>.json</code> and <code>.rif</code> file types, the latter a standardised format created by @stefvanbuuren.</p>
+<h3 id="package-structure">Package Structure<a class="headerlink" href="#package-structure" title="Permanent link">&para;</a></h3>
+<h4 id="constants">Constants<a class="headerlink" href="#constants" title="Permanent link">&para;</a></h4>
+<p>Constants have been created for measurement, references and validation.
+All are stored in the <code>constants</code> folder.
+All string constants are lower case.
+All number constants are stored as upper case.</p>
+<h3 id="measurement-class">Measurement Class<a class="headerlink" href="#measurement-class" title="Permanent link">&para;</a></h3>
+<p>The core class of RCPCHGrowth is the Measurement class. It is initialised with:</p>
+<div class="highlight"><pre><span></span><code><span class="n">birth_date</span>
+
+<span class="n">observation_date</span>
+
+<span class="n">sex</span> <span class="p">[</span><span class="s1">&#39;male&#39;</span><span class="p">,</span> <span class="s1">&#39;female&#39;</span><span class="p">]</span>
+
+<span class="n">measurement_method</span> <span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;bmi&#39;</span><span class="p">,</span> <span class="s1">&#39;ofc&#39;</span><span class="p">]</span>
+
+<span class="n">observation_value</span>
+
+<span class="n">reference</span> <span class="p">[</span><span class="s1">&#39;uk-who&#39;</span><span class="p">,</span> <span class="s1">&#39;trisomy-21&#39;</span> <span class="s1">&#39;turners-syndrome&#39;</span><span class="p">]</span>
+</code></pre></div>
+<p>The dates are python dates
+The <code>observation_value</code> is a float value.</p>
+<p>Optional parameters include:</p>
+<div class="highlight"><pre><span></span><code><span class="n">bone_age</span>
+
+<span class="n">bone_age_centile</span>
+
+<span class="n">bone_age_sds</span>
+
+<span class="n">bone_age_text</span>
+
+<span class="n">bone_age_type</span> <span class="p">[</span><span class="s2">&quot;greulich-pyle&quot;</span><span class="p">,</span> <span class="s1">&#39;tanner-whitehouse-ii&#39;</span><span class="p">,</span> <span class="s1">&#39;tanner-whitehouse-iii&#39;</span><span class="p">,</span> <span class="s1">&#39;fels&#39;</span><span class="p">]</span>
+
+<span class="n">events_text</span>
+</code></pre></div>
+<p>These default to None if not provided.
+The bone ages are float values. No formatting is performed and are returned in the Measurement class object as provided. The chart plug in is optimised to recognise them.
+<code>bone_age_text</code> is contextual information to describe the bone age. It may be a radiology report or author comment.
+<code>events_text</code> is a list of strings, events to tag the measurement with, for example starting a treatment or receiving a diagnosis.</p>
+<p>Calling <code>Measurement(...).measurement</code> will return a full Measurement object.</p>
+<p>The Measurement class calls private methods, which in turn call functions within the package to perform the calculations and construct the Measurement object which is returned to the user as a json object.</p>
+<h3 id="the-measurement-object">The Measurement Object<a class="headerlink" href="#the-measurement-object" title="Permanent link">&para;</a></h3>
+<p>This is the return object from the Measurement class. It is made of the following elements:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;birth_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;birth_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-04-12&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;gestation_weeks&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;gestation_days&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;estimated_date_delivery&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-04-12&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;estimated_date_delivery_string&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sun 12 April, 2020&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;sex&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;female&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;measurement_dates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;observation_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2028-06-12&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;chronological_decimal_age&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">8.167008898015059</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;corrected_decimal_age&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">8.167008898015059</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;chronological_calendar_age&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8 years and 2 months&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;corrected_calendar_age&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8 years and 2 months&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;corrected_gestational_age&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;corrected_gestation_weeks&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;corrected_gestation_days&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;comments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;clinician_corrected_decimal_age_comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Born at term. No correction has been made for gestation.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;lay_corrected_decimal_age_comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Your baby was born on their due date.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;clinician_chronological_decimal_age_comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Born Term. No correction has been made for gestation.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;lay_chronological_decimal_age_comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Your baby was born on their due date.&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;corrected_decimal_age_error&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;chronological_decimal_age_error&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;child_observation_value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;measurement_method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;height&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;observation_value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">115.0</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;observation_value_error&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;measurement_calculated_values&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;corrected_sds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-2.406593606646068</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;corrected_centile&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;corrected_centile_band&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This height measurement is between the 0.4th and 2nd centiles.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;chronological_sds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-2.406593606646068</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;chronological_centile&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;chronological_centile_band&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This height measurement is between the 0.4th and 2nd centiles.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;corrected_measurement_error&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;chronological_measurement_error&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;corrected_percentage_median_bmi&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;chronological_percentage_median_bmi&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;plottable_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;centile_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;chronological_decimal_age_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">8.167008898015059</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">115.0</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;events_text&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Growth hormone start&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Growth Hormone Deficiency diagnosis&quot;</span><span class="w"></span>
+<span class="w">                </span><span class="p">],</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;bone_age_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This bone age is advanced&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;bone_age_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;greulich-pyle&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;bone_age_sds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;bone_age_centile&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">98.0</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;observation_error&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;age_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;chronological_age&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;calendar_age&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8 years and 2 months&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;lay_comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Your baby was born on their due date.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;clinician_comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Born Term. No correction has been made for gestation.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;age_error&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;centile_band&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This height measurement is between the 0.4th and 2nd centiles.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;observation_value_error&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">            </span><span class="p">},</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;corrected_decimal_age_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">8.167008898015059</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">115.0</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;events_text&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Growth hormone start&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Growth Hormone Deficiency diagnosis&quot;</span><span class="w"></span>
+<span class="w">                </span><span class="p">],</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;bone_age_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This bone age is advanced&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;bone_age_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;greulich-pyle&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;bone_age_sds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;bone_age_centile&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">98.0</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;observation_error&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;age_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;corrected_age&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;corrected_gestational_age&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;calendar_age&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8 years and 2 months&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;lay_comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Your baby was born on their due date.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;clinician_comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Born at term. No correction has been made for gestation.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;age_error&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;centile_band&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This height measurement is between the 0.4th and 2nd centiles.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;observation_value_error&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;sds_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;chronological_decimal_age_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">8.167008898015059</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-2.406593606646068</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;events_text&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Growth hormone start&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Growth Hormone Deficiency diagnosis&quot;</span><span class="w"></span>
+<span class="w">                </span><span class="p">],</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;bone_age_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This bone age is advanced&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;bone_age_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;greulich-pyle&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;bone_age_sds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;bone_age_centile&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">98.0</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;age_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;chronological_age&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;calendar_age&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8 years and 2 months&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;lay_comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Your baby was born on their due date.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;clinician_comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Born Term. No correction has been made for gestation.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;age_error&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;centile_band&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This height measurement is between the 0.4th and 2nd centiles.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;observation_value_error&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">            </span><span class="p">},</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;corrected_decimal_age_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">8.167008898015059</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-2.406593606646068</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;events_text&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Growth hormone start&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Growth Hormone Deficiency diagnosis&quot;</span><span class="w"></span>
+<span class="w">                </span><span class="p">],</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;bone_age_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This bone age is advanced&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;bone_age_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;greulich-pyle&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;bone_age_sds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;bone_age_centile&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">98.0</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;age_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;corrected_age&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;corrected_gestational_age&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;calendar_age&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8 years and 2 months&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;lay_comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Your baby was born on their due date.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;clinician_comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Born at term. No correction has been made for gestation.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;age_error&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;centile_band&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This height measurement is between the 0.4th and 2nd centiles.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;observation_value_error&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;bone_age&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;bone_age&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;bone_age_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;greulich-pyle&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;bone_age_sds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;bone_age_centile&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">98.0</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;bone_age_text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This bone age is advanced&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;events_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;events_text&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;Growth hormone start&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;Growth Hormone Deficiency diagnosis&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="global-functions">Global Functions<a class="headerlink" href="#global-functions" title="Permanent link">&para;</a></h3>
+<h4 id="date-functions">Date Functions<a class="headerlink" href="#date-functions" title="Permanent link">&para;</a></h4>
+<p>There are two relevant date calculations, one which takes into account the gestation at birth (<code>corrected_decimal_age</code>), and one which does not (<code>chronological_decimal_age</code>).</p>
+<p>Note that age correction now occurs across the life course, even when term. Age correction is discontinued at 42 weeks gestation. Decimal age is calculated by calculating the difference in days between the two dates using the dateutil package, then dividing this by 365.25. This is because every fourth year is a leap year.</p>
+<p>Ages can be calculated as decimal ages, or calendar ages which are returned as a string. Advice relating to age correction is also returned as a string from functions in <code>growth_interpretations.py</code></p>
+<h4 id="lms-calculations">LMS Calculations<a class="headerlink" href="#lms-calculations" title="Permanent link">&para;</a></h4>
+<p>The primary calculation is to generate a z score (SDS) from two dates, a sex, measurement method and observation value, comparing against a reference. As described elsewhere, UK-WHO are made up of 2 references (formerly 3), the UK90 which spans from 23 weeks gestation to 20 y  of age. Because these data contain children who were bottle fed as well as breast fed, the breast fed cohort from the WHO 2006 cohort were deemed more accurate and replaced the UK90 for the 2 week to 4 year age groups. Because the UK90 data are nolonger used for children in this age bracket, they have been removed to create a continuous data set. This has then been broken into the preterm (up top 42 weeks), infants (under 2s), WHO children (&lt; 4 y), UK90 children (4-20y). Where data sets overlap, there are 2 ages at the junction, one from each reference. There is a step at the junction between the data sets.</p>
+<p>Each reference comprises an L, M and S value for a decimal age. The decimal ages in the reference data are not separated at uniform intervals - depending on age, they are weeks, months or years apart.</p>
+<p>The calculation involves first calculating a decimal age (corrected or chronological), then using this to look up the nearest L, M and S values. If there is no exact match, the intermediate L, M, and S values are calculated using cubic interpolation (if there are 2 values either side of the decimal age requested in the reference data) or linear interpolation (if the age falls at the extremes of a given reference and there is therefore only one value above or below the age provided). The resulting L, M and S values are put into the equation to generate an SDS, which can in turn be used to generate a centile. This latter calcuation is done using the SciPy package.</p>
+<h5 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h5>
+<p>The functions called by the Measurement class are <code>sds_for_measurement</code> or its inverse <code>measurement_from_sds</code>, found in the <code>global_functions.py</code> file.</p>
+<p>The correct reference is selected based on the parameter passed in from the user in the function <code>lms_value_array_for_measurement_for_reference</code>. From this the individual L, M and S values are returned using the <code>fetch_LMS</code> function. This function finds the lowest nearest decimal age in the LMS list (<code>nearest_lowest_index</code>) and if there is a match, the L, M and S are returned. If there is no match, interpolation is performed, depending on how many values are present below and above that value in the list. If there are 2 values, <code>cubic_interpolation</code> can be performed, otherwise <code>linear_interpolation</code> can be performed.</p>
+<p>Note that our cubic interpolation method is subtly different from those in the SciPy and Numpy packages. The code using these functions remains and has been commented out. The library functions we found to be slower and less precise.</p>
+<p>The L, M and S are then converted to SDS using the <code>lms_to_z</code> and returned or converted to centile using the <code>centile</code> function and then returned.</p>
+<h5 id="reference-selection">Reference Selection<a class="headerlink" href="#reference-selection" title="Permanent link">&para;</a></h5>
+<p>There are several references, and therefore selection of the correct LMS table is essential before beginning calculation. The references are all stored as JSON files in the <code>data_tables</code> folder. There are individual files (<code>uk_who.py</code>, <code>turner.py</code> and <code>trisomy_21.py</code>) which select the correct tables and contain error handling, particularly to return meaningful errors to users. For example, weight and head circumference but not length data are available at 23 and 24 weeks gestation. Head circumference in girls stops at 17 y but in boys it stops at 18y. To handle all these idiosyncracies related to each reference, an individual file for table selection has therefore been created.</p>
+<h5 id="centile-advice-strings">Centile Advice Strings<a class="headerlink" href="#centile-advice-strings" title="Permanent link">&para;</a></h5>
+<p>There was much discussion about these at project board. Found in <code>centile_bands.py</code> these strings are returned in the Measurement object to guide users on interpretation of the centile values they receive. The project board were very clear they wished to dissuade users from quoting exact centile values, instead to refer to ranges. Further details about this can be found in the clinician information. Although the Measurement object returns an exact centile value, the advice strings are better suited for reporting to users and are rendered in tooltips in the Typescript RCPCHGrowth Chart Component package.</p>
+<h4 id="chart-functions">Chart Functions<a class="headerlink" href="#chart-functions" title="Permanent link">&para;</a></h4>
+<p>These are for the creation of plottable centile charts. <code>chart_functions.py</code> contains a <code>create_chart</code> function which accepts a reference as a parameter and returns a large object with plottable values to render a centile chart, and a label for each centile series. For the UK-WHO references, they form the structure:</p>
+<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    structure:</span>
+<span class="sd">    UK_WHO generates 4 json objects, each structure as below</span>
+<span class="sd">    uk90_preterm: {</span>
+<span class="sd">        male: {</span>
+<span class="sd">            height: [</span>
+<span class="sd">                {</span>
+<span class="sd">                    sds: -2.667,</span>
+<span class="sd">                    centile: 0.4</span>
+<span class="sd">                    data: [{l: , x: , y: }, ....]</span>
+<span class="sd">                }</span>
+<span class="sd">            ],</span>
+<span class="sd">            weight: [...]</span>
+<span class="sd">        },</span>
+<span class="sd">        female {...}</span>
+<span class="sd">    }</span>
+<span class="sd">    uk_who_infant: {...}</span>
+<span class="sd">    uk_who_child:{...}</span>
+<span class="sd">    uk90_child: {...}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</code></pre></div>
+<p>Each centile is created using the <code>generate_centile</code> function found in <code>global_functions</code>. This creates plottable x and y coordinates (x is decimal age in years, y is the measurement, l is the centile label) at regular time intervals, usually weekly to the age of 2y, monthly there after. It is possible of course to make it more granular, but this is at the cost of a much bigger object, which is more than 1MB even when minified.</p>
+<p>There is an endpoint in the API which calls this function and returns the chart for those users who need it. Equally, the Typescript Charting Component (built for React) has the reference data included.</p>
+<p><code>create_plottable_child_data</code>, largely deprecated now, receives a list of Measurement objects and returns a PlottableChild object. Earlier versions of the API required 2 API calls - one to make the calculations, one to convert those to a plottable format. This has now been moved into the Measurement object so is only used with older versions of the API.</p>
+<h3 id="other-functions">Other functions<a class="headerlink" href="#other-functions" title="Permanent link">&para;</a></h3>
+<p>There are more experimental functions in <code>dynamic_growth.py</code> which calculate height velocity and acceleration from a list of Measurement objects, and some implementations of thrive lines based using correlation tables in the <code>data_tables</code> folder. These are features that have significant work and testing still to do and contributions are welcome.</p>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../faqs-for-developers/" class="md-footer__link md-footer__link--prev" aria-label="Previous: FAQs for Developers" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              FAQs for Developers
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../safety/overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Clinical Safety: Overview" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Clinical Safety: Overview
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021 Royal College of Paediatrics and Child Health (RCPCH)
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/rcpchtweets" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/rcpch" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://openhealthhub.org/c/rcpch-digital-growth-charts" target="_blank" rel="noopener" title="openhealthhub.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M225.9 32C103.3 32 0 130.5 0 252.1 0 256 .1 480 .1 480l225.8-.2c122.7 0 222.1-102.3 222.1-223.9C448 134.3 348.6 32 225.9 32zM224 384c-19.4 0-37.9-4.3-54.4-12.1L88.5 392l22.9-75c-9.8-18.1-15.4-38.9-15.4-61 0-70.7 57.3-128 128-128s128 57.3 128 128-57.3 128-128 128z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://signal.group/#CjQKIAjLf5lS9OZIAI6lsJKWP1LmeJXkUW_fzZH1ryEw3oFEEhBH-4F7WnlyYjKerjfzD6B0" target="_blank" rel="noopener" title="signal.group" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c5.5 0 10 3.58 10 8s-4.5 8-10 8c-1.24 0-2.43-.18-3.53-.5C5.55 21 2 21 2 21c2.33-2.33 2.7-3.9 2.75-4.5C3.05 15.07 2 13.13 2 11c0-4.42 4.5-8 10-8Z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "navigation.expand"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>
