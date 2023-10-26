@@ -30,6 +30,7 @@ nav:
     - 'integrator/api-keys.md'
     - 'integrator/making-api-calls.md'
     - 'integrator/api-reference.md'
+    - 'integrator/component.md'
     - 'integrator/support.md'
     - 'integrator/client-specification.md'
     - 'integrator/faqs-for-integrators.md'
@@ -120,7 +121,6 @@ plugins:
       enable_creation_date: true
   - macros
   - search
-  - render_swagger
   - with-pdf:
         cover_title: RCPCH Digital Growth Charts
         cover_subtitle: Complete Documentation Manual
