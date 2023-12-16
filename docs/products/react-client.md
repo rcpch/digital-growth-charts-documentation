@@ -41,6 +41,3 @@ It was felt that representing boys' charts with blue lines and girls' charts wit
 - [Developer documentation](../developer/react-client.md)
 - [Contributor documentation](../developer/start-here.md)
 
---8<--
-docs/_assets/_snippets/docs-contributions.md
---8<--

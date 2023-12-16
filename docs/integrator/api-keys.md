@@ -33,6 +33,6 @@ We require an API key to authenticate calls made and ensure they are valid. The 
 
 ![getting-api-keys](../_assets/_images/getting-api-keys.png)
 
------
-
 ## Next: [Making an API call](../integrator/making-api-calls.md)
+
+-----

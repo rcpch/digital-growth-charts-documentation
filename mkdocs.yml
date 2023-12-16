@@ -87,7 +87,6 @@ nav:
 # `not_in_nav` will prevent 'The following pages exist in the docs directory, but are not included in the "nav" configuration:' warnings
 not_in_nav: |
   _assets/_snippets/dgc-platform-comprises.md
-  _assets/_snippets/docs-contributions.md
   _assets/_snippets/htn-award.md
   _assets/_snippets/self-host-warning.md
   _utilities/page-template.md
@@ -175,6 +174,7 @@ markdown_extensions:
       check_paths: true
       auto_append:
         - includes/_abbreviations.md # adds abbreviations snippets to ALL pages
+        - includes/_docs-contributions.md # adds docs-contributions snippets to ALL pages
   - pymdownx.superfences
   - toc:
       permalink: false
