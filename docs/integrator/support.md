@@ -4,8 +4,6 @@ reviewers: Dr Marcus Baw, Dr Anchit Chandran
 audience: integrators, implementers, technical-architects
 ---
 
-# Support
-
 ## Commercial Support
 
 !!! tip "Commercial support"
