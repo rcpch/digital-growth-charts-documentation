@@ -23,7 +23,7 @@ audience: developers
 !!! success "Use our Growth Chart React Component"
 The dGC React Component is the recommended way to display Digital Growth Charts to end users. We have built the component to be easy to integrate into existing web-based views, even if your stack does not currently use React. You can use the component as-is in a React app, or include it in plain HTML or any other JavaScript framework.
 
-    Displaying growth charts is a complex task, and we have built the component to make it as easy as possible for developers to display charts correctly. The component is designed to be customisable, so you can change the look and feel to match your app.
+Displaying growth charts is a complex task, and we have built the component to make it as easy as possible for developers to display charts correctly. The component is designed to be customisable, so you can change the look and feel to match your app.
 
 ## Background
 
