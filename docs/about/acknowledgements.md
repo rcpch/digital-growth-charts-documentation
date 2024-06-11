@@ -29,7 +29,7 @@ audience: all
 - [Heroku](https://www.heroku.com/) (used in early alpha stages for quick hosting)
 - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) and [MkDocs](https://www.mkdocs.org/) itself (documentation sites)
 - [Microsoft Azure](https://azure.microsoft.com/) (main cloud platform)
-- [openhealthhub.org](https://openhealthhub.org/) (free forum hosting)
+- [openhealthhub.org](https://openhealthhub.org/) (free forum hosting, used for support before https://forum.rcpch.tech)
 - [Python](https://www.python.org/) and the Python Software Foundation (main language used for the RCPCH dGC project)
 - [ReactJS](https://reactjs.org/) (frontend JavaScript framework for Chart component and demo app)
 

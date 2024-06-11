@@ -39,10 +39,6 @@ This is the API 'calculation engine' extracted out of the API so that it can be 
 
 This is a CLI which wraps the `rcpch-python` package. It makes it easy to use the growth calculation functions of the python packages in the command line.
 
-### [Documentation](/)
-
-All documentation for the project is completely in the open and is primarily here on this documentation site. At present, a small amount of further documentation remains at the Azure API Management Developer Portal at [dev.rcpch.ac.uk](https://dev.rcpch.ac.uk), however we are working to bring all documentation into this site.
-
 ### [Clinical Safety documentation](../safety/overview.md)
 
 Including our complete Clinical Safety Management File for the development/manufacture (DCB0129) of the API and associated clients, libraries and tools, and for implementers to use as an information source for their own clinical safety cases.

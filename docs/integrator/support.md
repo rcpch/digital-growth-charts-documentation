@@ -48,11 +48,11 @@ To obtain the information you need for the best use of the RCPCH dGC platform de
 
 ### Discourse Forum
 
-Our primary support method is through the forum at [openhealthhub.org](https://openhealthhub.org/c/rcpch-digital-growth-charts). You can search for previous answers to your question, connect with the developers and team behind the API, and find a community of other integrators, with whom you can share tips and ideas.
+Our primary support method is through the forum at [forum.rcpch.tech](https://forum.rcpch.tech). You can search for previous answers to your question, connect with the developers and team behind the API, and find a community of other integrators, with whom you can share tips and ideas.
 
-[Go to the forums :fontawesome-brands-discourse:](https://openhealthhub.org/c/rcpch-digital-growth-charts){ .md-button .md-button--primary }
+[Go to the forums :fontawesome-brands-discourse:](https://forum.rcpch.tech){ .md-button .md-button--primary }
 
-[![open-health-hub-screenshot](../_assets/_images/ohh-screenshot.png)](https://openhealthhub.org/c/rcpch-digital-growth-charts)
+[![forum-screenshot](../_assets/_images/forum-screenshot.png)](https://forum.rcpch.tech/)
 
 ### Signal Chat
 

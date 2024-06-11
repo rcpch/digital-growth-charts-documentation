@@ -17,7 +17,7 @@ reviewers: Dr Marcus Baw
 
 [:octicons-mark-github-16: GitHub repository](https://github.com/{{ repository_name }})
 
-[:octicons-code-review-24: Developer Portal](https://dev.rcpch.ac.uk) (Sign up and get API keys here)
+[:octicons-code-review-24: Developer Portal](https://forum.rcpch.tech/) (Sign up and get API keys here)
 
 [:material-api: API Gateway Base URL](https://api.rcpch.ac.uk) (NB: Without a valid API key, the endpoint will always respond with 404)
 
