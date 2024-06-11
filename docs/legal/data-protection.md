@@ -36,7 +36,7 @@ In view of the stateless nature of the server, the RCPCH doesn't handle any Pati
 
 ## For the Digital Growth Charts API Service provided by the RCPCH
 
-[The API developer portal](https://dev.rcpch.ac.uk/) collects the essential minimum details from Consumers/Integrators/Customers, so we can provide them a safe, reliable API service. Use of the service requires some data to be collected. This data is retained only for the duration of the customer's use of the API service, after which is it deleted.
+[The API developer portal](https://forum.rcpch.tech/) collects the essential minimum details from Consumers/Integrators/Customers, so we can provide them a safe, reliable API service. Use of the service requires some data to be collected. This data is retained only for the duration of the customer's use of the API service, after which is it deleted.
 
 | Data elements                                | Reason for collection                                    |
 | -------------------------------------------- | -------------------------------------------------------- |
