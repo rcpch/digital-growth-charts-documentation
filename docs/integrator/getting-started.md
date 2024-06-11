@@ -23,7 +23,7 @@ It has full access to the API but the number of requests are limited.
 
 2. Navigate to your user summary page using the drop down in the top right hand menu
 
-![forum-user-summary-link](../_assets/_images/forum-user-summary.png)
+![forum-user-summary-link](../_assets/_images/forum-user-summary-link.png)
 
 3. Click on the API keys tab
 
