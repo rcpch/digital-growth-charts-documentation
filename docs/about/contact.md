@@ -14,7 +14,7 @@ audience: all
 
     These are the basis of an open, searchable knowledge base about the dGC Platform.
 
-    [RCPCH Forum :fontawesome-brands-discourse:](https://openhealthhub.org/c/rcpch-digital-growth-charts){ .md-button .md-button--primary }
+    [RCPCH Forum :fontawesome-brands-discourse:](https://forum.rcpch.tech){ .md-button .md-button--primary }
 
 !!! info "Signal Chat"
 
