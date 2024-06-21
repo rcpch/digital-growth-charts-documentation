@@ -27,7 +27,6 @@ nav:
     - 'products/flask(deprecated).md'
   - Integrators:
     - 'integrator/getting-started.md'
-    - 'integrator/api-keys.md'
     - 'integrator/making-api-calls.md'
     - 'integrator/api-reference.md'
     - 'integrator/support.md'
