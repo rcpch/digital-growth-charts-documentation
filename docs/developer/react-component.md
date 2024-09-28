@@ -105,7 +105,7 @@ npm run build
 And once you receive a message that the build has completed, go to the client terminal and enter:
 
 ```console
-s/deprecated/start-react-client
+npm run dev
 ```
 
 !!! warning
@@ -126,28 +126,26 @@ This library has been written in Typescript. The main component is `RCPCHChart`,
 
 ??? note "`RCPCHChart` component props"
     ```js
-        {
-        title: string,
-        subtitle: string,
-        measurementMethod: 'height' | 'weight' | 'ofc' | 'bmi',
-        sex: 'male' | 'female',
-        measurementsArray: [Measurement],
-        reference: 'uk-who' | 'turner' | 'trisomy-21',
-        width: number,
-        height: number,
-        chartStyle: ChartStyle,
-        axisStyle: AxisStyle,
-        gridlineStyle: GridlineStyle,
-        centileStyle: CentileStyle,
-        sdsStyle?: SDSStyle;
-        measurementStyle: MeasurementStyle
-        midParentalHeightData?: MidParentalHeightObject,
-        enableZoom?: boolean,
-        chartType?: 'centile' | 'sds',
-        enableExport: boolean,
-        exportChartCallback: function(svg: any),
-        clinicianFocus?: boolean;
-        }
+        title: string; 
+    measurementMethod: 'height' | 'weight' | 'ofc' | 'bmi';
+    reference: 'uk-who' | 'turner' | 'trisomy-21' | 'cdc'; // 'cdc' coming soon!
+    sex: 'male' | 'female';
+    measurements: ClientMeasurementObject;
+    midParentalHeightData?: MidParentalHeightObject | undefined;
+    enableZoom?: boolean;
+    chartType?: 'centile' | 'sds';
+    enableExport?: boolean | undefined;
+    exportChartCallback(svg?: any): any;
+    clinicianFocus?: boolean | undefined | null;
+    theme?: 'monochrome' | 'traditional' | 'tanner1' | 'tanner2' | 'tanner3' | 'custom';
+    customThemeStyles?: {
+        chartStyle?: ChartStyle 
+        axisStyle?: AxisStyle
+        gridlineStyle?: GridlineStyle
+        measurementStyle?: MeasurementStyle
+        centileStyle?: CentileStyle
+        sdsStyle?: SDSStyle
+    } // individual styles to override in each theme. If 'custom' theme is selected, 'monochrome' styles are defaulted and styles passed here override them 
     ```
 
 ### Measurement interface
@@ -334,6 +332,11 @@ Centile data are returned from the RCPCH API in this same structure, though no A
 
 Victory Charts are a dependency (see below), built on top of D3.js. On build, it is likely you will get an error relating to circular dependencies for some files in the d3-interpolate module. This issue is logged [here](https://github.com/d3/d3-interpolate/issues/58).
 
+### Build error
+
+v7.0.0 uses Rollup 4.11, and has the following build script in `package.json`: `"build": "ROLLUP_WATCH=false rollup -c --bundleConfigAsCjs",`
+If users are using later versions, this has has changed and should be `“build”: “ROLLUP -w -c --bundleConfigAsCjs”,` (thanks to Caroline Kirkhope at System C for noticing this)
+
 ## Contributing
 
 See [Contributing](../developer/contributing.md) for information on how to get involved in the project.
@@ -352,4 +355,3 @@ This chart component software is is subject to copyright and is owned by the RCP
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 There is important chart line rendering data bundled in the component, which subject to copyright and is owned by the RCPCH. It is specifically excluded from the MIT license mentioned above. If you wish to use this software, please [contact the RCPCH](../about/contact.md) so we can ensure you have the correct license for use. Subscribers to the Digital Growth Charts API will automatically be assigned licenses for the chart plotting data.
-
