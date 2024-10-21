@@ -51,21 +51,15 @@ If you need us to develop a charting component in a different language or framew
 
 `git clone` the repo
 
-```console
-git clone https://github.com.rcpch/{{ repository_name }}
-```
+    git clone https://github.com.rcpch/{{ repository_name }}
 
 Install dependencies
 
-```console
-npm install
-```
+    npm install
 
 Run Storybook to view the component in isolation
 
-```console
-npm run storybook
-```
+    npm run storybook
 
 ### Running the Charts component locally
 
@@ -73,46 +67,43 @@ To run the Chart component locally alongside the React client, there are some ex
 
 <!-- We should stick to exclusively using these 2 terms to avoid confusion. Could also add a diagram showing which is which  -->
 
-We would advise having both the Component and Client open when working through this part of the documentation. If you are using Visual Studio code, you can do this by opening a 'Workspace'.
+We would advise having both the Component and Client open when working through this part of the documentation. If you are using Visual Studio code, you can do this by opening a 'Workspace'. To work on these together they need to `npm link`ed, which creates a symlink between the client's `node_modules` folder and the local version of the client
 
 First, in the Client directory, ensure you have a version of the chart component in your `node_modules`. Look for `node_modules/@rcpch/digital-growth-charts-react-component-library` 
 
 Begin by opening a terminal in the client directory, and in the component directory. In both, execute the following command:
 
-```console
-npm ls -g --depth=0 --link=true
-```
+    npm ls -g --depth=0 --link=true
 
 The result printed out will show you any symlinks between the 2 directories, and if you have never before ran `npm link`, then this will likely be empty.
 
 In both the client and component terminals, execute the following command:
 
-```console
-nvm use node
-```
+    nvm use node
 
-This will use nvm (node version manager) to move to the latest version of node. 
+This will use nvm (node version manager) to move to the latest version of node. If you are running different versions of node in each terminal, the symlink will not be created between both.
 
-Next, in your client terminal, execute the following command:
+Next, in your component terminal in the root directory, execute the following command:
 
-```console
-npm link @rcpch/digital-growth-charts-react-component-library@7.0.0
-```
+    npm link 
 
 !!! warning
     You may receive a permission denied error. If this is the case, execute the above command again but place `sudo` at the start of it.
 
-Then, execute the following command in the component terminal:
+Then, execute the following command in the client terminal:
 
-```console
-npm run build
-```
+    @rcpch/digital-growth-charts-react-component-library@7.0.0
 
-And once you receive a message that the build has completed, go to the client terminal and enter:
+The client and the component are now linked. Any changes you make in the component will appear in the client when you rebuild the component
 
-```console
-npm run dev
-```
+    npm run build
+
+!!! warning
+    Note that there will be some advisory build errors about circular imports. These are detailed in troubleshooting below and relate to the Victory Charts package on which the RCPCH charts are based.
+
+To run the client, in the root of the client in the terminal:
+
+    npm run dev
 
 !!! warning
     You may receive a hooks error and a blank screen. This would be due to a clash between react versions between the client and component. You should navigate to the Component `node_modules` folder, and delete the `react` and `react-dom` folders.
@@ -132,14 +123,16 @@ This library has been written in Typescript. The main component is `RCPCHChart`,
 
 ??? note "`RCPCHChart` component props"
     ```js
-        title: string; 
+    title: string;
     measurementMethod: 'height' | 'weight' | 'ofc' | 'bmi';
-    reference: 'uk-who' | 'turner' | 'trisomy-21' | 'cdc'; // 'cdc' coming soon!
+    reference: 'uk-who' | 'turner' | 'trisomy-21' | 'cdc';
     sex: 'male' | 'female';
     measurements: ClientMeasurementObject;
     midParentalHeightData?: MidParentalHeightObject | undefined;
     enableZoom?: boolean;
     chartType?: 'centile' | 'sds';
+    height?: number;
+    width?: number;
     enableExport?: boolean | undefined;
     exportChartCallback(svg?: any): any;
     clinicianFocus?: boolean | undefined | null;
@@ -178,108 +171,103 @@ or override styles within an existing theme, this can be done by passing in cust
 
 All attributes are optional, therefore only those attributes where changes are requested need be passed in. The keys for the `customThemeStyles` object are as follows:
 
--   `chartStyle?: ChartStyle;`
--   `axisStyle?: AxisStyle;`
--   `gridlineStyle?: GridlineStyle;`
--   `centileStyle?: CentileStyle;`
--   `sdsStyle?: SDSStyle;`
--   `measurementStyle?: MeasurementStyle;`
+* `chartStyle?: ChartStyle;`
+* `axisStyle?: AxisStyle;`
+* `gridlineStyle?: GridlineStyle;`
+* `centileStyle?: CentileStyle;`
+* `sdsStyle?: SDSStyle;`
+* `measurementStyle?: MeasurementStyle;`
 
 The attributes of each of these are below:
 
 #### `ChartStyle`
 
--   `backgroundColour?: string;` //background colour of chart
--   `titleStyle?: TextStyle `| undefined; // style of text in title: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
--   `subTitleStyle?: TextStyle `| undefined; // style of text in subtitle: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
--   `tooltipBackgroundColour?: string;` //background colour of tooltip
--   `tooltipStroke?: string;` //border colour of tooltip
--   `tooltipTextStyle?: TextStyle `| undefined; // tooltip text: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
--   `termFill?: string;` // background colour of weight term area
--   `termStroke?: string;` // border colour of weight term area
--   `toggleButtonInactiveColour?: string;` // buttons - inactive colour
--   `toggleButtonActiveColour?: string;` // buttons - active colour
--   `toggleButtonTextStyle?: TextStyle | undefined;` // buttons text: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
+* `backgroundColour?: string;` //background colour of chart
+* `titleStyle?: TextStyle `| undefined; // style of text in title: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
+* `subTitleStyle?: TextStyle `| undefined; // style of text in subtitle: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
+* `tooltipBackgroundColour?: string;` //background colour of tooltip
+* `tooltipStroke?: string;` //border colour of tooltip
+* `tooltipTextStyle?: TextStyle `| undefined; // tooltip text: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
+* `termFill?: string;` // background colour of weight term area
+* `termStroke?: string;` // border colour of weight term area
+* `toggleButtonInactiveColour?: string;` // buttons - inactive colour
+* `toggleButtonActiveColour?: string;` // buttons - active colour
+* `toggleButtonTextStyle?: TextStyle | undefined;` // buttons text: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
 
 #### `MeasurementStyle`
 
--   `measurementFill?: string;` // measurement point fill colour - only apply to SDS charts
--   `highlightedMeasurementFill?: string;` // measurement point fill colour when hightlighted (SDS charts)
--   `eventTextStyle?: TextStyle;` // styles for text of events: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
+* `measurementFill?: string;` // measurement point fill colour - only apply to SDS charts
+* `highlightedMeasurementFill?: string;` // measurement point fill colour when hightlighted (SDS charts)
+* `eventTextStyle?: TextStyle;` // styles for text of events: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
 
 #### `CentileStyle`
 
--   `sdsStroke?: string;` // sds line colour
--   `centileStroke?: string;` // centile line colour
--   `delayedPubertyAreaFill?: string;` // delayed puberty area colour
--   `midParentalCentileStroke?: string;` // Midparental height centile line colour
--   `midParentalAreaFill?: string;` // Midparental height area colour
+* `sdsStroke?: string;` // sds line colour
+* `centileStroke?: string;` // centile line colour
+* `delayedPubertyAreaFill?: string;` // delayed puberty area colour
+* `midParentalCentileStroke?: string;` // Midparental height centile line colour
+* `midParentalAreaFill?: string;` // Midparental height area colour
 
 #### `SDSStyle`
 
--   `heightStroke?: string;` // sds line colour
--   `weightStroke?: string;` // sds line colour
--   `ofcStroke?: string;` // sds line colour
--   `bmiStroke?: string;` // sds line colour
+* `heightStroke?: string;` // sds line colour
+* `weightStroke?: string;` // sds line colour
+* `ofcStroke?: string;` // sds line colour
+* `bmiStroke?: string;` // sds line colour
 
 #### `GridlineStyle`
 
--   `gridlines?: boolean;` // show or hide gridlines
--   `stroke?: string;` // gridline colour
--   `strokeWidth?: number;` // gridline width
--   `dashed?: boolean;` // dashed vs continuous gridlines
+* `gridlines?: boolean;` // show or hide gridlines
+* `stroke?: string;` // gridline colour
+* `strokeWidth?: number;` // gridline width
+* `dashed?: boolean;` // dashed vs continuous gridlines
 
 #### `AxisStyle`
 
--   `axisStroke?: string;` // Axis colour
--   `axisLabelTextStyle?: TextStyle | undefined;` // Axis label text: : includes fontFamily, fontSize, colour, weight (regular/bold/italic)
--   `tickLabelTextStyle?: TextStyle | undefined;` // Tick label text : includes fontFamily, fontSize, colour, weight (regular/bold/italic)
+* `axisStroke?: string;` // Axis colour
+* `axisLabelTextStyle?: TextStyle | undefined;` // Axis label text: : includes fontFamily, fontSize, colour, weight (regular/bold/italic)
+* `tickLabelTextStyle?: TextStyle | undefined;` // Tick label text : includes fontFamily, fontSize, colour, weight (regular/bold/italic)
 
 #### `TextStyle`
 
--   `name?: string;`
--   `colour?: string;`
--   `size?: number;`
--   `style?: 'bold' | 'italic' | 'normal';`
+* `name?: string;`
+* `colour?: string;`
+* `size?: number;`
+* `style?: 'bold' | 'italic' | 'normal';`
 
 For example, if a user wished to override the background colour of the existing 'monochrome' theme:
 
-```js
-const customChartStyle: ChartStyle = {
-  backgroundColour: "tomato"
-}
+    const customChartStyle: ChartStyle = {
+    backgroundColour: "tomato"
+    }
 
-const customStyles = {
-  chartStyle: customChartStyle
-}
-```
+    const customStyles = {
+    chartStyle: customChartStyle
+    }
 
 And in the JSX:
 
-```js
-<RCPCHChart
-    reference={'uk-who'}
-    measurementMethod={'height'}
-    sex={'female'}
-    title={'Arthur Scargill - 12345678A'}
-    measurements={[]} // this is the plottable child data
-    midParentalHeightData={[]} // this is the optional plottable midparental height data from the RCPCH API
-    theme={'monochrome'}
-    customThemeStyles={customStyles} <---- override styles here
-    enableZoom
-    chartType={'centile'}
-    enableExport={false}
-    exportChartCallback={() => {}} // this is a callback for the export chart function if true
-    clinicianFocus={false}
-/>
-```
+    <RCPCHChart
+        reference={'uk-who'}
+        measurementMethod={'height'}
+        sex={'female'}
+        title={'Arthur Scargill - 12345678A'}
+        measurements={[]} // this is the plottable child data
+        midParentalHeightData={[]} // this is the optional plottable midparental height data from the RCPCH API
+        theme={'monochrome'}
+        customThemeStyles={customStyles} <---- override styles here
+        enableZoom
+        chartType={'centile'}
+        enableExport={false}
+        exportChartCallback={() => {}} // this is a callback for the export chart function if true
+        clinicianFocus={false}
+    />
 
 ### Mid-Parental Height
 
 `midParentalHeightData`: This is the return value from the RCPCH API and takes the structure:
 
 ??? note "`midParentalHeightData`"
-    ```js
         export interface MidParentalHeightObject {
             mid_parental_height?: number;
             mid_parental_height_sds?: number;
@@ -290,12 +278,10 @@ And in the JSX:
             mid_parental_height_lower_value?: number
             mid_parental_height_upper_value?: number
         }
-    ```
 
 This returns a mid-parental height, mid-parental SDS and centile, along with the centile data if the user wishes to plot a mid-parental centile. The structure of the Reference and Centile interfaces is:
 
 ??? note "`Reference` and `Centile` interface structures"
-    ```js
     export interface Reference {
     [name: string]: ISexChoice
     }
@@ -323,7 +309,6 @@ This returns a mid-parental height, mid-parental SDS and centile, along with the
             bmi?: ICentile[],
             ofc?: ICentile[],
         }
-    ```
 
 Centile data are returned from the RCPCH API in this same structure, though no API call is made from this component - all the centile data for all the references is included.
 
