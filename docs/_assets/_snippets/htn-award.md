@@ -8,5 +8,6 @@
   </a>
 </p>
 <p align="center">Winner Best Health Tech Solution HTN Health Teach Awards 2020</p>
+<p align="center">Winner Best Solution for Clinicians HTN Health Teach Awards 2024</p>
 
 ---

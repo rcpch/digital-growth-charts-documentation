@@ -25,11 +25,13 @@ RCPCHGrowth has been primarily built to work with the UK-WHO dataset. LMS calcul
 The references included are:
 
 1. UK90 dataset – runs from 23 weeks to 20 years
-2. WHO 2006 – runs from 2 weeks to 4 years
+2. WHO 2006 standard – runs from 2 weeks to 4 years
 3. Down reference
 4. Turner reference
+5. CDC (US) reference - comprises a US interpretation of WHO 2006 0-2y, CDC 2-20y. It also has extended BMI centiles which reinterpret z score calculation above the 95th centile.
+6. Fenton (Canada) - this reference licensed to Dr Fenton is a preterm reference from 22-50 weeks gestation, with median values in weight in grams. This dataset is closed source and licensed so not in the repo. It is currently not implemented in RCPCHGrowth.
 
-Data tables are stored in the ```data_tables``` folder as ```.json```. There is a separate [repository](https://github.com/rcpch/growth-references) to store references from across the world. Currently, they are stored as ```.csv```, ```.json``` and ```.rif``` file types.
+Data tables are stored in the `data_tables` folder as `.json`. There is a separate [repository](https://github.com/rcpch/growth-references) to store references from across the world. Currently, they are stored as `.csv`, `.json` and `.rif` file types.
 
 *`.rif` is a standardised format created by @stefvanbuuren.*
 
@@ -58,7 +60,7 @@ measurement_method: ['height', 'weight', 'bmi', 'ofc']
 
 observation_value: float
 
-reference: ['uk-who', 'trisomy-21' 'turners-syndrome']
+reference: ['uk-who', 'trisomy-21' 'turners-syndrome', 'cdc']
 ```
 
 #### Optional parameters
@@ -277,6 +279,8 @@ The calculation involves first calculating a decimal age (corrected or chronolog
 
 This latter calculation is done using the SciPy package.
 
+Note that CDC references use only linear interpolation.
+
 ##### Steps
 
 The functions called by the Measurement class are ```sds_for_measurement```, or its inverse ```measurement_from_sds```, found in the ```global_functions.py``` file.
@@ -287,11 +291,11 @@ From this, the individual L, M and S values are returned using the ```fetch_LMS`
 
 Note that our cubic interpolation method is subtly different from those in the SciPy and NumPy packages. The code using these functions remains and has been commented out. We found the library functions to be slower and less precise.
 
-The L, M and S are then converted to SDS using the ```lms_to_z``` and either returned, or converted to centile using the ```centile``` function and then returned.
+The L, M and S are then converted to SDS using the `lms_to_z` and either returned, or converted to centile using the `centile` function and then returned.
 
 ##### Reference Selection
 
-As there are several references, the selection of the correct LMS table is essential before beginning calculation. The references are all stored as JSON files in the ```data_tables``` folder. There are individual files (```uk_who.py```, ```turner.py``` and ```trisomy_21.py```) which select the correct tables and contain error handling, particularly to return meaningful errors to users. For example, weight and head circumference but not length data are available at 23 and 24 weeks gestation. Head circumference in girls stops at 17 years but in boys it stops at 18 years. To handle all these idiosyncrasies, an individual file for table selection has been created.
+As there are several references, the selection of the correct LMS table is essential before beginning calculation. The references are all stored as JSON files in the `data_tables` folder. There are individual files (`uk_who.py`, `turner.py`, `trisomy_21.py` and `cdc`) which select the correct tables and contain error handling, particularly to return meaningful errors to users. For example, weight and head circumference but not length data are available at 23 and 24 weeks gestation. Head circumference in girls stops at 17 years but in boys it stops at 18 years. To handle all these idiosyncrasies, an individual file for table selection has been created.
 
 ##### Centile Advice Strings
 
@@ -301,7 +305,7 @@ There was much discussion about these at project board. Found in ```centile_band
 
 These are for the creation of plottable centile charts.
 
-```chart_functions.py``` contains a ```create_chart``` function which accepts a reference as a parameter and returns a large object with plottable values to render a centile chart, and a label for each centile series.
+`chart_functions.py` contains a `create_chart` function which accepts a reference as a parameter and returns a large object with plottable values to render a centile chart, and a label for each centile series.
 
 For the UK-WHO references, there are 4 `json` objects generated, with the following structure:
 
@@ -324,12 +328,12 @@ uk_who_child:{...}
 uk90_child: {...}
 ```
 
-Each centile is created using the ```generate_centile``` function found in ```global_functions```. This creates plottable x and y coordinates (x is decimal age in years, y is the measurement, l is the centile label) at regular time intervals, usually weekly to the age of 2y, and monthly thereafter. This could be more granular, but at the cost of a much bigger object, which is more than 1MB, even when minified.
+Each centile is created using the `generate_centile` function found in `global_functions`. This creates plottable x and y coordinates (x is decimal age in years, y is the measurement, l is the centile label) at regular time intervals, usually weekly to the age of 2y, and monthly thereafter. This could be more granular, but at the cost of a much bigger object, which is more than 1MB, even when minified.
 
 There is an endpoint in the API which calls this function and returns the chart for those users who need it. Equally, the Typescript Charting Component (built for React) has the reference data included.
 
-```create_plottable_child_data```, largely deprecated now, receives a list of Measurement objects and returns a `PlottableChild` object. Earlier versions of the API required 2 API calls - one to make the calculations, one to convert those to a plottable format. This has now been moved into the Measurement object so is only used with older versions of the API.
+`create_plottable_child_data`, largely deprecated now, receives a list of Measurement objects and returns a `PlottableChild` object. Earlier versions of the API required 2 API calls - one to make the calculations, one to convert those to a plottable format. This has now been moved into the Measurement object so is only used with older versions of the API.
 
 ### Other functions
 
-There are more experimental functions in ```dynamic_growth.py``` which calculate height velocity and acceleration from a list of Measurement objects, and some implementations of thrive lines based using correlation tables in the ```data_tables``` folder. These features still have significant work and testing required - contributions are welcome.
+There are more experimental functions in `dynamic_growth.py` which calculate height velocity and acceleration from a list of Measurement objects, and some implementations of thrive lines based using correlation tables in the `data_tables` folder. These features still have significant work and testing required - contributions are welcome.

@@ -1,13 +1,15 @@
-# Base Docker image Official Python 3.10
-FROM python:3.11
+# Base Docker image Official Python 3.12
+FROM python:3.12
 
 # Set 'build-time' environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
-# Extra packages required for Material for MkDocs plugins (dependency for git and pdf plugins)
-RUN apt-get update \
-    apt install -y git python3-cffi python3-brotli libpango-1.0-0 libpangoft2-1.0-0
+# Extra packages required for Material for MkDocs plugins
+RUN apt-get update && \
+    apt-get install -y git python3-cffi python3-brotli libpango-1.0-0 libpangoft2-1.0-0 && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Add requirements
 COPY requirements.txt /app/requirements.txt

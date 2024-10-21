@@ -25,7 +25,7 @@ Run all scripts from the root of the project, or they won't work.
 
 #### Managing Python versions
 
-Currently, we use Python 3.8.3 for these algorithms.
+Currently, we use Python 312.0 for these algorithms.
 
 There are different tools available to help you manage multiple different Python versions on the same machine. We use `pyenv` here, however, there are other ways to solve this problem. If you already have a preferred method, you should be able to use that.
 
@@ -66,13 +66,13 @@ cd digital-growth-charts-server
 Install the correct Python version
 
 ```bash
-pyenv install 3.8.0
+pyenv install 3.12.0
 ```
 
-Create a virtualenv for this project 'growth-charts', abbreviated to 'gc-3.8' using Python 3.8.0
+Create a virtualenv for this project 'growth-charts', abbreviated to 'gc-3.8' using Python 3.12.0
 
 ```bash
-pyenv virtualenv 3.8.0 dgc-server
+pyenv virtualenv 3.12.0 dgc-server
 ```
 
 !!! tip "Auto-selection of Python and virtualenv"

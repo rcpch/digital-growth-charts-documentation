@@ -30,3 +30,6 @@ mkdocs-macros-plugin
 
 # for the PDF export feature
 mkdocs-with-pdf
+
+# for the timestamp feature
+mkdocs-git-revision-date-localized-plugin
