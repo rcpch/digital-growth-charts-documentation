@@ -8,11 +8,13 @@ audience: developers
 
 {% set repository_name="rcpch/digital-growth-charts-react-component-library" -%}
 
-[![Github Issues](https://img.shields.io/github/issues/{{ repository_name }})](https://github.com/{{ repository_name }}/issues)
-[![Github Stars](https://img.shields.io/github/stars/{{ repository_name }})](https://github.com/{{ repository_name }}/stargazers)
-[![Github Forks](https://img.shields.io/github/forks/{{ repository_name }})](https://github.com/{{ repository_name }}/network/members)
-[![Github Licence](https://img.shields.io/github/license/{{ repository_name }})](https://github.com/{{ repository_name }}/blob/live/LICENSE)
-[![NPM Publish](https://github.com/{{ repository_name }}/actions/workflows/main.yml/badge.svg)](https://github.com/{{ repository_name }}/actions/workflows/main.yml)
+* [digital-growth-charts-react-component-library](https://github.com/rcpch/digital-growth-charts-react-component-library) is a React 18.2 Typescript component library which 'knows' how to display the results from the REST API, as a familiar digital growth chart.<br/>
+![NPM Version](https://img.shields.io/npm/v/%40rcpch%2Fdigital-growth-charts-react-component-library?style=flat-square&labelColor=%2311a7f2&color=%230d0d58)
+![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/rcpch/digital-growth-charts-react-component-library?style=flat-square&labelColor=%2311a7f2&color=%230d0d58)
+![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-pr/rcpch/digital-growth-charts-react-component-library?style=flat-square&labelColor=%2311a7f2&color=%230d0d58)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/rcpch/digital-growth-charts-react-component-library?style=flat-square&labelColor=%2311a7f2&color=%230d0d58)
+![GitHub Repo stars](https://img.shields.io/github/stars/RCPCH/digital-growth-charts-react-component-library?style=flat-square&labelColor=%2311a7f2&color=%230d0d58)
+
 
 [:octicons-mark-github-16: GitHub repository](https://github.com/{{ repository_name }})
 
@@ -21,7 +23,7 @@ audience: developers
 ![height-chart-girl-component](../_assets/_images/height-chart-girl-component.png)
 
 !!! success "Use our Growth Chart React Component"
-The dGC React Component is the recommended way to display Digital Growth Charts to end users. We have built the component to be easy to integrate into existing web-based views, even if your stack does not currently use React. You can use the component as-is in a React app, or include it in plain HTML or any other JavaScript framework.
+    The dGC React Component is the recommended way to display Digital Growth Charts to end users. We have built the component to be easy to integrate into existing web-based views, even if your stack does not currently use React. You can use the component as-is in a React app, or include it in plain HTML or any other JavaScript framework.
 
     Displaying growth charts is a complex task, and we have built the component to make it as easy as possible for developers to display charts correctly. The component is designed to be customisable, so you can change the look and feel to match your app.
 
@@ -32,14 +34,18 @@ The dGC React Component is the recommended way to display Digital Growth Charts 
 React is a popular UI library for Javascript. It has endured well and remains a popular choice for developers. Importantly, unlike some other Javascript frameworks which are primarily designed for Single Page Applications, React doesn't expect to have the entire webpage to itself. It can be used as a small component in any other web page, even if the main framework being used is completely different.
 
 !!! question "Tell us what you think"
-Let us know what you think of our design decisions, on this or any other area of the dGC Project, by chatting to us on our [dGC Forum :fontawesome-brands-discourse:](https://forum.rcpch.tech), or our RCPCH Community [Signal chat channel :simple-signal:](https://signal.group/#CjQKIAjLf5lS9OZIAI6lsJKWP1LmeJXkUW_fzZH1ryEw3oFEEhBH-4F7WnlyYjKerjfzD6B0)
+    Let us know what you think of our design decisions, on this or any other area of the dGC Project, by chatting to us on our [dGC Forum :fontawesome-brands-discourse:](https://forum.rcpch.tech), or our RCPCH Community [Signal chat channel :simple-signal:](https://signal.group/#CjQKIAjLf5lS9OZIAI6lsJKWP1LmeJXkUW_fzZH1ryEw3oFEEhBH-4F7WnlyYjKerjfzD6B0)
 
 ### What about other frameworks/UI libraries?
 
 If you need us to develop a charting component in a different language or framework, we may be able to do this with you or your company. We would need to discuss the requirements and quote for this service. You should be aware that all such RCPCH-developed artefacts will also be open source. We ensure the licensing of open source components is compatible with commercial use.
 
 !!! note "Contact us"
-To contact us for this service, email <mailto:commercial@rcpch.ac.uk>.
+    To contact us for this service, email <mailto:commercial@rcpch.ac.uk>.
+
+!!! question "What's new?"
+    - Now support CDC (US) as of November 2024
+    - Reintroduces width and height props for charting - note users control the aspect ratio
 
 ## Getting started
 
@@ -155,100 +161,118 @@ The `Measurement` interface is structured to reflect the JSON `Measurement` obje
 !!! tip
     **You simply need to pass JSON from the dGC API directly in to the component as an array of `Measurement` JSON objects. The component 'knows' how to render this correctly. You don't need to parse, restructure, or even understand the JSON returned from the API: just pass it directly to the component inside an array containing one or more `Measurement` objects.**
 
-## Styling
+### Themes vs Styles
 
-The styling components allow the user to customise elements of the chart. Chart styles control the chart and the tooltips.
+Themes are collections of styles. The RCPCH have created some suggested themes:
 
-!!! note "Styling options available through `ChartStyle`"
-    ```js
-        interface ChartStyle{
-            backgroundColour?: string,
-            width?: number,
-            height?: number,
-            padding?: requires {left?: number, right?: number, top?: number, bottom?: number},
-            titleStyle?: requires {name?: string, colour?: string, size?: number, weight?: 'bold' | 'italic' | 'regular'}
-            subTitleStyle?: requires {name?: string, colour?: string, size?: number, weight?: 'bold' | 'italic' | 'regular'},,
-            tooltipBackgroundColour?: string,
-            tooltipStroke?: string,
-            tooltipTextStyle?: requires {name?: string, colour?: string, size?: number, weight?: 'bold' | 'italic' | 'regular'}
-            termFill?: string,
-            termStroke?: string,
-            infoBoxFill?: string,
-            infoBoxStroke?: string
-            infoBoxTextStyle?: requires {name?: string, colour?: string, size?: number, weight?: 'bold' | 'italic' | 'regular'}
-            toggleButtonInactiveColour: string // relates to the toggle buttons present if age correction is necessary
-            toggleButtonActiveColour: string
-            toggleButtonTextColour: string
-        }
-    ```
+1. Monochrome (default)
+2. Traditional: this uses the preexisting pink and blue colours present on the paper charts
+3. Tanner 1: Purple and yellow
+4. Tanner 2: Orange and blue
+5. Tanner 3: Red and yellow
+6. Custom
 
-Note for the tooltips and infobox text sizes, these are strokeWidths, not point sizes as the text here is SVG.
+These themes all have predefined attributes for `fontFamily`, `color`, `size`, `stroke` and `strokeWidth` for different aspects of the charts.
+If these attributes are too prescriptive and users would like either to build their own theme,
+or override styles within an existing theme, this can be done by passing in custom styles through the `customThemeStyles` prop.
 
-### Axis Styles
+All attributes are optional, therefore only those attributes where changes are requested need be passed in. The keys for the `customThemeStyles` object are as follows:
 
-??? note "Axis styles control axes and axis labels"
-    ```js
-        interface AxisStyle{
-            axisStroke?: string,
-            axisLabelTextStyle?: requires {name?: string, colour?: string, size?: number, weight?: 'bold' | 'italic' | 'regular'}
-            tickLabelTextStyle?: requires {name?: string, colour?: string, size?: number, weight?: 'bold' | 'italic' | 'regular'}
-        }
-    ```
+-   `chartStyle?: ChartStyle;`
+-   `axisStyle?: AxisStyle;`
+-   `gridlineStyle?: GridlineStyle;`
+-   `centileStyle?: CentileStyle;`
+-   `sdsStyle?: SDSStyle;`
+-   `measurementStyle?: MeasurementStyle;`
 
-### Gridline Styles
+The attributes of each of these are below:
 
-??? note "Gridline styles allow/hide gridlines and control line width, presence of dashes, colour"
-    ```js
-        interface GridlineStyle{
-            gridlines?: boolean,
-            stroke?: string,
-            strokeWidth?: number,
-            dashed?: boolean
-        }
-    ```
+#### `ChartStyle`
 
-### Centile Styles
+-   `backgroundColour?: string;` //background colour of chart
+-   `titleStyle?: TextStyle `| undefined; // style of text in title: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
+-   `subTitleStyle?: TextStyle `| undefined; // style of text in subtitle: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
+-   `tooltipBackgroundColour?: string;` //background colour of tooltip
+-   `tooltipStroke?: string;` //border colour of tooltip
+-   `tooltipTextStyle?: TextStyle `| undefined; // tooltip text: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
+-   `termFill?: string;` // background colour of weight term area
+-   `termStroke?: string;` // border colour of weight term area
+-   `toggleButtonInactiveColour?: string;` // buttons - inactive colour
+-   `toggleButtonActiveColour?: string;` // buttons - active colour
+-   `toggleButtonTextStyle?: TextStyle | undefined;` // buttons text: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
 
-??? note "Centile styles control the width and colour of the centile and SDS lines"
-    ```js
-        interface CentileStyle{
-            sdsStroke?: string,
-            sdsStrokeWidth?: string,
-            centileStroke?: string,
-            centileStrokeWidth?: number,
-            delayedPubertyAreaFill?: string,
-            midParentalCentileStroke?: number;
-            midParentalCentileStrokeWidth?: number;
-            midParentalAreaFill?: string;
-        }
-    ```
+#### `MeasurementStyle`
 
-### SDS Styles
+-   `measurementFill?: string;` // measurement point fill colour - only apply to SDS charts
+-   `highlightedMeasurementFill?: string;` // measurement point fill colour when hightlighted (SDS charts)
+-   `eventTextStyle?: TextStyle;` // styles for text of events: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
 
-SDS styles control the colour and width of the SDS lines. As all measurement methods are rendered on a single chart, the user is offered the option of different colours for each measurement method (height, weight, head circumference(OFC) and body mass index (BMI)). If no SDS style is supplied, the centile line colour is used with an opacity applied to each measurement.
+#### `CentileStyle`
 
-??? note "SDS Styles"
-    ```js
-        interface SDSStyle {
-            lineStrokeWidth?: number;
-            heightStroke?: string;
-            weightStroke?: string;
-            ofcStroke?: string;
-            bmiStroke?: string;
-        }
-    ```
+-   `sdsStroke?: string;` // sds line colour
+-   `centileStroke?: string;` // centile line colour
+-   `delayedPubertyAreaFill?: string;` // delayed puberty area colour
+-   `midParentalCentileStroke?: string;` // Midparental height centile line colour
+-   `midParentalAreaFill?: string;` // Midparental height area colour
 
-### Measurement Styles
+#### `SDSStyle`
 
-Measurement styles control the plotted data points: colour, size and shape. Corrected ages are always rendered as crosses. Circles for chronological ages are preferred. On the SDS charts, measurement points are grey by default, with the measurement method in focus highlighted by rendering as a line. Points which are not highlighted can be emphasised on mouse hover, with the highlighted colour being set by the `highlightedMeasurementFill` prop.
+-   `heightStroke?: string;` // sds line colour
+-   `weightStroke?: string;` // sds line colour
+-   `ofcStroke?: string;` // sds line colour
+-   `bmiStroke?: string;` // sds line colour
 
-??? note "Measurement Styles"
-    ```js
-        interface MeasurementStyle{
-            measurementFill?: string,
-            highLightedMeasurementFill?: string;
-        }
-    ```
+#### `GridlineStyle`
+
+-   `gridlines?: boolean;` // show or hide gridlines
+-   `stroke?: string;` // gridline colour
+-   `strokeWidth?: number;` // gridline width
+-   `dashed?: boolean;` // dashed vs continuous gridlines
+
+#### `AxisStyle`
+
+-   `axisStroke?: string;` // Axis colour
+-   `axisLabelTextStyle?: TextStyle | undefined;` // Axis label text: : includes fontFamily, fontSize, colour, weight (regular/bold/italic)
+-   `tickLabelTextStyle?: TextStyle | undefined;` // Tick label text : includes fontFamily, fontSize, colour, weight (regular/bold/italic)
+
+#### `TextStyle`
+
+-   `name?: string;`
+-   `colour?: string;`
+-   `size?: number;`
+-   `style?: 'bold' | 'italic' | 'normal';`
+
+For example, if a user wished to override the background colour of the existing 'monochrome' theme:
+
+```js
+const customChartStyle: ChartStyle = {
+  backgroundColour: "tomato"
+}
+
+const customStyles = {
+  chartStyle: customChartStyle
+}
+```
+
+And in the JSX:
+
+```js
+<RCPCHChart
+    reference={'uk-who'}
+    measurementMethod={'height'}
+    sex={'female'}
+    title={'Arthur Scargill - 12345678A'}
+    measurements={[]} // this is the plottable child data
+    midParentalHeightData={[]} // this is the optional plottable midparental height data from the RCPCH API
+    theme={'monochrome'}
+    customThemeStyles={customStyles} <---- override styles here
+    enableZoom
+    chartType={'centile'}
+    enableExport={false}
+    exportChartCallback={() => {}} // this is a callback for the export chart function if true
+    clinicianFocus={false}
+/>
+```
 
 ### Mid-Parental Height
 
