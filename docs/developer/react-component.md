@@ -46,9 +46,9 @@ The prop to define which chart type is rendered is: `chartType?: 'centile' | 'sd
 Other props are:
 
 * `title: string;` the title of the chart : could include patient name and identifiers
-* `measurementMethod: 'height' | 'weight' | 'ofc' | 'bmi';` _must_ be one of the options provided
-* `reference: 'uk-who' | 'turner' | 'trisomy-21' | 'cdc';` _must_ be one of the options provided
-* `sex: 'male' | 'female';` _must_ be one of the options provided
+* `measurementMethod: 'height' | 'weight' | 'ofc' | 'bmi';` *must* be one of the options provided
+* `reference: 'uk-who' | 'turner' | 'trisomy-21' | 'cdc';` *must* be one of the options provided
+* `sex: 'male' | 'female';` *must* be one of the options provided
 * `measurements: { measurementMethod: Measurement[]};` array of measurements returned from RCPCH Growth API. This should not be edited or manipulated. **NOTE this has changed in v7.0.0**
 * `midParentalHeightData?: MidParentalHeightObject | undefined;` an RCPCH object returned from the RCPCH Growth API. Should not be edited or manipulated
 * `enableZoom?: boolean;` Allows the user to zoom and pan the charts if set to true. If disabled, hides the buttons associated with this.
@@ -58,6 +58,9 @@ Other props are:
 * `clinicianFocus?: boolean | undefined | null;` Toggles tooltip advice between those aimed at clinicians and those more appropriate for patients/lay people.
 * `theme?: 'monochrome' | 'traditional' | 'tanner1' | 'tanner2' | 'tanner3' | 'custom'`
 * `customThemeStyles?`: discussed below
+* `height` height in pixels: note that aspect ratio is not respected here - the charts render best in landscape, 1000x800px or 5:4
+* `weight` weight in pixels. As for height.
+* `logoVariant: 'top' | 'bottom' | 'legend'`  Moves the RCPCH logo from top left to bottom centre or replaces the logo with the phrase *powered by RCPCH - <version>*
 
 ### `measurements`
 
@@ -122,6 +125,7 @@ An array of height measurements for a girl returned from the RCPCH Growth API:
     enableExport={false}
     exportChartCallback={()=>{}} // this is a callback for the export chart function if true
     clinicianFocus={false}
+    logoVariant={'top'}
 />
 ```
 
@@ -196,6 +200,7 @@ In the same way, an implementation for the sds charts would be:
     enableExport={false}
     exportChartCallback={()=>{}} // this is a callback for the export chart function if true
     clinicianFocus={false}
+    logoVariant={'top'}
 />
 ```
 
@@ -362,11 +367,15 @@ export interface Measurement {
 
 ### `exportChartCallBack`
 
-```exportChartCallback``` callback function implemented if `enableExport` is true. It receives an SVG element. This can be saved in the client to clipboard by converting to canvas using HTML5. An example implementation of this is [here](https://github.com/rcpch/digital-growth-charts-react-client/blob/live/src/functions/canvasFromSVG.js) in our demo client.
+`exportChartCallback` callback function implemented if `enableExport` is true. It receives an SVG element. This can be saved in the client to clipboard by converting to canvas using HTML5. An example implementation of this is [here](https://github.com/rcpch/digital-growth-charts-react-client/blob/live/src/functions/canvasFromSVG.js) in our demo client.
 
 ### `clinicianFocus`
 
-```clinicianFocus```: a boolean optional prop which defaults to false. If true, the advice strings that are reported to users in tooltips are more technical and aimed at clinicians familiar with centile charts. If false, the advice strings will be less technical and more suitable for parents, guardians, carers or other laypersons.
+`clinicianFocus`: a boolean optional prop which defaults to false. If true, the advice strings that are reported to users in tooltips are more technical and aimed at clinicians familiar with centile charts. If false, the advice strings will be less technical and more suitable for parents, guardians, carers or other laypersons.
+
+### `logoVariant`
+
+`logoVariant`: a positional prop for the RCPCH logo and library version. `top` renders top left, `bottom` renders bottom centre and `legend` renders bottom centre, removing the logo and replacing with the phrase *powered by RCPCH digital growth charts - <version>*
 
 !!! example "Requests for additional functionality in props"
     In time, more props can be added if users request them. If you have requests, please post issues on our [GitHub](https://github.com/rcpch/digital-growth-charts-react-component-library/issues) or get involved to contribute as below.
@@ -388,69 +397,69 @@ or override styles within an existing theme, this can be done by passing in cust
 
 All attributes are optional, therefore only those attributes where changes are requested need be passed in. The keys for the `customThemeStyles` object are as follows:
 
--   `chartStyle?: ChartStyle;`
--   `axisStyle?: AxisStyle;`
--   `gridlineStyle?: GridlineStyle;`
--   `centileStyle?: CentileStyle;`
--   `sdsStyle?: SDSStyle;`
--   `measurementStyle?: MeasurementStyle;`
+* `chartStyle?: ChartStyle;`
+* `axisStyle?: AxisStyle;`
+* `gridlineStyle?: GridlineStyle;`
+* `centileStyle?: CentileStyle;`
+* `sdsStyle?: SDSStyle;`
+* `measurementStyle?: MeasurementStyle;`
 
 The attributes of each of these are below:
 
 #### `ChartStyle`
 
--   `backgroundColour?: string;` //background colour of chart
--   `titleStyle?: TextStyle `| undefined; // style of text in title: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
--   `subTitleStyle?: TextStyle `| undefined; // style of text in subtitle: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
--   `tooltipBackgroundColour?: string;` //background colour of tooltip
--   `tooltipStroke?: string;` //border colour of tooltip
--   `tooltipTextStyle?: TextStyle `| undefined; // tooltip text: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
--   `termFill?: string;` // background colour of weight term area
--   `termStroke?: string;` // border colour of weight term area
--   `toggleButtonInactiveColour?: string;` // buttons - inactive colour
--   `toggleButtonActiveColour?: string;` // buttons - active colour
--   `toggleButtonTextStyle?: TextStyle | undefined;` // buttons text: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
+* `backgroundColour?: string;` //background colour of chart
+* `titleStyle?: TextStyle`| undefined; // style of text in title: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
+* `subTitleStyle?: TextStyle`| undefined; // style of text in subtitle: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
+* `tooltipBackgroundColour?: string;` //background colour of tooltip
+* `tooltipStroke?: string;` //border colour of tooltip
+* `tooltipTextStyle?: TextStyle`| undefined; // tooltip text: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
+* `termFill?: string;` // background colour of weight term area
+* `termStroke?: string;` // border colour of weight term area
+* `toggleButtonInactiveColour?: string;` // buttons - inactive colour
+* `toggleButtonActiveColour?: string;` // buttons - active colour
+* `toggleButtonTextStyle?: TextStyle | undefined;` // buttons text: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
 
 #### `MeasurementStyle`
 
--   `measurementFill?: string;` // measurement point fill colour - only apply to SDS charts
--   `highlightedMeasurementFill?: string;` // measurement point fill colour when hightlighted (SDS charts)
--   `eventTextStyle?: TextStyle;` // styles for text of events: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
+* `measurementFill?: string;` // measurement point fill colour - only apply to SDS charts
+* `highlightedMeasurementFill?: string;` // measurement point fill colour when hightlighted (SDS charts)
+* `eventTextStyle?: TextStyle;` // styles for text of events: includes fontFamily, fontSize, colour, weight (regular/bold/italic)
 
 #### `CentileStyle`
 
--   `sdsStroke?: string;` // sds line colour
--   `centileStroke?: string;` // centile line colour
--   `delayedPubertyAreaFill?: string;` // delayed puberty area colour
--   `midParentalCentileStroke?: string;` // Midparental height centile line colour
--   `midParentalAreaFill?: string;` // Midparental height area colour
+* `sdsStroke?: string;` // sds line colour
+* `centileStroke?: string;` // centile line colour
+* `delayedPubertyAreaFill?: string;` // delayed puberty area colour
+* `midParentalCentileStroke?: string;` // Midparental height centile line colour
+* `midParentalAreaFill?: string;` // Midparental height area colour
 
 #### `SDSStyle`
 
--   `heightStroke?: string;` // sds line colour
--   `weightStroke?: string;` // sds line colour
--   `ofcStroke?: string;` // sds line colour
--   `bmiStroke?: string;` // sds line colour
+* `heightStroke?: string;` // sds line colour
+* `weightStroke?: string;` // sds line colour
+* `ofcStroke?: string;` // sds line colour
+* `bmiStroke?: string;` // sds line colour
 
 #### `GridlineStyle`
 
--   `gridlines?: boolean;` // show or hide gridlines
--   `stroke?: string;` // gridline colour
--   `strokeWidth?: number;` // gridline width
--   `dashed?: boolean;` // dashed vs continuous gridlines
+* `gridlines?: boolean;` // show or hide gridlines
+* `stroke?: string;` // gridline colour
+* `strokeWidth?: number;` // gridline width
+* `dashed?: boolean;` // dashed vs continuous gridlines
 
 #### `AxisStyle`
 
--   `axisStroke?: string;` // Axis colour
--   `axisLabelTextStyle?: TextStyle | undefined;` // Axis label text: : includes fontFamily, fontSize, colour, weight (regular/bold/italic)
--   `tickLabelTextStyle?: TextStyle | undefined;` // Tick label text : includes fontFamily, fontSize, colour, weight (regular/bold/italic)
+* `axisStroke?: string;` // Axis colour
+* `axisLabelTextStyle?: TextStyle | undefined;` // Axis label text: : includes fontFamily, fontSize, colour, weight (regular/bold/italic)
+* `tickLabelTextStyle?: TextStyle | undefined;` // Tick label text : includes fontFamily, fontSize, colour, weight (regular/bold/italic)
 
 #### `TextStyle`
 
--   `name?: string;`
--   `colour?: string;`
--   `size?: number;`
--   `style?: 'bold' | 'italic' | 'normal';`
+* `name?: string;`
+* `colour?: string;`
+* `size?: number;`
+* `style?: 'bold' | 'italic' | 'normal';`
 
 For example, if a user wished to override the background colour of the existing 'monochrome' theme:
 
@@ -481,6 +490,7 @@ And in the JSX:
     enableExport={false}
     exportChartCallback={() => {}} // this is a callback for the export chart function if true
     clinicianFocus={false}
+    logoVariant={'top'}
 />
 ```
 
@@ -505,34 +515,28 @@ And in the JSX:
 This returns a mid-parental height, mid-parental SDS and centile, along with the centile data if the user wishes to plot a mid-parental centile. The structure of the Reference and Centile interfaces is:
 
 ??? note "`Reference` and `Centile` interface structures"
-    ```js
     export interface Reference {
         [name: string]: ISexChoice
     }
-
     export interface ICentile {
         centile: number,
         data: IPlottedCentileMeasurement[],
         sds: number
     }
-
     export interface IPlottedCentileMeasurement {
         "l": string | number,
         "x": number,
         "y": number
     }
-
     export interface ISexChoice {
         male: IMeasurementMethod,
         female: IMeasurementMethod
     }
-
     export interface IMeasurementMethod{
         height?: ICentile[],
         weight?: ICentile[],
         bmi?: ICentile[],
         ofc?: ICentile[],
     }
-    ```
 
 Centile data are returned from the RCPCH API in this same structure, though no API call is made from this component - all the centile data for all the references is included.
