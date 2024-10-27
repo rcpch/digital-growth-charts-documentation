@@ -18,6 +18,13 @@ audience: all
 - Dr Anchit Chandran for proofreading, corrections, and contributions to the documentation.
 - 'William' Nai-Wei Wang for proofreading, corrections, and contributions to the documentation.
 
+Significant implementations and contributions have been made by our users. They are all acknowledged on Github, but include:
+
+- Cambric (Scotland)
+- DCHW
+- Isle of Wight NHS Foundation Trust
+- SigmaMD (USA)
+
 ## Technical Acknowledgements
 
 - [DigitalOcean](https://www.digitalocean.com/) (ancillary cloud services)

@@ -30,7 +30,7 @@ Where datasets overlap, there are 2 ages at the junction, one from each of UK90 
 
 ## Instructions for the Trisomy 21 (Down's Syndrome) charts
 
-The PDF linked below was produced in 2012 to accompany the Trisomy 21 (Down's Syndrome) charts. In due course, we will update and reformat the text and adapt the presentation for the API version of the charts.
+The PDF linked below was produced in 2012 to accompany the Trisomy 21 (Down's Syndrome) charts. In due course, we will update and reformat the text and adapt the presentation for the API version of the charts. Note that the trisomy 21 AAP (USA) reference is also supported.
 
 [PDF Down's Syndrome Chart Information (2012)](../_assets/_pdfs/2012-instructions-for-downs-syndrome-charts.pdf)
 

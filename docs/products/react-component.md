@@ -18,7 +18,7 @@ reviewers: Dr Marcus Baw, Dr Simon Chapman, Dr Anchit Chandran
 ## Features
 
 * Calculation and display of height, weight, BMI, head circumference, and BMI centiles.
-* Support for Trisomy 21 (Down syndrome) and Turner syndrome. **Now includes CDC (US) reference as of November 2024**
+* Support for Trisomy 21 (Down syndrome) and Turner syndrome. **Now includes CDC (US) reference and Trisomy 21 (AAP - USA) as of November 2024** *Note these are still under testing*
 * Automatic gestational age correction, throughout the life course.
 * Zoomable, scrollable charts.
 * Event logging - clinical events can be associated with measurements.
@@ -50,6 +50,7 @@ You can use the component as-is in a React app, or include it in plain HTML or a
 * React testing with Jest
 * Deprecate styles in favour of themes (custom theme can be supplied)
 * **In 7.1, includes CDC (US) reference as of November 2024**
+* **In 7.2, includes Trisomy 21 (AAP - US) reference as of November 2024**
 
 ### Version 6 new features
 

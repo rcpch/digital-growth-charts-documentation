@@ -56,6 +56,16 @@ Alongside the API, RCPCH offer a charting component built to receive the results
 - zoom in/out
 - life-course view
 - cut/paste
+- choices of RCPCH-designed themes
+- customisable styling
+
+### Supported References
+
+- UK-WHO
+- Trisomy 21 (UK)
+- Trisomy 21 (USA) - American Academy of Pediatrics *added 2024* - **under testing**
+- Turner Syndrome  
+- CDC (USA) - *added 2024* - **under testing**
 
 ## Future Scope
 
