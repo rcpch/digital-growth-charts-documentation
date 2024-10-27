@@ -21,7 +21,7 @@ reviewers: Dr Marcus Baw, Dr Anchit Chandran
 docs/_assets/_snippets/htn-award.md
 --8<--
 
-This client, written in React.js, is for demonstration of the API and the chart library component. This is now the main focus of development for our RCPCH Digital Growth Charts Demo Client. We previously built a [Flask-based client](https://github.com/rcpch/digital-growth-charts-flask-client) (which used Flask only because that client actually split off from the original API development). The Flask client code is still available as an educational tool, however it is considered deprecated and will not receive updates.
+This client, written in React.js/Vite, is for demonstration of the API and the chart library component. This is now the main focus of development for our RCPCH Digital Growth Charts Demo Client. We previously built a [Flask-based client](https://github.com/rcpch/digital-growth-charts-flask-client) (which used Flask only because that client actually split off from the original API development). The Flask client code is still available as an educational tool, however it is considered deprecated and will not receive updates.
 
 We have attempted to build the very best of growth chart theory and practice into the React client, including guidance given to us by the RCPCH Digital Growth Charts Project Board, and accepted best practice from the days of paper growth charts.
 
