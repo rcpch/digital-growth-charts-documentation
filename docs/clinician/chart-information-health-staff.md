@@ -121,12 +121,19 @@ BMI indicates how heavy a child is relative to his or her height and is the simp
 
 The child or young person's BMI is compared with the median value for age and sex and expressed as a percentage. It is used mainly for risk assessment in eating disorders.
 
+### Mid-Parental Height
+
+When assessing a child's stature, comparing their height centile against that of their parents is helpful for clinicians, to find out if the child is short or tall for the family. How this is calculated has been debated in the medical literature and clinicians often use a simple calculation which involves adding 13 cm to a mother's height or subtracting 13 cm from a father's height and then taking the average. The RCPCH charts have a calculator however that uses to research on large numbers of children to show that a more accurate way is to find the mid-parental centile is to take an average of the parents' height z-scores (standard deviation scores) and multiply this by a factor calculated from linear regression in a large cohort of children. This has the effect of correct mid-parental particularly where there is a large difference in heights between parents. This is shown on the RCPCH growth charts in an inset on the top right-hand corner of the charts. The methodology is repeated in the digital growth chart calculations. For more information on this, see: [The strengths and limitations of parental heights as a predictor of attained height, Charlotte M Wright, Tim D Cheetham, Arch Dis Child 1999;81:257–260](https://pubmed.ncbi.nlm.nih.gov/10451401/)
+
+An improvement on the paper charts is added to the digital charts where the mid-parental height centile ranges are shown on the chart next to the latest plotted measurements.
+
 ### Predicting adult height
 
 Parents like to know how tall their child will be as an adult. The child’s most recent height centile (aged 2–4 years) gives a good idea of this for healthy children. Plot this centile on the adult height predictor to the right of the height chart to find the average adult height for children on this centile. Four out of five children will have adult heights that are within ± 6cm of this value.
 
 #### Adult Height Predictor
-The paper-based Adult Heigth Predictor allowed you to predict the child’s adult height based on their current height, but with a regression adjustment to allow for the tendency of very tall and short children to be less extreme in height as adults. Four girls out of five will have an adult height within ± 6cm of the predicted adult height.
+
+The paper-based Adult Height Predictor allowed you to predict the child’s adult height based on their current height, but with a regression adjustment to allow for the tendency of very tall and short children to be less extreme in height as adults. Four girls out of five will have an adult height within ± 6cm of the predicted adult height.
 
 !!! info
     Adult Height Prediction is an upcoming feature of the Digital Growth Chart API

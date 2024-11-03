@@ -334,6 +334,14 @@ There is an endpoint in the API which calls this function and returns the chart 
 
 `create_plottable_child_data`, largely deprecated now, receives a list of Measurement objects and returns a `PlottableChild` object. Earlier versions of the API required 2 API calls - one to make the calculations, one to convert those to a plottable format. This has now been moved into the Measurement object so is only used with older versions of the API.
 
+### Utilities
+
+#### Mid-Parental Height
+
+Functions that relate to this are found in `mid_parental_height.py`. Methodology is documented in [this paper](https://pubmed.ncbi.nlm.nih.gov/10451401/) and involves taking the mean of parental height z scores and applying a regression factor (0.5). This corrects for the well-recognised concept of regression to the mean, where by parents who are either very tall or very short have a tendancy to have children whose heights are less extreme. The simplified calculation therefore is: (MatHtz +PatHtz)/4
+
+This is reported as a centile and SDS as well as absolute value, with values approximately 2 centiles either side. This is because the same paper found that 90% of children of parents fell within 2 centiles of the mid-parental height centile. In the chart, this is rendered as a three centile lines (upper, mph and lower) over the latest measurement if present.
+
 ### Other functions
 
 There are more experimental functions in `dynamic_growth.py` which calculate height velocity and acceleration from a list of Measurement objects, and some implementations of thrive lines based using correlation tables in the `data_tables` folder. These features still have significant work and testing required - contributions are welcome.
