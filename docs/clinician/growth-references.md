@@ -21,7 +21,7 @@ The codebase we have built is capable of utilising any reference or dataset, but
 
 ## Reference Library
 
-| identifier | Age Range           | Description                                                                    | Country          | Links                                                                   |
+| identifier | Age Range           | Description                                                                    | Country          |  Links                                                                   | 
 | ---------- | ------------------- | ------------------------------------------------------------------------------ | ---------------- | ----------------------------------------------------------------------- |
 | cdc2000    |                     | length/height, weight & head circumference for ages 0 to 19.9y; BMI 2 to 19.9y | :us:             | [link](https://github.com/rcpch/growth-references/tree/main/cdc2000)     |
 | spirometry | 4 - 80 years        | FEV1, FVC, FEV1FVC & FEF2575                                                   | :gb:             | [link](https://github.com/rcpch/growth-references/tree/main/spirometry) |
@@ -33,11 +33,34 @@ The codebase we have built is capable of utilising any reference or dataset, but
 
 ---
 
-1. Average values at birth for weight, length and head circumference for all term births (gestations 37+0 to 42+6 weeks) computed from UK 1990 reference database.
+NOTE: The UK-WHO Term reference is NOW DEPRECATED but still active on paper charts. It comprises average values at birth for weight, length and head circumference for all term births (gestations 37+0 to 42+6 weeks) computed from UK 1990 reference database .
 
-2. Weight, and head circumference at birth (gestations 23 to 43 weeks) and length at birth (gestations 26 to 43 weeks), computed from UK 1990 reference database and shown by week.
+## Age Thresholds by Reference
 
-3. This is the WHO standard for weight, BMI and head circumference from 2 weeks to 4 years, for length 2 weeks to 2 years and height 2-4 years. It is shown by week to 13 weeks and then by calendar month. It is exactly the same data as the LMS data included in the Z-score tables accessed from the WHO website [WHO](http://www.who.int/childgrowth/standards), except there is no birthweight.
+| reference table | measurement method | thresholds |
+| WHO (US) | length / weight / head circumference | 0 -3 y|
+| CDC  | height / weight / bmi (extended) | 2 - 20y |
+| UK-WHO preterm |  height | 25 weeks - 42 weeks |
+| UK-WHO preterm |  weight | 23 weeks - 42 weeks |
+| UK-WHO preterm |  head circumference | 23 weeks - 42 weeks |
+| UK-WHO infant (mix of WHO and UK90 references) |  height or length / weight / BMI / head circumference | 2 weeks - 4 years |
+| UK-WHO child |  height or length / weight / BMI | 4 - 20 years |
+| UK-WHO child |  head circumference (boys) | 4 - 18 years |
+| UK-WHO child |  head circumference (girls) | 4 - 17 years |
+| Trisomy 21 (UK) |  height / weight / BMI | 0 - 20 years |
+| Trisomy 21 (UK) |  head circumference | 0 - 18 years |
+| Trisomy 21 (AAP - US) |  height / head circumference | 1mth to 20 years |
+| Trisomy 21 (AAP - US) |  weight / BMI | 0 to 20 years |
+| Turner |  height | 1 to 20 years |
+
+### Context
+
+1. Weight, and head circumference at birth (gestations 23 to 43 weeks) and length at birth (gestations 26 to 43 weeks), computed from UK 1990 reference database and shown by week - UK90 preterm reference
+2. This is the WHO standard for weight, BMI and head circumference from 2 weeks to 4 years, for length 2 weeks to 2 years and height 2-4 years. It is shown by week to 13 weeks and then by calendar month. It is exactly the same data as the LMS data included in the Z-score tables accessed from the WHO website [WHO](http://www.who.int/childgrowth/standards), except there is no birthweight.
+3. CDC: runs from 2y to 20 y. From 0-2y the CDC interposes its own version of WHO (2006).
+   1. height / weight / BMI centiles 0-2 y (CDC) with extended BMI centiles included (published 2022)
+   2. height / weight / head circumference 0-2 y (WHO - US)
+   3. preterm data for height / weight / head circumference exists as the Canadian Fenton reference. This has not been implemented
 
 ### To be added
 
