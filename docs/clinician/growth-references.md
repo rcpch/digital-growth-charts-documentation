@@ -38,6 +38,7 @@ NOTE: The UK-WHO Term reference is NOW DEPRECATED but still active on paper char
 ## Age Thresholds by Reference
 
 | reference table | measurement method | thresholds |
+| -------- | ---------- | --------- |
 | WHO (US) | length / weight / head circumference | 0 -3 y|
 | CDC  | height / weight / bmi (extended) | 2 - 20y |
 | UK-WHO preterm |  height | 25 weeks - 42 weeks |
