@@ -5,7 +5,7 @@ reviewers: Dr Marcus Baw, Dr Simon Chapman, Dr Anchit Chandran
 
 {% set repository_name="rcpch/digital-growth-charts-react-component-library" -%}
 [digital-growth-charts-react-component-library](https://github.com/rcpch/digital-growth-charts-react-component-library) is a React 18.2 Typescript component library which 'knows' how to display the results from the REST API, as a familiar digital growth chart.<br/>
-[![Storybook](https://raw.githubusercontent.com/storybookjs/brand/refs/heads/main/badge/badge-storybook.svg 'Storybook')](https://6732292d6f3624b0036f84b4-whhlqivzjh.chromatic.com/)
+[![Storybook](https://raw.githubusercontent.com/storybookjs/brand/refs/heads/main/badge/badge-storybook.svg 'Storybook')](https://live--6732292d6f3624b0036f84b4.chromatic.com/)
 ![NPM Version](https://img.shields.io/npm/v/%40rcpch%2Fdigital-growth-charts-react-component-library?style=flat-square&labelColor=%2311a7f2&color=%230d0d58)
 ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/rcpch/digital-growth-charts-react-component-library?style=flat-square&labelColor=%2311a7f2&color=%230d0d58)
 ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-pr/rcpch/digital-growth-charts-react-component-library?style=flat-square&labelColor=%2311a7f2&color=%230d0d58)
