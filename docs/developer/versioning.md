@@ -22,3 +22,13 @@ We use [Semantic Versioning (SemVer)](https://semver.org/) to ensure server vers
 ## Bump2version
 
 We use `bump2version` tool to simplify versioning in the `digital-growth-charts-server` and `rcpchgrowth-python` packages.
+
+## References
+
+With every deploy of the server, `generate_and_store_chart_data` gets run, which skips centile chart generation from references if they already exist. On the command line though it is possible to override this and rebuild all the centile data files.
+
+```python
+python
+from main import generate_and_store_chart_data
+generate_and_store_chart_data(overwrite=True)
+```
