@@ -1,6 +1,6 @@
 ---
 title: Privacy Notice
-reviewers: Dr Marcus Baw, Dr Anchit Chandran
+reviewers: Dr Marcus Baw, Dr Anchit Chandran, Adele Picken
 audience: caldicott-guardians, implementers, developers
 ---
 
@@ -12,7 +12,7 @@ If you choose to create an account for the API service, we collect your name and
 
 We will process your data as part of a contract with you. Information collected will be used to create and manage your account, and to contact you about Growth API. We do not use your personal data to make automated decisions or undertake profiling about you.
 
-It is important to distinguish between **the account data we collect about Integrators** (developer account data) and **the data we process on your behalf**. The data we collect about you is your account information, which is used to manage your account and contact you about the service. The data we process on your behalf is the measurements you send to the API, which are used to calculate centiles and SDS scores.
+It is important to distinguish between **the account data we collect about Integrators** (developer account data) and **the data we process on your behalf**. The personal data we collect about you is your account information, which is used to manage your account and contact you about the service. The measurements you send to the API, which are used to calculate centiles and SDS scores are not personal data but anonymised data. 
 
 ## What do we do with your developer account information?
 
