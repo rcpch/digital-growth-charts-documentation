@@ -4,13 +4,15 @@ reviewers: Dr Simon Chapman
 audience: integrators, implementers, technical-architects
 ---
 
-## Installing the chart component
+## Installing the RCPCH Digital Growth Charts React Component
 
-The API and the charting component have been built to work together, but exist separately. The [RCPCH Digital Growth Charts API] calculation endpoint (https://growth.rcpch.ac.uk/integrator/api-reference/) returns centiles and SDS against children's growth measurements in the form of a structured JSON `Measurement` object. Most users want to chart these.
+The API and the charting component have been built to work together, but exist separately. The [RCPCH Digital Growth Charts APIcalculation endpoint](https://growth.rcpch.ac.uk/integrator/api-reference/) returns centiles and SDS against children's growth measurements in the form of a structured JSON `Measurement` object. Most users want to chart these.
 
-The (RCPCH Digital Growth Charts React Component Library)[https://github.com/rcpch/digital-growth-charts-react-component-library] is written in typescript and react and accepts the RCPCH Digital Growth Charts API response as a prop. There is a [`storybook` instance](https://live--6732292d6f3624b0036f84b4.chromatic.com/) and an [interactive demonstration](https://growth.rcpch.ac.uk/).
+The [RCPCH Digital Growth Charts React Component Library](https://github.com/rcpch/digital-growth-charts-react-component-library) is written in typescript and react and accepts the RCPCH Digital Growth Charts API response as a prop. There is a [Storybook](https://live--6732292d6f3624b0036f84b4.chromatic.com/) and an [interactive demonstration](https://growth.rcpch.ac.uk/).
 
-There is a list of [features](https://growth.rcpch.ac.uk/products/react-component/#why-a-chart-library) for a diverse range of use cases. The charts can be customized to be viewed by families and children, or by clinicians, from health visitors and midwives, to paediatric endocrinology growth specialists.
+The RCPCH Digital Growth Charts React Component Library has a list of [features](https://growth.rcpch.ac.uk/products/react-component/#why-a-chart-library) for a diverse range of use cases. The charts can be customized to be viewed by families and children, or by clinicians, from health visitors and midwives, to paediatric endocrinology growth specialists.
+
+Currently the RCPCH Digital Growth Charts React Component Library do not support mobile screens. It is likely that chart visualisation will need to be reimagined for the smaller screen. This is on the RCPCH roadmap.
 
 ### React
 
@@ -30,24 +32,27 @@ Note that the RCPCH logo and chart version appears by default in the top left ha
 
 ### What if I can't use React?
 
-It is common in healthcare environments not to be able to use frameworks like React. For this reason RCPCH have published the charts on [jsdeliver](https://www.jsdelivr.com/package/npm/@rcpch/digital-growth-charts-react-component-library). This allows implementers to import the javascript in the head tag of their page. This gives access the `RCPCHGrowthCharts` wrapper which accepts all the props detailed above for instantiating a single chart, as well as the id of the div in the DOM where the charts are to be located, within the `render` attribute.
+It is common in healthcare environments not to be able to use frameworks like React. For this reason RCPCH have published the charts on [jsdeliver](https://www.jsdelivr.com/package/npm/@rcpch/digital-growth-charts-react-component-library) and [unpkg](https://unpkg.com/@rcpch/digital-growth-charts-react-component-library@latest/build/umd/rcpch-digital-growth-charts.umd.js). This allows implementers to import the javascript in the head tag of their page. This gives access to the `RCPCHGrowthCharts` wrapper which accepts all the props detailed above for instantiating a single chart, as well as the id of the div in the DOM where the charts are to be located, within the `render` attribute.
 
 ```html
 <!doctype html>
 <html>
     <head>
         <title>Growth Chart Example</title>
-    </head>
-    <body>
-        <div id="growth-chart-container"></div> <!--- The charts will appear here -->
-        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@rcpch/digital-growth-charts-react-component-library@7.3.4/build/umd/rcpch-digital-growth-charts.umd.min.js" integrity="sha384-Te61Ux4WqUzrwMJb8pDAtE92B3sYPlsR31W91KLAA6geskluSC40Z+wT14We0ngF"></script> <!--- Note the order of the imports: React must be version 18, and come before the library -->
-        <script>
-            window.onload = function () {
-                const demoMeasurements = [ /* RCPCH digital growth charts API response goes here. Note must be associated with one of height, weight, ofc or bmi */];
+        <!-- React dependencies -->
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js" defer></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" defer></script>
+        <!-- RCPCH Growth Charts library with SRI hash for security -->
+        <script 
+            src="https://cdn.jsdelivr.net/npm/@rcpch/digital-growth-charts-react-component-library@7.3.4/build/umd/rcpch-digital-growth-charts.umd.min.js" 
+            integrity="sha384-Te61Ux4WqUzrwMJb8pDAtE92B3sYPlsR31W91KLAA6geskluSC40Z+wT14We0ngF"
+            crossorigin="anonymous"
+            defer></script><!--note the order of the dependencies: React and React-dom should come first-->
+        <script defer>
+            document.addEventListener('DOMContentLoaded', function () {
+                const demoMeasurements = [ /* RCPCH digital growth charts API response goes here */ ];
                 window.RCPCHGrowthCharts.render({
-                    targetElementId: 'growth-chart-container', /* the id of the div you intend the charts to appear */
+                    targetElementId: 'growth-chart-container',
                     title: 'Demo UK-WHO Growth Chart for Children',
                     measurementMethod: 'height',
                     reference: 'uk-who',
@@ -57,14 +62,16 @@ It is common in healthcare environments not to be able to use frameworks like Re
                     enableZoom: false,
                     chartType: 'centile',
                     enableExport: false,
-                    exportChartCallback: {},
                     clinicianFocus: false,
                     theme: 'tanner3',
                     height: 800,
                     width: 800,
                 });
-            };
+            });
         </script>
+    </head>
+    <body>
+        <div id="growth-chart-container"></div> <!-- The charts will appear here -->
     </body>
 </html>
 ```
