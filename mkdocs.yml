@@ -29,6 +29,7 @@ nav:
     - 'integrator/getting-started.md'
     - 'integrator/making-api-calls.md'
     - 'integrator/api-reference.md'
+    - 'integrator/using-the-chart-component.md'
     - 'integrator/support.md'
     - 'integrator/client-specification.md'
     - 'integrator/faqs-for-integrators.md'
