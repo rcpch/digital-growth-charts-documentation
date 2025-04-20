@@ -25,6 +25,7 @@ RCPCH internal project staff provided invaluable support from project concept, t
 
 <!-- (Alphabetical order by surname) -->
 - **Jo Ball**, Design and Brand Manager, Content and Brand Team, RCPCH.
+- - **Michael Barton**, Lead Software Developer, RCPCH
 - **Richard Burley**, Chief Digital Officer, RCPCH.
 - **Alex Brown**, Head of Commercial and Corporate Partnerships, RCPCH.
 - **Susan Hansford**, , Digital Product Manager, RCPCH.
@@ -43,6 +44,7 @@ RCPCH internal project staff provided invaluable support from project concept, t
 The development team was drawn from RCPCH internal staff, RCPCH members with software development skills, and external specialists. As a multidisciplinary development team, the various duties of software development, quality assurance, testing, deployment, and maintenance were apportioned amongst the team according to experience and skill-set.
 
 <!-- (Alphabetical order by surname) -->
+- **Michael Barton**, Lead Software Developer, Royal College of Paediatrics and Child Health
 - **Dr Marcus Baw**, General Hacktitioner, Developer and Informatician, Yorkshire and The Internet.
 - **Dr Anchit Chandran**, Doctor and Software Developer, London.
 - **Dr Simon Chapman**, Consultant in Paediatric Endocrinology, King's College Hospital, London.

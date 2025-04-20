@@ -66,6 +66,7 @@ Alongside the API, RCPCH offer a charting component built to receive the results
 - Trisomy 21 (USA) - American Academy of Pediatrics *added 2024* - **under testing**
 - Turner Syndrome  
 - CDC (USA) - *added 2024* - **under testing**
+- WHO - *added 2024* - **under testing**
 
 ## Future Scope
 

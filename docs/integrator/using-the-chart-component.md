@@ -30,6 +30,11 @@ The charts are deliberately shipped with a monochrome theme. In addition to this
 
 Note that the RCPCH logo and chart version appears by default in the top left hand corner. For implementers who prefer less prominence of the logo, an RCPCH acknowledgement statement can be used instead at the foot of the chart using the `logoVariant` prop.
 
+##### Theme Builder 🎨 - NEW IN 2025
+
+For those who want to customize the chart, the style props can bue overridden if the `custom` theme option is selected. This exposes a variety of styles, from font and colour to line and background colour. Use the Storybook Theme Builder to customize the elements you need and click to save the settings object to the clipboard to be attached to the `customThemeStyles` prop.
+![theme-builder](../_assets/_images/theme-builder.png)
+
 ### What if I can't use React?
 
 It is common in healthcare environments not to be able to use frameworks like React. For this reason RCPCH have published the charts on [jsdeliver](https://www.jsdelivr.com/package/npm/@rcpch/digital-growth-charts-react-component-library) and [unpkg](https://unpkg.com/@rcpch/digital-growth-charts-react-component-library@latest/build/umd/rcpch-digital-growth-charts.umd.js). This allows implementers to import the javascript in the head tag of their page. This gives access to the `RCPCHGrowthCharts` wrapper which accepts all the props detailed above for instantiating a single chart, as well as the id of the div in the DOM where the charts are to be located, within the `render` attribute.
