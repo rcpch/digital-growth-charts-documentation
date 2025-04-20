@@ -6,7 +6,7 @@ audience: integrators, implementers, technical-architects
 
 ## Installing the RCPCH Digital Growth Charts React Component
 
-The API and the charting component have been built to work together, but exist separately. The [RCPCH Digital Growth Charts APIcalculation endpoint](https://growth.rcpch.ac.uk/integrator/api-reference/) returns centiles and SDS against children's growth measurements in the form of a structured JSON `Measurement` object. Most users want to chart these.
+The API and the charting component have been built to work together, but exist separately. The [RCPCH Digital Growth Charts API calculation endpoint](https://growth.rcpch.ac.uk/integrator/api-reference/) returns centiles and SDS against children's growth measurements in the form of a structured JSON `Measurement` object. Most users want to chart these.
 
 The [RCPCH Digital Growth Charts React Component Library](https://github.com/rcpch/digital-growth-charts-react-component-library) is written in typescript and react and accepts the RCPCH Digital Growth Charts API response as a prop. There is a [Storybook](https://live--6732292d6f3624b0036f84b4.chromatic.com/) and an [interactive demonstration](https://growth.rcpch.ac.uk/).
 
@@ -32,7 +32,7 @@ Note that the RCPCH logo and chart version appears by default in the top left ha
 
 ##### Theme Builder 🎨 - NEW IN 2025
 
-For those who want to customize the chart, the style props can bue overridden if the `custom` theme option is selected. This exposes a variety of styles, from font and colour to line and background colour. Use the Storybook Theme Builder to customize the elements you need and click to save the settings object to the clipboard to be attached to the `customThemeStyles` prop.
+For those who want to customize the chart, the style props can be overridden if the `custom` theme option is selected. This exposes a variety of styles, from font and colour to line and background colour. Use the Storybook Theme Builder to customize the elements you need and click to save the settings object to the clipboard to be attached to the `customThemeStyles` prop. <br/>
 ![theme-builder](../_assets/_images/theme-builder.png)
 
 ### What if I can't use React?
