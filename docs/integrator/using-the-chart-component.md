@@ -49,10 +49,11 @@ It is common in healthcare environments not to be able to use frameworks like Re
         <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" defer></script>
         <!-- RCPCH Growth Charts library with SRI hash for security -->
         <script 
-            src="https://cdn.jsdelivr.net/npm/@rcpch/digital-growth-charts-react-component-library@7.3.4/build/umd/rcpch-digital-growth-charts.umd.min.js" 
-            integrity="sha384-Te61Ux4WqUzrwMJb8pDAtE92B3sYPlsR31W91KLAA6geskluSC40Z+wT14We0ngF"
+            src="https://cdn.jsdelivr.net/npm/@rcpch/digital-growth-charts-react-component-library@7.3.7/build/umd/rcpch-digital-growth-charts.umd.min.js" 
+            integrity="sha256-DtOz5oco8GOB9TWyZf64bi2sM4NzFCktURAToB21bMc=" 
             crossorigin="anonymous"
-            defer></script><!--note the order of the dependencies: React and React-dom should come first-->
+            defer>
+        </script><!--note the order of the dependencies: React and React-dom should come first-->
         <script defer>
             document.addEventListener('DOMContentLoaded', function () {
                 const demoMeasurements = [ /* RCPCH digital growth charts API response goes here */ ];
