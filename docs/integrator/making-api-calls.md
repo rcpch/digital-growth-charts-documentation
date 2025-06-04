@@ -6,15 +6,9 @@ audience: integrators, implementers, technical-architects
 
 # Making calls to the Digital Growth Charts API
 
-There are as many ways to make an API call as there are software developers, but here are some common ways.
+There are as many ways to make an API call as there are software developers, but here are some common ways. We'll start by using **cURL** to get you started but if you prefer a graphical tool, then feel free to skip ahead to the **Postman** section.
 
-We'll start by using `cURL` but if you prefer a graphical tool, then feel free to skip ahead to the Postman section.
-
-!!! tip "API base URL"
-
-    For all API calls to the Growth Charts API, you should use the base URL **`https://api.rcpch.ac.uk/growth/v1`**.
-
-    Our API naming policy is designed to allow the same `api.rcpch.ac.uk` sub-domain for non-growth APIs in the future. We have versioned the API `v1` to allow for future development without interfering with existing integrations.
+--8<-- "docs/_assets/_snippets/api-baseurl.md"
 
 ## cURL
 
@@ -105,11 +99,9 @@ You should get a nicely formatted JSON response object:
 
 
 
-## Using Postman :simple-postman:
+## Postman :simple-postman:
 
-Postman is a tool for API development. The RCPCH team used Postman extensively during the API development and testing process.
-
-Download Postman [here](https://learning.postman.com/docs/getting-started/installation-and-updates/).
+Postman is a tool for API development. The RCPCH team used Postman extensively during the API development and testing process. Download Postman [here](https://learning.postman.com/docs/getting-started/installation-and-updates/).
 
 We have produced a set of Postman Collections and Environments which can help you explore the dGC API.
 
@@ -117,8 +109,6 @@ We have produced a set of Postman Collections and Environments which can help yo
 
 ## openAPI3 (Swagger) API documentation :simple-swagger:
 
-As we've specified our API documentation in the openAPI3 (formerly known as 'Swagger') format, we can auto-generate interactive API documentation, which allows you to actually make requests in the documentation site.
+As we've specified our API documentation in the openAPI3 (formerly known as 'Swagger') format, we can auto-generate API documentation.
 
 The Swagger API reference is [here](api-reference.md).
-
-A similar interface is also embedded in our API Management Platform (the developer portal), where you can try API calls with your keys being automatically added to the request.
