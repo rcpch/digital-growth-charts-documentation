@@ -178,7 +178,7 @@ markdown_extensions:
         - includes/_abbreviations.md # adds abbreviations snippets to ALL pages
   - pymdownx.superfences
   - toc:
-      permalink: false
+      permalink: true
 
 copyright: Copyright &copy; 2020 - 2025 Royal College of Paediatrics and Child Health (RCPCH)
 repo_url: https://github.com/rcpch/digital-growth-charts-documentation
