@@ -162,7 +162,7 @@ Note: these are argument-order sensitive.
 ```console
 >>> rcpchgrowth measurement-for-centile 3.4 weight male 25.0 --reference trisomy-21
 
-Reference: Trisomy 21/Down's Syndrome
+Reference: Trisomy 21/Down Syndrome
 SDS -0.674
 Centile: 25.0 %
 weight: 12.367721906931306 kg

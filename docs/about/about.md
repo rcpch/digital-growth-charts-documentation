@@ -42,7 +42,7 @@ In addition to calculating SDS, centiles and corrected decimal ages against a ch
 - the raw data required for constructing the centile lines in a growth chart. This is offered either in the standard 9 centile format, or can generate custom centiles if requested
 - mid-parental height calculation
 
-These features are offered for all 3 growth references - UK-WHO, Down's and Turner's.
+These features are offered for all 3 growth references - UK-WHO, Down syndrome and Turner syndrome.
 
 ### Chart Features
 
@@ -62,8 +62,8 @@ Alongside the API, RCPCH offer a charting component built to receive the results
 ### Supported References
 
 - UK-WHO
-- Trisomy 21 (UK)
-- Trisomy 21 (USA) - American Academy of Pediatrics *added 2024* - **under testing**
+- Down Syndrome (UK)
+- Down Syndrome (USA) - American Academy of Pediatrics *added 2024* - **under testing**
 - Turner Syndrome  
 - CDC (USA) - *added 2024* - **under testing**
 - WHO - *added 2024* - **under testing**

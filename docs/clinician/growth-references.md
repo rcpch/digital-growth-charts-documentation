@@ -25,7 +25,7 @@ The codebase we have built is capable of utilising any reference or dataset, but
 | ---------- | ------------------- | ------------------------------------------------------------------------------ | ---------------- | ----------------------------------------------------------------------- |
 | cdc2000    |                     | length/height, weight & head circumference for ages 0 to 19.9y; BMI 2 to 19.9y | :us:             | [link](https://github.com/rcpch/growth-references/tree/main/cdc2000)     |
 | spirometry | 4 - 80 years        | FEV1, FVC, FEV1FVC & FEF2575                                                   | :gb:             | [link](https://github.com/rcpch/growth-references/tree/main/spirometry) |
-| trisomy21  |                     | Trisomy 21 Growth Standards 2002                                               | :gb: :ie:        | [link](https://github.com/rcpch/growth-references/tree/main/trisomy21)  |
+| down  |                     | Down Syndrome Growth Standards 2002                                               | :gb: :ie:        | [link](https://github.com/rcpch/growth-references/tree/main/trisomy21)  |
 | turner     |                     | Turner Syndrome, Heights 2002                                                  | :gb: :ie:        | [link](https://github.com/rcpch/growth-references/tree/main/turner)     |
 | uk-who     | 23 weeks - 20y      | UK90 and WHO Child Growth Standards                                            | :gb:             | [link](https://github.com/rcpch/growth-references/tree/main/uk-who)     |
 | uk90       | 23 weeks - 20 years | UK 1990 reference data, reanalysed 2009                                        | :gb:             | [link](https://github.com/rcpch/growth-references/tree/main/uk90)       |
@@ -48,10 +48,10 @@ NOTE: The UK-WHO Term reference is NOW DEPRECATED but still active on paper char
 | UK-WHO child |  height or length / weight / BMI | 4 - 20 years |
 | UK-WHO child |  head circumference (boys) | 4 - 18 years |
 | UK-WHO child |  head circumference (girls) | 4 - 17 years |
-| Trisomy 21 (UK) |  height / weight / BMI | 0 - 20 years |
-| Trisomy 21 (UK) |  head circumference | 0 - 18 years |
-| Trisomy 21 (AAP - US) |  height / head circumference | 1mth to 20 years |
-| Trisomy 21 (AAP - US) |  weight / BMI | 0 to 20 years |
+| Down Syndrome (UK) |  height / weight / BMI | 0 - 20 years |
+| Down Syndrome (UK) |  head circumference | 0 - 18 years |
+| Down Syndrome (AAP - US) |  height / head circumference | 1mth to 20 years |
+| Down Syndrome (AAP - US) |  weight / BMI | 0 to 20 years |
 | Turner |  height | 1 to 20 years |
 
 ### Context
@@ -77,6 +77,6 @@ NOTE: The UK-WHO Term reference is NOW DEPRECATED but still active on paper char
 
 4. WHO Multicentre Growth Reference Study Group. WHO Child Growth Standards: Head circumference-for-age, arm circumference-for-age, triceps skinfold-for-age and subscapular skinfold-for age. Methods and Development. 2007. ISBN 978 92 4 1547185.
 
-5. Down's syndrome centiles - Styles ME, Cole TJ, Dennis J, Preece MA. New cross sectional stature, weight and head circumference references for Down’s syndrome in the UK and Republic of Ireland. Arch Dis Child 2002;87:104-8. BMI centiles added 11/11/2013
+5. Down syndrome centiles - Styles ME, Cole TJ, Dennis J, Preece MA. New cross sectional stature, weight and head circumference references for Down’s syndrome in the UK and Republic of Ireland. Arch Dis Child 2002;87:104-8. BMI centiles added 11/11/2013
 
 6. Lyon AJ, Preece MA, Grant DB. Growth curve for girls with Turner syndrome. Arch Dis Child 1985;60:932-935.

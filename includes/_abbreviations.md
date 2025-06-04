@@ -25,7 +25,7 @@
 *[GDPR]: General Data Protection Regulation
 *[GMDN]: Global Medical Device Nomenclature
 *[GNU]: Gnu's Not Unix
-*[GPG]: Gnu Privacy Guard
+*[GPG]: GNU Privacy Guard
 *[HTML]: Hypertext Markup Language
 *[ICO]: Information Commissioner's Office
 *[JSON]: JavaScript Object Notation. A computer data format.
