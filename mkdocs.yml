@@ -91,6 +91,7 @@ not_in_nav: |
   _assets/_snippets/docs-contributions.md
   _assets/_snippets/htn-award.md
   _assets/_snippets/self-host-warning.md
+  _assets/_snippets/api-baseurl.md
   _utilities/page-template.md
   internal/azure-apim.md
 
