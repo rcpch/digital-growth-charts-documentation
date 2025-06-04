@@ -26,7 +26,7 @@ Your baby should be weighed in the first week as part of the assessment of feedi
 
 After that, your baby will usually be weighed only when seen routinely, unless there is concern.
 
-Some parents like to have their babies weighed often, but this can be misleading and cause unnecessary worry. For example, if one week your baby was weighed just after a big feed but the next week they were weighed before a feed, it could look as if they had not gained weight. Longer gaps between weights are more likely to show the true weight change. Your health visitor or doctor may recommend more frequent weights for children if there are concerns about slow weight gain or weight loss, but it is still important not to weight too often:
+Some parents like to have their babies weighed often, but this can be misleading and cause unnecessary worry. For example, if one week your baby was weighed just after a big feed but the next week they were weighed before a feed, it could look as if they had not gained weight. Longer gaps between weights are more likely to show the true weight change. Your health visitor or doctor may recommend more frequent weights for children if there are concerns about slow weight gain or weight loss, but it is still important not to weigh too often:
 
 | Age            | No concerns                                            | If there is slow weight gain or weight loss, no more often than: |
 | -------------- | ------------------------------------------------------ | ---------------------------------------------------------------- |
