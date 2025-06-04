@@ -32,9 +32,3 @@ Marcus Baw's discussion of what it means for Royal Colleges to be developing in-
 [Digital Growth pages on RCPCH website](https://www.rcpch.ac.uk/resources/growth-charts/digital)
 
 [Marcus Baw's series of Open Health Hub background articles explaining the problem of Growth Charts and why previous solutions just didn't cut the mustard](https://openhealthhub.org/t/centile-part-1-what-are-centiles)
-
-## Videos
-
-[Understanding the RCPCH Digital Growth Charts Project - 35 minute YouTube video](https://www.youtube.com/watch?v=TRKd38d7_1I)
-
-<iframe width="100%" height="500px" src="https://www.youtube-nocookie.com/embed/TRKd38d7_1I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
