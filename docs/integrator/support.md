@@ -53,11 +53,3 @@ Our primary support method is through the forum at [forum.rcpch.tech](https://fo
 [Go to the forums :fontawesome-brands-discourse:](https://forum.rcpch.tech){ .md-button .md-button--primary }
 
 [![forum-screenshot](../_assets/_images/forum-screenshot.png)](https://forum.rcpch.tech/)
-
-### Signal Chat
-
-RCPCH have set up a Signal group chat for the Digital Growth Charts. This is a useful way to get quick answers and signposting to the right documentation, whether you're stuck, found an issue or have any other reason to speak with the developer team directly.
-
-[Go to the Signal group :simple-signal:](https://signal.group/#CjQKIAjLf5lS9OZIAI6lsJKWP1LmeJXkUW_fzZH1ryEw3oFEEhBH-4F7WnlyYjKerjfzD6B0){ .md-button .md-button--primary }
-
------
