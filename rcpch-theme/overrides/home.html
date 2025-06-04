@@ -1,101 +1,117 @@
-{% extends "overrides/main.html" %}
+{% extends "overrides/main.html" %} {% block tabs %} {{ super() }}
 
-{% block tabs %} {{ super() }}
+<style>
+  .md-typeset .mdx-hero__content h1 {
+    margin-top: 1.25em;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+  }
 
-    <style>
+  @media screen and (max-width: 960px) {
+    iframe#demo-iframe {
+      display: none;
+    }
 
-        .md-typeset .mdx-hero__content h1 {
-            margin-top: 1.25em;
-            margin-left: 0px;
-            margin-right: 0px;
-            width: 100%;
-        }
-        
-        @media screen and (max-width: 960px) {
-            iframe#demo-iframe {
-                display:none;
-            }
-            
-            div#iframe-mobile-replacement {
-                display: block;
-            }
-        }
-        
-        div#twitter-embeds {
-            margin: auto;
-        }
+    div#iframe-mobile-replacement {
+      display: block;
+    }
+  }
 
-        .container {
-            margin-left: 100px;
-            margin-right: 100px;
-            display: flex;
-            justify-content: space-between;
-        }
 
-        .twitter-tweet {
-            width: 200px;
-            padding-left: 20px;
-        }
+  .container {
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    justify-content: space-between;
+  }
 
-        #demo-iframe {
-            width: 95%;
-            height: 1000px;
-        }
+  .twitter-tweet {
+    width: 200px;
+    padding-left: 20px;
+  }
 
-    </style>
+  #demo-iframe {
+    width: 95%;
+    height: 1000px;
+  }
+</style>
 
-    <section >
-        <div class="mdx-hero__content md-typeset">
-                <br />
+<section>
+  <div class="mdx-hero__content md-typeset">
+    <br />
 
-                <h1>
-                    'Best Practice As Code' by the RCPCH.
-                </h1>
-                    
-                <h2>
-                    Digital clinical tools provided to developers of clinician and patient facing technology.
-                </h2>
-                
-                <p>
-                    Working with experts in growth monitoring, growth charts, centile and SDS calculation, we've created an API that handles the heavy lifting of child growth parameters. You get reliable, safe results - instantly. Our Free tier provides instant access to all, our code is fully open source, and the API service sustainably managed as a non-profit enterprise, with uptime guarantees and SLA.
-                </p>
-                
-                <a href="integrator/getting-started/" title="Go to the integrator documentation" class="md-button md-button--primary" id="integrator">
-                    Integrator Docs
-                </a>
-                <a href="clinician/how-the-api-works/" title="Go to the clinical documentation" class="md-button md-button--primary" id="clinician">
-                    Clinician Information
-                </a>
-                <a href="developer/start-here/" title="Go to the contributor documentation" class="md-button md-button--primary" id="contributor">
-                    Contribute
-                </a>
-            
-        </div>
-        
-            <div class="md-grid md-typeset">
-                <div>
-                    <iframe id="demo-iframe" src="https://rcpch.github.io/digital-growth-charts-react-client/" allow="clipboard-read; clipboard-write"></iframe>
-                </div>
-                
-                <!-- This div only shows for small screens to explain why there is no demo chart-->
-                <div id="iframe-mobile-replacement">
-                    <br />
-                    <h1>Demo Growth Chart</h1>
-                    <h2>
-                        Our demo chart appears here on a desktop browser view. Growth charts are hard to interact with in mobile views and are not intended for small touch screens, hence we have suppressed the demo chart from this mobile view.
-                    </h2>
-                </div>
-            </div>
-        
-            
-        
-    </section>
+    <h1>'Best Practice As Code' by the RCPCH.</h1>
 
-{% endblock %}
+    <h2>
+      Digital clinical tools provided to developers of clinician and patient
+      facing technology.
+    </h2>
+
+    <p>
+      Working with experts in growth monitoring, growth charts, centile and SDS
+      calculation, we've created an API that handles the heavy lifting of child
+      growth parameters. You get reliable, safe results - instantly. Our Free
+      tier provides instant access to all, our code is fully open source, and
+      the API service sustainably managed as a non-profit enterprise, with
+      uptime guarantees and SLA.
+    </p>
+
+    <a
+      href="integrator/getting-started/"
+      title="Go to the integrator documentation"
+      class="md-button md-button--primary"
+      id="integrator"
+    >
+      Integrator Docs
+    </a>
+    <a
+      href="clinician/how-the-api-works/"
+      title="Go to the clinical documentation"
+      class="md-button md-button--primary"
+      id="clinician"
+    >
+      Clinician Information
+    </a>
+    <a
+      href="developer/start-here/"
+      title="Go to the contributor documentation"
+      class="md-button md-button--primary"
+      id="contributor"
+    >
+      Contribute
+    </a>
+  </div>
+
+  <div class="md-grid md-typeset">
+    <div>
+      <iframe
+        id="demo-iframe"
+        src="https://rcpch.github.io/digital-growth-charts-react-client/"
+        allow="clipboard-read; clipboard-write"
+        scrolling="no"
+      ></iframe>
+    </div>
+
+    <!-- This div only shows for small screens to explain why there is no demo chart-->
+    <div id="iframe-mobile-replacement">
+      <br />
+      <h1>Demo Growth Chart</h1>
+      <h2>
+        Our demo chart appears here on a desktop browser view. Growth charts are
+        hard to interact with in mobile views and are not intended for small
+        touch screens, hence we have suppressed the demo chart from this mobile
+        view.
+      </h2>
+    </div>
+  </div>
+</section>
+
+{% endblock %} 
 
 {% block content %}
 {% endblock %}
 
 {% block footer %}
-{{ super ()}}
+{{ super () }}
 {% endblock %}
