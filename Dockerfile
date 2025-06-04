@@ -24,6 +24,9 @@ RUN pip install -r /app/requirements.txt
 # Set working directory back to main app
 WORKDIR /app/
 
+# Flag the app directory as safe so that Git can read it
+RUN git config --global --add safe.directory /app
+
 # Copy application code into image
 # (Excludes any files/dirs matched by patterns in .dockerignore)
 COPY . /app/
