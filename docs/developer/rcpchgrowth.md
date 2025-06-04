@@ -271,7 +271,7 @@ Ages can be calculated as decimal ages, or calendar ages which are returned as a
 
 #### LMS Calculations
 
-The primary calculation is to generate a z-score (SDS) from two dates, sex, measurement method, and observation value, comparing against a reference, detailed in [How the UK-WHO Charts Work](/clinician/chart-information-health-staff/#how-the-uk-who-charts-work).
+The primary calculation is to generate a z-score (SDS) from two dates, sex, measurement method, and observation value, comparing against a reference, detailed in [How the UK-WHO Charts Work](../clinician/chart-information-health-staff.md#how-the-uk-who-charts-work).
 
 Each reference comprises an L, M and S value for a decimal age. The decimal ages in the reference data are not separated at uniform intervals. Depending on age, intervals are weeks, months or years apart.
 
