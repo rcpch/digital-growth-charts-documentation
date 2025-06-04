@@ -128,6 +128,7 @@ plugins:
       enabled: !ENV [ENABLE_GIT_COMMITTERS, false] # makes Git Committers optional
   - git-revision-date-localized:
       enable_creation_date: true
+      type: iso_date
   - macros
   - search
   - render_swagger
@@ -180,8 +181,8 @@ markdown_extensions:
 
 copyright: Copyright &copy; 2020 - 2025 Royal College of Paediatrics and Child Health (RCPCH)
 repo_url: https://github.com/rcpch/digital-growth-charts-documentation
-repo_name: rcpch/documentation
-edit_uri: blob/live/docs
+repo_name: rcpch/dgc-documentation
+edit_uri: edit/live/docs
 
 extra_css:
   - _assets/_stylesheets/extra.css
