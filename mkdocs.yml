@@ -132,7 +132,6 @@ plugins:
       type: iso_date
   - macros
   - search
-  - render_swagger
   - with-pdf:
       cover_title: RCPCH Digital Growth Charts
       cover_subtitle: Complete Documentation Manual
