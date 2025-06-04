@@ -4,6 +4,9 @@ services:
 
   mkdocs: # Digital Growth Charts Documentation
     build: .
+    environment:
+      - ENABLE_PDF_EXPORT=0 # Makes PDF export an option, default disabled for local dev
+      - ENABLE_GIT_COMMITTERS=True # Makes git-committers an option, default enabled
     volumes:
       - .:/app
     ports:
