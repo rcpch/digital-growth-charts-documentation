@@ -100,7 +100,7 @@ If you need us to develop a charting component in a different language or framew
 
 See [Contributing](../developer/contributing.md) for information on how to get involved in the project or how to implement the digital growth charts component into a project.
 
-You can get in touch with the primary developers to talk about the project using any of the methods on our [contact page](../about/contact.md).
+You can get in touch with the primary developers to talk about the project using any of the methods on our [contact page](../contact/contact.md).
 
 ## Acknowledgements
 
@@ -113,4 +113,4 @@ The charts are built using [Victory Charts](https://formidable.com/open-source/v
 This chart component software is is subject to copyright and is owned by the RCPCH, but is released under the MIT license.
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-There is important chart line rendering data bundled in the component, which subject to copyright and is owned by the RCPCH. It is specifically excluded from the MIT license mentioned above. If you wish to use this software, please [contact the RCPCH](../about/contact.md) so we can ensure you have the correct license for use. Subscribers to the Digital Growth Charts API will automatically be assigned licenses for the chart plotting data.
+There is important chart line rendering data bundled in the component, which subject to copyright and is owned by the RCPCH. It is specifically excluded from the MIT license mentioned above. If you wish to use this software, please [contact the RCPCH](../contact/contact.md) so we can ensure you have the correct license for use. Subscribers to the Digital Growth Charts API will automatically be assigned licenses for the chart plotting data.

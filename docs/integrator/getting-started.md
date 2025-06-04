@@ -27,7 +27,7 @@ API keys allow us to manage usage and billing for the API. We do have a perpetua
 
 #### Sign up to our forum at [https://forum.rcpch.tech/](https://forum.rcpch.tech/)
 !!! tip Approval required
-    Sign up to the forum is subject to our approval process, please [contact us](../about/contact.md) if you are not approved automatically.
+    Sign up to the forum is subject to our approval process, please [contact us](../contact/contact.md) if you are not approved automatically.
 
 #### Navigate to your user summary page using the drop down in the top right hand menu
 

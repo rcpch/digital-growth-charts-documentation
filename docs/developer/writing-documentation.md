@@ -36,7 +36,7 @@ This occurs whether changes are made using online or local, offline editing meth
 
 If you are new to Markdown editing, you can use GitHub's interface itself to edit online, by clicking the 'pencil' edit icon in the top right corner of any source code page. There are also external tools like [Prose.io](http://prose.io/) and [StackEdit](https://stackedit.io/) which give you a nice interface for editing MarkDown online, and will sync the changes with GitHub for you.
 
-If you need help getting set up, [contact us in the Signal chat](../about/contact.md).
+If you need help getting set up, [contact us in the Signal chat](../contact/contact.md).
 
 ### Using a text editor and editing locally
 

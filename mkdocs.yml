@@ -13,6 +13,7 @@ nav:
       - "about/team.md"
       - "about/acknowledgements.md"
       - "about/awards-press-blogs.md"
+      - "about/videos.md"
   - Products:
       - "products/get-digital-growth-charts.md"
       - "products/products-overview.md"
@@ -82,7 +83,7 @@ nav:
       - "technical/security.md"
       - "technical/data-security-protection-toolkit.md"
       - "technical/status.md"
-  - Contact: "about/contact.md"
+  - Contact: "contact/contact.md"
 
 # `not_in_nav` will prevent 'The following pages exist in the docs directory, but are not included in the "nav" configuration:' warnings
 not_in_nav: |
@@ -181,7 +182,7 @@ markdown_extensions:
 
 copyright: Copyright &copy; 2020 - 2025 Royal College of Paediatrics and Child Health (RCPCH)
 repo_url: https://github.com/rcpch/digital-growth-charts-documentation
-repo_name: rcpch/dgc-documentation
+repo_name: rcpch/documentation
 edit_uri: edit/live/docs
 
 extra_css:
