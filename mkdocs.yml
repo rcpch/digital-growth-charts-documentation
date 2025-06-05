@@ -129,8 +129,8 @@ plugins:
       branch: live
       enabled: !ENV [ENABLE_GIT_COMMITTERS, false] # makes Git Committers optional
   - git-revision-date-localized:
-      enable_creation_date: true
-      type: iso_date
+      enable_creation_date: false
+      type: date
   - macros
   - search
   - with-pdf:
