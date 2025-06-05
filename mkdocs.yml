@@ -85,7 +85,8 @@ nav:
       - "technical/status.md"
   - Contact: "contact/contact.md"
 
-# `not_in_nav` will prevent 'The following pages exist in the docs directory, but are not included in the "nav" configuration:' warnings
+# `not_in_nav` will prevent annoying warnings in the server output like:
+#'The following pages exist in the docs directory, but are not included in the "nav" configuration:' warnings
 not_in_nav: |
   _assets/_snippets/dgc-platform-comprises.md
   _assets/_snippets/docs-contributions.md
@@ -93,7 +94,6 @@ not_in_nav: |
   _assets/_snippets/self-host-warning.md
   _assets/_snippets/api-baseurl.md
   _utilities/page-template.md
-  internal/azure-apim.md
 
 theme:
   name: material
