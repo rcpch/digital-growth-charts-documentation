@@ -4,7 +4,7 @@ reviewers: Dr Marcus Baw
 audience: all
 ---
 
-# Awards, Press, Blogs, and other Mentions of the dGC Project
+# Awards, Press, Blogs, and other Mentions of the digital Growth Charts Project
 
 ## 2020 Health Tech Awards
 
@@ -26,6 +26,10 @@ Marcus Baw's discussion of what it means for Royal Colleges to be developing in-
 [November 2020 - Digital child growth assessment – from print to digital](https://www.rcpch.ac.uk/news-events/news/digital-child-growth-assessment-print-digital)
 
 [January 2021 - Why we chose Python for the RCPCH Digital Growth Charts project](https://www.rcpch.ac.uk/news-events/news/why-we-chose-python-rcpch-digital-growth-charts-project)
+
+## Academic Press
+
+Wright CM, Chapman S, Cole TJ. How can we best chart children's growth in the paperless age? The UK experience. Arch Dis Child. 2024 Jan 22;109(2):78-82. [doi: 10.1136/archdischild-2023-325363. PMID: 37463736.](https://pubmed.ncbi.nlm.nih.gov/37463736/)
 
 ## Background reading
 
