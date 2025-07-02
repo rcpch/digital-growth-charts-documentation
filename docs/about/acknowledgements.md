@@ -12,7 +12,6 @@ audience: all
 
 ## Additional Contributors
 
-- Dr Mark Wardle for [Deprivare](https://github.com/wardle/deprivare)) (a UK deprivation-index server) and [Hermes](https://github.com/wardle/hermes) (a SNOMED terminology server) and advice on *Dockerising* and deploying both of these.
 - Dr Dan Leach for advice on MHRA Medical Device Registration.
 - Dr Charles van Lennep for many contributions to React code and building the React Native client.
 - Dr Anchit Chandran for proofreading, corrections, and contributions to the documentation.
@@ -21,7 +20,7 @@ audience: all
 Significant implementations and contributions have been made by our users. They are all acknowledged on Github, but include:
 
 - Cambric (Scotland)
-- DCHW
+- Digital Health and Care Wales
 - Isle of Wight NHS Foundation Trust
 - SigmaMD (USA)
 
@@ -31,6 +30,7 @@ Significant implementations and contributions have been made by our users. They 
 - [Discourse](https://www.discourse.org/) (forum platform for openhealthhub.org)
 - [FastAPI](https://fastapi.tiangolo.com/) (used for the current version of the API server)
 - [Flask](https://flask.palletsprojects.com/) (used for the first draft of the API server)
+- [Flutter](https://flutter.dev/) (used for mobile)
 - [GitHub](https://github.com/) (code hosting, issues, actions, projects)
 - [Gravitee.io](https://www.gravitee.io/) (open source API management platform)
 - [Heroku](https://www.heroku.com/) (used in early alpha stages for quick hosting)
