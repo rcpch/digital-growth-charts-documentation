@@ -10,7 +10,7 @@ audience: clinicians, health-staff
 
 **A**: Paper or PDF charts required a human to plot the measurement and then read off the Centile. Digital Growth Charts automatically calculate Centiles and SDS (Standard Deviation Score) from the measurements, and plot these on a digital chart for you.
 
-Digital Growth Charts include recommended SNOMED-CT clinical terminology to guide persistence of the returned values.
+Not only do the charts calculate the centile and SDS more accurately than the paper charts, but they also handle correction for prematurity if present. Digital growth charts also support all the features of a paper chart used by paediatric endocrinologists (mid-parental height and bone ages), as well as extra features such as event tracking, cut and paste, pan and zoom.
 
 ## Q: How do I get the RCPCH Digital Growth Charts in my EPR?
 
