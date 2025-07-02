@@ -28,10 +28,10 @@ This is the time elapsed since birth, in years, irrespective of the gestational 
 
 Used for preterm children, the *corrected decimal age* is calculated from their *due date*, rather than their birth date (which will be earlier than their due date, owing to prematurity).
 
-This correction adjusts for the immaturity of preterm babies born early. The process is referred to as *gestational age correction*. Prior to digital growth charts, it was a manual process.
+This correction adjusts for the immaturity of preterm babies born early. The process is referred to as *gestational age correction* (or sometime 'adjustment'). Prior to digital growth charts, it was a manual process.
 
-The previous convention was to apply gestational age correction to all babies born before 37 weeks gestation. For those born at 32-36 weeks, the correction was applied until the baby was 1 year old (in _corrected_ years), and below 32 weeks until they were 2 years old (in _corrected_ years).
+The previous convention was to apply gestational age correction to all babies born before 37 weeks gestation. For those born at 32-36 weeks, the correction was applied until the baby was 1 year old (in _corrected_ years), and below 32 weeks until they were 2 years old (in _corrected_ years). The reason for this was because correcting past these ages was practically very difficult on a paper chart; years on the x-axis in older children are closer together and the impact of age correction becomes less pronounced.  
 
-Now the correction is applied automatically by the API, the Project Board decided it made no sense to stop the correction at arbitrary ages, and it should be applied throughout childhood. Of course, the difference between corrected and uncorrected age becomes less apparent as the child gets older.
+Now that correction can be applied automatically and accurately by the API at any age, the Project Board decided that age correction should be applied throughout childhood. Of course, the difference between corrected and uncorrected age becomes less apparent as the child gets older.
 
 A further Project Board decision was to extend the gestational age correction to all children, including those born at term. This represents a departure from the previous practice of using a common reference for all term gestation babies, averaged across gestations 37-42 weeks. Now term babies, like preterm babies, are assessed using their gestational age. Equally, babies born post 40 weeks are corrected backwards. There is no upper limit to this.
