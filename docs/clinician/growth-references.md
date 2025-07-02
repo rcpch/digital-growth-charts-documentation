@@ -26,10 +26,12 @@ The codebase we have built is capable of utilising any reference or dataset, but
 | cdc2000    |                     | length/height, weight & head circumference for ages 0 to 19.9y; BMI 2 to 19.9y | :us:             | [link](https://github.com/rcpch/growth-references/tree/main/cdc2000)     |
 | spirometry | 4 - 80 years        | FEV1, FVC, FEV1FVC & FEF2575                                                   | :gb:             | [link](https://github.com/rcpch/growth-references/tree/main/spirometry) |
 | down  |                     | Down Syndrome Growth Standards 2002                                               | :gb: :ie:        | [link](https://github.com/rcpch/growth-references/tree/main/trisomy21)  |
+| down  |                     | Down Syndrome Growth Standards 2015                                               | :us:        | [link](https://github.com/rcpch/growth-references/tree/main/trisomy21/AAP)  |
 | turner     |                     | Turner Syndrome, Heights 2002                                                  | :gb: :ie:        | [link](https://github.com/rcpch/growth-references/tree/main/turner)     |
 | uk-who     | 23 weeks - 20y      | UK90 and WHO Child Growth Standards                                            | :gb:             | [link](https://github.com/rcpch/growth-references/tree/main/uk-who)     |
 | uk90       | 23 weeks - 20 years | UK 1990 reference data, reanalysed 2009                                        | :gb:             | [link](https://github.com/rcpch/growth-references/tree/main/uk90)       |
-| who2006    |                     | WHO Child Growth Standards                                                     | :united_nations: | [link](https://github.com/rcpch/growth-references/tree/main/who2006)    |
+| who2006    |                     | WHO Child Growth Standards                                                     | :united_nations: | [link](https://github.com/rcpch/growth-references/blob/main/who2006/WHO2006.csv)    |
+| who2007    |                     | WHO Child Growth Standards                                                     | :united_nations: | [link](https://github.com/rcpch/growth-references/blob/main/who2006/WHO2007.csv)    |
 
 ---
 
@@ -42,11 +44,11 @@ NOTE: The UK-WHO Term reference is NOW DEPRECATED but still active on paper char
 | WHO 2006 | length / weight / head circumference / BMI | 0 - 5 y |
 | WHO 2007 | length / weight / head circumference / BMI | 5 - 19 y (weight 5-10y) |
 | WHO (US) | length / weight / head circumference | 0 -3 y |
-| CDC  | height / weight / bmi (extended) | 2 - 20y |
-| UK-WHO preterm |  height | 25 weeks - 42 weeks |
-| UK-WHO preterm |  weight | 23 weeks - 42 weeks |
-| UK-WHO preterm |  head circumference | 23 weeks - 42 weeks |
-| UK-WHO infant (mix of WHO and UK90 references) |  height or length / weight / BMI / head circumference | 2 weeks - 4 years |
+| CDC[^3]  | height / weight / bmi (extended) | 2 - 20y |
+| UK-WHO preterm |  height[^1] | 25 weeks - 42 weeks |
+| UK-WHO preterm |  weight[^1] | 23 weeks - 42 weeks |
+| UK-WHO preterm |  head circumference[^1] | 23 weeks - 42 weeks |
+| UK-WHO infant [^2] |  height or length / weight / BMI / head circumference | 2 weeks - 4 years |
 | UK-WHO child |  height or length / weight / BMI | 4 - 20 years |
 | UK-WHO child |  head circumference (boys) | 4 - 18 years |
 | UK-WHO child |  head circumference (girls) | 4 - 17 years |
@@ -58,12 +60,12 @@ NOTE: The UK-WHO Term reference is NOW DEPRECATED but still active on paper char
 
 ### Context
 
-1. Weight, and head circumference at birth (gestations 23 to 43 weeks) and length at birth (gestations 26 to 43 weeks), computed from UK 1990 reference database and shown by week - UK90 preterm reference
-2. This is the WHO standard for weight, BMI and head circumference from 2 weeks to 4 years, for length 2 weeks to 2 years and height 2-4 years. It is shown by week to 13 weeks and then by calendar month. It is exactly the same data as the LMS data included in the Z-score tables accessed from the WHO website [WHO](http://www.who.int/childgrowth/standards), except there is no birthweight.
-3. CDC: runs from 2y to 20 y. From 0-2y the CDC interposes its own version of WHO (2006).
-   1. height / weight / BMI centiles 0-2 y (CDC) with extended BMI centiles included (published 2022)
-   2. height / weight / head circumference 0-2 y (WHO - US)
-   3. preterm data for height / weight / head circumference exists as the Canadian Fenton reference. This has not been implemented
+[^1]. Weight, and head circumference at birth (gestations 23 to 43 weeks) and length at birth (gestations 26 to 43 weeks), computed from UK 1990 reference database and shown by week - UK90 preterm reference
+[^2]. This is the WHO standard for weight, BMI and head circumference from 2 weeks to 4 years, for length 2 weeks to 2 years and height 2-4 years. It is shown by week to 13 weeks and then by calendar month. It is exactly the same data as the LMS data included in the Z-score tables accessed from the WHO website [WHO](http://www.who.int/childgrowth/standards), except there is no birthweight.
+[^3]. CDC: runs from 2y to 20 y. From 0-2y the CDC interposes its own version of WHO (2006).
+    - height / weight / BMI centiles 0-2 y (CDC) with extended BMI centiles included (published 2022)
+    - height / weight / head circumference 0-2 y (WHO - US)
+    - preterm data for height / weight / head circumference exists as the Canadian Fenton reference. This has not been implemented
 
 ### To be added
 
@@ -82,3 +84,5 @@ NOTE: The UK-WHO Term reference is NOW DEPRECATED but still active on paper char
 5. Down syndrome centiles - Styles ME, Cole TJ, Dennis J, Preece MA. New cross sectional stature, weight and head circumference references for Down’s syndrome in the UK and Republic of Ireland. Arch Dis Child 2002;87:104-8. BMI centiles added 11/11/2013
 
 6. Lyon AJ, Preece MA, Grant DB. Growth curve for girls with Turner syndrome. Arch Dis Child 1985;60:932-935.
+
+7. Zemel BS, Pipan M, Stallings VA, Hall W, Schgadt K, Freedman DS, Thorpe P. Growth Charts for Children with Down Syndrome in the U.S. Pediatrics, 2015.
