@@ -10,9 +10,9 @@ audience: clinicians, health-staff
 
 The UK–WHO growth chart combines World Health Organization (WHO) standards with UK 1990 preterm and birth data:
 
-- The chart for birth measurements (32 –42 weeks gestation) is based on British children measured around 1990.
+- The chart for birth measurements (23–42 weeks gestation) is based on British children measured around 1990.
 - The chart from 2 weeks to 4 years of age is based on the WHO growth standard, derived from measurements of healthy, non-deprived, breast-fed children of mothers who did not smoke.
-- The UK 1990 growth reference for children is used from 4 years - 18 years.
+- The UK 1990 growth reference for children is used from 4 years - 20 years.
 - The charts depict a healthy pattern of growth that is desirable for all children, whether breast-fed or formula-fed, and of whichever ethnic origin.
 
 ## Reason for combining UK 1990 and WHO 2006
@@ -24,9 +24,9 @@ The final dataset has 4 parts:
   1. Pre-term (up to 42 weeks)
   2. Infants (under 2 years)
   3. WHO 2006 children (< 4 years)
-  4. UK 1990 children (4 years - 18 years)
+  4. UK 1990 children (4 years - 20 years)
 
-Where datasets overlap, there are 2 ages at the junction, one from each of UK90 and WHO 2006. There is a purposeful step at the junction between the data sets.
+Where datasets overlap, there are 2 ages at the junction, one from each of UK90 and WHO 2006. There is a purposeful step at the junction between the data sets. There is an additional step at 2 y in height/length where children go from being measured lying down to standing up.
 
 ## Instructions for the Down Syndrome charts
 
@@ -123,17 +123,13 @@ The child or young person's BMI is compared with the median value for age and se
 
 ### Mid-Parental Height
 
-When assessing a child's stature, comparing their height centile against that of their parents is helpful for clinicians, to find out if the child is short or tall for the family. How this is calculated has been debated in the medical literature and clinicians often use a simple calculation which involves adding 13 cm to a mother's height or subtracting 13 cm from a father's height and then taking the average. The RCPCH charts have a calculator however that uses to research on large numbers of children to show that a more accurate way is to find the mid-parental centile is to take an average of the parents' height z-scores (standard deviation scores) and multiply this by a factor calculated from linear regression in a large cohort of children. This has the effect of correct mid-parental particularly where there is a large difference in heights between parents. This is shown on the RCPCH growth charts in an inset on the top right-hand corner of the charts. The methodology is repeated in the digital growth chart calculations. For more information on this, see: [The strengths and limitations of parental heights as a predictor of attained height, Charlotte M Wright, Tim D Cheetham, Arch Dis Child 1999;81:257–260](https://pubmed.ncbi.nlm.nih.gov/10451401/)
+When assessing a child's stature, comparing their height centile against that of their parents is helpful for clinicians, to find out if the child is short or tall for the family. How this is calculated has been debated in the medical literature and clinicians often use a simple calculation which involves adding 13 cm to a mother's height (for a boy) or subtracting 13 cm from a father's height (for a girl) and then taking the average of that and the other parent. The RCPCH charts have a calculator however that research on large numbers of children to shows a more accurate way: instead, an average is taken of the parents' height z-scores (standard deviation scores) and this is multiplied by a factor calculated from linear regression in a large cohort of children. This has the effect of correcting mid-parental particularly where there is a large difference in heights between parents. This is shown on the RCPCH paper growth charts in an inset on the top right-hand corner of the charts. The methodology is repeated in the digital growth chart calculations. For more information on this, see: [The strengths and limitations of parental heights as a predictor of attained height, Charlotte M Wright, Tim D Cheetham, Arch Dis Child 1999;81:257–260](https://pubmed.ncbi.nlm.nih.gov/10451401/)
 
-An improvement on the paper charts is added to the digital charts where the mid-parental height centile ranges are shown on the chart next to the latest plotted measurements.
+An further improvement on the paper charts has been to render the mid-parental height centile rangesnext to the latest plotted measurements, rather than at the top.
 
 ### Predicting adult height
 
-Parents like to know how tall their child will be as an adult. The child’s most recent height centile (aged 2–4 years) gives a good idea of this for healthy children. Plot this centile on the adult height predictor to the right of the height chart to find the average adult height for children on this centile. Four out of five children will have adult heights that are within ± 6cm of this value.
-
-#### Adult Height Predictor
-
-The paper-based Adult Height Predictor allowed you to predict the child’s adult height based on their current height, but with a regression adjustment to allow for the tendency of very tall and short children to be less extreme in height as adults. Four girls out of five will have an adult height within ± 6cm of the predicted adult height.
+Parents like to know how tall their child will be as an adult. The child’s most recent height centile (aged 2–4 years) gives a good idea of this for healthy children. Plot this centile on the adult height predictor to the right of the height chart to find the average adult height for children on this centile. This will predict the child’s adult height based on their current height, but with a regression adjustment to allow for the tendency of very tall and short children to be less extreme in height as adults. Four out of five children will have adult heights that are within ± 6cm of this value.
 
 !!! info
     Adult Height Prediction is an upcoming feature of the Digital Growth Chart API
