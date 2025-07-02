@@ -85,7 +85,7 @@ pyenv virtualenv 3.12.0 dgc-server
 `pyenv virtualenv`s should return something like:
 
 ```bash
-dgc-server (created from /home/my-user/.pyenv/versions/3.8.0)
+dgc-server (created from /home/my-user/.pyenv/versions/3.12.0)
 ```
 
 Activate the virtualenv manually if it's not already selected
@@ -115,8 +115,8 @@ Refer to the [pyenv command reference](https://github.com/pyenv/pyenv/blob/maste
     pyenv install 3.8.3
     ```
 
-!!! note "If installing on macOS Big Sur, pyenv install of python 3.8.0 and requirements.txt may fail"
-    To install 3.8.3 via pyenv, set the following 2 environment variables (requires homebrew installed versions of bzip2, openssl and zlib):
+!!! note "If installing on macOS Big Sur, pyenv install of python 3.12.0 and requirements.txt may fail"
+    To install 3.12 via pyenv, set the following 2 environment variables (requires homebrew installed versions of bzip2, openssl and zlib):
 
 ```bash
 export CFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix bzip2)/include -I$(brew --prefix readline)/include -I$(xcrun --show-sdk-path)/usr/include"
