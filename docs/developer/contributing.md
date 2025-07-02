@@ -31,6 +31,8 @@ Some helpful sources of information on Python style are:
 - <https://www.python.org/dev/peps/pep-0008>
 - <https://google.github.io/styleguide/pyguide.html>
 
+For more guidance on our house style, visit our [RCPCH Playbook](https://playbook.rcpch.tech/developer/start-here/).
+
 ## Intellectual Property (IP) of contributions
 
 - The copyright over the IP in this and other Growth Chart related repositories is owned by the Royal College of Paediatrics and Child Health, which releases it under an open source license. Consult the individual repository for specifics on which license we have used.

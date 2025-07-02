@@ -26,14 +26,13 @@ The references included are:
 
 1. UK90 dataset – runs from 23 weeks to 20 years
 2. WHO 2006 standard – runs from 2 weeks to 4 years
-3. Down reference
-4. Turner reference
-5. CDC (US) reference - comprises a US interpretation of WHO 2006 0-2y, CDC 2-20y. It also has extended BMI centiles which reinterpret z score calculation above the 95th centile.
-6. Fenton (Canada) - this reference licensed to Dr Fenton is a preterm reference from 22-50 weeks gestation, with median values in weight in grams. This dataset is closed source and licensed so not in the repo. It is currently not implemented in RCPCHGrowth.
+3. WHO 2007 standar - runs from 5 - 19 y
+4. Down reference (both UK 2002 and US 2015 references)
+5. Turner reference
+6. CDC (US) reference - comprises a US interpretation of WHO 2006 0-2y, CDC 2-20y. It also has extended BMI centiles which reinterpret z score calculation above the 95th centile.
+7. Fenton (Canada) - this reference licensed to Dr Fenton is a preterm reference from 22-50 weeks gestation, with median values in weight in grams. This dataset is closed source and licensed so not in the repo. It is currently not implemented in RCPCHGrowth.
 
-Data tables are stored in the `data_tables` folder as `.json`. There is a separate [repository](https://github.com/rcpch/growth-references) to store references from across the world. Currently, they are stored as `.csv`, `.json` and `.rif` file types.
-
-*`.rif` is a standardised format created by @stefvanbuuren.*
+Data tables are stored in the `data_tables` folder as `.json`. There is a separate [repository](https://github.com/rcpch/growth-references) to store references from across the world. Currently, they are stored as `.csv` and `.json` file types.
 
 ### Package Structure
 
@@ -279,7 +278,15 @@ The calculation involves first calculating a decimal age (corrected or chronolog
 
 This latter calculation is done using the SciPy package.
 
-Note that CDC references use only linear interpolation.
+Note that CDC and WHO references outside of the UK context use only linear interpolation.
+
+The CDC BMI calculation has a complexity well described [here](https://www.cdc.gov/growthcharts/extended-bmi-data-files.htm). At higher BMI values (>95th centile) it introduces a new *sigma* value. Sigma is the dispersion parameter used in the calculation of BMI percentiles and z-scores above the 95th percentile (z-score 1.645), and is applied to calculations only for the extended BMI range in the CDC reference.
+![formula](https://latex.codecogs.com/svg.image?BMIZ=\frac{(BMI/M)^L-1}{L * S}
+![formula](https://latex.codecogs.com/svg.image?BMIPercentile = \Phi(BMIZ)
+If the BMI centile is above 95%, a correction is applied:
+![formula](https://latex.codecogs.com/svg.image?BMIPercentile = 90 + 10\Phi \frac{BMI-P95}{sigma}
+![formula](https://latex.codecogs.com/svg.image?BMIZ = \Phi^{-1}\frac{BMIPercentile}{100}
+
 
 ##### Steps
 
@@ -295,11 +302,19 @@ The L, M and S are then converted to SDS using the `lms_to_z` and either returne
 
 ##### Reference Selection
 
-As there are several references, the selection of the correct LMS table is essential before beginning calculation. The references are all stored as JSON files in the `data_tables` folder. There are individual files (`uk_who.py`, `turner.py`, `trisomy_21.py` and `cdc`) which select the correct tables and contain error handling, particularly to return meaningful errors to users. For example, weight and head circumference but not length data are available at 23 and 24 weeks gestation. Head circumference in girls stops at 17 years but in boys it stops at 18 years. To handle all these idiosyncrasies, an individual file for table selection has been created.
+As there are several references, the selection of the correct LMS table is essential before beginning calculation. The references are all stored as JSON files in the `data_tables` folder. There are individual files (`uk_who.py`, `turner.py`, `trisomy_21.py`, `trisomy_21_aap.py`, `who.py`  and `cdc.py`) which select the correct tables and contain error handling, particularly to return meaningful errors to users. For example, in UK-WHO, weight and head circumference but not length data are available at 23 and 24 weeks gestation. Head circumference in girls stops at 17 years but in boys it stops at 18 years. To handle all these idiosyncrasies, an individual file for table selection has been created.
 
 ##### Centile Advice Strings
 
 There was much discussion about these at project board. Found in ```centile_bands.py```, these strings are returned in the `Measurement` object to guide users on interpretation of the centile values they receive. The Project Board were very clear they wished to dissuade users from quoting exact centile values, instead to refer to ranges. Further details can be found in the clinician information. Although the `Measurement` object returns an exact centile value, the advice strings are better suited for reporting to users and are rendered in tooltips in the Typescript RCPCHGrowth Chart Component package.
+
+##### Thresholds
+
+A list of all the reference thresholds can be found [here](https://growth.rcpch.ac.uk/clinician/growth-references/#reference-library).
+
+A discussion about suitable cut-offs to distinguish between impossible and unlikely values is well documented [here](https://github.com/rcpch/rcpchgrowth-python/issues/32).
+
+An RCPCHGrowth base decision that all values should be returned to the user, no matter how improbable. This is because the python package maybe used in research where values of this nature maybe meaningful. In a clinical context however, through review of datasets and the literature (detailed in the issue), a decision was made to set absolute cut-offs for height, weight and head circumference at +/- 8 SDS, while BMI would have cut-offs of +/-15 SDS.
 
 #### Chart Functions
 
