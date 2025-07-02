@@ -6,7 +6,7 @@ audience: developers
 
 ## Developer documentation
 
-The demonstration React client for the dGC API is built in React and styled with Semantic UI React. It is intended as a good starting point for understanding the dGC API backend and serves as a prototype client from which you can build your own client, if that is what you require.
+The demonstration React client for the dGC API is built in React (Vite) and styled with Semantic UI React. It is intended as a good starting point for understanding the dGC API backend and serves as a prototype client from which you can build your own client, if that is what you require.
 
 It's important to understand the three parts of the dGC platform that are in play here:
 

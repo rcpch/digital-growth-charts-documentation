@@ -24,6 +24,7 @@ nav:
       - "products/python-library.md"
       - "products/command-line-client.md"
       - "products/google-sheets-plugin.md"
+      - "products/flutter-app.md"
       - "products/react-native.md"
       - "products/flask(deprecated).md"
   - Integrators:

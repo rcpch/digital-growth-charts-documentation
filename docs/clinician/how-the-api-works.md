@@ -19,7 +19,7 @@ The LMS method provides a way of obtaining normalised growth centiles from a ref
 
 ### How the LMS method is used
 
-- Using the LMS table, look up the age and sex-specific values of L, M and S for the relevant measurement (e.g. height). If the child's age falls between the tabulated ages, use cubic interpolation to obtain values for the child's exact age.
+- Using the LMS table, look up the age and sex-specific values of L, M and S for the relevant measurement (e.g. height). If the child's age falls between the tabulated ages, use _cubic interpolation_ to obtain values for the child's exact age.
 
 - To obtain the z-score, plug the LMS values with the child's measurement into the formula:
   <div class="latex">
