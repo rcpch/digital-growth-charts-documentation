@@ -41,7 +41,7 @@ A natural step exists at each of these time points which **must** be respected. 
 The API endpoint returns the chart data in an array of arrays.
 
 - The first level array represents the 9 centiles `[0.4, 2, 9 , 25, 50, 75, 91, 98, 99.6]`, with each centile sequentially having a nested array of 4 arrays of data, one for each dataset (see below).
-- The individual data points are reported as float values for x and y coordinates. X corresponds to decimal age, y to the measurement value of the chart requested. If the optional `three-percent-centiles` is passed - instead of the default `cole-nine-centiles` - an older format of 9 centiles `[3, 5, 10, 25, 50, 75, 90, 95, 97]` is returned. The `nine-cole-centiles` is the international standard.
+- The individual data points are reported as float values for x and y coordinates. X corresponds to decimal age, y to the measurement value of the chart requested. If the optional `three-percent-centiles` is passed - instead of the default `cole-nine-centiles` - an older format of 9 centiles `[3, 5, 10, 25, 50, 75, 90, 95, 97]` is returned. The `nine-cole-centiles` is the UK standard - each centlie represents 0.67 of a SDS. WHO and CDC datasets variously use different collections of centiles. The centiles returned from the API accept a `centile_format` parameter for one of: `"three-percent-centiles", "five-percent-centiles", "eighty-five-percent-centiles", "cole-nine-centiles", "extended-who-centiles"` or a custom list of centiles, or a custom list of standard deviation scores (if the `is_sds` flag is passed).
 
 The chart data is only returned for the measurement method requested e.g. if only height is supplied, only height centile data will be returned. Multiple API calls are required to obtain a full set of measurement data.
 
@@ -77,11 +77,13 @@ Along with the centile data, the growth data (presented to the endpoint in the r
 
 - Provide help and information facility to access instructions drawn from the RCPCH educational materials (see separate documents: [information for parents](../parents/chart-information-families.md), [information for health staff](../clinician/chart-information-health-staff.md)).
 
+- If using the RCPCH Charts, the RCPCH acknowledgement should be included. There is a prop to de-emphasise this to make less prominent if required.
+
 ### When plotting centile charts
 
 Certain key presentation principles should be included:
 
-- Use Cole nine-centile format (see below).
+- Use Cole nine-centile format (see above).
 
 - Scale different elements of the chart to best display information in each period.
 
