@@ -12,7 +12,7 @@ The project board is responsible for the clinical, academic, and governance over
 
 <!-- (Alphabetical order by surname) -->
 - **Prof Helen Bedford**, Professor of Children's Health, Population, Policy & Practice Department, UCL GOS Institute of Child Health, London.
-- **Dr Simon Chapman**, Consultant in Paediatric Endocrinology, King's College Hospital, London.
+- **Dr Simon Chapman**, Consultant Paediatrician (Diabetes & Endocrinology), King's College Hospital, London.
 - **Prof Tim Cole**, Professor of Medical Statistics, Population, Policy & Practice Department, UCL GOS Institute of Child Health, London.
 - **Prof Mary Fewtrell**, Professor of Paediatric Nutrition, Population, Policy & Practice Department, UCL GOS Institute of Child Health, London.
 - **Victoria Jackson**, Project Coordinator, Institute of Health Visiting.
@@ -25,10 +25,10 @@ RCPCH internal project staff provided invaluable support from project concept, t
 
 <!-- (Alphabetical order by surname) -->
 - **Jo Ball**, Design and Brand Manager, Content and Brand Team, RCPCH.
-- - **Michael Barton**, Lead Software Developer, RCPCH
+- **Michael Barton**, Lead Software Developer, RCPCH
 - **Richard Burley**, Chief Digital Officer, RCPCH.
 - **Alex Brown**, Head of Commercial and Corporate Partnerships, RCPCH.
-- **Susan Hansford**, , Digital Product Manager, RCPCH.
+- **Susan Hansford**, Digital Product Manager, RCPCH.
 - **Joanne Hatton**, Enterprise Systems Manager, RCPCH.
 - **Jonathan Miall**, Director of Membership and Development, (now ret'd from RCPCH).
 - **Rachel McKeown**, Policy Lead & Project Manager, RCPCH (now left RCPCH).
@@ -47,7 +47,7 @@ The development team was drawn from RCPCH internal staff, RCPCH members with sof
 - **Michael Barton**, Lead Software Developer, Royal College of Paediatrics and Child Health
 - **Dr Marcus Baw**, General Hacktitioner, Developer and Informatician, Yorkshire and The Internet.
 - **Dr Anchit Chandran**, Doctor and Software Developer, London.
-- **Dr Simon Chapman**, Consultant in Paediatric Endocrinology, King's College Hospital, London.
+- **Dr Simon Chapman**, Consultant Paediatric (Diabetes & Endocrinology), King's College Hospital, London.
 - **Prof Tim Cole**, Professor of Medical Statistics, Population, Policy & Practice Department, UCL GOS Institute of Child Health, London.
 - **Danny Cowen**, Medical Student, Imperial College London.
 - **Dr Charles van Lennep**, Paediatrician in Training, London.
