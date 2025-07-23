@@ -37,23 +37,26 @@ For those who want to customize the chart, the style props can be overridden if 
 
 ### What if I can't use React?
 
-It is common in healthcare environments not to be able to use frameworks like React. For this reason RCPCH have published the charts on [jsdeliver](https://www.jsdelivr.com/package/npm/@rcpch/digital-growth-charts-react-component-library) and [unpkg](https://unpkg.com/@rcpch/digital-growth-charts-react-component-library@latest/build/umd/rcpch-digital-growth-charts.umd.js). This allows implementers to import the javascript in the head tag of their page. This gives access to the `RCPCHGrowthCharts` wrapper which accepts all the props detailed above for instantiating a single chart, as well as the id of the div in the DOM where the charts are to be located, within the `render` attribute.
+It is common in healthcare environments not to be able to use frameworks like React. For this reason RCPCH have published the charts on [jsdeliver](https://www.jsdelivr.com/package/npm/@rcpch/digital-growth-charts-react-component-library) and [unpkg](https://unpkg.com/@rcpch/digital-growth-charts-react-component-library@latest/build/rcpch-digital-growth-charts.umd.js). This allows implementers to import the javascript in the head tag of their page. This gives access to the `RCPCHGrowthCharts` wrapper which accepts all the props detailed above for instantiating a single chart, as well as the id of the div in the DOM where the charts are to be located, within the `render` attribute.
 
 ```html
 <!doctype html>
 <html>
     <head>
         <title>Growth Chart Example</title>
-        <!-- React dependencies -->
+        <!-- React dependencies. Must come first -->
         <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js" defer></script>
         <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" defer></script>
-        <!-- RCPCH Growth Charts library with SRI hash for security -->
+        <!-- RCPCH Growth Charts library -->
+        <!-- You must use the integrity check to ensure you are using the expected code as this component   -->
+        <!-- can render patient data. You can get the value from this file, adjusting the version as needed -->
+        <!-- https://cdn.jsdelivr.net/npm/@rcpch/digital-growth-charts-react-component-library@7.4.0/build/sri-hash.txt -->
         <script 
-            src="https://cdn.jsdelivr.net/npm/@rcpch/digital-growth-charts-react-component-library@7.3.7/build/umd/rcpch-digital-growth-charts.umd.min.js" 
-            integrity="sha256-DtOz5oco8GOB9TWyZf64bi2sM4NzFCktURAToB21bMc=" 
+            src="https://cdn.jsdelivr.net/npm/@rcpch/digital-growth-charts-react-component-library@7.4.0/build/rcpch-digital-growth-charts.umd.min.js" 
+            integrity="sha384-qi0VLSTriOa9dh7dMVRCLR5nZlgrNGrccCX6Xiw+4hvfeVTVXClhoiqViE2IFoPe" 
             crossorigin="anonymous"
             defer>
-        </script><!--note the order of the dependencies: React and React-dom should come first-->
+        </script>
         <script defer>
             document.addEventListener('DOMContentLoaded', function () {
                 const demoMeasurements = [ /* RCPCH digital growth charts API response goes here */ ];
@@ -81,5 +84,3 @@ It is common in healthcare environments not to be able to use frameworks like Re
     </body>
 </html>
 ```
-
-For security reasons you may wish to include the SRI (Subresource Integrity) as above.<br/>This can be found at [https://cdn.jsdelivr.net/npm/@rcpch/digital-growth-charts-react-component-library@latest/build/umd/sri-hash.txt]('https://cdn.jsdelivr.net/npm/@rcpch/digital-growth-charts-react-component-library@7.3.3/build/umd/sri-hash.txt')
