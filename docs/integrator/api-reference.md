@@ -12,15 +12,24 @@ audience: integrators, implementers, technical-architects
 
 <div id="swagger-ui"></div>
 
-<script id="swagger-js" src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js" charset="UTF-8"></script>
+<script id="swagger-js"></script>
 
 <script>
-    // Workaround weird behaviour where this script executes before the ui bundle is loaded when
-    // mkdocs does a client side navigation between pages
-    setTimeout(() => {
+    // We enable instant navigation in mkdocs-material which does a client-side JS replacement of the page
+    // rather than loading it fresh. It simulates reloading script tags but it does so in parallel.
+    // (https://github.com/squidfunk/mkdocs-material/blob/9d958543d01ccedd0b6531f8129cfb76ef3d812a/src/templates/assets/javascripts/integrations/instant/index.ts#L222)
+    // This is not the same as how the browser would load the script tags initially, blocking on the first
+    // one before loading the second. The effect is that the Swagger UI loads fine if you load this page
+    // directly but crashes on a client side navigation.
+    // Work around this by listening to the `load` event on the swagger dist script.
+    const scriptTag = document.getElementById("swagger-js");
+
+    scriptTag.addEventListener("load", () => {
         window.SwaggerUIBundle({
             url: 'https://raw.githubusercontent.com/rcpch/digital-growth-charts-server/live/openapi.json',
             dom_id: '#swagger-ui',
         });
-    }, 0);
+    });
+
+    scriptTag.src = "https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js";
 </script>
