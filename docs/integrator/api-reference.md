@@ -7,9 +7,14 @@ audience: integrators, implementers, technical-architects
 
 --8<-- "docs/_assets/_snippets/api-baseurl.md"
 
-<!-- Embeds the Swagger UI view of the API reference here -->
-<link type="text/css" rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css">
+<script>
+    window.addEventListener("message", (e) => {
+        console.log(e.data);
 
-<div id="swagger-ui"></div>
+        if(e.data && e.data.type === "swagger-ui-loaded") {
+            document.getElementById("swagger-ui").height = e.data.height + 100;
+        }
+    });
+</script>
 
-<script type="module" src="/_assets/_javascripts/swagger.js"></script>
+<iframe id="swagger-ui" src="/_assets/swagger.html" style="width: 100%"></iframe>
