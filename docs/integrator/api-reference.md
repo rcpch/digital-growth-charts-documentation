@@ -12,15 +12,15 @@ audience: integrators, implementers, technical-architects
 
 <div id="swagger-ui"></div>
 
-<script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js" charset="UTF-8"></script>
+<script id="swagger-js" src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js" charset="UTF-8"></script>
 
 <script>
-    document.onreadystatechange = () => {
-        if (document.readyState === "complete") {
-            window.SwaggerUIBundle({
-                url: 'https://raw.githubusercontent.com/rcpch/digital-growth-charts-server/live/openapi.json',
-                dom_id: '#swagger-ui',
-            });
-        }
-    };
+    // Workaround weird behaviour where this script executes before the ui bundle is loaded when
+    // mkdocs does a client side navigation between pages
+    setTimeout(() => {
+        window.SwaggerUIBundle({
+            url: 'https://raw.githubusercontent.com/rcpch/digital-growth-charts-server/live/openapi.json',
+            dom_id: '#swagger-ui',
+        });
+    }, 0);
 </script>
