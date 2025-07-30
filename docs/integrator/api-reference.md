@@ -7,16 +7,12 @@ audience: integrators, implementers, technical-architects
 
 --8<-- "docs/_assets/_snippets/api-baseurl.md"
 
-<!-- Embeds the Swagger UI view of the API reference here -->
-<link type="text/css" rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css">
-
-<div id="swagger-ui"></div>
-
-<script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js" charset="UTF-8"></script>
-
 <script>
-    const ui = SwaggerUIBundle({
-    url: 'https://raw.githubusercontent.com/rcpch/digital-growth-charts-server/live/openapi.json',
-    dom_id: '#swagger-ui',
-    })
+    window.addEventListener("message", (e) => {
+        if(e.data && e.data.type === "swagger-ui-loaded") {
+            document.getElementById("swagger-ui").height = e.data.height + 100;
+        }
+    });
 </script>
+
+<iframe id="swagger-ui" src="/_assets/swagger.html" style="width: 100%"></iframe>
