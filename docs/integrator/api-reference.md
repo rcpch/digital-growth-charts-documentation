@@ -22,14 +22,21 @@ audience: integrators, implementers, technical-architects
     // one before loading the second. The effect is that the Swagger UI loads fine if you load this page
     // directly but crashes on a client side navigation.
     // Work around this by listening to the `load` event on the swagger dist script.
-    const scriptTag = document.getElementById("swagger-js");
 
-    scriptTag.addEventListener("load", () => {
-        window.SwaggerUIBundle({
-            url: 'https://raw.githubusercontent.com/rcpch/digital-growth-charts-server/live/openapi.json',
-            dom_id: '#swagger-ui',
+    // Defining scriptTag at the top level caused an error but only in the Azure build who even knows
+    // > Uncaught SyntaxError: Failed to execute 'replaceWith' on 'Element': Identifier 'scriptTag' has already been declared
+    // so wrap it in an IIFE since we can't use ES modules because the same mkdocs-material instant loading
+    // code strips out all attributes from script tags unless they have src
+    (() => {
+        const scriptTag = document.getElementById("swagger-js");
+
+        scriptTag.addEventListener("load", () => {
+            window.SwaggerUIBundle({
+                url: 'https://raw.githubusercontent.com/rcpch/digital-growth-charts-server/live/openapi.json',
+                dom_id: '#swagger-ui',
+            });
         });
-    });
 
-    scriptTag.src = "https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js";
+        scriptTag.src = "https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js";
+    })();
 </script>
