@@ -9,8 +9,6 @@ audience: integrators, implementers, technical-architects
 
 <script>
     window.addEventListener("message", (e) => {
-        console.log(e.data);
-
         if(e.data && e.data.type === "swagger-ui-loaded") {
             document.getElementById("swagger-ui").height = e.data.height + 100;
         }
