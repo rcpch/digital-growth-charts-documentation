@@ -1,9 +1,18 @@
+# mkdocs.yml
+
+# key site information
 site_name: RCPCH Digital Growth Charts
 site_description: Documentation for the RCPCH Digital Growth Charts Platform
 site_author: The Royal College of Paediatrics and Child Health
 site_url: https://growth.rcpch.ac.uk
 
+copyright: Copyright &copy; 2020 - 2025 Royal College of Paediatrics and Child Health (RCPCH)
+repo_url: https://github.com/rcpch/digital-growth-charts-documentation
+repo_name: rcpch/documentation
+edit_uri: edit/live/docs
+
 # `mkdocs serve` serves the docs locally on this port (default 8000)
+# note that the docker-compose setup maps this port to 8001 so as not to clash with other services
 dev_addr: "127.0.0.1:8000"
 
 nav:
@@ -12,6 +21,7 @@ nav:
       - "about/about.md"
       - "about/team.md"
       - "about/acknowledgements.md"
+      - "about/whos-using-dgc.md"
       - "about/awards-press-blogs.md"
       - "about/videos.md"
   - Products:
@@ -179,11 +189,6 @@ markdown_extensions:
   - toc:
       permalink: true
 
-copyright: Copyright &copy; 2020 - 2025 Royal College of Paediatrics and Child Health (RCPCH)
-repo_url: https://github.com/rcpch/digital-growth-charts-documentation
-repo_name: rcpch/documentation
-edit_uri: edit/live/docs
-
 extra_css:
   - _assets/_stylesheets/extra.css
 
@@ -198,3 +203,8 @@ extra:
       link: https://bsky.app/profile/rcpch.bsky.social
     - icon: fontawesome/brands/x-twitter
       link: https://twitter.com/rcpchtweets
+
+# adds sortable tables
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js
