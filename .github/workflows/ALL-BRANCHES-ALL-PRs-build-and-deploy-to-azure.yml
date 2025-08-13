@@ -2,14 +2,11 @@
 # and pushes it to Azure from where it is deployed
 # to the LIVE site https://growth.rcpch.ac.uk/
 #
-# Azure will also build a preview site for any PRs against LIVE or branches
+# Azure will also build a preview site for any PRs against live
 
 name: ALL-BRANCHES-ALL-PRs-build-and-deploy-to-azure.yml
 
 on:
-  push:
-    branches:
-      - "**"
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
