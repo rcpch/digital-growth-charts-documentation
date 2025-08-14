@@ -7,6 +7,9 @@
 name: ALL-BRANCHES-ALL-PRs-build-and-deploy-to-azure.yml
 
 on:
+  push:
+    branches:
+      - live
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
