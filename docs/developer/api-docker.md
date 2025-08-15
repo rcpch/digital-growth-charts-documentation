@@ -39,3 +39,5 @@ This is useful for rapid development environment set-up. It pulls the `python` D
 Run the `s/up` script, which will run the image in a Docker container.
 
 The dGC server will then be running in development mode in the container. It will be available at <https://localhost:8000>.
+
+Alternatively, if you want to make updates to the RCPCHGrowth package locally and then see how that works in the server without deploying first to PyPi, a useful script is `s/dev`. As above, this will create a Docker container but will install the local version of RCPCHGrowth as an editable (`pip install . -e`) instead of pulling the live version from PyPi. For this to work the folder containing the RCPCHGrowth package must be parallel and at the same level in the file system as your digital-growth-charts-server folder. 
