@@ -43,7 +43,6 @@ nav:
       - "integrator/support.md"
       - "integrator/client-specification.md"
       - "integrator/faqs-for-integrators.md"
-      - "integrator/whos-using-dgc.md"
   - Clinicians:
       - "clinician/how-the-api-works.md"
       - "clinician/chart-information-health-staff.md"
