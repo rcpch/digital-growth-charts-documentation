@@ -24,6 +24,12 @@ We built our system to work well for any size or shape of EPR or organisation, w
 | Royal Cornwall Hospitals NHS Trust                          | Cerner                      |
 | Salford Royal/Northern Care Alliance NHS Foundation Trust   | Altera Sunrise              |
 
+### Research Organisations
+
+| Organisation Name        | Description                                                                                                                                                               |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| University of Nottingham | [Developing and validating an explainable digital mortality prediction tool for extremely preterm infants](https://www.medrxiv.org/content/10.1101/2025.07.09.25331175v1) |
+
 ### Other Organisations
 
 | Organisation Name | System / EPR in use |
