@@ -28,7 +28,7 @@ We built our system to work well for any size or shape of EPR or organisation, w
 
 | Organisation Name        | Description                                                                                                                                                               |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| University of Nottingham | Developing and validating an explainable digital mortality prediction tool for extremely preterm infants. T’ng Chang Kwok, Chao Chen, Jayaprakash Veeravalli, Carol AC Coupland, Edmund Juszczak, Jonathan Garibaldi, Kirsten Mitchell, Kate L Francis, Christopher J D McKinlay, Brett J Manley, Don Sharkey medRxiv 2025.07.09.25331175 doi: https://doi.org/10.1101/2025.07.09.25331175 |
+| University of Nottingham | Developing and validating an explainable digital mortality prediction tool for extremely preterm infants. T’ng Chang Kwok, Chao Chen, Jayaprakash Veeravalli, Carol AC Coupland, Edmund Juszczak, Jonathan Garibaldi, Kirsten Mitchell, Kate L Francis, Christopher J D McKinlay, Brett J Manley, Don Sharkey medRxiv 2025.07.09.25331175 doi: <https://doi.org/10.1101/2025.07.09.25331175> |
 
 ### Other Organisations
 
