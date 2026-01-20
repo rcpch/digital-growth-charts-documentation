@@ -28,6 +28,9 @@ mkdocs-with-pdf
 # for the timestamp feature
 mkdocs-git-revision-date-localized-plugin
 
+# LLMs.txt generation
+mkdocs-llmstxt
+
 # spelling / common typo checks for docs
 codespell
 

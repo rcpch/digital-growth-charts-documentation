@@ -141,6 +141,7 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: false
       type: date
+  - llmstxt
   - macros
   - search
   - with-pdf:
