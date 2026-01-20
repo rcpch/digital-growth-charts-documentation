@@ -9,7 +9,6 @@ reviewers: Dr Marcus Baw, Dr Simon Chapman, Dr Anchit Chandran
 [![Github Stars](https://img.shields.io/github/stars/{{ repository_name }})](https://github.com/{{ repository_name }}/stargazers)
 [![Github Forks](https://img.shields.io/github/forks/{{ repository_name }})](https://github.com/{{ repository_name }}/network/members)
 [![Github Licence](https://img.shields.io/github/license/{{ repository_name }})](https://github.com/{{repository_name }}/blob/live/LICENSE)
-[![GitHub Action](https://github.com/{{ repository_name }}/actions/workflows/main.yml/badge.svg)](https://github.com/{{ repository_name }}/actions/workflows/main.yml)
 [![DOI](https://zenodo.org/badge/361149103.svg)](https://zenodo.org/badge/latestdoi/361149103)
 
 [:octicons-mark-github-16: GitHub Repository](https://github.com/rcpch/rcpchgrowth-python)

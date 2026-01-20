@@ -3,16 +3,6 @@ title: RCPCHGrowth CLI Tool
 reviewers: Dr Marcus Baw, Dr Simon Chapman, Dr Anchit Chandran
 ---
 
-<!-- {% set repository_name="rcpch/rcpchgrowth-python-cli" -%}
-
-[![Github Issues](https://img.shields.io/github/issues/{{ repository_name }})](https://github.com/{{ repository_name }}/issues)
-[![Github Stars](https://img.shields.io/github/stars/{{ repository_name }})](https://github.com/{{ repository_name }}/stargazers)
-[![Github Forks](https://img.shields.io/github/forks/{{ repository_name }})](https://github.com/{{ repository_name }}/network/members)
-[![Github Licence](https://img.shields.io/github/license/{{ repository_name }})](https://github.com/{{repository_name }}/blob/live/LICENSE)
-[![Upload Python Package](https://github.com/rcpch/rcpchgrowth-python-cli/actions/workflows/python-publish.yml/badge.svg)](https://github.com/rcpch/rcpchgrowth-python-cli/actions/workflows/python-publish.yml)
-
-[:octicons-mark-github-16: GitHub repository](https://github.com/{{ repository_name }}) -->
-
 # RCPCHGrowth CLI Tool ( :warning: deprecated)
 
 Partly for our own uses, we wrapped the [RCPCHGrowth Python package](python-library.md) in a command-line tool, so you can conveniently use the powerful growth functions in `rcpchgrowth-python` in the terminal.
