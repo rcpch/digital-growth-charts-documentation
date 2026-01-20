@@ -31,7 +31,7 @@ We have attempted to build the very best of growth chart theory and practice int
 
 It was felt that representing boys' charts with blue lines and girls' charts with pink lines did not necessarily fit with 21st Century sensibilities of sex and gender. A Project Board decision was made to make the default chart colour monochrome black/grey.
 
-'Traditional' growth chart pink and blue colours are available as an option, and we have created som other colour options named after James Tanner who pioneered the study of childrens' growth, showing off the capability of the chart component to be customised.
+'Traditional' growth chart pink and blue colours are available as an option, and we have created some other colour options named after James Tanner who pioneered the study of childrens' growth, showing off the capability of the chart component to be customised.
 
 ### Other documentation
 
