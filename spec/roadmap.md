@@ -1,5 +1,12 @@
-# Documentation Roadmap
+# 2026 Documentation Review Roadmap
 
+- [x] Review all docs files to create generalised high-level features (`spec.md`), implementation guidances (`implementation.md`), and style guide (`style-guide.md`) for the RCPCH Digital Growth Charts platform documentation.
+- [x] Audit all docs files for compliance with the `spec/style-guide.md` and create this roadmap of changes that will improve the docs site to meet those standards.
+- [x] Add further convenience scripts to `s/` as needed to help with documentation development and maintenance.
+- [x] Add dependabot configuration to keep documentation dependencies up to date.
+- [x] Add linting and spellchecking scripts to make it easier to use these consistently and regularly.
+- [x] Run linting and spellchecking across all docs files and fix any issues found.
+ - <https://github.com/rcpch/digital-growth-charts-documentation/issues>
 - [x] Add automated `LLMs.txt` generation to the build output to meet `spec/spec.md` requirements. There is a plugin for MkDocs at <https://github.com/pawamoy/mkdocs-llmstxt> which should help achieve this goal.
 - [ ] Expand the home page audience routing in `rcpch-theme/overrides/home.html` to include parents/carers, researchers, and safety/compliance audiences, not just integrators/clinicians/contributors.
 - [ ] Add missing `audience` frontmatter to content pages: `docs/index.md`, `docs/developer/react-component.md`, `docs/products/api-server.md`, `docs/products/command-line-client(deprecated).md`, `docs/products/flutter-app.md`, `docs/products/pricing.md`, `docs/products/python-library.md`, `docs/products/react-client.md`, `docs/products/react-component.md`, `docs/products/react-native.md`, `docs/safety/overview.md`, `docs/safety/download.md`, `docs/safety/dtac.md`, `docs/safety/medical-device-reg/mhra.md`, `docs/safety/medical-device-reg/essential-req.md`, `docs/safety/medical-device-reg/doc-api.md`, `docs/safety/medical-device-reg/mdr-technical-docs.md`, `docs/safety/csmf/clinical-risk-mgmt-plan.md`, `docs/safety/csmf/clinical-risk-mgmt-system.md`, `docs/safety/csmf/clinical-safety-case-report.md`, `docs/safety/csmf/hazard-log.md`, `docs/safety/csmf/third-party-tools-safety-assmt.md`, `docs/safety/csmf/license.md`, `docs/technical/security.md`, `docs/technical/status.md`, `docs/technical/data-security-protection-toolkit.md`.
