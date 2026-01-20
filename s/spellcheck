@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -v  # Enable verbose mode
+set -e  # Exit on error
+
+# scripts may need to be made executable on some platforms before they can be run
+# chmod +x s/spellcheck
+
+# Runs codespell inside the mkdocs docker container.
+# Usage:
+#   s/spellcheck              # checks default paths
+#   s/spellcheck <paths...>   # checks only the given paths/files
+
+DEFAULT_PATHS=(docs spec README.md mkdocs.yml)
+
+if [ "$#" -gt 0 ]; then
+  docker compose run --rm mkdocs codespell "$@"
+else
+  docker compose run --rm mkdocs codespell "${DEFAULT_PATHS[@]}"
+fi
