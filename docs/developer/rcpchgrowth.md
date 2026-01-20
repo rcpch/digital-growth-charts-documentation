@@ -26,7 +26,7 @@ The references included are:
 
 1. UK90 dataset – runs from 23 weeks to 20 years
 2. WHO 2006 standard – runs from 2 weeks to 4 years
-3. WHO 2007 standar - runs from 5 - 19 y
+3. WHO 2007 standard - runs from 5 - 19 y
 4. Down reference (both UK 2002 and US 2015 references)
 5. Turner reference
 6. CDC (US) reference - comprises a US interpretation of WHO 2006 0-2y, CDC 2-20y. It also has extended BMI centiles which reinterpret z score calculation above the 95th centile.
