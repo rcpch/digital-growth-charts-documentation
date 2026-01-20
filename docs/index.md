@@ -3,8 +3,10 @@ template: overrides/home.html
 title: Home
 ---
 
-# Home
+<!-- Home -->
 
-Documentation for the RCPCH Digital Growth Charts Platform.
+<!-- Documentation for the RCPCH Digital Growth Charts Platform. -->
+
+
 
 
