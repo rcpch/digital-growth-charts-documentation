@@ -353,7 +353,7 @@ There is an endpoint in the API which calls this function and returns the chart 
 
 #### Mid-Parental Height
 
-Functions that relate to this are found in `mid_parental_height.py`. Methodology is documented in [this paper](https://pubmed.ncbi.nlm.nih.gov/10451401/) and involves taking the mean of parental height z scores and applying a regression factor (0.5). This corrects for the well-recognised concept of regression to the mean, where by parents who are either very tall or very short have a tendancy to have children whose heights are less extreme. The simplified calculation therefore is: (MatHtz +PatHtz)/4
+Functions that relate to this are found in `mid_parental_height.py`. Methodology is documented in [this paper](https://pubmed.ncbi.nlm.nih.gov/10451401/) and involves taking the mean of parental height Z-scores and applying a regression factor (0.5). This corrects for the well-recognised concept of regression to the mean, where by parents who are either very tall or very short have a tendency to have children whose heights are less extreme. The simplified calculation therefore is: (MatHtz +PatHtz)/4
 
 This is reported as a centile and SDS as well as absolute value, with values approximately 2 centiles either side. This is because the same paper found that 90% of children of parents fell within 2 centiles of the mid-parental height centile. In the chart, this is rendered as a three centile lines (upper, mph and lower) over the latest measurement if present.
 
