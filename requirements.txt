@@ -30,3 +30,6 @@ mkdocs-git-revision-date-localized-plugin
 
 # spelling / common typo checks for docs
 codespell
+
+# markdown linting
+pymarkdownlnt

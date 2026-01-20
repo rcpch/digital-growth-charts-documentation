@@ -1,0 +1,26 @@
+# PyMarkdown configuration
+# https://github.com/jackdewinter/pymarkdown
+
+# The default ruleset is useful but a bit noisy for MkDocs/Material docs.
+# Tune the biggest sources of churn first; expand later as desired.
+
+plugins:
+  # Disable line length checks (docs often include long links, code, tables).
+  md013:
+    enabled: false
+
+  # Allow inline HTML (MkDocs/Material and `md_in_html` commonly rely on it).
+  md033:
+    enabled: false
+
+  # Allow emphasis used as headings sometimes in docs; keep disabled to avoid churn.
+  md036:
+    enabled: false
+
+  # Duplicate headings can be legitimate across long documents.
+  md024:
+    enabled: false
+
+  # Allow missing language tags on fenced code blocks (many snippets may omit them).
+  md040:
+    enabled: false
