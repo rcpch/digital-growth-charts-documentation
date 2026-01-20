@@ -7,4 +7,7 @@ set -e  # Exit on error
 # chmod +x <filename> is the command to do this on unixy systems
 
 # shuts down the Docker Compose setup AND deletes containers and images (but not volumes)
-docker compose down --rmi local # removes the container and local images
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+COMPOSE_FILE="$REPO_ROOT/docker-compose.yml"
+
+docker compose -f "$COMPOSE_FILE" --project-directory "$REPO_ROOT" down --rmi local "$@" # removes the container and local images
