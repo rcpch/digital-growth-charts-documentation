@@ -141,7 +141,22 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: false
       type: date
-  - llmstxt
+  - llmstxt:
+      full_output: llms-full.txt
+      sections:
+        documentation:
+          - index.md
+          - about/*.md
+          - clinician/*.md
+          - contact/*.md
+          - developer/*.md
+          - integrator/*.md
+          - legal/*.md
+          - parents/*.md
+          - products/*.md
+          - researchers/*.md
+          - safety/*.md
+          - technical/*.md
   - macros
   - search
   - with-pdf:
