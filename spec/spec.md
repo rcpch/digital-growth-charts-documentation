@@ -74,7 +74,6 @@ The initial pages should assist users to find the part of the documentation that
 ## Goals
 
 - Comprehensive and totally open documentation
--
 
 ## Non-Goals
 

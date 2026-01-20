@@ -19,8 +19,8 @@ DEFAULT_PATHS=(docs spec README.md)
 
 if [ "$#" -gt 0 ]; then
   docker compose -f "$COMPOSE_FILE" --project-directory "$REPO_ROOT" run --rm mkdocs \
-    pymarkdown --config "$CONFIG_FILE_IN_CONTAINER" scan "$@"
+    pymarkdown --enable-extensions front-matter --config "$CONFIG_FILE_IN_CONTAINER" scan "$@"
 else
   docker compose -f "$COMPOSE_FILE" --project-directory "$REPO_ROOT" run --rm mkdocs \
-    pymarkdown --config "$CONFIG_FILE_IN_CONTAINER" scan "${DEFAULT_PATHS[@]}"
+    pymarkdown --enable-extensions front-matter --config "$CONFIG_FILE_IN_CONTAINER" scan "${DEFAULT_PATHS[@]}"
 fi
