@@ -1,6 +1,7 @@
 ---
 title: Technical Documentation
 reviewers: Dr Marcus Baw
+audience: clinical-safety, implementers
 ---
 
 # Technical Documentation for EU Medical Device Regulation

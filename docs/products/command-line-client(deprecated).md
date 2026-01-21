@@ -1,6 +1,7 @@
 ---
 title: RCPCHGrowth CLI Tool
 reviewers: Dr Marcus Baw, Dr Simon Chapman, Dr Anchit Chandran
+audience: developers, researchers
 ---
 
 # RCPCHGrowth CLI Tool ( :warning: deprecated)

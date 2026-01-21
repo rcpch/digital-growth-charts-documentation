@@ -1,6 +1,7 @@
 ---
 title: Declaration of Conformity
 reviewers: Dr Marcus Baw
+audience: clinical-safety, implementers
 ---
 
 # Declaration of Conformity (API Server)

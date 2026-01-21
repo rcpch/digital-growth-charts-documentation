@@ -1,6 +1,7 @@
 ---
 title: RCPCHGrowth Package
 reviewers: Dr Marcus Baw, Dr Simon Chapman, Dr Anchit Chandran
+audience: developers, researchers, academics
 ---
 
 {% set repository_name="rcpch/digital-growth-charts-react-component-library" -%}

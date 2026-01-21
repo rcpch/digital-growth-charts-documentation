@@ -1,6 +1,7 @@
 ---
 title: React Chart Component
 reviewers: Dr Marcus Baw, Dr Simon Chapman, Dr Anchit Chandran
+audience: developers
 ---
 
 ## Getting started

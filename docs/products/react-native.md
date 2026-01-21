@@ -1,6 +1,7 @@
 ---
 title: React Native Client
 reviewers: Dr Marcus Baw, Dr Simon Chapman, Dr Anchit Chandran
+audience: developers, integrators
 ---
 
 # React Native Client (experimental, pre-alpha)
