@@ -8,10 +8,11 @@ Built with:
 
 ## Getting Started
 
+Prerequisites: [Docker](https://www.docker.com/get-started) and [Docker Compose](https://docs.docker.com/compose/install/) installed.
+
 To get started developing locally, clone the repository and run:
 
 ```bash
-chmod +x s/*
 s/up
 ```
 
