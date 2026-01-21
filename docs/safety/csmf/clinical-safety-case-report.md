@@ -9,7 +9,7 @@ reviewers: Dr Marcus Baw
 
 | Version control                                                                                                                                                                                                                          |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| The revisions of this document are managed in the Git version control system and are visible by reviewing the Git commit log, which is here <https://github.com/rcpch/digital-growth-charts-documentation/commits/live/docs/safety/csmf> |
+| The latest revision of this document is recorded in commit {{ latest_commit_link("docs/safety/csmf/clinical-safety-case-report.md") }}. |
 
 | Reviewers        |                                                                   |
 | ---------------- | ----------------------------------------------------------------- |
@@ -53,7 +53,7 @@ A full description of the Clinical Risk Management System in place at the RCPCH 
 
 Clinical safety and risk management are well-embedded within the culture of the RCPCH and its Digital Incubator Team.
 
-The Clinical Risk Management File is currently maintained by the [Clinical Safety Officer](clinical-risk-mgmt-plan/#clinical-safety-officer), and contains all the relevant documentation related to the clinical safety of the RCPCH Digital Growth Charts Platform.
+The Clinical Risk Management File is currently maintained by the [Clinical Safety Officer](clinical-risk-mgmt-plan.md#clinical-safety-officer), and contains all the relevant documentation related to the clinical safety of the RCPCH Digital Growth Charts Platform.
 
 The Clinical Safety Officer (CSO) is responsible for clinical safety of RCPCH Digital Growth Charts Platform, through the application of clinical risk management procedure. The CSO is a suitably qualified and experienced clinician who holds current registration with their relevant professional body and has had appropriate training for this role. In the RCPCH the CSO role is held by one of the lead developers.
 
