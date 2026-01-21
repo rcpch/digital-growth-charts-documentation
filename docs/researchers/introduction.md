@@ -4,9 +4,9 @@ reviewers: Dr Simon Chapman
 audience: researchers
 ---
 
-# How to Use RCPCHGrowth in Research
+# How to Use RCPCHgrowth in Research
 
-It is common to need to calculate z-scores and centiles against children's growth measurements for datasets in research, and using the RCPCH API is not always possible, for example when operating inside a Secure Research Environment (SRE) or when working offline. The RCPCHGrowth python package can be installed inside a Trusted Research Environment or Secure Data Environment and the calculations can be run locally, using familiar tools like Jupyter Notebooks.
+It is common to need to calculate z-scores and centiles against children's growth measurements for datasets in research, and using the RCPCH API is not always possible, for example when operating inside a Secure Research Environment (SRE) or when working offline. The RCPCHgrowth python package can be installed inside a Trusted Research Environment or Secure Data Environment and the calculations can be run locally, using familiar tools like Jupyter Notebooks.
 
 ## Getting Started
 
@@ -16,7 +16,7 @@ The notebooks themselves are their own best documentation. To get them running t
 
 ### Python Environment
 
-Setting up a Python environment is discussed in detail [here](/docs/developer/api-python.md#managing-python-versions)
+Setting up a Python environment is discussed in detail [here](../developer/api-python#managing-python-versions)
 
 Once a virtual environment has been created, RCPCHGrowth can be installed directly:
 
@@ -38,7 +38,7 @@ import rcpchgrowth
 
 ### Docker
 
-The Docker setup helps you easily interact with the notebook examples provided by RCPCH. You will need Docker [installed](/docs/developer/api-python.md#api-docker.md)
+The Docker setup helps you easily interact with the notebook examples provided by RCPCH. You will need Docker [installed](../developer/api-python#api-docker.md)
 
 Then from the command line:
 

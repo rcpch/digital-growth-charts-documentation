@@ -5,7 +5,7 @@ reviewers: Dr Marcus Baw, Dr Anchit Chandran
 
 # Security
 
-Security is taken extremely seriously by this project and we are compliant with the [Data Security and Protection Toolkit (DSPT)](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-data-and-technology-standards/framework/beta---data-security-standards) which is part of latest NHS Digital Data Security Standards (see [DSPT](data-security-protection-toolkit.md) section for evidence).
+Security is taken extremely seriously by this project and we are compliant with the [Data Security and Protection Toolkit (DSPT)](https://www.dsptoolkit.nhs.uk/) which is part of latest NHS Digital Data Security Standards (see [DSPT](data-security-protection-toolkit.md) section for evidence).
 
 ## Deployment Security 'Code Chain'
 
@@ -51,9 +51,4 @@ Within these practices are also measures which ensure the deployed code is teste
 
 ### Cyber Essentials
 
-The RCPCH has been certified as compliant with the requirements of the Cyber Essentials scheme
-
-<object data="../../_assets/_pdfs/rcpch-cyber-essentials-certificate-exp-2025.pdf?#zoom=80&scrollbar=0&toolbar=0&navpanes=0" width="100%" height="650" type="application/pdf">
-  <p>If the PDF cannot be displayed inline here, it is available as a download from <a href="../../_assets/_pdfs/rcpch-cyber-essentials-certificate-exp-2025.pdf">this link</a>
-  </p>
-</object>
+The RCPCH has been certified as compliant with the requirements of the Cyber Essentials scheme. Cyber Essentials is a government-backed, industry-supported scheme to help organisations protect themselves against common online threats. The certification demonstrates our commitment to cyber security and provides assurance to our users that we take the protection of their data seriously.

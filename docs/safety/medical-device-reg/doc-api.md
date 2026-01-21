@@ -33,7 +33,7 @@ Server application code is located at <https://github.com/rcpch/digital-growth-c
 
 1. ### Technical file
 
-The complete unabridged technical file, all documentation, instructions for use, and the application source code itself are available publicly within this [RCPCH dGC documentation site](/) and the GitHub repository <https://github.com/rcpch/digital-growth-charts-server>.
+The complete unabridged technical file, all documentation, instructions for use, and the application source code itself are available publicly within this [RCPCH dGC documentation site](https://growth.rcpch.ac.uk) and the GitHub repository <https://github.com/rcpch/digital-growth-charts-server>.
 
 |                             |                                                                                 |
 | --------------------------- | ------------------------------------------------------------------------------- |

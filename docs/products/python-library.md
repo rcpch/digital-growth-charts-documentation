@@ -40,4 +40,4 @@ We'd be interested to hear from people who are using the RCPCHGrowth Python pack
 
 ## Contributing
 
-If you want to contribute to the project, please read the section on [Contributing](/docs/developer/contributing.md).
+If you want to contribute to the project, please read the section on [Contributing](../developer/contributing.md).

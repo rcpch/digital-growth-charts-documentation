@@ -32,7 +32,7 @@ Where datasets overlap, there are 2 ages at the junction, one from each of UK90 
 
 The PDF linked below was produced in 2012 to accompany the Down Syndrome charts. In due course, we will update and reformat the text and adapt the presentation for the API version of the charts. Note that the Down Syndrome AAP (USA) reference is also supported.
 
-[PDF Down Syndrome Chart Information (2012)](../_assets/_pdfs/2012-instructions-for-downs-syndrome-charts.pdf)
+[PDF Down Syndrome Chart Information (2012)](https://growth.rcpch.ac.uk/_assets/_pdfs/2012-instructions-for-downs-syndrome-charts.pdf)
 
 ## Centile Terminology
 

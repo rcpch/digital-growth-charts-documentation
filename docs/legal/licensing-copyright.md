@@ -58,10 +58,8 @@ Components which other organisations would benefit from being able to directly r
 | Tool / Framework / Library                                                       | License                                                                     |
 | -------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | [Python](https://github.com/python/cpython/blob/master/LICENSE)                  | [PSF License](https://directory.fsf.org/wiki/License:Python-2.0.1)          |
-| [Flask](https://github.com/opentracing-contrib/python-flask/blob/master/LICENSE) | [BSD 3-Clause License](https://directory.fsf.org/wiki/License:BSD-3-Clause) |
 | [FastAPI](https://github.com/tiangolo/fastapi#license)                           | [MIT License](https://directory.fsf.org/wiki/License:Expat)                 |
 | [React](https://github.com/facebook/react/blob/master/LICENSE)                   | [MIT License](https://directory.fsf.org/wiki/License:Expat)                 |
-| [React-Native](https://github.com/facebook/react-native/blob/master/LICENSE)     | [MIT License](https://directory.fsf.org/wiki/License:Expat)                 |
 | [MkDocs](https://github.com/squidfunk/mkdocs-material/blob/master/LICENSE)       | [MIT License](https://directory.fsf.org/wiki/License:Expat)                 |
 
 All the above licenses are compatible with the AGPL terms of the Digital Growth Charts API Server and Python package part of the project, and the MIT terms of the other parts.
@@ -69,4 +67,4 @@ All the above licenses are compatible with the AGPL terms of the Digital Growth 
 All the above projects remain the copyright of their respective owners.
 
 !!! quote "Further reading on Open Source"
-    **[Open Source is the Only Way For Medicine](https://medium.com/@marcus_baw/open-source-is-the-only-way-for-medicine-9e698de0447e)** - a blog post by one of the dGC team, Dr Marcus Baw, describes some reasons why open source is so fundamental for science and medicine in particular.
+    **[Open Source is the Only Way For Medicine](https://bawmedical.co.uk/t/open-source-is-the-only-way-for-medicine/80)** - a blog post by one of the dGC team, Dr Marcus Baw, describes some reasons why open source is so fundamental for science and medicine in particular.

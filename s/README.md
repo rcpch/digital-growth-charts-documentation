@@ -18,3 +18,7 @@ The `s/` directory contains some simple convenience scripts to speed up and stan
 - `s/spellcheck` runs `codespell` in Docker.
 	- `./s/spellcheck` checks the default docs/spec paths.
 	- `./s/spellcheck docs/about/team.md` checks a specific file.
+- `s/check-links` runs `mkdocs-linkcheck` in Docker.
+	- `./s/check-links` builds the site then checks local links in `site/`.
+	- `./s/check-links -r site` checks local + remote links.
+	- `./s/check-links --help` shows available options.

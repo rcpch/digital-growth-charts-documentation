@@ -45,7 +45,7 @@ See [Declaration of Confomity](doc-api.md)
 
 1. ### Label and instructions of use
 
-All instructions for use are contained within [this documentation website](/).
+All instructions for use are contained within [this documentation website](https://growth.rcpch.ac.uk).
 
 1. ### A statement of relevant regulations to which the product complies
 

@@ -61,7 +61,7 @@ NOTE: The UK-WHO Term reference is NOW DEPRECATED but still active on paper char
 ### Context
 
 [^1]. Weight, and head circumference at birth (gestations 23 to 43 weeks) and length at birth (gestations 26 to 43 weeks), computed from UK 1990 reference database and shown by week - UK90 preterm reference
-[^2]. This is the WHO standard for weight, BMI and head circumference from 2 weeks to 4 years, for length 2 weeks to 2 years and height 2-4 years. It is shown by week to 13 weeks and then by calendar month. It is exactly the same data as the LMS data included in the Z-score tables accessed from the WHO website [WHO](http://www.who.int/childgrowth/standards), except there is no birthweight.
+[^2]. This is the WHO standard for weight, BMI and head circumference from 2 weeks to 4 years, for length 2 weeks to 2 years and height 2-4 years. It is shown by week to 13 weeks and then by calendar month. It is exactly the same data as the LMS data included in the Z-score tables accessed from the WHO website [WHO](https://www.who.int/tools/child-growth-standards), except there is no birthweight.
 [^3]. CDC: runs from 2y to 20 y. From 0-2y the CDC interposes its own version of WHO (2006).
     - height / weight / BMI centiles 0-2 y (CDC) with extended BMI centiles included (published 2022)
     - height / weight / head circumference 0-2 y (WHO - US)
