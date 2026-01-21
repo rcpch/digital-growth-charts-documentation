@@ -6,7 +6,7 @@ site_description: Documentation for the RCPCH Digital Growth Charts Platform
 site_author: The Royal College of Paediatrics and Child Health
 site_url: https://growth.rcpch.ac.uk
 
-copyright: Copyright &copy; 2020 - 2025 Royal College of Paediatrics and Child Health (RCPCH)
+copyright: Copyright &copy; 2020-2026 Royal College of Paediatrics and Child Health (RCPCH)
 repo_url: https://github.com/rcpch/digital-growth-charts-documentation
 repo_name: rcpch/documentation
 edit_uri: edit/live/docs
@@ -206,6 +206,10 @@ markdown_extensions:
   - pymdownx.superfences
   - toc:
       permalink: true
+
+validation:
+  links:
+    unrecognized_links: ignore
 
 extra_css:
   - _assets/_stylesheets/extra.css
