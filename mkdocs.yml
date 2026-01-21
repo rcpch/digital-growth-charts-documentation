@@ -157,7 +157,8 @@ plugins:
           - researchers/*.md
           - safety/*.md
           - technical/*.md
-  - macros
+  - macros:
+      module_name: main
   - search
   - with-pdf:
       cover_title: RCPCH Digital Growth Charts
