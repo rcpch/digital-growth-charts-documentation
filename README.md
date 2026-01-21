@@ -8,13 +8,15 @@ Built with:
 
 ## Getting Started
 
-Prerequisites: [Docker](https://www.docker.com/get-started) and [Docker Compose](https://docs.docker.com/compose/install/) installed.
+Prerequisites: [Docker Engine](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/).
 
 To get started developing locally, clone the repository and run:
 
 ```bash
 s/up
 ```
+
+This `s/` script will set up the Docker containers needed to build and serve the documentation site locally. Once running, the documentation site will be available at <http://localhost:8001>, which should open in a browser automatically for you.
 
 All other documentation regarding developing the documentation site can be found in `docs/developer/writing-documentation.md` or at <https://growth.rcpch.ac.uk/developer/writing-documentation>
 
