@@ -211,6 +211,7 @@ extra_css:
 
 # footer links and variables
 extra:
+  pdf_export: !ENV [ENABLE_PDF_EXPORT, false]
   social:
     - icon: fontawesome/brands/discourse
       link: https://forum.rcpch.tech

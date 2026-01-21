@@ -1,0 +1,19 @@
+/* PDF-only overrides for mkdocs-with-pdf */
+
+/* WeasyPrint doesn't support CSS grid; flatten grid layouts for PDF */
+.md-typeset .grid,
+.md-typeset .grid.cards {
+  display: block !important;
+  grid-template-columns: none !important;
+  gap: 0 !important;
+}
+
+.md-typeset .grid > * {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+
+/* Hide external SVG badges in PDF output */
+img[src*="img.shields.io"] {
+  display: none !important;
+}

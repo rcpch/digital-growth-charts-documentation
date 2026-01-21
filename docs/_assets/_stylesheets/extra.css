@@ -158,6 +158,21 @@ button {
 
 /* IFRAMES FOR EMBEDS */
 
+/* PDF: avoid CSS grid layouts that WeasyPrint cannot render */
+@media print {
+  .md-typeset .grid,
+  .md-typeset .grid.cards {
+    display: block !important;
+    grid-template-columns: none !important;
+    gap: 0 !important;
+  }
+
+  .md-typeset .grid > * {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+}
+
 /* iframes should be centred and without margin */
 iframe {
   border: 0;
