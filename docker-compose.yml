@@ -7,9 +7,13 @@ services:
     environment:
       - ENABLE_PDF_EXPORT=0 # Makes PDF export an option, default disabled for local dev
       - ENABLE_GIT_COMMITTERS=True # Makes git-committers an option, default enabled
+      # WATCHDOG_* may be able to be reverted once Mkdocs/Click bug is fixed.
+      # https://github.com/mkdocs/mkdocs/issues/4055
+      - WATCHDOG_USE_POLLING=1 # Ensure file change detection works with bind mounts
+      - WATCHDOG_POLLING_INTERVAL=1
     volumes:
       - .:/app
     ports:
       - 8001:8000 # MkDocs will be accessible at localhost:8001
-    command: sh -c "mkdocs serve --dev-addr=0.0.0.0:8000"
+    command: sh -c "mkdocs serve --dev-addr=0.0.0.0:8000 --livereload"
     restart: always
