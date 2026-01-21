@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -v  # Enable verbose mode
+set -e  # Exit on error
+
+# scripts may need to be made executable on some platforms before they can be run
+# chmod +x s/check-links
+
+# Runs mkdocs-linkcheck inside the mkdocs docker container.
+# Usage:
+#   s/check-links              # checks links in docs/
+#   s/check-links <args...>    # passes extra args to mkdocs-linkcheck
+
+docker compose  run --rm \
+  mkdocs \
+  sh -c "mkdocs-linkcheck -r docs $*"
+
