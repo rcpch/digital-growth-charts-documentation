@@ -1,0 +1,28 @@
+#!/bin/bash
+
+set -v  # Enable verbose mode
+set -e  # Exit on error
+
+# scripts may need to be made executable on some platforms before they can be run
+# chmod +x s/check-links
+
+# Runs mkdocs-linkcheck inside the mkdocs docker container.
+# Usage:
+#   s/check-links              # builds then checks links in site/
+#   s/check-links <args...>    # passes extra args to mkdocs-linkcheck
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+COMPOSE_FILE="$REPO_ROOT/docker-compose.yml"
+if [ "$#" -gt 0 ]; then
+  docker compose -f "$COMPOSE_FILE" --project-directory "$REPO_ROOT" run --rm \
+    -e AIOHTTP_MAX_HEADER_SIZE=16384 \
+    -e AIOHTTP_MAX_LINE_SIZE=16384 \
+    mkdocs \
+    sh -c "mkdocs build --clean && mkdocs-linkcheck -r docs $*"
+else
+  docker compose -f "$COMPOSE_FILE" --project-directory "$REPO_ROOT" run --rm \
+    -e AIOHTTP_MAX_HEADER_SIZE=16384 \
+    -e AIOHTTP_MAX_LINE_SIZE=16384 \
+    mkdocs \
+    sh -c "mkdocs build --clean && mkdocs-linkcheck -r docs"
+fi

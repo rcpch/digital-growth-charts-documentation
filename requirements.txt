@@ -23,3 +23,6 @@ codespell
 
 # markdown linting
 pymarkdownlnt
+
+# link checking for MkDocs
+mkdocs-linkcheck
