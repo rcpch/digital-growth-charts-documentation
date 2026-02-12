@@ -54,7 +54,7 @@ Within these practices are also measures which ensure the deployed code is teste
 
 The RCPCH has been certified as compliant with the requirements of the Cyber Essentials scheme. Cyber Essentials is a government-backed, industry-supported scheme to help organisations protect themselves against common online threats. The certification demonstrates our commitment to cyber security and provides assurance to our users that we take the protection of their data seriously.
 
-<object data="../../_assets/_pdfs/rcpch-cyber-essentials-certificate-exp-2025.pdf?#zoom=80&scrollbar=0&toolbar=0&navpanes=0" width="100%" height="650" type="application/pdf">
-  <p>If the PDF cannot be displayed inline here, it is available as a download from <a href="../../_assets/_pdfs/rcpch-cyber-essentials-certificate-exp-2025.pdf">this link</a>
+<object data="../../_assets/_pdfs/rcpch-cyber-essentials-certificate-exp-2026.pdf?#zoom=80&scrollbar=0&toolbar=0&navpanes=0" width="100%" height="650" type="application/pdf">
+  <p>If the PDF cannot be displayed inline here, it is available as a download from <a href="../../_assets/_pdfs/rcpch-cyber-essentials-certificate-exp-2026.pdf">this link</a>
   </p>
 </object>
