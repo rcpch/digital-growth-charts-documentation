@@ -8,9 +8,9 @@ audience: clinical-safety, clinicians, implementers
 
 ## Document Controls
 
-| Version control                                                                                                                                                                                                                          |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| The latest revision of this document is recorded in commit {{ latest_commit_link("docs/safety/csmf/clinical-safety-case-report.md") }}. |
+| Version control                                                                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| The latest revision of this document is recorded in the commit history here: <https://github.com/rcpch/digital-growth-charts-documentation/commits/live/docs/safety/csmf>. |
 
 | Reviewers        |                                                                   |
 | ---------------- | ----------------------------------------------------------------- |
@@ -40,7 +40,7 @@ docs/_assets/_snippets/dgc-platform-comprises.md
 The RCPCH Digital Growth Charts Platform is intended to be deployed within other systems, principally Electronic Patient Records (EPRs), Electronic Health Records (EHRs), Personal Health Records (PHRs), and other software platforms. **ONLY The commercial subscription API service provided by the RCPCH is warranted to have undergone the testing and assurance described in this document.**
 
 !!! warning "DISCLAIMER"
-    **If using the API service in any other 'unofficial' way, such as self-hosting, reverse-engineering, or misusing internal dGC components outwith the RCPCH Platform - this is deemed to be usage outwith any provisions of this document. The RCPCH Clinical Safety Officer expressly disclaims any responsibility for usage of the RCPCH dGC Platform outwith of its intended commercial use.**
+**If using the API service in any other 'unofficial' way, such as self-hosting, reverse-engineering, or misusing internal dGC components outwith the RCPCH Platform - this is deemed to be usage outwith any provisions of this document. The RCPCH Clinical Safety Officer expressly disclaims any responsibility for usage of the RCPCH dGC Platform outwith of its intended commercial use.**
 
 The intended user of these digital growth charts is a healthcare professional with sufficient training and knowledge to be able to understand the meaning of the values or charts displayed. Although growth charts have been present in the Red Book for parents to see for many years, parents are unlikely to have the understanding of the charts to operate or interpret the charts independently. Parents may freely be given access to charts but the interpretation of a growth trend remains a clinician task.
 
@@ -120,8 +120,6 @@ RCPCH endeavours to ensure that implementer organisations have appropriate suppo
 ---
 
 ### Hazard: Incorrect centile data is _returned by_ the API
-
-
 
 #### Description of initial Risk and mitigation steps
 
