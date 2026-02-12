@@ -21,10 +21,10 @@ Though the UK 1990 data spans 23 weeks gestation to 20 years old, it also includ
 
 The final dataset has 4 parts:
 
-  1. Pre-term (up to 42 weeks)
-  2. Infants (under 2 years)
-  3. WHO 2006 children (< 4 years)
-  4. UK 1990 children (4 years - 20 years)
+1. Pre-term (up to 42 weeks)
+2. Infants (under 2 years)
+3. WHO 2006 children (< 4 years)
+4. UK 1990 children (4 years - 20 years)
 
 Where datasets overlap, there are 2 ages at the junction, one from each of UK90 and WHO 2006. There is a purposeful step at the junction between the data sets. There is an additional step at 2 y in height/length where children go from being measured lying down to standing up.
 
@@ -32,7 +32,7 @@ Where datasets overlap, there are 2 ages at the junction, one from each of UK90 
 
 The PDF linked below was produced in 2012 to accompany the Down Syndrome charts. In due course, we will update and reformat the text and adapt the presentation for the API version of the charts. Note that the Down Syndrome AAP (USA) reference is also supported.
 
-[PDF Down Syndrome Chart Information (2012)](https://growth.rcpch.ac.uk/_assets/_pdfs/2012-instructions-for-downs-syndrome-charts.pdf)
+[PDF Down Syndrome Chart Information (2012)](../_assets/_pdfs/2012-instructions-for-downs-syndrome-charts.pdf)
 
 ## Centile Terminology
 
@@ -46,10 +46,7 @@ Being very small or very big can sometimes be associated with underlying illness
 
 Anyone who measures a child, plots or interprets charts should be suitably trained, or be supervised by someone qualified to do so. For further information and training materials, see the [RCPCH website](https://www.rcpch.ac.uk/resources/uk-who-growth-charts-guidance-health-professionals).
 
-!!! tip "Clothing and nappies"
-    - When measuring children **up to 2 years**, remove all clothes and nappy.
-    - Children **older than 2 years** should wear minimal clothing only.
-    - Always remove the child's shoes.
+!!! tip "Clothing and nappies" - When measuring children **up to 2 years**, remove all clothes and nappy. - Children **older than 2 years** should wear minimal clothing only. - Always remove the child's shoes.
 
 - Weight: use only Class III clinical electronic scales in metric setting.
 - Length: (before 2 years of age): proper equipment is essential (length board or mat). Measurers should be trained.
@@ -71,7 +68,7 @@ Weights measured too close together may be misleading, but if there are concerns
 
 ### When to measure length or height?
 
-Length or height should be measured whenever there are any worries about a child’s weight gain, growth or general health. Measure length until age 2; measure height after age 2.  A child’s height is usually slightly less than their length.
+Length or height should be measured whenever there are any worries about a child’s weight gain, growth or general health. Measure length until age 2; measure height after age 2. A child’s height is usually slightly less than their length.
 
 ### How to assess weight loss after birth?
 
@@ -108,14 +105,14 @@ If any of the following occur:
 
 ### How do SDS charts work?
 
-Centiles are derived mathematically from standard deviation scores (SDS), also known as z scores. These values in turn are related to p values - the probability of finding a child with a given measurement in a sample. An SDS of 0 equates to the 50th centile, with positive values relating to centiles above this, and a negative value relating to centiles below. The benefit of reporting and charting SDS rather than centiles is that values can all be plotted on the same chart. It is important to note that plotting the z score against age must be against the *corrected* age, not the *chronological* one, as the chart otherwise becomes crowded and hard to interpret.
+Centiles are derived mathematically from standard deviation scores (SDS), also known as z scores. These values in turn are related to p values - the probability of finding a child with a given measurement in a sample. An SDS of 0 equates to the 50th centile, with positive values relating to centiles above this, and a negative value relating to centiles below. The benefit of reporting and charting SDS rather than centiles is that values can all be plotted on the same chart. It is important to note that plotting the z score against age must be against the _corrected_ age, not the _chronological_ one, as the chart otherwise becomes crowded and hard to interpret.
 
 ## Calculations as yet not implemented in the API
 
 ### Weight–height to BMI conversion chart
 
-![formula](https://latex.codecogs.com/svg.image?BMI&space;=&space;weight\;in\;kg/(height\;in\;m)^2)
-BMI indicates how heavy a child is relative to his or her height and is the simplest measure of thinness and fatness from the age of 2, when height can be measured fairly accurately.  In a child over 2 years of age, the BMI centile is a better indicator of overweight or underweight than the weight centile; a child whose weight is average for their height will have a BMI between the 25th and 75th centiles, whatever their height centile. BMI above the 91st centile suggests that the child is overweight; a child above the 98th centile is very overweight (clinically obese). BMI below the 2nd centile is unusual and may reflect under-nutrition.
+![formula](<https://latex.codecogs.com/svg.image?BMI&space;=&space;weight;in;kg/(height;in;m)^2>)
+BMI indicates how heavy a child is relative to his or her height and is the simplest measure of thinness and fatness from the age of 2, when height can be measured fairly accurately. In a child over 2 years of age, the BMI centile is a better indicator of overweight or underweight than the weight centile; a child whose weight is average for their height will have a BMI between the 25th and 75th centiles, whatever their height centile. BMI above the 91st centile suggests that the child is overweight; a child above the 98th centile is very overweight (clinically obese). BMI below the 2nd centile is unusual and may reflect under-nutrition.
 
 ### Percentage median BMI
 
@@ -132,4 +129,4 @@ An further improvement on the paper charts has been to render the mid-parental h
 Parents like to know how tall their child will be as an adult. The child’s most recent height centile (aged 2–4 years) gives a good idea of this for healthy children. Plot this centile on the adult height predictor to the right of the height chart to find the average adult height for children on this centile. This will predict the child’s adult height based on their current height, but with a regression adjustment to allow for the tendency of very tall and short children to be less extreme in height as adults. Four out of five children will have adult heights that are within ± 6cm of this value.
 
 !!! info
-    Adult Height Prediction is an upcoming feature of the Digital Growth Chart API
+Adult Height Prediction is an upcoming feature of the Digital Growth Chart API
