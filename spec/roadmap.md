@@ -1,0 +1,22 @@
+# 2026 Documentation Review Roadmap
+
+- [x] Review all docs files to create generalised high-level features (`spec.md`), implementation guidances (`implementation.md`), and style guide (`style-guide.md`) for the RCPCH Digital Growth Charts platform documentation.
+- [x] Audit all docs files for compliance with the `spec/style-guide.md` and create this roadmap of changes that will improve the docs site to meet those standards.
+- [x] Add further convenience scripts to `s/` as needed to help with documentation development and maintenance.
+- [x] Add dependabot configuration to keep documentation dependencies up to date.
+- [x] Add linting and spellchecking scripts to make it easier to use these consistently and regularly.
+- [x] Run linting and spellchecking across all docs files and fix any issues found.
+ - <https://github.com/rcpch/digital-growth-charts-documentation/issues>
+- [x] Add automated `LLMs.txt` generation to the build output to meet `spec/spec.md` requirements. There is a plugin for MkDocs at <https://github.com/pawamoy/mkdocs-llmstxt> which should help achieve this goal.
+- [x] Expand the home page audience routing in `rcpch-theme/overrides/home.html` to include parents/carers, researchers, and safety/compliance audiences, not just integrators/clinicians/contributors.
+- [x] Add missing `audience` frontmatter to content pages with no existing `audience` field.
+- [ ] Add missing `reviewers` frontmatter to `docs/index.md` and `docs/safety/download.md`.
+- [ ] Add short purpose/intro paragraphs where pages currently jump straight to embeds or snippets: `docs/integrator/api-reference.md`, `docs/technical/status.md`, `docs/safety/download.md`, `docs/legal/disclaimer.md`.
+- [ ] Update `docs/developer/writing-documentation.md` to explicitly cover markdown linting, UK English spelling, and running `s/codespell` per `spec/implementation.md`.
+- [ ] Audit duplicated content across audience sections (clinicians/parents/integrators) and replace repeats with shared snippets and cross-links, per `spec/spec.md` non-goal.
+- [ ] Investigate whether PDF export can be constrained to specific parts of the documentation.
+- [ ] Dark mode?
+- [ ] Review the Medical Device Regulation technical documentation in `docs/safety/medical-device-reg/mdr-technical-docs.md` for compliance with recent EU MDR updates.
+- [ ] Review the Clinical Safety Management File documents in `docs/safety/csmf/` 
+- [ ] Hero section - width should match rest of site? Reduce size of text. Add some more interesting RCPCH colours? Make the hero dismissible.
+- [ ] Institute some 'point' regression testing for key items of content, to help identify missing content caused by upstream framework bugs etc.

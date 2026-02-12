@@ -8,7 +8,7 @@ audience: all
 
 ## Clinical Acknowledgements
 
-- Prof Tim Cole and the [RCPCH Digital Growth Charts Project Board](../../about/team/#project-board) for their invaluable specialist advice and guidance during the process of transforming paper growth charts into digital.
+- Prof Tim Cole and the [RCPCH Digital Growth Charts Project Board](../../about/team#project-board) for their invaluable specialist advice and guidance during the process of transforming paper growth charts into digital.
 
 ## Additional Contributors
 

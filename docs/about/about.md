@@ -28,7 +28,7 @@ To help you implement the API, our team has built reference implementations and 
 
 ## Videos :material-video-vintage:
 
-We now have a series of videos explaining the Digital Growth Charts, these are now on their own page at[Videos](videos.md).
+We now have a series of videos explaining the Digital Growth Charts, these are now on their own page at [Videos](videos.md).
 
 ## Current Scope :fontawesome-solid-binoculars:
 

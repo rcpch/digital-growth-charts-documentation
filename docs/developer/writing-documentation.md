@@ -46,7 +46,7 @@ More experienced coders can `git clone` the repo and make changes offline on the
 
 ### Setting up a development environment for the dGC documentation site
 
-For all platforms we recommmend using the `docker compose` setup, which will run the MkDocs site in a Docker container, so you don't need to install Python or MkDocs locally. This is the easiest way to get started.
+For all platforms we recommend using the `docker compose` setup, which will run the MkDocs site in a Docker container, so you don't need to install Python or MkDocs locally. This is the easiest way to get started, and it isolates your local development environment from any conflicting dependencies.
 
 #### Prerequisites
 

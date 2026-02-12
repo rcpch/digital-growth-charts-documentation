@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -v  # Enable verbose mode
+set -e  # Exit on error
+
+# scripts may need to be made executable on some platforms before they can be run
+# chmod +x s/markdownlint
+
+# Runs a Markdown linter (pymarkdown) inside the mkdocs docker container.
+# Usage:
+#   s/markdownlint              # checks default paths
+#   s/markdownlint <paths...>   # checks only the given paths/files
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+COMPOSE_FILE="$REPO_ROOT/docker-compose.yml"
+CONFIG_FILE_IN_CONTAINER=/app/.pymarkdown.yml
+
+DEFAULT_PATHS=(docs spec README.md)
+
+if [ "$#" -gt 0 ]; then
+  docker compose -f "$COMPOSE_FILE" --project-directory "$REPO_ROOT" run --rm mkdocs \
+    pymarkdown --enable-extensions front-matter --config "$CONFIG_FILE_IN_CONTAINER" scan "$@"
+else
+  docker compose -f "$COMPOSE_FILE" --project-directory "$REPO_ROOT" run --rm mkdocs \
+    pymarkdown --enable-extensions front-matter --config "$CONFIG_FILE_IN_CONTAINER" scan "${DEFAULT_PATHS[@]}"
+fi

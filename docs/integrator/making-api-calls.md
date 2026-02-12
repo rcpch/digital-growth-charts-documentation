@@ -30,7 +30,6 @@ Copy and paste the following cURL request into your command line, inserting your
 
 ```bash hl_lines="3"
 curl --location --request POST 'https://api.rcpch.ac.uk/growth/v1/uk-who/calculation' \
---header 'Origin: https://growth.rcpch.ac.uk/' \
 --header 'Subscription-Key: YOUR_PRIMARY_API_KEY_GOES_HERE' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -61,7 +60,6 @@ The response should be a large JSON response like the following (truncated):
 
 ```bash hl_lines="19"
 curl --location --request POST 'https://api.rcpch.ac.uk/growth/v1/uk-who/calculation' \
---header 'Origin: https://growth.rcpch.ac.uk/' \
 --header 'Subscription-Key: YOUR_PRIMARY_API_KEY_GOES_HERE' \
 --header 'Content-Type: application/json' \
 --data-raw '{

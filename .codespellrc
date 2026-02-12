@@ -1,0 +1,23 @@
+[codespell]
+# Keep the default dictionary; tune it for this repo.
+
+# Avoid scanning binary/assets that generate garbage OCR-like tokens.
+skip =
+    *.pdf,
+    *.png,
+    *.jpg,
+    *.jpeg,
+    *.gif,
+    *.svg,
+    docs/_assets/_pdfs/*,
+    docs/_assets/_images/*,
+    site/*,
+    .git/*
+
+# Project-specific words/acronyms that codespell otherwise flags.
+# (Add to this list as you encounter legitimate terms.)
+ignore-words-list =
+    EHR,
+    ehr,
+    Wight,
+    wight

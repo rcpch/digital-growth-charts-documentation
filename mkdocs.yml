@@ -6,7 +6,7 @@ site_description: Documentation for the RCPCH Digital Growth Charts Platform
 site_author: The Royal College of Paediatrics and Child Health
 site_url: https://growth.rcpch.ac.uk
 
-copyright: Copyright &copy; 2020 - 2025 Royal College of Paediatrics and Child Health (RCPCH)
+copyright: Copyright &copy; 2020-2026 Royal College of Paediatrics and Child Health (RCPCH)
 repo_url: https://github.com/rcpch/digital-growth-charts-documentation
 repo_name: rcpch/documentation
 edit_uri: edit/live/docs
@@ -34,7 +34,6 @@ nav:
       - "products/python-library.md"
       - "products/google-sheets-plugin.md"
       - "products/flutter-app.md"
-      - "products/react-native.md"
   - Integrators:
       - "integrator/getting-started.md"
       - "integrator/making-api-calls.md"
@@ -141,7 +140,24 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: false
       type: date
-  - macros
+  - llmstxt:
+      full_output: llms-full.txt
+      sections:
+        documentation:
+          - index.md
+          - about/*.md
+          - clinician/*.md
+          - contact/*.md
+          - developer/*.md
+          - integrator/*.md
+          - legal/*.md
+          - parents/*.md
+          - products/*.md
+          - researchers/*.md
+          - safety/*.md
+          - technical/*.md
+  - macros:
+      module_name: main
   - search
   - with-pdf:
       cover_title: RCPCH Digital Growth Charts
@@ -190,11 +206,16 @@ markdown_extensions:
   - toc:
       permalink: true
 
+validation:
+  links:
+    unrecognized_links: ignore
+
 extra_css:
   - _assets/_stylesheets/extra.css
 
 # footer links and variables
 extra:
+  pdf_export: !ENV [ENABLE_PDF_EXPORT, false]
   social:
     - icon: fontawesome/brands/discourse
       link: https://forum.rcpch.tech

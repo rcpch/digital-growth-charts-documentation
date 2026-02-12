@@ -35,7 +35,7 @@ You can see and test out the charts on our live demo site: [growth.rcpch.ac.uk](
 
 This is the API 'calculation engine' extracted out of the API so that it can be used as a standalone utility in other Python programs, such as in large-scale growth research or academia.
 
-### [The Digital Growth Charts command line utility](../products/command-line-client.md)
+### [The Digital Growth Charts command line utility](../products/command-line-client(deprecated).md)
 
 This is a CLI which wraps the `rcpch-python` package. It makes it easy to use the growth calculation functions of the python packages in the command line.
 

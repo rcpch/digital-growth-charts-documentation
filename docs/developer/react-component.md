@@ -1,6 +1,7 @@
 ---
 title: React Chart Component
 reviewers: Dr Marcus Baw, Dr Simon Chapman, Dr Anchit Chandran
+audience: developers
 ---
 
 ## Getting started
@@ -41,7 +42,7 @@ This library has been written in Typescript. The main component is `<RCPCHChart>
 
 Documentation for this has moved into the [Storybook](https://live--6732292d6f3624b0036f84b4.chromatic.com/?path=/docs/rcpchchart--docs)
 
-The RCPCH Digital Growth Charts React Component Library supports both Centile Charts and SDS Charts. Each chart is created on instantiation for the `<RCPCHChart />` component with the relevent props. Note that there needs to be a single instance of the component for each chart rendered - for example, if height and weight charts are requested, two instances of the component are required.
+The RCPCH Digital Growth Charts React Component Library supports both Centile Charts and SDS Charts. Each chart is created on instantiation for the `<RCPCHChart />` component with the relevant props. Note that there needs to be a single instance of the component for each chart rendered - for example, if height and weight charts are requested, two instances of the component are required.
 
 More detail on props, particularly for themes or individual styles, is found in the Storybook docs. RCPCH provide 4 supported themes that include the traditional pink and blue charts, a monochrome theme as well as themes in line with RCPCH colours. For those who have more specific requirements, a custom theme is also provided where developers can override individual styles.
 

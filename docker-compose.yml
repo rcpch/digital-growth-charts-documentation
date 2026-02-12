@@ -11,5 +11,5 @@ services:
       - .:/app
     ports:
       - 8001:8000 # MkDocs will be accessible at localhost:8001
-    command: sh -c "mkdocs serve --dev-addr=0.0.0.0:8000"
+    command: sh -c "mkdocs serve --dev-addr=0.0.0.0:8000 --livereload"
     restart: always

@@ -26,7 +26,7 @@ The references included are:
 
 1. UK90 dataset – runs from 23 weeks to 20 years
 2. WHO 2006 standard – runs from 2 weeks to 4 years
-3. WHO 2007 standar - runs from 5 - 19 y
+3. WHO 2007 standard - runs from 5 - 19 y
 4. Down reference (both UK 2002 and US 2015 references)
 5. Turner reference
 6. CDC (US) reference - comprises a US interpretation of WHO 2006 0-2y, CDC 2-20y. It also has extended BMI centiles which reinterpret z score calculation above the 95th centile.
@@ -353,7 +353,7 @@ There is an endpoint in the API which calls this function and returns the chart 
 
 #### Mid-Parental Height
 
-Functions that relate to this are found in `mid_parental_height.py`. Methodology is documented in [this paper](https://pubmed.ncbi.nlm.nih.gov/10451401/) and involves taking the mean of parental height z scores and applying a regression factor (0.5). This corrects for the well-recognised concept of regression to the mean, where by parents who are either very tall or very short have a tendancy to have children whose heights are less extreme. The simplified calculation therefore is: (MatHtz +PatHtz)/4
+Functions that relate to this are found in `mid_parental_height.py`. Methodology is documented in [this paper](https://pubmed.ncbi.nlm.nih.gov/10451401/) and involves taking the mean of parental height Z-scores and applying a regression factor (0.5). This corrects for the well-recognised concept of regression to the mean, where by parents who are either very tall or very short have a tendency to have children whose heights are less extreme. The simplified calculation therefore is: (MatHtz +PatHtz)/4
 
 This is reported as a centile and SDS as well as absolute value, with values approximately 2 centiles either side. This is because the same paper found that 90% of children of parents fell within 2 centiles of the mid-parental height centile. In the chart, this is rendered as a three centile lines (upper, mph and lower) over the latest measurement if present.
 
