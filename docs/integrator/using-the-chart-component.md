@@ -50,10 +50,10 @@ It is common in healthcare environments not to be able to use frameworks like Re
         <!-- RCPCH Growth Charts library -->
         <!-- You must use the integrity check to ensure you are using the expected code as this component   -->
         <!-- can render patient data. You can get the value from this file, adjusting the version as needed -->
-        <!-- https://cdn.jsdelivr.net/npm/@rcpch/digital-growth-charts-react-component-library@7.4.0/build/sri-hash.txt -->
+        <!-- https://cdn.jsdelivr.net/npm/@rcpch/digital-growth-charts-react-component-library@7.5.0/build/sri-hash.txt -->
         <script 
-            src="https://cdn.jsdelivr.net/npm/@rcpch/digital-growth-charts-react-component-library@7.4.0/build/rcpch-digital-growth-charts.umd.min.js" 
-            integrity="sha384-qi0VLSTriOa9dh7dMVRCLR5nZlgrNGrccCX6Xiw+4hvfeVTVXClhoiqViE2IFoPe" 
+            src="https://cdn.jsdelivr.net/npm/@rcpch/digital-growth-charts-react-component-library@7.5.0/build/rcpch-digital-growth-charts.umd.min.js" 
+            integrity="sha384-yu1MIbRclkM3UCyciRAULihnERx26NqFKjP/EuddYVumiom3Oy5p9KBGSUHABc8g" 
             crossorigin="anonymous"
             defer>
         </script>
