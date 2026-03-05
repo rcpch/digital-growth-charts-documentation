@@ -6,69 +6,58 @@
     padding: 0.3rem 0 0;
   }
 
-  /* Blue box needs position:relative so the arrow can be absolute inside it.
-     Override extra.css padding: 3em — we restore spacing inside .hero-collapsible
-     so the collapsed state is a thin bar, not a large empty box. */
+  /* Blue box: constrained width, centred text, relative for the hide button */
   .mdx-hero__content {
     position: relative;
     text-align: center;
     padding: 1rem 3em;
   }
 
-  /* Hide the toggle checkbox */
-  .hero-toggle {
-    display: none;
-  }
-
-  /* Arrow button: absolutely positioned top-right inside the blue box */
-  .hero-fold-btn {
-    position: absolute;
-    top: 0.7em;
-    right: 0.8em;
-    cursor: pointer;
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 0.8em;
-    line-height: 1;
-    padding: 0.25em 0.4em;
-    user-select: none;
-    border-radius: 0.2em;
-  }
-  .hero-fold-btn:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.15);
-  }
-  .hero-fold-btn::after {
-    content: "▼";
-  }
-
-  /* When unchecked: hide body content and flip arrow */
-  .hero-toggle:not(:checked) ~ .hero-fold-btn::after {
-    content: "◀";
-  }
-  .hero-toggle:not(:checked) ~ .hero-collapsible {
-    display: none;
-  }
-
-  /* h2 and p inside hero-collapsible are not direct children of mdx-hero__content,
-     so the white-text rule in extra.css won't reach them — override here */
-  .mdx-hero__content .hero-collapsible h2,
-  .mdx-hero__content .hero-collapsible p {
+  /* h2 and p are not direct children of mdx-hero__content so extra.css
+     white-text rule won't reach them — override here */
+  .mdx-hero__content h2,
+  .mdx-hero__content p {
     color: #ffffff;
   }
 
-  /* Suppress the large md-typeset top margin on the h2 */
-  .mdx-hero__content .hero-collapsible h2 {
+  /* Suppress the large md-typeset default top margin on the h2 */
+  .mdx-hero__content h2 {
     margin-top: 0.4em;
   }
 
-  /* Restore bottom spacing; no extra top padding needed */
-  .hero-collapsible {
-    padding: 0 0 0.75em;
+  /* Bottom spacing below the buttons */
+  .mdx-hero__content .hero-body {
+    padding-bottom: 0.75em;
   }
 
   /* Margin adjustments for hero buttons */
   .md-typeset .mdx-hero__content .md-button {
     margin: 0.3rem 0.35rem;
+  }
+
+  /* 'hide' link: small, top-right corner of the blue box */
+  .hero-hide-btn {
+    position: absolute;
+    top: 0.5em;
+    right: 0.7em;
+    font-size: 0.7em;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0.2em 0.4em;
+    border-radius: 0.2em;
+    user-select: none;
+  }
+  .hero-hide-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.15);
+    text-decoration: none;
+  }
+
+  /* Hide the empty main content area (sidebar + content column) on the home page.
+     All content is in the tabs block above; md-main has nothing to show here. */
+  .md-main {
+    display: none;
   }
 
   /* Hides demo iframe on small screens */
@@ -82,13 +71,6 @@
     }
   }
 
-  .container {
-    margin-left: 100px;
-    margin-right: 100px;
-    display: flex;
-    justify-content: space-between;
-  }
-
   #demo-iframe {
     width: 95%;
     height: 1100px;
@@ -96,20 +78,14 @@
 </style>
 
 <section class="hero-section">
-  <div class="md-grid">
+  <div class="md-grid" id="hero-section">
     <div class="mdx-hero__content md-typeset">
-      <!-- Hidden checkbox drives the fold toggle via CSS ~ combinator -->
-      <input type="checkbox" id="hero-toggle" class="hero-toggle" checked />
 
-      <!-- Arrow label: absolutely positioned top-right inside the blue box -->
-      <label
-        for="hero-toggle"
-        class="hero-fold-btn"
-        aria-label="Toggle introduction"
-      ></label>
+      <a class="hero-hide-btn"
+         onclick="document.getElementById('hero-section').style.display='none'; return false;"
+         aria-label="Hide introduction">hide</a>
 
-      <!-- Collapsible body: heading + text + buttons all fold together -->
-      <div class="hero-collapsible">
+      <div class="hero-body">
         <h2>'Best Practice As Code' by the RCPCH.</h2>
         <p>
           Expert-built child growth API. Accurate centile and SDS calculations,
@@ -167,6 +143,7 @@
           Clinical Safety
         </a>
       </div>
+
     </div>
   </div>
 

@@ -6,32 +6,32 @@ This file documents issues and compatibility concerns identified during the migr
 
 | File | Change |
 |------|--------|
-| `requirements.txt` | Replaced `mkdocs-material` with `zensical` |
-| `mkdocs.yml` | Removed `theme.name: material`; added `theme.variant: classic`; updated emoji module paths to `zensical.extensions.emoji.*` |
-| `docker-compose.yml` | Replaced `mkdocs serve` with `zensical serve` |
-| `.github/workflows/ALL-BRANCHES-ALL-PRs-build-and-deploy-to-azure.yml` | Replaced `mkdocs build` with `zensical build --clean` |
-| `Dockerfile` | Updated comment |
-| `docs/developer/writing-documentation.md` | Updated all MkDocs/Material CLI and wording references |
+| `requirements.txt` | Replaced `mkdocs-material` with `zensical`; suspended incompatible plugins with tracking comments |
+| `mkdocs.yml` | Removed `theme.name: material`; added `theme.variant: classic`; updated emoji module paths to `zensical.extensions.emoji.*`; commented out suspended plugins |
+| `docker-compose.yml` | Replaced `mkdocs serve` with `zensical serve`; renamed service from `mkdocs` to `zensical` |
+| `.github/workflows/ALL-BRANCHES-ALL-PRs-build-and-deploy-to-azure.yml` | Replaced `mkdocs build` with `zensical build --clean`; updated comment |
+| `Dockerfile` | Updated plugin comment |
+| `docs/developer/writing-documentation.md` | Updated all MkDocs/Material CLI and wording references; fixed stale CI workflow filename link |
 | `docs/legal/licensing-copyright.md` | Updated MkDocs entry in software bill of materials table |
 | `docs/about/acknowledgements.md` | Updated technical acknowledgements |
+| `docs/safety/download.md` | Added notice that PDF is the last pre-migration build; link retained |
 | `spec/spec.md` | Updated tooling references |
 | `s/README.md` | Updated server description |
 | `docs/_utilities/page-template.md` | Updated MkDocs references in template comments |
+| `rcpch-theme/overrides/home.html` | Refactored hero section: collapsible toggle, `md-grid` width constraint, reduced padding |
+| `docs/_assets/_stylesheets/extra.css` | Scoped iframe margin to `#demo-iframe` only |
 
 ## Flagged Issues
 
-### 1. `mkdocs-with-pdf` plugin — likely incompatible
+### 1. `mkdocs-with-pdf` plugin — suspended
 
 **File:** `requirements.txt`, `mkdocs.yml` (`plugins.with-pdf`)
 
-The `mkdocs-with-pdf` plugin is specifically designed for Material for MkDocs. It hooks into Material's rendering pipeline and may not function correctly under Zensical's classic variant. The PDF export feature (controlled by `ENABLE_PDF_EXPORT` env var) should be tested after migration.
+**Status: suspended** — the plugin is commented out in both `requirements.txt` and `mkdocs.yml`. The download page (`docs/safety/download.md`) links to the last PDF generated before the migration and carries a notice explaining this.
 
-**Recommendation:** Test PDF generation with `ENABLE_PDF_EXPORT=1 zensical build --clean`. If it fails, the plugin may need to be replaced or removed; flag in the migration. The `extra.pdf_export` variable and `output_path: pdf/digital-growth-charts-documentation.pdf` config will also be affected if the plugin is dropped.
+A GitHub issue has been created to track re-enablement: [rcpch/digital-growth-charts-documentation#150](https://github.com/rcpch/digital-growth-charts-documentation/issues/150)
 
-> * comment out PDF generation in `mkdocs.yml` 
-> * hard-wire a recent version of the PDF export to the download button
-> * Await zensical PDF module https://github.com/zensical/backlog/issues/25
-> * note all this in a GitHub issue to remind us to re-enable PDF export once zensical supports it natively
+Awaiting Zensical native PDF support: [zensical/backlog#25](https://github.com/zensical/backlog/issues/25)
 
 ---
 
@@ -45,72 +45,62 @@ The `rcpch-theme/` directory contains template overrides built against Material 
 
 ---
 
-### 3. Material-specific `theme.features` — may be silently ignored or unsupported
+### 3. Material-specific `theme.features` — confirmed supported
 
 **File:** `mkdocs.yml` (`theme.features`)
 
-The following features are Material for MkDocs-specific and may not be recognised by Zensical:
-
-- `content.action.edit`
-- `content.action.view`
-- `content.code.copy`
-- `content.code.select`
-- `navigation.expand`
-- `navigation.footer`
-- `navigation.instant`
-- `navigation.tabs`
-- `navigation.tabs.sticky`
-- `navigation.top`
-- `navigation.tracking`
-- `toc.follow`
-
-**Recommendation:** Check Zensical's classic variant documentation for supported feature flags. Remove or replace any that are not supported to avoid unexpected behaviour.
-
-> So far most seem like they work natievly. 
+**Status: resolved** — all features in use are confirmed supported by Zensical's classic variant. Verified against [zensical.toml](https://github.com/zensical/zensical/blob/bf930dd84ba8f9013fa83752d130e2fc833462c8/python/zensical/bootstrap/zensical.toml). No CLI errors and no broken formatting observed.
 
 ---
 
-### 4. `theme.palette` — Material-specific setting
+### 4. `theme.palette` — confirmed supported
 
 **File:** `mkdocs.yml` (`theme.palette`)
 
-The `palette` block with `scheme: default` is a Material for MkDocs construct. Zensical may not use this key, or may interpret it differently.
-
-**Recommendation:** Verify that Zensical's classic variant supports a `palette` configuration. If not, this block can be removed without affecting functionality (it only controls light/dark mode, and dark mode was intentionally disabled in the comments).
+**Status: resolved** — `[[project.theme.palette]]` with `scheme: default` is confirmed supported in Zensical's classic variant, as shown in the bootstrap `zensical.toml`. No changes required.
 
 ---
 
-### 5. `theme.font` — Material-specific setting
+### 5. `theme.font` — confirmed supported
 
 **File:** `mkdocs.yml` (`theme.font`)
 
-The `font` block (`text: Montserrat`, `code: Roboto Mono`) uses Material for MkDocs' mechanism for loading Google Fonts. Zensical may handle fonts differently.
-
-**Recommendation:** Verify font loading still works after migration. If Montserrat and Roboto Mono are not rendered, fonts may need to be loaded via `extra_css` instead.
+**Status: resolved** — font configuration (`text: Montserrat`, `code: Roboto Mono`) works correctly under Zensical. Google Fonts are loaded as expected.
 
 ---
 
-### 6. `docker-compose.yml` service name
+### 6. `docker-compose.yml` service name — resolved
 
 **File:** `docker-compose.yml`
 
-The Docker Compose service is still named `mkdocs`. This is a minor cosmetic issue and does not affect functionality, but may cause confusion.
-
-**Recommendation:** Optionally rename the service from `mkdocs` to `zensical` or `docs` for clarity.
+**Status: resolved** — service renamed from `mkdocs` to `zensical`.
 
 ---
 
-### 7. `docs/developer/writing-documentation.md` — workflow filename in CI link
+### 7. `docs/developer/writing-documentation.md` — stale CI workflow link — resolved
 
-**File:** `docs/developer/writing-documentation.md` (line ~25)
+**File:** `docs/developer/writing-documentation.md`
 
-The page links to a GitHub Actions workflow filename (`build-and-deploy-to-gh-pages-and-azure.yml`) that does not match the actual workflow filename (`ALL-BRANCHES-ALL-PRs-build-and-deploy-to-azure.yml`). This predates the Zensical migration but should be corrected.
+**Status: resolved** — link corrected to `ALL-BRANCHES-ALL-PRs-build-and-deploy-to-azure.yml`.
+
+---
+
+### 8. Other suspended plugins
+
+The following plugins were also suspended pending Zensical module system support. Each has a tracking issue linked in `requirements.txt` and is commented out in `mkdocs.yml`:
+
+| Plugin | Zensical tracking issue |
+|--------|------------------------|
+| `mkdocs-git-committers-plugin-2` | [zensical/backlog#17](https://github.com/zensical/backlog/issues/17) |
+| `mkdocs-git-revision-date-localized-plugin` | [zensical/backlog#18](https://github.com/zensical/backlog/issues/18) |
+| `mkdocs-macros-plugin` | [zensical/backlog#16](https://github.com/zensical/backlog/issues/16) |
+| `mkdocs-llmstxt` | [zensical/backlog#92](https://github.com/zensical/backlog/issues/92) |
 
 ---
 
 ## Validation Steps
 
-After completing the migration, verify with:
+Build and serve without optional plugins (current state):
 
 ```bash
 pip install -r requirements.txt
@@ -118,8 +108,9 @@ zensical build --clean
 zensical serve
 ```
 
-Also run with PDF and git-committers enabled to confirm those optional plugins are functional:
+Once plugins are re-enabled, verify each individually:
 
 ```bash
-ENABLE_PDF_EXPORT=1 ENABLE_GIT_COMMITTERS=True zensical build --clean
+ENABLE_PDF_EXPORT=1 zensical build --clean
+ENABLE_GIT_COMMITTERS=True zensical build --clean
 ```
