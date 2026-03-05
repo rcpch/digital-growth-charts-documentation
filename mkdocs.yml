@@ -133,58 +133,45 @@ theme:
   logo: _assets/_images/rcpch_logo.png
 
 plugins:
-  - git-committers:
-      repository: rcpch/digital-growth-charts-documentation
-      branch: live
-      enabled: !ENV [ENABLE_GIT_COMMITTERS, false] # makes Git Committers optional
-  - git-revision-date-localized:
-      enable_creation_date: false
-      type: date
-  - llmstxt:
-      full_output: llms-full.txt
-      sections:
-        documentation:
-          - index.md
-          - about/*.md
-          - clinician/*.md
-          - contact/*.md
-          - developer/*.md
-          - integrator/*.md
-          - legal/*.md
-          - parents/*.md
-          - products/*.md
-          - researchers/*.md
-          - safety/*.md
-          - technical/*.md
-  - macros:
-      module_name: main
   - search
-  - with-pdf:
-      cover_title: RCPCH Digital Growth Charts
-      cover_subtitle: Complete Documentation Manual
-      toc_title: Table Of Contents
-      #heading_shift: false
-      #toc_level: 3
-      #ordered_chapter_level: 2
-      #excludes_children:
-      #    - 'release-notes/:upgrading'
-      #    - 'release-notes/:changelog'
-      #exclude_pages:
-      #    - 'bugs/'
-      #    - 'appendix/contribute/'
-      #convert_iframe:
-      #    - src: IFRAME SRC
-      #      img: POSTER IMAGE URL
-      #      text: ALTERNATE TEXT
-      #    - src: ...
-      #two_columns_level: 3
-      #render_js: true
-      #headless_chrome_path: headless-chromium
-      output_path: pdf/digital-growth-charts-documentation.pdf
-      enabled_if_env: ENABLE_PDF_EXPORT
-      #debug_html: true
-      #show_anchors: true
-      #verbose: true
+  # Plugins below are suspended pending Zensical module system support.
+  # Re-enable each once the corresponding Zensical issue is resolved.
+  #
+  # - git-committers:       # https://github.com/zensical/backlog/issues/17
+  #     repository: rcpch/digital-growth-charts-documentation
+  #     branch: live
+  #     enabled: !ENV [ENABLE_GIT_COMMITTERS, false]
+  #
+  # - git-revision-date-localized:  # https://github.com/zensical/backlog/issues/18
+  #     enable_creation_date: false
+  #     type: date
+  #
+  # - llmstxt:              # https://github.com/zensical/backlog/issues/92
+  #     full_output: llms-full.txt
+  #     sections:
+  #       documentation:
+  #         - index.md
+  #         - about/*.md
+  #         - clinician/*.md
+  #         - contact/*.md
+  #         - developer/*.md
+  #         - integrator/*.md
+  #         - legal/*.md
+  #         - parents/*.md
+  #         - products/*.md
+  #         - researchers/*.md
+  #         - safety/*.md
+  #         - technical/*.md
+  #
+  # - macros:               # https://github.com/zensical/backlog/issues/16
+  #     module_name: main
+  #
+  # - with-pdf:             # https://github.com/zensical/backlog/issues/25
+  #     cover_title: RCPCH Digital Growth Charts
+  #     cover_subtitle: Complete Documentation Manual
+  #     toc_title: Table Of Contents
+  #     output_path: pdf/digital-growth-charts-documentation.pdf
+  #     enabled_if_env: ENABLE_PDF_EXPORT
 
 markdown_extensions:
   - abbr
@@ -215,7 +202,7 @@ extra_css:
 
 # footer links and variables
 extra:
-  pdf_export: !ENV [ENABLE_PDF_EXPORT, false]
+  # pdf_export: !ENV [ENABLE_PDF_EXPORT, false]  # suspended: with-pdf plugin not yet compatible with Zensical
   social:
     - icon: fontawesome/brands/discourse
       link: https://forum.rcpch.tech
