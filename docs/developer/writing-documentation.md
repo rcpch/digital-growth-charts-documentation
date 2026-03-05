@@ -10,8 +10,7 @@ Where possible, we have tried to bring together **all** documentation relating t
 
 ## Zensical
 
-The documentation for the Digital Growth Charts project is created using [Zensical](https://zensical.com/), a documentation framework built on MkDocs. It uses the classic variant, which provides a Material-like appearance with additional features.
-
+The documentation for the Digital Growth Charts project is created using [Zensical](https://zensical.org/), a documentation framework built on MkDocs. It uses the classic variant, which provides a Material-like appearance with additional features.
 
 ## Adding or editing documentation
 

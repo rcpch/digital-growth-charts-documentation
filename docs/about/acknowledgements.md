@@ -33,8 +33,8 @@ Significant implementations and contributions have been made by our users. They 
 - [openhealthhub.org](https://openhealthhub.org/) (free forum hosting, used for support before https://forum.rcpch.tech)
 - [Python](https://www.python.org/) and the Python Software Foundation (main language used for the RCPCH dGC project)
 - [ReactJS](https://reactjs.org/) (frontend JavaScript framework for Chart component and demo app)
-- [Zensical](https://zensical.com/) (documentation site framework)
+- [Zensical](https://zensical.org/) (documentation site framework)
 <!-- include free services and open source components for acknowledgement, no need to thank the services we pay for -->
 
 !!! success "Additions"
-    Have we missed someone? Let us know by [editing this page in your own fork and making a PR](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files#editing-files-in-another-users-repository)!
+Have we missed someone? Let us know by [editing this page in your own fork and making a PR](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files#editing-files-in-another-users-repository)!
