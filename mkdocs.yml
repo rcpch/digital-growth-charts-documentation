@@ -105,7 +105,7 @@ not_in_nav: |
   _utilities/page-template.md
 
 theme:
-  name: material
+  variant: classic
   custom_dir: rcpch-theme
   features:
     - content.action.edit # explicitly adds edit button (Material4MkDocs9.0)
@@ -193,8 +193,8 @@ markdown_extensions:
   - md_in_html #insiders
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:zensical.extensions.emoji.to_svg
+      emoji_index: !!python/name:zensical.extensions.emoji.twemoji
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.keys

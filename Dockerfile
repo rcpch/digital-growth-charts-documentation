@@ -5,7 +5,7 @@ FROM python:3.12
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Extra packages required for Material for MkDocs plugins
+# Extra packages required for Zensical plugins
 RUN apt-get update && \
     apt-get install -y git python3-cffi python3-brotli libpango-1.0-0 libpangoft2-1.0-0 && \
     apt-get clean && \

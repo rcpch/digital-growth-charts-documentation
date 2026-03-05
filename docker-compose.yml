@@ -1,7 +1,6 @@
 # This is a Docker Compose file for local development of the Digital Growth Charts documentation.
 
 services:
-
   mkdocs: # Digital Growth Charts Documentation
     build: .
     environment:
@@ -10,6 +9,6 @@ services:
     volumes:
       - .:/app
     ports:
-      - 8001:8000 # MkDocs will be accessible at localhost:8001
-    command: sh -c "mkdocs serve --dev-addr=0.0.0.0:8000 --livereload"
+      - 8001:8000 # Zensical will be accessible at localhost:8001
+    command: sh -c "zensical serve --dev-addr=0.0.0.0:8000"
     restart: always
