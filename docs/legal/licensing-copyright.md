@@ -11,7 +11,7 @@ audience: implementers, developers, clinicians
 As responsible clinicians, the Project Board and Project Team all agreed the growth references and calculation code should be open source, enabling peer review, improving quality, and development of an international community of practice around these clinical tools.
 
 !!! info "Open Source Mythbuster - clarifying common misconceptions"
-    **Control**: control over the open source code still remains completely and exclusively under the control of the RCPCH software development team.
+**Control**: control over the open source code still remains completely and exclusively under the control of the RCPCH software development team.
 
     **Modifications**: outside contributors **cannot** make any direct changes to our code. One of the most common myths about open-source software relates to it being insecure because "anyone can change your code". This is simply not true. However, we **can** accept positive improvements and contributions from the community via 'Pull Request' on GitHub. Even then, the development team still control when and how these are introduced. We are under no obligation to accept contributions.
 
@@ -35,9 +35,9 @@ The 'LMS' method used to create data tables from raw observational data, and to 
 
 ### Growth References
 
-* UK90 Growth References are Copyright ⓒ Royal College of Paediatrics and Child Health.
+- UK90 Growth References are Copyright ⓒ Royal College of Paediatrics and Child Health.
 
-* Other references, such as those for Turner syndrome and Down Syndrome, are the copyright of their respective owners.
+- Other references, such as those for Turner syndrome and Down Syndrome, are the copyright of their respective owners.
 
 ## Licensing summary
 
@@ -55,16 +55,16 @@ Components which other organisations would benefit from being able to directly r
 
 ## Open Source Licenses and Software Bill of Materials
 
-| Tool / Framework / Library                                                       | License                                                                     |
-| -------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| [Python](https://github.com/python/cpython/blob/master/LICENSE)                  | [PSF License](https://directory.fsf.org/wiki/License:Python-2.0.1)          |
-| [FastAPI](https://github.com/tiangolo/fastapi#license)                           | [MIT License](https://directory.fsf.org/wiki/License:Expat)                 |
-| [React](https://github.com/facebook/react/blob/master/LICENSE)                   | [MIT License](https://directory.fsf.org/wiki/License:Expat)                 |
-| [MkDocs](https://github.com/squidfunk/mkdocs-material/blob/master/LICENSE)       | [MIT License](https://directory.fsf.org/wiki/License:Expat)                 |
+| Tool / Framework / Library                                      | License                                                            |
+| --------------------------------------------------------------- | ------------------------------------------------------------------ |
+| [Python](https://github.com/python/cpython/blob/master/LICENSE) | [PSF License](https://directory.fsf.org/wiki/License:Python-2.0.1) |
+| [FastAPI](https://github.com/tiangolo/fastapi#license)          | [MIT License](https://directory.fsf.org/wiki/License:Expat)        |
+| [React](https://github.com/facebook/react/blob/master/LICENSE)  | [MIT License](https://directory.fsf.org/wiki/License:Expat)        |
+| [Zensical](https://zensical.org/)                               | [MIT License](https://directory.fsf.org/wiki/License:Expat)        |
 
 All the above licenses are compatible with the AGPL terms of the Digital Growth Charts API Server and Python package part of the project, and the MIT terms of the other parts.
 
 All the above projects remain the copyright of their respective owners.
 
 !!! quote "Further reading on Open Source"
-    **[Open Source is the Only Way For Medicine](https://bawmedical.co.uk/t/open-source-is-the-only-way-for-medicine/80)** - a blog post by one of the dGC team, Dr Marcus Baw, describes some reasons why open source is so fundamental for science and medicine in particular.
+**[Open Source is the Only Way For Medicine](https://bawmedical.co.uk/t/open-source-is-the-only-way-for-medicine/80)** - a blog post by one of the dGC team, Dr Marcus Baw, describes some reasons why open source is so fundamental for science and medicine in particular.

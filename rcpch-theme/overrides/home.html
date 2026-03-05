@@ -1,21 +1,66 @@
 {% extends "overrides/main.html" %} {% block tabs %} {{ super() }}
 
 <style>
-  .md-typeset .mdx-hero__content h1 {
-    margin-top: 1.25em;
-    margin-left: 0px;
-    margin-right: 0px;
-    width: 100%;
+  /* Hero section: compact vertical spacing */
+  .hero-section {
+    padding: 0.3rem 0 0;
   }
 
-  .md-typeset .mdx-hero__content {
+  /* Blue box: constrained width, centred text, relative for the hide button */
+  .mdx-hero__content {
+    position: relative;
     text-align: center;
+    padding: 1rem 3em;
   }
 
+  /* h2 and p are not direct children of mdx-hero__content so extra.css
+     white-text rule won't reach them — override here */
+  .mdx-hero__content h2,
+  .mdx-hero__content p {
+    color: #ffffff;
+  }
+
+  /* Suppress the large md-typeset default top margin on the h2 */
+  .mdx-hero__content h2 {
+    margin-top: 0.4em;
+  }
+
+  /* Bottom spacing below the buttons */
+  .mdx-hero__content .hero-body {
+    padding-bottom: 0.75em;
+  }
+
+  /* Margin adjustments for hero buttons */
   .md-typeset .mdx-hero__content .md-button {
     margin: 0.3rem 0.35rem;
   }
 
+  /* 'hide' link: small, top-right corner of the blue box */
+  .hero-hide-btn {
+    position: absolute;
+    top: 0.5em;
+    right: 0.7em;
+    font-size: 0.7em;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0.2em 0.4em;
+    border-radius: 0.2em;
+    user-select: none;
+  }
+  .hero-hide-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.15);
+    text-decoration: none;
+  }
+
+  /* Hide the empty main content area (sidebar + content column) on the home page.
+     All content is in the tabs block above; md-main has nothing to show here. */
+  .md-main {
+    display: none;
+  }
+
+  /* Hides demo iframe on small screens */
   @media screen and (max-width: 960px) {
     iframe#demo-iframe {
       display: none;
@@ -26,87 +71,80 @@
     }
   }
 
-
-  .container {
-    margin-left: 100px;
-    margin-right: 100px;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .twitter-tweet {
-    width: 200px;
-    padding-left: 20px;
-  }
-
   #demo-iframe {
     width: 95%;
-    height: 1000px;
+    height: 1100px;
   }
 </style>
 
-<section>
-  <div class="mdx-hero__content md-typeset">
+<section class="hero-section">
+  <div class="md-grid" id="hero-section">
+    <div class="mdx-hero__content md-typeset">
 
-    <h2>'Best Practice As Code' by the RCPCH.</h2>
+      <a class="hero-hide-btn"
+         onclick="document.getElementById('hero-section').style.display='none'; return false;"
+         aria-label="Hide introduction">hide</a>
 
-    <p>
-      Working with experts in growth monitoring, growth charts, centile and SDS
-      calculation, we've created an API that handles the heavy lifting of child
-      growth parameters. You get reliable, safe results - instantly. Our Free
-      tier provides instant access to all, our code is fully open source, and
-      the API service sustainably managed as a non-profit enterprise, with
-      uptime guarantees and SLA for paid plans.
-    </p>
+      <div class="hero-body">
+        <h2>'Best Practice As Code' by the RCPCH.</h2>
+        <p>
+          Expert-built child growth API. Accurate centile and SDS calculations,
+          delivered instantly. Free to access, fully open source, and
+          sustainably run as a non-profit — with uptime guarantees and SLA on
+          paid plans.
+        </p>
 
-    <a
-      href="integrator/getting-started/"
-      title="Integrator documentation"
-      class="md-button md-button--primary"
-      id="integrator"
-    >
-      Integrators
-    </a>
-    <a
-      href="clinician/how-the-api-works/"
-      title="Clinical documentation"
-      class="md-button md-button--primary"
-      id="clinician"
-    >
-      Clinicians
-    </a>
-    <a
-      href="developer/start-here/"
-      title="Contributor documentation"
-      class="md-button md-button--primary"
-      id="contributor"
-    >
-      Contributors
-    </a>
-    <a
-      href="parents/chart-information-families/"
-      title="Parents and carers documentation"
-      class="md-button md-button--primary"
-      id="parents-carers"
-    >
-      Parents & Carers
-    </a>
-    <a
-      href="researchers/introduction/"
-      title="esearchers documentation"
-      class="md-button md-button--primary"
-      id="researchers"
-    >
-      Researchers
-    </a>
-    <a
-      href="safety/overview/"
-      title="Clinical safety documentation"
-      class="md-button md-button--primary"
-      id="clinical-safety"
-    >
-      Clinical Safety
-    </a>
+        <a
+          href="integrator/getting-started/"
+          title="Integrator documentation"
+          class="md-button md-button--primary"
+          id="integrator"
+        >
+          Integrators
+        </a>
+        <a
+          href="clinician/how-the-api-works/"
+          title="Clinical documentation"
+          class="md-button md-button--primary"
+          id="clinician"
+        >
+          Clinicians
+        </a>
+        <a
+          href="developer/start-here/"
+          title="Contributor documentation"
+          class="md-button md-button--primary"
+          id="contributor"
+        >
+          Contributors
+        </a>
+        <a
+          href="parents/chart-information-families/"
+          title="Parents and carers documentation"
+          class="md-button md-button--primary"
+          id="parents-carers"
+        >
+          Parents & Carers
+        </a>
+        <a
+          href="researchers/introduction/"
+          title="Researchers documentation"
+          class="md-button md-button--primary"
+          id="researchers"
+        >
+          Researchers
+        </a>
+        <a
+          href="safety/overview/"
+          title="Clinical safety documentation"
+          class="md-button md-button--primary"
+          id="clinical-safety"
+        >
+          Clinical Safety
+        </a>
+      </div>
+
+    </div>
   </div>
 
   <div class="md-grid md-typeset">
@@ -133,11 +171,5 @@
   </div>
 </section>
 
-{% endblock %} 
-
-{% block content %}
-{% endblock %}
-
-{% block footer %}
-{{ super () }}
-{% endblock %}
+{% endblock %} {% block content %} {% endblock %} {% block footer %} {{ super ()
+}} {% endblock %}

@@ -53,7 +53,7 @@ The initial pages should assist users to find the part of the documentation that
 
 ## Presentation and Interaction Features
 
-- Built with MkDocs + Material theme and a custom RCPCH theme.
+- Built with Zensical (classic variant) and a custom RCPCH theme.
 - Tabbed navigation with expanded sidebar and anchor tracking.
 - Search, code copy/select helpers, and edit/view buttons for GitHub source.
 - Sortable tables and embedded assets (images, PDFs, iframes).
@@ -67,7 +67,7 @@ The initial pages should assist users to find the part of the documentation that
 
 - Published at `https://growth.rcpch.ac.uk` with GitHub Pages published via GitHub Actions.
 - Documentation changes follow GitHub workflow with protected `live` branch.
-- Site supports local development via Docker and MkDocs.
+- Site supports local development via Docker Compose.
 
 ---
 

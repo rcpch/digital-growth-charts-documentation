@@ -1,15 +1,14 @@
 # This is a Docker Compose file for local development of the Digital Growth Charts documentation.
 
 services:
-
-  mkdocs: # Digital Growth Charts Documentation
+  zensical: # Digital Growth Charts Documentation
     build: .
     environment:
-      - ENABLE_PDF_EXPORT=0 # Makes PDF export an option, default disabled for local dev
-      - ENABLE_GIT_COMMITTERS=True # Makes git-committers an option, default enabled
+      - ENABLE_PDF_EXPORT=0 # PDF export suspended pending Zensical support
+      - ENABLE_GIT_COMMITTERS=False # git-committers suspended pending Zensical support
     volumes:
       - .:/app
     ports:
-      - 8001:8000 # MkDocs will be accessible at localhost:8001
-    command: sh -c "mkdocs serve --dev-addr=0.0.0.0:8000 --livereload"
+      - 8001:8000 # Zensical will be accessible at localhost:8001
+    command: sh -c "zensical serve --dev-addr=0.0.0.0:8000"
     restart: always

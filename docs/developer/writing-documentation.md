@@ -6,23 +6,21 @@ audience: developers
 
 # Writing dGC Documentation
 
-Where possible, we have tried to bring together **all** documentation relating to any aspect of the dGC project into this one MkDocs site, published at [growth.rcpch.ac.uk](https://growth.rcpch.ac.uk)
+Where possible, we have tried to bring together **all** documentation relating to any aspect of the dGC project into this one Zensical site, published at [growth.rcpch.ac.uk](https://growth.rcpch.ac.uk)
 
-## Material for MkDocs
+## Zensical
 
-The documentation for the Digital Growth Charts project is created using the MkDocs documentation framework. It uses the '_Material for MkDocs_' theme, which adds a number of extra features and a more modern appearance.
-
-As you’d expect, there is delightful documentation for both projects: [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/), and for the underlying [MkDocs](https://www.mkdocs.org/), on which it’s built. At times, you may need to refer to **both** for different features.
+The documentation for the Digital Growth Charts project is created using [Zensical](https://zensical.org/), a documentation framework built on MkDocs. It uses the classic variant, which provides a Material-like appearance with additional features.
 
 ## Adding or editing documentation
 
 Mostly this just requires creating Markdown files in the `docs/` directory of the [documentation repository](https://github.com/rcpch/digital-growth-charts-documentation).
 
-Use other pages within this repo to get ideas on the style and the features available such as [emoji](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#emoji), [icons](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#using-icons), and [admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/).
+Use other pages within this repo to get ideas on the style and the features available such as emoji, icons, and admonitions (refer to the Zensical documentation for available extensions).
 
 ### Continuous Integration via GitHub Actions
 
-Any changes to the `live` branch of the documentation repository trigger a [GitHub Action](https://github.com/rcpch/digital-growth-charts-documentation/blob/live/.github/workflows/build-and-deploy-to-gh-pages-and-azure.yml). This runs Material for MkDocs in a temporary application container, builds the site from the Markdown source into a set of static HTML pages, and [publishes the site to Azure](https://growth.rcpch.ac.uk/), with a [backup in GitHub Pages](https://rcpch.github.io/digital-growth-charts-documentation/).
+Any changes to the `live` branch of the documentation repository trigger a [GitHub Action](https://github.com/rcpch/digital-growth-charts-documentation/blob/live/.github/workflows/ALL-BRANCHES-ALL-PRs-build-and-deploy-to-azure.yml). This runs Zensical in a temporary application container, builds the site from the Markdown source into a set of static HTML pages, and [publishes the site to Azure](https://growth.rcpch.ac.uk/), with a [backup in GitHub Pages](https://rcpch.github.io/digital-growth-charts-documentation/).
 
 This occurs whether changes are made using online or local, offline editing methods.
 
@@ -42,11 +40,11 @@ Once merged, the changes will be automatically deployed to the live site, and yo
 
 ### Using a text editor and editing locally
 
-More experienced coders can `git clone` the repo and make changes offline on their local machine before pushing to the remote to either the `rcpch` organisation's remote, or their own fork. This allows you to run Material for MkDocs locally and preview the site as it will appear when pushed to `live`.
+More experienced coders can `git clone` the repo and make changes offline on their local machine before pushing to the remote to either the `rcpch` organisation's remote, or their own fork. This allows you to run Zensical locally and preview the site as it will appear when pushed to `live`.
 
 ### Setting up a development environment for the dGC documentation site
 
-For all platforms we recommend using the `docker compose` setup, which will run the MkDocs site in a Docker container, so you don't need to install Python or MkDocs locally. This is the easiest way to get started, and it isolates your local development environment from any conflicting dependencies.
+For all platforms we recommend using the `docker compose` setup, which will run the Zensical site in a Docker container, so you don't need to install Python or Zensical locally. This is the easiest way to get started, and it isolates your local development environment from any conflicting dependencies.
 
 #### Prerequisites
 
@@ -68,7 +66,7 @@ For all platforms we recommend using the `docker compose` setup, which will run 
    cd digital-growth-charts-documentation
    ```
 
-3. Start the MkDocs development server using Docker Compose:
+3. Start the Zensical development server using Docker Compose:
    ```console
    docker compose up
    ```
@@ -78,8 +76,8 @@ For all platforms we recommend using the `docker compose` setup, which will run 
 These plugins can add 10-15 seconds of build time to the site, so when developing locally, they are disabled by default. They are enabled by using environment variables, if you want to test that they work locally before pushing to the remote:
 
 ```console
-export ENABLE_GIT_COMMITTERS=true; mkdocs serve
-export ENABLE_PDF_EXPORT=true; mkdocs serve
+export ENABLE_GIT_COMMITTERS=true; zensical serve
+export ENABLE_PDF_EXPORT=true; zensical serve
 ```
 
 You should always build the site at least once with both PDF export and Git Committers enabled, to ensure there are no issues, before pushing to the remote.
@@ -143,8 +141,8 @@ reviewers: Dr Marcus Baw, Dr Simon Chapman, Other Reviewer ...
 
 When you push new changes to ANY branch of this repo, or it you open a Pull Request, Azure will automatically build a version of the site for review. You need to visit [this Static Web App deployment resource on the Azure portal](https://portal.azure.com/#@rcpch.ac.uk/resource/subscriptions/99e313f5-79fe-4480-b867-8daf2800cf22/resourceGroups/RCPCH-Dev-API-Growth/providers/Microsoft.Web/staticSites/documentation-demo-static-site/environments) to see the URL of the deployment, as it depends on the branch name. To obtain Azure access contact Marcus Baw of the RCPCH developer team.
 
-Therefore, you don't need to do `mkdocs build` or `mkdocs gh-deploy --force` commands manually or locally - it’s done for you if you push to branches or PRs on GitHub.
+Therefore, you don't need to do `zensical build --clean` command manually or locally - it’s done for you if you push to branches or PRs on GitHub.
 
 ## Plugins
 
-MkDocs has [many plugins available](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins). We already use some to extend the capabilities of MarkDown, making the documentation look nicer and function better.
+Zensical supports many MkDocs-compatible plugins. We already use some to extend the capabilities of Markdown, making the documentation look nicer and function better.

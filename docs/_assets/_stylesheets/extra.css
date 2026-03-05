@@ -109,7 +109,7 @@
 /* enlarges the logo image */
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg {
-  height: 5rem !important;
+  height: 2.5rem !important;
   width: auto;
 }
 
@@ -177,7 +177,7 @@ button {
 iframe {
   border: 0;
   display: block;
-  margin: 40px auto;
+  margin: 0 auto;
 }
 
 /* suppress the 'no-demo' message on a full size screen */

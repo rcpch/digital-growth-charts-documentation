@@ -78,6 +78,7 @@ This is addressed [here](https://growth.rcpch.ac.uk/integrator/using-the-chart-c
 This returns a mid-parental height, mid-parental SDS and centile, along with the centile data if the user wishes to plot a mid-parental centile. The structure of the Reference and Centile interfaces is:
 
 ??? note "`Reference` and `Centile` interface structures"
+    ```js
     export interface Reference {
         [name: string]: ISexChoice
     }
@@ -101,5 +102,6 @@ This returns a mid-parental height, mid-parental SDS and centile, along with the
         bmi?: ICentile[],
         ofc?: ICentile[],
     }
+    ```
 
 Centile data are returned from the RCPCH API in this same structure, though no API call is made from this component - all the centile data for all the references is included.

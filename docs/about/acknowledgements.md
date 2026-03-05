@@ -26,19 +26,15 @@ Significant implementations and contributions have been made by our users. They 
 
 ## Technical Acknowledgements
 
-- [DigitalOcean](https://www.digitalocean.com/) (ancillary cloud services)
 - [Discourse](https://www.discourse.org/) (forum platform for openhealthhub.org)
 - [FastAPI](https://fastapi.tiangolo.com/) (used for the current version of the API server)
-- [Flask](https://flask.palletsprojects.com/) (used for the first draft of the API server)
-- [Flutter](https://flutter.dev/) (used for mobile)
+- [Flutter](https://flutter.dev/) (used for mobile applications)
 - [GitHub](https://github.com/) (code hosting, issues, actions, projects)
-- [Gravitee.io](https://www.gravitee.io/) (open source API management platform)
-- [Heroku](https://www.heroku.com/) (used in early alpha stages for quick hosting)
-- [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) and [MkDocs](https://www.mkdocs.org/) itself (documentation sites)
-- [Microsoft Azure](https://azure.microsoft.com/) (main cloud platform)
 - [openhealthhub.org](https://openhealthhub.org/) (free forum hosting, used for support before https://forum.rcpch.tech)
 - [Python](https://www.python.org/) and the Python Software Foundation (main language used for the RCPCH dGC project)
 - [ReactJS](https://reactjs.org/) (frontend JavaScript framework for Chart component and demo app)
+- [Zensical](https://zensical.org/) (documentation site framework)
+<!-- include free services and open source components for acknowledgement, no need to thank the services we pay for -->
 
 !!! success "Additions"
-    Have we missed someone? Let us know by [editing this page in your own fork and making a PR](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files#editing-files-in-another-users-repository)!
+Have we missed someone? Let us know by [editing this page in your own fork and making a PR](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files#editing-files-in-another-users-repository)!
