@@ -1,7 +1,7 @@
 # Requirements for the dGC documentation
 
-# Material for MkDocs theme
-mkdocs-material
+# Zensical theme
+zensical
 
 # for the feature which displays authors at the bottom of the page
 mkdocs-git-committers-plugin-2
@@ -10,12 +10,18 @@ mkdocs-git-committers-plugin-2
 mkdocs-macros-plugin
 
 # for the PDF export feature
-mkdocs-with-pdf
+# NOTE FOR FUTURE (added 2026.03.05): Zensical does not support this plugin
+# However they are planning PDF export support, when the module system is built
+# Follow this issue: https://github.com/zensical/backlog/issues/25
+# mkdocs-with-pdf
 
 # for the timestamp feature
 mkdocs-git-revision-date-localized-plugin
 
 # LLMs.txt generation
+# NOTE FOR FUTURE (added 2026.03.05): Zensical does not support this plugin
+# However there is an Issue for a similar feature
+# https://github.com/zensical/backlog/issues/92
 mkdocs-llmstxt
 
 # spelling / common typo checks for docs
@@ -24,5 +30,3 @@ codespell
 # markdown linting
 pymarkdownlnt
 
-# link checking for MkDocs
-mkdocs-linkcheck

@@ -1,4 +1,4 @@
-# This Action builds the documentation site in mkdocs
+# This Action builds the documentation site with Zensical
 # and pushes it to Azure from where it is deployed
 # to the LIVE site https://growth.rcpch.ac.uk/
 #
@@ -35,7 +35,7 @@ jobs:
         with:
           python-version: "3.12" # Matching the Python version in the Dockerfile
       - run: pip install -r requirements.txt
-      - run: mkdocs build
+      - run: zensical build --clean
       - name: Upload to Azure
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
