@@ -4,25 +4,36 @@
 zensical
 
 # for the feature which displays authors at the bottom of the page
-mkdocs-git-committers-plugin-2
+# NOTE FOR FUTURE (added 2026.03.05): Zensical does not support this plugin
+# However they are planning to support it, when the module system is built
+# Issue: https://github.com/zensical/backlog/issues/17
+# Re-enable when the feature is added
+# mkdocs-git-committers-plugin-2
 
 # for the feature which enables 'foldable' admonition text (used for large code blocks)
-mkdocs-macros-plugin
+# Follow this issue: https://github.com/zensical/backlog/issues/16
+# mkdocs-macros-plugin
 
 # for the PDF export feature
 # NOTE FOR FUTURE (added 2026.03.05): Zensical does not support this plugin
 # However they are planning PDF export support, when the module system is built
 # Follow this issue: https://github.com/zensical/backlog/issues/25
+# Re-enable when the feature is added
 # mkdocs-with-pdf
 
 # for the timestamp feature
-mkdocs-git-revision-date-localized-plugin
+# NOTE FOR FUTURE (added 2026.03.05): Zensical does not support this plugin
+# However they are planning to support it, when the module system is built
+# Follow this issue: https://github.com/zensical/backlog/issues/18
+# Re-enable when the feature is added
+# mkdocs-git-revision-date-localized-plugin
 
 # LLMs.txt generation
 # NOTE FOR FUTURE (added 2026.03.05): Zensical does not support this plugin
 # However there is an Issue for a similar feature
-# https://github.com/zensical/backlog/issues/92
-mkdocs-llmstxt
+# Follow this issue https://github.com/zensical/backlog/issues/92
+# Re-enable when the feature is added
+# mkdocs-llmstxt
 
 # spelling / common typo checks for docs
 codespell
