@@ -79,15 +79,7 @@ If you make a request, we have one month to respond to you.
 
 ## How to make a complaint
 
-If you are unhappy with how we are using your personal data, you should contact us in the first instance so that we can understand and try to resolve your concern. If we can't resolve the issue you have the right to complain to the Information Commissioners Office (ICO). The ICO is the UK's independent body set up to uphold information rights.
-
-| ICO details |
-| --- |
-| :fontawesome-solid-phone: Helpline number: 0303 123 1113 |
-| :fontawesome-solid-address-book: Information Commissioner’s Office, Wycliffe House, Water Lane, Wilmslow, Cheshire, SK9 5AF |
-| :fontawesome-solid-globe: <https://www.ico.org.uk> |
-
-If you have any questions about our privacy policy, the information we hold about you or you wish to make a complaint, please send an email to: <information.governance@rcpch.ac.uk>
+If you are unhappy with how we are using your personal data or how we have dealt with a rights request, you should contact us in the first instance so that we can understand and try to resolve your concern. If you would like to make a complaint, please follow our [data protection complaints process](https://www.rcpch.ac.uk/about-us/privacy-hub/data-protection-complaints). If you remain dissatisfied, you can complain to the [Information Commission](https://ico.org.uk/make-a-complaint/data-protection-complaints/)
 
 ## Changes to this Privacy Policy
 
