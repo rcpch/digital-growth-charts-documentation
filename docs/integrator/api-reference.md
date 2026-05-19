@@ -5,6 +5,8 @@ audience: integrators, implementers, technical-architects
 ---
 # API Reference
 
+This page provides the interactive Swagger UI documentation for the RCPCH Digital Growth Charts API. Use this reference to explore available endpoints, request/response schemas, and to try out API calls directly.
+
 --8<-- "docs/_assets/_snippets/api-baseurl.md"
 
 <script>
