@@ -15,6 +15,12 @@
 - [ ] Update `docs/developer/writing-documentation.md` to explicitly cover markdown linting, UK English spelling, and running `s/codespell` per `spec/implementation.md`.
 - [ ] Audit duplicated content across audience sections (clinicians/parents/integrators) and replace repeats with shared snippets and cross-links, per `spec/spec.md` non-goal.
 - [ ] Investigate whether PDF export can be constrained to specific parts of the documentation.
+- [ ] Re-enable `with-pdf` plugin once Zensical module support lands, then restore automated PDF generation and validate `docs/safety/download.md` messaging (tracking: <https://github.com/zensical/backlog/issues/25>, <https://github.com/rcpch/digital-growth-charts-documentation/issues/150>).
+- [ ] Re-enable `git-committers` plugin once supported by Zensical and verify contributor metadata rendering (tracking: <https://github.com/zensical/backlog/issues/17>).
+- [ ] Re-enable `git-revision-date-localized` plugin once supported by Zensical and verify page timestamp rendering (tracking: <https://github.com/zensical/backlog/issues/18>).
+- [ ] Re-enable `macros` plugin once supported by Zensical and verify existing macro-dependent content still renders correctly (tracking: <https://github.com/zensical/backlog/issues/16>).
+- [ ] Re-enable `llmstxt` plugin (or equivalent native feature) once supported by Zensical and verify `LLMs.txt` generation in build output (tracking: <https://github.com/zensical/backlog/issues/92>).
+- [ ] Audit all overrides in `rcpch-theme/` against Zensical classic template blocks/macros to confirm `theme.custom_dir` compatibility and remove any Material-specific template assumptions.
 - [ ] Dark mode?
 - [ ] Review the Medical Device Regulation technical documentation in `docs/safety/medical-device-reg/mdr-technical-docs.md` for compliance with recent EU MDR updates.
 - [ ] Review the Clinical Safety Management File documents in `docs/safety/csmf/` 
