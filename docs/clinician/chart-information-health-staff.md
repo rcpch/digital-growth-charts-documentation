@@ -34,6 +34,10 @@ The PDF linked below was produced in 2012 to accompany the Down Syndrome charts.
 
 [PDF Down Syndrome Chart Information (2012)](../_assets/_pdfs/2012-instructions-for-downs-syndrome-charts.pdf)
 
+## Growth chart papers
+
+For key publications on UK-WHO growth chart development, implementation, and validation, see [Growth chart papers](growth-chart-papers.md).
+
 ## Centile Terminology
 
 ![What are centiles](../_assets/_images/centile-terminology.png)
