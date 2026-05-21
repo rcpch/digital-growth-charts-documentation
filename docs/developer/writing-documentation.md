@@ -137,6 +137,40 @@ reviewers: Dr Marcus Baw, Dr Simon Chapman, Other Reviewer ...
 ---
 ```
 
+## Markdown Linting and Spellchecking
+
+We maintain consistent documentation quality through automated linting and spellchecking. All contributors should run these tools locally before submitting changes.
+
+### Markdown Linting
+
+Run markdown linting to check for style issues, broken links, and formatting problems:
+
+```console
+./s/lint
+```
+
+This runs [PyMarkdown](https://pymarkdownlnt.readthedocs.io/) with the ruleset defined in `.pymarkdown.yml`.
+
+### Spellchecking
+
+Run spellchecking to catch typos and ensure UK English spelling conventions (e.g. "colour", "centre" not "center"):
+
+```console
+./s/spellcheck
+```
+
+This runs [Codespell](https://github.com/codespell-project/codespell) with a `.codespellrc` configuration file. The tool uses UK English by default.
+
+### Before pushing
+
+Before submitting a Pull Request, ensure both tools pass without errors:
+
+```console
+./s/lint && ./s/spellcheck
+```
+
+If either tool reports issues, fix them in your editor and re-run.
+
 ## Publishing is automated
 
 When you push new changes to ANY branch of this repo, or it you open a Pull Request, Azure will automatically build a version of the site for review. You need to visit [this Static Web App deployment resource on the Azure portal](https://portal.azure.com/#@rcpch.ac.uk/resource/subscriptions/99e313f5-79fe-4480-b867-8daf2800cf22/resourceGroups/RCPCH-Dev-API-Growth/providers/Microsoft.Web/staticSites/documentation-demo-static-site/environments) to see the URL of the deployment, as it depends on the branch name. To obtain Azure access contact Marcus Baw of the RCPCH developer team.

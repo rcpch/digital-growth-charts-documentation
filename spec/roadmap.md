@@ -12,8 +12,8 @@
 - [x] Add missing `audience` frontmatter to content pages with no existing `audience` field.
 - [x] Add missing `reviewers` frontmatter to `docs/index.md` and `docs/safety/download.md`.
 - [x] Add short purpose/intro paragraphs where pages currently jump straight to embeds or snippets: `docs/integrator/api-reference.md`, `docs/technical/status.md`, `docs/safety/download.md`, `docs/legal/disclaimer.md`.
-- [ ] Update `docs/developer/writing-documentation.md` to explicitly cover markdown linting, UK English spelling, and running `s/codespell` per `spec/implementation.md`.
-- [ ] Audit duplicated content across audience sections (clinicians/parents/integrators) and replace repeats with shared snippets and cross-links, per `spec/spec.md` non-goal.
+- [x] Update `docs/developer/writing-documentation.md` to explicitly cover markdown linting, UK English spelling, and running `s/codespell` per `spec/implementation.md`.
+- [x] Audit duplicated content across audience sections (clinicians/parents/integrators) and replace repeats with shared snippets and cross-links, per `spec/spec.md` non-goal.
 - [ ] Investigate whether PDF export can be constrained to specific parts of the documentation.
 - [ ] Re-enable `with-pdf` plugin once Zensical module support lands, then restore automated PDF generation and validate `docs/safety/download.md` messaging (tracking: <https://github.com/zensical/backlog/issues/25>, <https://github.com/rcpch/digital-growth-charts-documentation/issues/150>).
 - [ ] Re-enable `git-committers` plugin once supported by Zensical and verify contributor metadata rendering (tracking: <https://github.com/zensical/backlog/issues/17>).
