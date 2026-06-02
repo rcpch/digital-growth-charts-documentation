@@ -59,36 +59,4 @@ We are planning to develop a simple application which can view Issues in a tabul
 
 ## Hazard Table
 
-<div id="github-issues"></div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script>
-    var hazardLogUrl = "https://api.github.com/repos/rcpch/digital-growth-charts-documentation/issues?state=open&labels=hazard";
-
-
-    $(document).ready(function () {
-        $.getJSON(hazardLogUrl, function (allIssues) {
-            $("div#github-issues").append("There are " + allIssues.length + " Hazards:</br>");
-            $.each(allIssues, function (i, issue) {
-
-                // Get assignee (if applicable)
-                var assigneeName = "Unassigned";
-                if (issue.assignee) {
-                    assigneeName = issue.assignee.login;
-                }
-
-                // Calculate number of days ago created
-                var today = new Date();
-                var timeDifference = today - Date.parse(issue.created_at);
-                var daysAgo = (timeDifference / (1000 * 3600 * 24)).toFixed();
-
-                $("div#github-issues")
-                    .append("<div style=\"margin-bottom:20px;\">")
-                    .append("<strong><a href=\"" + issue.html_url + "\">" + issue.title + "</a></strong></br>")
-                    .append("#" + issue.number + " opened " + daysAgo + " days ago by " + issue.user.login + "</br>")
-                    .append("Assigned to: " + assigneeName)
-                    .append("</div>");
-            });
-        });
-    });
-</script>
+Please refer to the [RCPCH dGC Hazard Log GitHub Project](https://github.com/orgs/rcpch/projects/7/views/1)
