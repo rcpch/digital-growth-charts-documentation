@@ -1,6 +1,6 @@
 ---
-title: Using the chart component
-reviewers: Dr Simon Chapman
+title: Using the Chart Component
+reviewers: Dr Simon Chapman, Dr Marcus Baw
 audience: integrators, implementers, technical-architects
 ---
 

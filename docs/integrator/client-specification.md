@@ -174,7 +174,7 @@ The nine centile lines used in the British 1990 and UK-WHO charts are labelled i
 | 98th                | 2.00          | Continuous  |
 | 99.6th              | 2.67          | Dashed      |
 
-## Definitions and terminology of Centile Bands
+## Definitions and terminology of Centile Bands
 
 A "centile space" is the distance between two centile lines.
 

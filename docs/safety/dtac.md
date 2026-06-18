@@ -25,6 +25,7 @@ accompanying score provided from Section D will show the level of adherence to t
 Standard.
 
 ## Section A. Company information
+
 Non-assessed section
 
 Information about your organisation and contact details.
@@ -95,6 +96,7 @@ Information about your organisation and contact details.
 </table>
 
 ## Section B. Value proposition
+
 Non-assessed section
 
 Please set out the context of the clinical, economic or behavioural benefits of your product to support the review of your technology. This criteria will not be scored but will provide the context of the product undergoing assessment.
@@ -177,6 +179,7 @@ Where possible, please provide details relating to the specific technology and n
 </table>
 
 ## Section C. Technical questions
+
 Assessed sections
 
 ### C1 - Clinical safety
@@ -645,7 +648,7 @@ To provide a seamless care journey, it is important that relevant technologies i
 
 Good interoperability reduces expenditure, complexity and delivery times on local system integration projects by standardising technology and interface specifications and simplifying integration. It allows it to be replicated and scaled up and opens the market for innovation by defining the standards to develop upfront.
 
-This section should be tailored to the specific use case of the product and the needs of the buyer however it should reflect the standards used within the NHS and social care and direction of travel. 
+This section should be tailored to the specific use case of the product and the needs of the buyer however it should reflect the standards used within the NHS and social care and direction of travel.
 
 Please provide details relating to the specific technology and not generally to your organisation.
 
@@ -799,6 +802,7 @@ This section will be scored in relation to the [<span class="underline">NHS serv
   standard</span>](https://service-manual.nhs.uk/service-standard). This will not contribute to the overall Assessment Criteria as set out in Section C.
 
 ### D1 - Usability and accessibility
+
 scored section
 
 Establishing that your product has followed best practice.

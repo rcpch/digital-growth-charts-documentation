@@ -6,7 +6,7 @@
 - [x] Add dependabot configuration to keep documentation dependencies up to date.
 - [x] Add linting and spellchecking scripts to make it easier to use these consistently and regularly.
 - [x] Run linting and spellchecking across all docs files and fix any issues found.
- - <https://github.com/rcpch/digital-growth-charts-documentation/issues>
+- <https://github.com/rcpch/digital-growth-charts-documentation/issues>
 - [x] Add automated `LLMs.txt` generation to the build output to meet `spec/spec.md` requirements. There is a plugin for MkDocs at <https://github.com/pawamoy/mkdocs-llmstxt> which should help achieve this goal.
 - [x] Expand the home page audience routing in `rcpch-theme/overrides/home.html` to include parents/carers, researchers, and safety/compliance audiences, not just integrators/clinicians/contributors.
 - [x] Add missing `audience` frontmatter to content pages with no existing `audience` field.

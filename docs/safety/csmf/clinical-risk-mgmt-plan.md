@@ -15,7 +15,7 @@ Using the combination of Git and GitHub removes much of the manual work of maint
 To see the contributors to the documentation site you can view them here on GitHub.
 Contributors: <https://github.com/rcpch/digital-growth-charts-documentation/graphs/contributors>
 
-Most recent update: 
+Most recent update:
 
 ## Purpose
 
@@ -44,7 +44,7 @@ If clarification is required of whether any system falls within scope of this CR
 
 !!! danger "IMPORTANT NOTICE FOR SELF-HOSTING"
     IMPORTANT: This Clinical Risk Management File applies ONLY to RCPCH open source software as deployed and managed by the RCPCH Digital Growth Charts Team under our direct control.
-    
+  
 --8<--
 docs/_assets/_snippets/self-host-warning.md
 --8<--

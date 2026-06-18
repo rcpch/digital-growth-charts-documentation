@@ -37,11 +37,13 @@ The PDF linked below was produced in 2012 to accompany the Down Syndrome charts.
 ## Growth chart papers
 
 For key publications on UK-WHO growth chart development, implementation, and validation, see [Growth chart papers](growth-chart-papers.md).
+
 ## Centile Terminology
 
 ![What are centiles](../_assets/_images/centile-terminology.png)
 
 --8<-- "docs/_assets/_snippets/centile-terminology.md"
+
 - Weight: use only Class III clinical electronic scales in metric setting.
 - Length: (before 2 years of age): proper equipment is essential (length board or mat). Measurers should be trained.
 - Height: (from 2 years): position head and feet as illustrated, with child standing as straight as possible. Measure height recorded to the last millimetre. A correctly installed stadiometer, or approved portable measuring device rigid rule with T piece, is the only equipment that can be reliably used.

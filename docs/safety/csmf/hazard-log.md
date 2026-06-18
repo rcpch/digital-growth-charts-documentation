@@ -65,7 +65,6 @@ We are planning to develop a simple application which can view Issues in a tabul
 <script>
     var hazardLogUrl = "https://api.github.com/repos/rcpch/digital-growth-charts-documentation/issues?state=open&labels=hazard";
 
-
     $(document).ready(function () {
         $.getJSON(hazardLogUrl, function (allIssues) {
             $("div#github-issues").append("There are " + allIssues.length + " Hazards:</br>");

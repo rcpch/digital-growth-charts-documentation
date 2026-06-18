@@ -26,6 +26,7 @@ API keys allow us to manage usage and billing for the API. We do have a perpetua
     * 'Reselling' the API through a proxy service is banned and could result in legal action due to the Medical Device status of the API.
 
 #### Sign up to our forum at [https://forum.rcpch.tech/](https://forum.rcpch.tech/)
+
 !!! tip Approval required
     Sign up to the forum is subject to our approval process, please [contact us](../contact/contact.md) if you are not approved automatically.
 

@@ -10,14 +10,13 @@ audience: clinical-safety, implementers
 ### The following apply to all devices
 
 - The devices must be designed and manufactured in such a way that, when used under the conditions and for the purposes intended, they will not compromise the clinical condition or the safety of the patients, or the safety and health of users or, where applicable, other persons, provided that any risks which may be associated with their intended use constitute acceptable risks when weighed against the benefits to the patient and are compatible with a high level of protection of health and safety. This shall include
-    - reducing as far as possible, the risk of use error due to the ergonomic features of the device and the environment in which the device is intended to be used (design for patient safety), and
-    - consideration of the technical knowledge, experience, education and training and where applicable the medical and physical conditions of intended users (design for lay, professional, disabled or other users).
+  - reducing as far as possible, the risk of use error due to the ergonomic features of the device and the environment in which the device is intended to be used (design for patient safety), and
+  - consideration of the technical knowledge, experience, education and training and where applicable the medical and physical conditions of intended users (design for lay, professional, disabled or other users).
 
 - The solutions adopted by the manufacturer for the design and construction of the devices must conform to safety principles, taking account of the generally acknowledged state of the art. In selecting the most appropriate solutions, the manufacturer must apply the following principles in the following order
     1. eliminate or reduce risks as far as possible (inherently safe design and construction),
     1. where appropriate take adequate protection measures including alarms if necessary, in relation to risks that cannot be eliminated,
     1. inform users of the residual risks due to any shortcomings of the protection measures adopted.
-
 
 - The devices must achieve the performances intended by the manufacturer and be designed, manufactured and packaged in such a way that they are suitable for one or more of the functions referred to in UK MDR 2002 - Part I Section 2(1), as specified by the manufacturer.
 
@@ -25,7 +24,7 @@ audience: clinical-safety, implementers
 
 - The devices must be designed, manufactured and packed in such a way that their characteristics and performances during their intended use will not be adversely affected during transport and storage taking account of the instructions and information provided by the manufacturer.
 
-* Any undesirable side-effect must constitute an acceptable risk when weighed against the performances intended.
+- Any undesirable side-effect must constitute an acceptable risk when weighed against the performances intended.
 
 **6a.** Demonstration of conformity with the essential requirements must include a clinical evaluation in accordance with Annex X.
 

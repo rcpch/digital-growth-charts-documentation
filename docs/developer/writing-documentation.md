@@ -67,6 +67,7 @@ For all platforms we recommend using the `docker compose` setup, which will run 
    ```
 
 3. Start the Zensical development server using Docker Compose:
+
    ```console
    docker compose up
    ```

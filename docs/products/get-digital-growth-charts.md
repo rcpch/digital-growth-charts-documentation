@@ -27,4 +27,4 @@ We know that calculation and display of growth parameters is technically hard, a
 
 The RCPCH Digital Growth Charts are already used in numerous NHS Trusts across England. Also, they are currently being adopted by UK General Practice clinical systems, at National level in UK Devolved Nations, and within major neonatal and maternity systems.
 
-See the [full list of organisations using our charts](../about/whos-using-dgc.md). 
+See the [full list of organisations using our charts](../about/whos-using-dgc.md).
