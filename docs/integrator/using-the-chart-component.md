@@ -58,7 +58,7 @@ The charts ship with a monochrome theme by default. RCPCH also provide four othe
 
 The RCPCH logo and chart version appear in the top left corner by default. To reduce the logo's prominence, the `logoVariant` prop can show an RCPCH acknowledgement statement at the foot of the chart instead.
 
-##### Theme Builder 🎨
+##### Theme Builder
 
 Select the `custom` theme to override style props such as fonts, colours, lines and backgrounds. The Storybook Theme Builder lets you adjust each element visually, then copies the resulting settings object to your clipboard to pass to the `customThemeStyles` prop. <br/>
 ![theme-builder](../_assets/_images/theme-builder.png)
