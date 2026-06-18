@@ -15,6 +15,8 @@
 - [x] Update `docs/developer/writing-documentation.md` to explicitly cover markdown linting, UK English spelling, and running `s/codespell` per `spec/implementation.md`.
 - [x] Audit duplicated content across audience sections (clinicians/parents/integrators) and replace repeats with shared snippets and cross-links, per `spec/spec.md` non-goal.
 - [x] Investigate whether PDF export can be constrained to specific parts of the documentation. Implemented a self-hosted WeasyPrint exporter (`pdf-export/build-safety-pdf.py`, `s/build-pdf`) that builds a single PDF of the Clinical Safety and Medical Device sections from the built site, wired into the build-and-deploy workflow. This replaces the suspended `mkdocs-with-pdf` plugin for the safety documentation.
+- [x] Document the `clinicianFocus` prop (and the rest of the `<RCPCHChart>` props) - addressed by the curated props table on `docs/integrator/using-the-chart-component.md` (closes <https://github.com/rcpch/digital-growth-charts-documentation/issues/89>).
+- [x] Signpost why the example cURL command fails in Windows Command Prompt / PowerShell and offer alternatives (Git Bash, WSL, Postman) on `docs/integrator/making-api-calls.md` (closes <https://github.com/rcpch/digital-growth-charts-documentation/issues/138>).
 - [ ] Re-enable `with-pdf` plugin once Zensical module support lands, then restore automated PDF generation and validate `docs/safety/download.md` messaging (tracking: <https://github.com/zensical/backlog/issues/25>, <https://github.com/rcpch/digital-growth-charts-documentation/issues/150>). Note: the safety-section PDF is now self-hosted (see above); this item only covers any wider whole-site PDF needs.
 - [ ] Re-enable `git-committers` plugin once supported by Zensical and verify contributor metadata rendering (tracking: <https://github.com/zensical/backlog/issues/17>).
 - [ ] Re-enable `git-revision-date-localized` plugin once supported by Zensical and verify page timestamp rendering (tracking: <https://github.com/zensical/backlog/issues/18>).
@@ -23,6 +25,33 @@
 - [ ] Audit all overrides in `rcpch-theme/` against Zensical classic template blocks/macros to confirm `theme.custom_dir` compatibility and remove any Material-specific template assumptions.
 - [ ] Dark mode?
 - [ ] Review the Medical Device Regulation technical documentation in `docs/safety/medical-device-reg/mdr-technical-docs.md` for compliance with recent EU MDR updates.
-- [ ] Review the Clinical Safety Management File documents in `docs/safety/csmf/` 
+- [ ] Review the Clinical Safety Management File documents in `docs/safety/csmf/`. This review should also address the outstanding hazard issues: <https://github.com/rcpch/digital-growth-charts-documentation/issues/48>, <https://github.com/rcpch/digital-growth-charts-documentation/issues/49>, <https://github.com/rcpch/digital-growth-charts-documentation/issues/50>, <https://github.com/rcpch/digital-growth-charts-documentation/issues/51>, <https://github.com/rcpch/digital-growth-charts-documentation/issues/88>, and the missing-section fix in <https://github.com/rcpch/digital-growth-charts-documentation/issues/116>.
 - [ ] Hero section - width should match rest of site? Reduce size of text. Add some more interesting RCPCH colours? Make the hero dismissible.
 - [ ] Institute some 'point' regression testing for key items of content, to help identify missing content caused by upstream framework bugs etc.
+
+## Outstanding GitHub Issues
+
+These are the open issues in the [documentation repository](https://github.com/rcpch/digital-growth-charts-documentation/issues) that are not already covered by a specific item above. They are mostly content and compliance work rather than the structural/migration tasks that make up the bulk of this roadmap. Grouped here so the 2026 review has a single view of the backlog.
+
+### Blocked on upstream Zensical support
+
+- [ ] Add Tags to the documentation site, applied via page frontmatter and indexed into a tags page, for an extra layer of discoverability (<https://github.com/rcpch/digital-growth-charts-documentation/issues/73>). Blocked until Zensical supports the `material/tags` plugin (tracking: <https://github.com/zensical/backlog/issues/38>).
+
+### Compliance and governance
+
+- [ ] Government Digital Service Open API best-practice review (<https://github.com/rcpch/digital-growth-charts-documentation/issues/61>).
+- [ ] WCAG 2.1 level AA compliance (<https://github.com/rcpch/digital-growth-charts-documentation/issues/62>).
+- [ ] Accessibility Statement (<https://github.com/rcpch/digital-growth-charts-documentation/issues/63>).
+- [ ] Benefits case describing the objectives of the project (<https://github.com/rcpch/digital-growth-charts-documentation/issues/64>).
+- [ ] Add a DPIA (Data Protection Impact Assessment) section (<https://github.com/rcpch/digital-growth-charts-documentation/issues/113>).
+
+### New or expanded content
+
+- [ ] User Journeys documentation (<https://github.com/rcpch/digital-growth-charts-documentation/issues/60>).
+- [ ] Develop the "Subscriber Guide" section (<https://github.com/rcpch/digital-growth-charts-documentation/issues/98>).
+- [ ] FHIR, SNOMED and openEHR implementation section (<https://github.com/rcpch/digital-growth-charts-documentation/issues/117>).
+- [ ] De-emphasise Bone Age and Events in the introductory API examples and move them to a clearly-marked optional section, so implementers don't think they are required parameters (<https://github.com/rcpch/digital-growth-charts-documentation/issues/122>).
+- [ ] Clarify what gestational age is in implementer-friendly terms, and that it is fixed once the child is born (<https://github.com/rcpch/digital-growth-charts-documentation/issues/123>).
+- [ ] List of which NHS orgs, non-NHS orgs and suppliers are using dGC (<https://github.com/rcpch/digital-growth-charts-documentation/issues/127>). Relates to the existing `docs/about/whos-using-dgc.md` page.
+- [ ] Add an information-security-oriented flowchart (<https://github.com/rcpch/digital-growth-charts-documentation/issues/129>).
+- [ ] Add a high-level flowchart (<https://github.com/rcpch/digital-growth-charts-documentation/issues/130>).

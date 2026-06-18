@@ -28,6 +28,12 @@ Download cURL [here](https://curl.se/download.html). Scroll to the correction do
 
 Copy and paste the following cURL request into your command line, inserting your `Primary key`:
 
+!!! warning "Windows users: the examples below use Bash syntax"
+
+    The cURL examples on this page use Bash conventions: backslash (`\`) line continuations and single-quoted (`'...'`) JSON. These do **not** work in Windows **Command Prompt** or **PowerShell**, which use different line-continuation characters and quoting rules, so pasting the example as-is will fail (often with a confusing error about the URL or port number).
+
+    To run the examples unchanged, use a Bash shell on Windows - **Git Bash** (installed with [Git for Windows](https://gitforwindows.org/)) or **WSL** (Windows Subsystem for Linux). Alternatively, use a graphical tool such as **Postman** (see below), which avoids shell-quoting issues entirely.
+
 ```bash hl_lines="3"
 curl --location --request POST 'https://api.rcpch.ac.uk/growth/v1/uk-who/calculation' \
 --header 'Subscription-Key: YOUR_PRIMARY_API_KEY_GOES_HERE' \
