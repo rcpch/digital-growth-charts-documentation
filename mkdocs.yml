@@ -39,6 +39,7 @@ nav:
       - "integrator/making-api-calls.md"
       - "integrator/api-reference.md"
       - "integrator/using-the-chart-component.md"
+      - "integrator/chart-component-storybook.md"
       - "integrator/support.md"
       - "integrator/client-specification.md"
       - "integrator/turner-down-syndrome.md"
