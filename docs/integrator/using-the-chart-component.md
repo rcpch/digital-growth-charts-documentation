@@ -28,14 +28,14 @@ The table below lists the props accepted by `<RCPCHChart>`. The authoritative de
 
 | Prop | Type | Required | Default | Description |
 | --- | --- | --- | --- | --- |
-| `title` | `string` | Yes | — | Title shown at the top of the chart. |
-| `measurementMethod` | `'height' \| 'weight' \| 'ofc' \| 'bmi'` | Yes | — | The measurement to plot. |
-| `reference` | `'uk-who' \| 'turner' \| 'trisomy-21' \| 'cdc' \| 'trisomy-21-aap' \| 'who'` | Yes | — | The growth reference dataset to chart against. |
-| `sex` | `'male' \| 'female'` | Yes | — | The child's sex. |
-| `measurements` | `ClientMeasurementObject` | Yes | — | The API response data, keyed by measurement method. |
-| `exportChartCallback` | `(svg?: any) => any` | Yes | — | Called with the chart SVG when an export is triggered. |
+| `title` | `string` | Yes | - | Title shown at the top of the chart. |
+| `measurementMethod` | `'height' \| 'weight' \| 'ofc' \| 'bmi'` | Yes | - | The measurement to plot. |
+| `reference` | `'uk-who' \| 'turner' \| 'trisomy-21' \| 'cdc' \| 'trisomy-21-aap' \| 'who'` | Yes | - | The growth reference dataset to chart against. |
+| `sex` | `'male' \| 'female'` | Yes | - | The child's sex. |
+| `measurements` | `ClientMeasurementObject` | Yes | - | The API response data, keyed by measurement method. |
+| `exportChartCallback` | `(svg?: any) => any` | Yes | - | Called with the chart SVG when an export is triggered. |
 | `allowDuplicates` | `boolean` | No | `false` | Whether to plot measurements that share the same age and value. |
-| `midParentalHeightData` | `MidParentalHeightObject` | No | — | Mid-parental height data to overlay on height charts. |
+| `midParentalHeightData` | `MidParentalHeightObject` | No | - | Mid-parental height data to overlay on height charts. |
 | `enableZoom` | `boolean` | No | `true` | Allow the user to zoom and pan the chart. |
 | `chartType` | `'centile' \| 'sds'` | No | `'centile'` | Whether to render a centile or an SDS chart. |
 | `enableExport` | `boolean` | No | `true` | Show the export control and enable SVG export. |
@@ -44,7 +44,7 @@ The table below lists the props accepted by `<RCPCHChart>`. The authoritative de
 | `height` | `number` | No | `800` | Chart height in pixels. |
 | `width` | `number` | No | `1000` | Chart width in pixels. |
 | `logoVariant` | `'top' \| 'bottom' \| 'legend'` | No | `'top'` | Placement of the RCPCH logo or acknowledgement. |
-| `customThemeStyles` | `object` | No | — | Per-element style overrides applied when `theme` is `custom` (see below). |
+| `customThemeStyles` | `object` | No | - | Per-element style overrides applied when `theme` is `custom` (see below). |
 
 When `theme` is set to `custom`, `customThemeStyles` lets you override individual style groups: `chartStyle`, `axisStyle`, `gridlineStyle`, `measurementStyle`, `centileStyle`, `sdsStyle` and `referenceStyle`. Any group you omit falls back to the monochrome defaults.
 
