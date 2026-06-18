@@ -193,6 +193,8 @@ markdown_extensions:
       auto_append:
         - includes/_abbreviations.md # adds abbreviations snippets to ALL pages
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - toc:
       permalink: true
 

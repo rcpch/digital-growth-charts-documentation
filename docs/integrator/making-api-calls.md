@@ -26,34 +26,44 @@ Download cURL [here](https://curl.se/download.html). Scroll to the correction do
 
 ### Using cURL to make a test request
 
-Copy and paste the following cURL request into your command line, inserting your `Primary key`:
+Copy and paste the following cURL request into your command line, inserting your `Primary key`. Use the tab that matches your operating system - the macOS / Linux version uses Bash quoting and `\` line continuations, while the Windows version uses Command Prompt quoting and `^` line continuations.
 
-!!! warning "Windows users: the examples below use Bash syntax"
+=== ":material-apple: :material-linux: macOS / Linux"
 
-    The cURL examples on this page use Bash conventions: backslash (`\`) line continuations and single-quoted (`'...'`) JSON. These do **not** work in Windows **Command Prompt** or **PowerShell**, which use different line-continuation characters and quoting rules, so pasting the example as-is will fail (often with a confusing error about the URL or port number).
+    ```bash hl_lines="3"
+    curl --location --request POST 'https://api.rcpch.ac.uk/growth/v1/uk-who/calculation' \
+    --header 'Subscription-Key: YOUR_PRIMARY_API_KEY_GOES_HERE' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "birth_date": "2020-04-12",
+        "observation_date": "2028-06-12",
+        "observation_value": 115,
+        "sex": "female",
+        "gestation_weeks": 40,
+        "gestation_days": 0,
+        "measurement_method": "height",
+        "bone_age": 10,
+        "bone_age_centile": 98,
+        "bone_age_sds": 2.0,
+        "bone_age_text": "This bone age is advanced",
+        "bone_age_type": "greulich-pyle",
+        "events_text": ["Growth hormone start", "Growth Hormone Deficiency diagnosis"]
+    }'
+    ```
 
-    To run the examples unchanged, use a Bash shell on Windows - **Git Bash** (installed with [Git for Windows](https://gitforwindows.org/)) or **WSL** (Windows Subsystem for Linux). Alternatively, use a graphical tool such as **Postman** (see below), which avoids shell-quoting issues entirely.
+=== ":material-microsoft-windows: Windows"
 
-```bash hl_lines="3"
-curl --location --request POST 'https://api.rcpch.ac.uk/growth/v1/uk-who/calculation' \
---header 'Subscription-Key: YOUR_PRIMARY_API_KEY_GOES_HERE' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "birth_date": "2020-04-12",
-    "observation_date": "2028-06-12",
-    "observation_value": 115,
-    "sex": "female",
-    "gestation_weeks": 40,
-    "gestation_days": 0,
-    "measurement_method": "height",
-    "bone_age": 10,
-    "bone_age_centile": 98,
-    "bone_age_sds": 2.0,
-    "bone_age_text": "This bone age is advanced",
-    "bone_age_type": "greulich-pyle",
-    "events_text": ["Growth hormone start", "Growth Hormone Deficiency diagnosis"]
-}'
-```
+    Windows **Command Prompt** and **PowerShell** do not understand Bash's `\` line continuations or single-quoted JSON, so the macOS / Linux example will fail if pasted as-is. The version below uses `^` for line continuation and escapes the inner double quotes (`\"`) so the JSON survives Command Prompt's quoting rules. cURL ships with Windows 10 and later.
+
+    ```bat hl_lines="2"
+    curl --location --request POST "https://api.rcpch.ac.uk/growth/v1/uk-who/calculation" ^
+    --header "Subscription-Key: YOUR_PRIMARY_API_KEY_GOES_HERE" ^
+    --header "Content-Type: application/json" ^
+    --data-raw "{\"birth_date\": \"2020-04-12\", \"observation_date\": \"2028-06-12\", \"observation_value\": 115, \"sex\": \"female\", \"gestation_weeks\": 40, \"gestation_days\": 0, \"measurement_method\": \"height\", \"bone_age\": 10, \"bone_age_centile\": 98, \"bone_age_sds\": 2.0, \"bone_age_text\": \"This bone age is advanced\", \"bone_age_type\": \"greulich-pyle\", \"events_text\": [\"Growth hormone start\", \"Growth Hormone Deficiency diagnosis\"]}"
+    ```
+
+    !!! tip "Using PowerShell?"
+        In PowerShell, `curl` is an alias for `Invoke-WebRequest`, which has different syntax. Call `curl.exe` explicitly to use real cURL, or simply run the command in **Command Prompt** instead.
 
 The response should be a large JSON response like the following (truncated):
 
