@@ -6,7 +6,7 @@ audience: integrators, implementers, technical-architects
 
 # SNOMED CT codes for storing growth results
 
-When you store the results returned by the Digital Growth Charts API in an Electronic Patient Record (EPR), it is good practice to code the stored values with [SNOMED CT](https://www.snomed.org/) concepts. Coding the centile and SDS (Standard Deviation Score) results makes them interoperable, queryable, and consistent across systems.
+When you store the results returned by the Digital Growth Charts API in an Electronic Patient Record (EPR), it is good practice to code the stored values alongside [SNOMED CT](https://www.snomed.org/) concepts. Coding the centile and SDS (Standard Deviation Score) results makes them more interoperable, queryable, and consistent across systems.
 
 !!! note "Advisory, not prescriptive"
     The concepts below are **suggestions** to help you get started. They are not a mandated value set, and the RCPCH does not require you to use these specific codes. Your organisation's terminology team may already have local conventions - if so, follow those. The aim here is to point you at sensible, active SNOMED CT observable entities that map cleanly onto what the API returns.
