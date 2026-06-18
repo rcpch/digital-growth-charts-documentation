@@ -42,8 +42,8 @@ These are the open issues in the [documentation repository](https://github.com/r
 
 ### New or expanded content
 
-- [ ] User Journeys documentation (<https://github.com/rcpch/digital-growth-charts-documentation/issues/60>).
-- [ ] Develop the "Subscriber Guide" section (<https://github.com/rcpch/digital-growth-charts-documentation/issues/98>).
+- [x] User Journeys documentation (<https://github.com/rcpch/digital-growth-charts-documentation/issues/60>). Addressed by the audience-based navigation and entry points (Implementer, Parent, Clinician, Developer, etc.), which give each type of user a clear journey through the site. Good enough for the 2026 review.
+- [x] Develop the "Subscriber Guide" section (<https://github.com/rcpch/digital-growth-charts-documentation/issues/98>). Closed as outdated.
 - [ ] FHIR, SNOMED and openEHR implementation section (<https://github.com/rcpch/digital-growth-charts-documentation/issues/117>).
 - [x] De-emphasise Bone Age and Events in the introductory API examples and move them to a clearly-marked optional section, so implementers don't think they are required parameters. The introductory cURL examples on `docs/integrator/making-api-calls.md` (both OS tabs and the `jq` example) now send only the required parameters, and a new "Optional parameters and advanced features" section lists the required fields and explains the optional bone age, events, Down/Turner syndrome and non-UK-WHO reference features, with a full example (closes <https://github.com/rcpch/digital-growth-charts-documentation/issues/122>).
 - [ ] Clarify what gestational age is in implementer-friendly terms, and that it is fixed once the child is born (<https://github.com/rcpch/digital-growth-charts-documentation/issues/123>).
