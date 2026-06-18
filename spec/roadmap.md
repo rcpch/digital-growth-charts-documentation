@@ -20,7 +20,7 @@
 - [x] Provide a PDF of the safety documentation - delivered by the self-hosted WeasyPrint exporter (see above), so this no longer depends on the `with-pdf` plugin landing in Zensical. There is no use-case for a whole-site PDF, so no further work is needed here (closes <https://github.com/rcpch/digital-growth-charts-documentation/issues/150>).
 - [ ] Re-enable `git-committers` plugin once supported by Zensical and verify contributor metadata rendering (tracking: <https://github.com/zensical/backlog/issues/17>).
 - [ ] Re-enable `git-revision-date-localized` plugin once supported by Zensical and verify page timestamp rendering (tracking: <https://github.com/zensical/backlog/issues/18>).
-- [ ] Re-enable `macros` plugin once supported by Zensical and verify existing macro-dependent content still renders correctly (tracking: <https://github.com/zensical/backlog/issues/16>).
+- [x] Re-enable `macros` for Jinja2 templating - now built into Zensical (0.0.40) as the `zensical.extensions.macros` markdown extension. Enabled in `mkdocs.yml` and verified the `{{ repository_name }}` badge substitution in `docs/products/*.md` (also fixed the python-library page, which was pointing at the wrong repository). Tracking: <https://github.com/zensical/backlog/issues/16>.
 - [ ] Re-enable `llmstxt` plugin (or equivalent native feature) once supported by Zensical and verify `LLMs.txt` generation in build output (tracking: <https://github.com/zensical/backlog/issues/92>).
 - [ ] Audit all overrides in `rcpch-theme/` against Zensical classic template blocks/macros to confirm `theme.custom_dir` compatibility and remove any Material-specific template assumptions.
 - [ ] Dark mode?

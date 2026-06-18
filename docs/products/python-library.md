@@ -4,7 +4,7 @@ reviewers: Dr Marcus Baw, Dr Simon Chapman, Dr Anchit Chandran
 audience: developers, researchers, academics
 ---
 
-{% set repository_name="rcpch/digital-growth-charts-react-component-library" -%}
+{% set repository_name="rcpch/rcpchgrowth-python" -%}
 
 [![Github Issues](https://img.shields.io/github/issues/{{ repository_name }})](https://github.com/{{ repository_name }}/issues)
 [![Github Stars](https://img.shields.io/github/stars/{{ repository_name }})](https://github.com/{{ repository_name }}/stargazers)

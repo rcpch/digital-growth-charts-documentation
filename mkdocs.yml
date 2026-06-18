@@ -166,9 +166,6 @@ plugins:
   #         - safety/*.md
   #         - technical/*.md
   #
-  # - macros:               # https://github.com/zensical/backlog/issues/16
-  #     module_name: main
-  #
   # - with-pdf:             # https://github.com/zensical/backlog/issues/25
   #     cover_title: RCPCH Digital Growth Charts
   #     cover_subtitle: Complete Documentation Manual
@@ -181,6 +178,9 @@ markdown_extensions:
   - admonition
   - attr_list
   - md_in_html #insiders
+  # Jinja2 templating in Markdown (e.g. {{ repository_name }} in products/*.md).
+  # Shipped in Zensical 0.0.40 - https://github.com/zensical/backlog/issues/16
+  - zensical.extensions.macros
   - pymdownx.details
   - pymdownx.emoji:
       emoji_generator: !!python/name:zensical.extensions.emoji.to_svg
