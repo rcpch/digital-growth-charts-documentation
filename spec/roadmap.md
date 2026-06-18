@@ -1,39 +1,17 @@
 # 2026 Documentation Review Roadmap
 
-- [x] Review all docs files to create generalised high-level features (`spec.md`), implementation guidances (`implementation.md`), and style guide (`style-guide.md`) for the RCPCH Digital Growth Charts platform documentation.
-- [x] Audit all docs files for compliance with the `spec/style-guide.md` and create this roadmap of changes that will improve the docs site to meet those standards.
-- [x] Add further convenience scripts to `s/` as needed to help with documentation development and maintenance.
-- [x] Add dependabot configuration to keep documentation dependencies up to date.
-- [x] Add linting and spellchecking scripts to make it easier to use these consistently and regularly.
-- [x] Run linting and spellchecking across all docs files and fix any issues found.
-- <https://github.com/rcpch/digital-growth-charts-documentation/issues>
-- [x] Add automated `LLMs.txt` generation to the build output to meet `spec/spec.md` requirements. There is a plugin for MkDocs at <https://github.com/pawamoy/mkdocs-llmstxt> which should help achieve this goal.
-- [x] Expand the home page audience routing in `rcpch-theme/overrides/home.html` to include parents/carers, researchers, and safety/compliance audiences, not just integrators/clinicians/contributors.
-- [x] Add missing `audience` frontmatter to content pages with no existing `audience` field.
-- [x] Add missing `reviewers` frontmatter to `docs/index.md` and `docs/safety/download.md`.
-- [x] Add short purpose/intro paragraphs where pages currently jump straight to embeds or snippets: `docs/integrator/api-reference.md`, `docs/technical/status.md`, `docs/safety/download.md`, `docs/legal/disclaimer.md`.
-- [x] Update `docs/developer/writing-documentation.md` to explicitly cover markdown linting, UK English spelling, and running `s/codespell` per `spec/implementation.md`.
-- [x] Audit duplicated content across audience sections (clinicians/parents/integrators) and replace repeats with shared snippets and cross-links, per `spec/spec.md` non-goal.
-- [x] Investigate whether PDF export can be constrained to specific parts of the documentation. Implemented a self-hosted WeasyPrint exporter (`pdf-export/build-safety-pdf.py`, `s/build-pdf`) that builds a single PDF of the Clinical Safety and Medical Device sections from the built site, wired into the build-and-deploy workflow. This replaces the suspended `mkdocs-with-pdf` plugin for the safety documentation.
-- [x] Document the `clinicianFocus` prop (and the rest of the `<RCPCHChart>` props) - addressed by the curated props table on `docs/integrator/using-the-chart-component.md` (closes <https://github.com/rcpch/digital-growth-charts-documentation/issues/89>).
-- [x] Make the example cURL command work on Windows as well as POSIX systems. Offered two versions in Zensical content tabs on `docs/integrator/making-api-calls.md` - macOS / Linux (Bash quoting, `\` continuations) and Windows (Command Prompt quoting, `^` continuations, escaped JSON), with OS icons on each tab and a note for PowerShell's `curl.exe` alias. Enabled the `pymdownx.tabbed` extension to support this (closes <https://github.com/rcpch/digital-growth-charts-documentation/issues/138>).
-- [x] Provide a PDF of the safety documentation - delivered by the self-hosted WeasyPrint exporter (see above), so this no longer depends on the `with-pdf` plugin landing in Zensical. There is no use-case for a whole-site PDF, so no further work is needed here (closes <https://github.com/rcpch/digital-growth-charts-documentation/issues/150>).
-- [x] Re-enable `macros` for Jinja2 templating - now built into Zensical (0.0.40) as the `zensical.extensions.macros` markdown extension. Enabled in `mkdocs.yml` and verified the `{{ repository_name }}` badge substitution in `docs/products/*.md` (also fixed the python-library page, which was pointing at the wrong repository). Tracking: <https://github.com/zensical/backlog/issues/16>.
-- [x] Audit all overrides in `rcpch-theme/` against Zensical classic template blocks/macros to confirm `theme.custom_dir` compatibility. Found and fixed a migration bug: the `main.html`/`home.html` overrides were nested in `rcpch-theme/overrides/` (a Material-era layout), so Zensical did not treat `main.html` as the global default-page template - the social/Open Graph meta tags in its `extrahead` block only rendered on the homepage and were absent from every content page. Moved both templates to the `custom_dir` root (`rcpch-theme/`), updated the homepage `template:` frontmatter and `home.html` `extends`, and fixed a malformed `og:image` URL (missing `/` before `_assets`). OG/Twitter cards now render correctly on all pages. Note: `partials/source-file.html` remains but is inert until the `git-committers`/`git-revision-date-localized` plugins are re-enabled (tracked separately).
-- [ ] Review the Medical Device Regulation technical documentation in `docs/safety/medical-device-reg/mdr-technical-docs.md` for compliance with recent EU MDR updates.
-- [ ] Review the Clinical Safety Management File documents in `docs/safety/csmf/`. This review should also address the outstanding hazard issues: <https://github.com/rcpch/digital-growth-charts-documentation/issues/48>, <https://github.com/rcpch/digital-growth-charts-documentation/issues/49>, <https://github.com/rcpch/digital-growth-charts-documentation/issues/50>, <https://github.com/rcpch/digital-growth-charts-documentation/issues/51>, <https://github.com/rcpch/digital-growth-charts-documentation/issues/88>, and the missing-section fix in <https://github.com/rcpch/digital-growth-charts-documentation/issues/116>.
-- [ ] Hero section - width should match rest of site? Reduce size of text. Add some more interesting RCPCH colours? Make the hero dismissible.
+The bulk of the 2026 documentation review is complete and is captured in [PR #161](https://github.com/rcpch/digital-growth-charts-documentation/pull/161). What remains is grouped below: work that is blocked on an upstream dependency, and improvements deferred to a future cycle.
 
-## Outstanding GitHub Issues
-
-These are the open issues in the [documentation repository](https://github.com/rcpch/digital-growth-charts-documentation/issues) that are not already covered by a specific item above. They are mostly content and compliance work rather than the structural/migration tasks that make up the bulk of this roadmap. Grouped here so the 2026 review has a single view of the backlog.
-
-### Blocked on upstream Zensical support
+## Blocked Upstream
 
 - [ ] Add Tags to the documentation site, applied via page frontmatter and indexed into a tags page, for an extra layer of discoverability (<https://github.com/rcpch/digital-growth-charts-documentation/issues/73>). Blocked until Zensical supports the `material/tags` plugin (tracking: <https://github.com/zensical/backlog/issues/38>).
 
-### Compliance and governance
+## Future Improvements
 
+### Safety and compliance
+
+- [ ] Review the Medical Device Regulation technical documentation in `docs/safety/medical-device-reg/mdr-technical-docs.md` for compliance with recent EU MDR updates.
+- [ ] Review the Clinical Safety Management File documents in `docs/safety/csmf/`, addressing the outstanding hazard issues (<https://github.com/rcpch/digital-growth-charts-documentation/issues/48>, <https://github.com/rcpch/digital-growth-charts-documentation/issues/49>, <https://github.com/rcpch/digital-growth-charts-documentation/issues/50>, <https://github.com/rcpch/digital-growth-charts-documentation/issues/51>, <https://github.com/rcpch/digital-growth-charts-documentation/issues/88>) and the missing-section fix in <https://github.com/rcpch/digital-growth-charts-documentation/issues/116>.
 - [ ] Government Digital Service Open API best-practice review (<https://github.com/rcpch/digital-growth-charts-documentation/issues/61>).
 - [ ] WCAG 2.1 level AA compliance (<https://github.com/rcpch/digital-growth-charts-documentation/issues/62>).
 - [ ] Accessibility Statement (<https://github.com/rcpch/digital-growth-charts-documentation/issues/63>).
@@ -42,11 +20,12 @@ These are the open issues in the [documentation repository](https://github.com/r
 
 ### New or expanded content
 
-- [x] User Journeys documentation (<https://github.com/rcpch/digital-growth-charts-documentation/issues/60>). Addressed by the audience-based navigation and entry points (Implementer, Parent, Clinician, Developer, etc.), which give each type of user a clear journey through the site. Good enough for the 2026 review.
-- [x] Develop the "Subscriber Guide" section (<https://github.com/rcpch/digital-growth-charts-documentation/issues/98>). Closed as outdated.
-- [ ] FHIR, SNOMED and openEHR implementation section (<https://github.com/rcpch/digital-growth-charts-documentation/issues/117>). **SNOMED CT part done**: new advisory page `docs/integrator/snomed-codes.md` suggesting active SNOMED CT observable entities for coding the returned centile and SDS results. FHIR (Magentus mapping WIP) and openEHR (Apperta archetype) are larger and less generically useful for the average implementer, so deferred beyond this review; issue left open to track them.
-- [x] De-emphasise Bone Age and Events in the introductory API examples and move them to a clearly-marked optional section, so implementers don't think they are required parameters. The introductory cURL examples on `docs/integrator/making-api-calls.md` (both OS tabs and the `jq` example) now send only the required parameters, and a new "Optional parameters and advanced features" section lists the required fields and explains the optional bone age, events, Down/Turner syndrome and non-UK-WHO reference features, with a full example (closes <https://github.com/rcpch/digital-growth-charts-documentation/issues/122>).
-- [x] Clarify what gestational age is in implementer-friendly terms, and that it is fixed once the child is born (<https://github.com/rcpch/digital-growth-charts-documentation/issues/123>). Added an implementer-friendly explanation by the required-parameters table on `docs/integrator/making-api-calls.md` (what `gestation_weeks`/`gestation_days` mean, that gestational age is fixed at birth and must be identical across all of a child's measurements, and why mixing different gestation values produces a misleading trajectory). Reframed the "Adjusting for Gestation at birth" section on `docs/integrator/client-specification.md` to note the chart component handles corrected-age plotting automatically, and tightened the gestational age definition to state it is fixed at birth.
-- [x] List of which NHS orgs, non-NHS orgs and suppliers are using dGC (<https://github.com/rcpch/digital-growth-charts-documentation/issues/127>). Delivered by the existing `docs/about/whos-using-dgc.md` page, which lists NHS organisations, research organisations, other organisations, and software suppliers.
+- [ ] FHIR and openEHR implementation sections (<https://github.com/rcpch/digital-growth-charts-documentation/issues/117>). The SNOMED CT part shipped in the 2026 review (`docs/integrator/snomed-codes.md`); FHIR (Magentus mapping WIP) and openEHR (Apperta archetype) are larger and less generically useful, so are deferred.
 - [ ] Add an information-security-oriented flowchart (<https://github.com/rcpch/digital-growth-charts-documentation/issues/129>).
 - [ ] Add a high-level flowchart (<https://github.com/rcpch/digital-growth-charts-documentation/issues/130>).
+
+### Site and UI
+
+- [ ] Hero section - width should match rest of site? Reduce size of text. Add some more interesting RCPCH colours? Make the hero dismissible.
+</content>
+</invoke>
