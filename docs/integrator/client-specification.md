@@ -113,6 +113,9 @@ Certain key presentation principles should be included:
 
 ### Adjusting for Gestation at birth
 
+!!! tip "Using the RCPCH chart component? This is handled for you"
+    If you display results with the [RCPCH chart component](using-the-chart-component.md), corrected-age plotting, the circle/cross notation and the chronological/corrected toggle are all built in - you do not need to implement any of this yourself. The detailed plotting rules below only apply if you are building your own charting from scratch. Whichever you do, remember that a child's gestational age is fixed at birth and must stay the same across all of their measurements.
+
 On the centile chart, it should be clear that allowance has been made for varying age of gestation at birth, by offering the option of plotting at chronological age with a **circle**, as well as gestational age (age – number of weeks premature) with a **cross**. If plotted together, they should be joined by a line. An option should be offered to toggle between the plotted chronological, corrected ages and both.
 
 !!! note "Gestation Age Correction through the life course"
@@ -130,7 +133,7 @@ On the centile chart, it should be clear that allowance has been made for varyin
 
 #### Definitions
 
-- **Gestational age**: time period for foetal development inside the uterus, beginning with conception and ending at birth
+- **Gestational age**: time period for foetal development inside the uterus, beginning with conception and ending at birth. It is fixed at the moment of birth and does not change thereafter.
 - **Weeks premature**: number of weeks prior to 37 weeks of gestation, for a live birth
 - **Chronological age**: time period starting from birth until a given date
 

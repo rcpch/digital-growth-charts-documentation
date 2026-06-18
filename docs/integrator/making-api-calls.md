@@ -119,6 +119,13 @@ The test request above sends only the parameters the API needs to return a centi
 | `gestation_days`     | Additional days of gestation at birth (use `0` for a term baby). |
 | `measurement_method` | `height`, `weight`, `ofc` (head circumference), or `bmi`.         |
 
+!!! warning "Gestational age is fixed at birth - never change it between measurements"
+    `gestation_weeks` and `gestation_days` describe **how far through pregnancy the child had reached when they were born** - for example, a baby born five weeks early is `35` weeks and `0` days, and a baby born on their due date is `40` weeks and `0` days.
+
+    Gestational age is a **fixed fact about the individual**. It is determined at the moment of birth and **does not change** for the rest of that child's life. Every measurement you send for the same child must use the **same** `gestation_weeks` and `gestation_days`.
+
+    The API uses these values to calculate the child's *corrected age* (their age adjusted for prematurity), which is what allows a preterm baby to be plotted fairly against the growth reference. If you send different gestation values for different measurements of the **same** child, each measurement is corrected differently, and plotting them together produces a misleading growth trajectory. Store the gestation once against the patient record and reuse it for every measurement.
+
 Everything else is **optional**. You do not need to send any of the following to get a valid result, and most measurements will not use them. They unlock additional features when you need them:
 
 !!! info "Bone age"
