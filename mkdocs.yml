@@ -43,6 +43,7 @@ nav:
       - "integrator/support.md"
       - "integrator/client-specification.md"
       - "integrator/turner-down-syndrome.md"
+      - "integrator/snomed-codes.md"
       - "integrator/faqs-for-integrators.md"
   - Clinicians:
       - "clinician/how-the-api-works.md"
