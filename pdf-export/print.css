@@ -1,0 +1,226 @@
+/* Print stylesheet for the self-hosted Clinical Safety / Medical Device PDF.
+ * Used by pdf-export/build-safety-pdf.py via WeasyPrint. Intentionally
+ * standalone (does not depend on the Zensical theme CSS) so the printed
+ * document is predictable and self-contained. */
+
+@page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+
+    @top-right {
+        content: "RCPCH Digital Growth Charts - Safety Documentation";
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        font-size: 8pt;
+        color: #6b6b6b;
+    }
+
+    @bottom-right {
+        content: "Page " counter(page) " of " counter(pages);
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        font-size: 8pt;
+        color: #6b6b6b;
+    }
+}
+
+/* No running header/footer on the cover page. */
+@page :first {
+    @top-right {
+        content: "";
+    }
+    @bottom-right {
+        content: "";
+    }
+}
+
+html {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.5;
+    color: #1a1a1a;
+}
+
+body {
+    margin: 0;
+}
+
+/* Each source page starts on a fresh sheet. */
+section.page {
+    break-before: page;
+}
+
+/* ---- Cover page ---- */
+section.cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 247mm; /* roughly the printable height of A4 with the margins above */
+}
+
+.cover-logo {
+    width: 70mm;
+    margin-bottom: 18mm;
+}
+
+.cover-title {
+    font-size: 26pt;
+    font-weight: 700;
+    margin: 0 0 6mm 0;
+    border: none;
+    color: #11a7f2;
+}
+
+.cover-subtitle {
+    font-size: 16pt;
+    font-weight: 400;
+    margin: 0 0 14mm 0;
+    color: #0d0d58;
+}
+
+.cover-date {
+    font-size: 11pt;
+    color: #6b6b6b;
+}
+
+/* ---- Headings ---- */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.25;
+    break-after: avoid;
+    color: #0d0d58;
+}
+
+h1 {
+    font-size: 20pt;
+    margin: 0 0 8pt 0;
+    padding-bottom: 4pt;
+    border-bottom: 2px solid #11a7f2;
+}
+
+h2 {
+    font-size: 15pt;
+    margin: 18pt 0 6pt 0;
+}
+
+h3 {
+    font-size: 12.5pt;
+    margin: 14pt 0 5pt 0;
+}
+
+h4, h5, h6 {
+    font-size: 11pt;
+    margin: 12pt 0 4pt 0;
+}
+
+p {
+    margin: 0 0 7pt 0;
+    orphans: 3;
+    widows: 3;
+}
+
+a {
+    color: #11a7f2;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+ul, ol {
+    margin: 0 0 7pt 0;
+    padding-left: 18pt;
+}
+
+li {
+    margin-bottom: 2pt;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ---- Tables ---- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8pt 0 12pt 0;
+    font-size: 9pt;
+    break-inside: auto;
+}
+
+th, td {
+    border: 1px solid #cfcfcf;
+    padding: 4pt 6pt;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: #eef6fb;
+    color: #0d0d58;
+    font-weight: 700;
+}
+
+tr {
+    break-inside: avoid;
+}
+
+/* ---- Code ---- */
+code {
+    font-family: "DejaVu Sans Mono", "Courier New", monospace;
+    font-size: 9pt;
+    background: #f4f4f4;
+    padding: 1pt 3pt;
+    border-radius: 2pt;
+}
+
+pre {
+    background: #f4f4f4;
+    border: 1px solid #e0e0e0;
+    border-radius: 3pt;
+    padding: 8pt;
+    font-size: 8.5pt;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    break-inside: avoid;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+}
+
+blockquote {
+    margin: 8pt 0;
+    padding: 2pt 12pt;
+    border-left: 3px solid #11a7f2;
+    color: #444;
+}
+
+/* ---- Admonitions (info / warning / note etc.) ---- */
+.admonition {
+    border: 1px solid #cfcfcf;
+    border-left: 4px solid #11a7f2;
+    border-radius: 3pt;
+    padding: 8pt 10pt;
+    margin: 10pt 0;
+    background: #fafafa;
+    break-inside: avoid;
+}
+
+.admonition-title {
+    font-weight: 700;
+    margin: 0 0 4pt 0;
+    color: #0d0d58;
+}
+
+.admonition.warning,
+.admonition.caution,
+.admonition.danger {
+    border-left-color: #d8643c;
+}
+
+.admonition.warning > .admonition-title,
+.admonition.caution > .admonition-title,
+.admonition.danger > .admonition-title {
+    color: #b1421f;
+}

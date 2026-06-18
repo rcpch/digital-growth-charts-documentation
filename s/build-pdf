@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -e  # Exit on error
+
+# scripts may need to be made executable on some platforms before they can be run
+# chmod +x s/build-pdf
+
+# Builds the self-hosted Clinical Safety / Medical Device PDF.
+#
+# It builds the site with Zensical, then runs the WeasyPrint exporter
+# (pdf-export/build-safety-pdf.py) against the freshly built HTML, both inside
+# the docker compose container so WeasyPrint and its native libraries are
+# available.
+#
+# Output: site/_assets/_pdfs/safety-documentation.pdf
+#
+# Usage:
+#   s/build-pdf
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+COMPOSE_FILE="$REPO_ROOT/docker-compose.yml"
+
+docker compose -f "$COMPOSE_FILE" --project-directory "$REPO_ROOT" run --rm zensical \
+  sh -c "zensical build --clean && python pdf-export/build-safety-pdf.py"
+
+echo "PDF written to site/_assets/_pdfs/safety-documentation.pdf"
