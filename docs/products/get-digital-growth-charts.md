@@ -6,7 +6,7 @@ audience: implementers, clinicians
 
 ## Are paper growth charts holding up digital transformation?
 
-We know from talking to experienced child health clinicians that they absolutely **must have** growth charts in any new digital solution. The lack of good quality and richly functional digital growth charts on the EPR/EHR market has held back digital transformation in many care settings. Some care-giving organisations have been forced to either hold up plans for digitisation, or use a parallel paper chart workflow.
+We know from talking to experienced child health clinicians that they absolutely **must** have growth charts in any new digital solution. The lack of good quality and richly functional digital growth charts on the EPR/EHR market has held back digital transformation in many care settings. Some care-giving organisations have been forced to either hold up plans for digitisation, or use a parallel paper chart workflow.
 
 !!! success "RCPCH Digital Growth Charts are a safe and cost-effective solution"
     Our solution is a UKCA/CE-marked Registered Medical Device, with a full DCB0129 clinical safety file, and is already in use in numerous NHS organisations across the UK, and within third-party EPR systems.
