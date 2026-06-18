@@ -25,18 +25,18 @@ API keys allow us to manage usage and billing for the API. We do have a perpetua
     
     * 'Reselling' the API through a proxy service is banned and could result in legal action due to the Medical Device status of the API.
 
-#### Sign up to our forum at [https://forum.rcpch.tech/](https://forum.rcpch.tech/)
+### Sign up to our forum at [https://forum.rcpch.tech/](https://forum.rcpch.tech/)
 
 !!! tip Approval required
     Sign up to the forum is subject to our approval process, please [contact us](../contact/contact.md) if you are not approved automatically.
 
-#### Navigate to your user summary page using the drop down in the top right hand menu
+### Navigate to your user summary page using the drop down in the top right hand menu
 
 ![forum-user-summary-link](../_assets/_images/forum-user-summary-link.png)
 
-#### Click on the API keys tab
+### Click on the API keys tab
 
-#### Click Generate API key
+### Click Generate API key
 
 ![forum-user-api-keys](../_assets/_images/forum-user-api-keys.png)
 

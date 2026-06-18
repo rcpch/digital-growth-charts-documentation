@@ -7,7 +7,7 @@ audience: clinical-safety, implementers
 !!! info "MHRA Medical device essential requirements - general"
     This is the reference standard which we used as a starting point in assuring safety and quality when developing the Digital Growth Charts.
 
-### The following apply to all devices
+## The following apply to all devices
 
 - The devices must be designed and manufactured in such a way that, when used under the conditions and for the purposes intended, they will not compromise the clinical condition or the safety of the patients, or the safety and health of users or, where applicable, other persons, provided that any risks which may be associated with their intended use constitute acceptable risks when weighed against the benefits to the patient and are compatible with a high level of protection of health and safety. This shall include
   - reducing as far as possible, the risk of use error due to the ergonomic features of the device and the environment in which the device is intended to be used (design for patient safety), and
@@ -28,7 +28,7 @@ audience: clinical-safety, implementers
 
 **6a.** Demonstration of conformity with the essential requirements must include a clinical evaluation in accordance with Annex X.
 
-### Design and construction essential requirements
+## Design and construction essential requirements
 
 The manufacturer will need to determine which apply to their software by reviewing Regulation 9 of UK MDR 2002. The following are likely to apply to software devices:
 
@@ -44,7 +44,7 @@ The manufacturer will need to determine which apply to their software by reviewi
 
 **13.1** Each device must be accompanied by the information needed to use it safely and properly, taking account of the training and knowledge of the potential users, and to identify the manufacturer.
 
-### This information comprises the details on the label and the data in the instructions for use
+## This information comprises the details on the label and the data in the instructions for use
 
 **13.3** The label must bear the following particulars.
 
@@ -54,7 +54,7 @@ The manufacturer will need to determine which apply to their software by reviewi
 
 **d)** all the information needed to verify whether the device is properly installed and can operate correctly and safely, plus details of the nature and frequency of the maintenance and calibration needed to ensure that the devices operate properly and safely at all times;
 
-### The following are possibly applicable to software devices
+## The following are possibly applicable to software devices
 
 **10.1.** Devices with a measuring function must be designed and manufactured in such a way as to provide sufficient accuracy and stability within appropriate limits of accuracy and taking account of the intended purpose of the device. The limits of accuracy must be indicated by the manufacturer.
 

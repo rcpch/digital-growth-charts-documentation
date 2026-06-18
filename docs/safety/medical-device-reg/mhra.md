@@ -23,10 +23,3 @@ Determination of the class of medical device applicable was performed using the 
 ## UK Responsible Person
 
 - [Information of Responsible Persons](https://www.gov.uk/guidance/regulating-medical-devices-in-the-uk#responsible)
-
-## References
-
-- [EU Exit and post-transition guidance, Regulation of Medical Devices Webinar - October 2020, webinar by MHRAgovuk on YouTube](https://www.youtube.com/watch?v=Q_g8xonsLpQ)
-- [EU Medical Device Regulation (MDR)]()
-- [EU Declaration of Conformity]()
-- [CE Marking]()
