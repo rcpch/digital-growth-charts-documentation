@@ -26,7 +26,7 @@ Download cURL [here](https://curl.se/download.html). Scroll to the correction do
 
 ### Using cURL to make a test request
 
-Copy and paste the following cURL request into your command line, inserting your `Primary key`. Use the tab that matches your operating system - the macOS / Linux version uses Bash quoting and `\` line continuations, while the Windows version uses Command Prompt quoting and `^` line continuations.
+Copy and paste the following cURL request into your command line, inserting your `Primary key`. This example sends only the **required** parameters - that is all you need to get a centile result back. Optional parameters such as bone age and events are covered in [Optional parameters and advanced features](#optional-parameters-and-advanced-features) below. Use the tab that matches your operating system - the macOS / Linux version uses Bash quoting and `\` line continuations, while the Windows version uses Command Prompt quoting and `^` line continuations.
 
 === ":material-apple: :material-linux: macOS / Linux"
 
@@ -41,13 +41,7 @@ Copy and paste the following cURL request into your command line, inserting your
         "sex": "female",
         "gestation_weeks": 40,
         "gestation_days": 0,
-        "measurement_method": "height",
-        "bone_age": 10,
-        "bone_age_centile": 98,
-        "bone_age_sds": 2.0,
-        "bone_age_text": "This bone age is advanced",
-        "bone_age_type": "greulich-pyle",
-        "events_text": ["Growth hormone start", "Growth Hormone Deficiency diagnosis"]
+        "measurement_method": "height"
     }'
     ```
 
@@ -59,7 +53,7 @@ Copy and paste the following cURL request into your command line, inserting your
     curl --location --request POST "https://api.rcpch.ac.uk/growth/v1/uk-who/calculation" ^
     --header "Subscription-Key: YOUR_PRIMARY_API_KEY_GOES_HERE" ^
     --header "Content-Type: application/json" ^
-    --data-raw "{\"birth_date\": \"2020-04-12\", \"observation_date\": \"2028-06-12\", \"observation_value\": 115, \"sex\": \"female\", \"gestation_weeks\": 40, \"gestation_days\": 0, \"measurement_method\": \"height\", \"bone_age\": 10, \"bone_age_centile\": 98, \"bone_age_sds\": 2.0, \"bone_age_text\": \"This bone age is advanced\", \"bone_age_type\": \"greulich-pyle\", \"events_text\": [\"Growth hormone start\", \"Growth Hormone Deficiency diagnosis\"]}"
+    --data-raw "{\"birth_date\": \"2020-04-12\", \"observation_date\": \"2028-06-12\", \"observation_value\": 115, \"sex\": \"female\", \"gestation_weeks\": 40, \"gestation_days\": 0, \"measurement_method\": \"height\"}"
     ```
 
     !!! tip "Using PowerShell?"
@@ -74,7 +68,7 @@ The response should be a large JSON response like the following (truncated):
 !!! tip "`jq`"
     A neat tool for pretty-printing JSON in the command line is [`jq`](https://stedolan.github.io/jq/download/). With `jq` installed, you can pipe the `cURL` output to `jq` and get a much easier-to-read response:
 
-```bash hl_lines="19"
+```bash hl_lines="12"
 curl --location --request POST 'https://api.rcpch.ac.uk/growth/v1/uk-who/calculation' \
 --header 'Subscription-Key: YOUR_PRIMARY_API_KEY_GOES_HERE' \
 --header 'Content-Type: application/json' \
@@ -85,13 +79,7 @@ curl --location --request POST 'https://api.rcpch.ac.uk/growth/v1/uk-who/calcula
     "sex": "female",
     "gestation_weeks": 40,
     "gestation_days": 0,
-    "measurement_method": "height",
-    "bone_age": 10,
-    "bone_age_centile": 98,
-    "bone_age_sds": 2.0,
-    "bone_age_text": "This bone age is advanced",
-    "bone_age_type": "greulich-pyle",
-    "events_text": ["Growth hormone start", "Growth Hormone Deficiency diagnosis"]
+    "measurement_method": "height"
 }' | jq
 ```
 
@@ -116,6 +104,57 @@ You should get a nicely formatted JSON response object:
 The response object from the API contains dates without times in the format `YYYY-MM-DD`. This is the format that the digital growth charts react component library expects. If the output of the API is passed directly to the charts they will render the measurements automatically. RCPCH recommend that the response is persisted, so that an API call is only required for each new measurement.
 
 If in the process of serializing or deserializing the response, the date format is changed, RCPCH advise ensuring that the dates do not change format. In case this happens, the charting component is optimized to process common date types, but will log this as a warning in the console. Any unparseable dates will log as errors.
+
+## Optional parameters and advanced features
+
+The test request above sends only the parameters the API needs to return a centile result:
+
+| Required parameter   | Description                                                       |
+| -------------------- | ---------------------------------------------------------------- |
+| `birth_date`         | The child's date of birth (`YYYY-MM-DD`).                         |
+| `observation_date`   | The date the measurement was taken (`YYYY-MM-DD`).               |
+| `observation_value`  | The measurement value (e.g. height in cm, weight in kg).          |
+| `sex`                | `male` or `female`.                                               |
+| `gestation_weeks`    | Completed weeks of gestation at birth (use `40` for a term baby). |
+| `gestation_days`     | Additional days of gestation at birth (use `0` for a term baby). |
+| `measurement_method` | `height`, `weight`, `ofc` (head circumference), or `bmi`.         |
+
+Everything else is **optional**. You do not need to send any of the following to get a valid result, and most measurements will not use them. They unlock additional features when you need them:
+
+!!! info "Bone age"
+    Bone age is a specialist radiological measurement, usually only performed for a very small minority of children seen in a growth or endocrine clinic. If you send the bone age parameters (`bone_age`, `bone_age_centile`, `bone_age_sds`, `bone_age_text`, `bone_age_type`), the API simply returns them alongside the growth data so the chart component can plot them. The API does not calculate bone age for you.
+
+!!! info "Events"
+    `events_text` lets you attach clinical annotations (for example *"Growth hormone start"*) to a measurement. The API passes these straight back in the response so the chart component can display them as event markers against the relevant point. They are purely for annotation and do not affect the centile calculation.
+
+!!! info "Down syndrome and Turner syndrome"
+    To plot against the condition-specific references, call the matching endpoint instead of `uk-who` - for example `/growth/v1/trisomy-21/calculation` or `/growth/v1/turner/calculation`. See [Turner and Down Syndrome](turner-down-syndrome.md) for details.
+
+!!! info "Other (non-UK-WHO) references"
+    The same calculation request can be sent to other reference endpoints, such as the CDC (US) reference, by changing the reference segment of the URL. The request body stays the same.
+
+Below is the same request as before, this time including the optional bone age and events parameters:
+
+```bash
+curl --location --request POST 'https://api.rcpch.ac.uk/growth/v1/uk-who/calculation' \
+--header 'Subscription-Key: YOUR_PRIMARY_API_KEY_GOES_HERE' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "birth_date": "2020-04-12",
+    "observation_date": "2028-06-12",
+    "observation_value": 115,
+    "sex": "female",
+    "gestation_weeks": 40,
+    "gestation_days": 0,
+    "measurement_method": "height",
+    "bone_age": 10,
+    "bone_age_centile": 98,
+    "bone_age_sds": 2.0,
+    "bone_age_text": "This bone age is advanced",
+    "bone_age_type": "greulich-pyle",
+    "events_text": ["Growth hormone start", "Growth Hormone Deficiency diagnosis"]
+}'
+```
 
 ## Postman :simple-postman:
 
