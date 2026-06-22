@@ -42,15 +42,7 @@ For key publications on UK-WHO growth chart development, implementation, and val
 
 ![What are centiles](../_assets/_images/centile-terminology.png)
 
-These charts indicate a child’s size compared with children of the same age and maturity who have shown optimum growth. The chart also shows how quickly a child is growing. The centile lines on the chart show the expected range of weights and heights (or lengths); each describes the number of children expected to be below that line (e.g. 50% below 50th, 91% below the 91st). Children come in all shapes and sizes, but 99 out of 100 children, who are growing optimally, will be between the two outer lines (0.4th and 99.6th centiles); half will lie between the 25th and 75th centile lines.
-
-Being very small or very big can sometimes be associated with underlying illness. There is no single threshold below which a child’s weight or height is definitely abnormal, but only 4 per 1000 children who are growing optimally are below the 0.4th centile, so these children should be assessed at some point to exclude any problems. Those above the 99.6th centile for height are almost always healthy. The BMI should be calculated if weight and height centiles appear very different.
-
-## Measuring children
-
-Anyone who measures a child, plots or interprets charts should be suitably trained, or be supervised by someone qualified to do so. For further information and training materials, see the [RCPCH website](https://www.rcpch.ac.uk/resources/uk-who-growth-charts-guidance-health-professionals).
-
-!!! tip "Clothing and nappies" - When measuring children **up to 2 years**, remove all clothes and nappy. - Children **older than 2 years** should wear minimal clothing only. - Always remove the child's shoes.
+--8<-- "docs/_assets/_snippets/centile-terminology.md"
 
 - Weight: use only Class III clinical electronic scales in metric setting.
 - Length: (before 2 years of age): proper equipment is essential (length board or mat). Measurers should be trained.

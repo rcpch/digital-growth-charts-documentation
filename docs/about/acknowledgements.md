@@ -8,7 +8,7 @@ audience: all
 
 ## Clinical Acknowledgements
 
-- Prof Tim Cole and the [RCPCH Digital Growth Charts Project Board](../../about/team#project-board) for their invaluable specialist advice and guidance during the process of transforming paper growth charts into digital.
+- Prof Tim Cole, Prof Charlotte Wright and the [RCPCH Digital Growth Charts Project Board](../../about/team#project-board) for their invaluable specialist advice and guidance during the process of transforming paper growth charts into digital.
 
 ## Additional Contributors
 
@@ -28,12 +28,13 @@ Significant implementations and contributions have been made by our users. They 
 
 - [Discourse](https://www.discourse.org/) (forum platform for openhealthhub.org)
 - [FastAPI](https://fastapi.tiangolo.com/) (used for the current version of the API server)
-- [Flutter](https://flutter.dev/) (used for mobile applications)
+- [Flutter](https://flutter.dev/) (used for our mobile applications)
 - [GitHub](https://github.com/) (code hosting, issues, actions, projects)
-- [openhealthhub.org](https://openhealthhub.org/) (free forum hosting, used for support before https://forum.rcpch.tech)
+- [openhealthhub.org](https://openhealthhub.org/) (free forum hosting, used for support before we had <https://forum.rcpch.tech>)
 - [Python](https://www.python.org/) and the Python Software Foundation (main language used for the RCPCH dGC project)
 - [ReactJS](https://reactjs.org/) (frontend JavaScript framework for Chart component and demo app)
 - [Zensical](https://zensical.org/) (documentation site framework)
+
 <!-- include free services and open source components for acknowledgement, no need to thank the services we pay for -->
 
 !!! success "Additions"

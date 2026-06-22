@@ -1,43 +1,71 @@
 ---
-title: Using the chart component
-reviewers: Dr Simon Chapman
+title: Using the Chart Component
+reviewers: Dr Simon Chapman, Dr Marcus Baw
 audience: integrators, implementers, technical-architects
 ---
 
 ## Installing the RCPCH Digital Growth Charts React Component
 
-The API and the charting component have been built to work together, but exist separately. The [RCPCH Digital Growth Charts API calculation endpoint](https://growth.rcpch.ac.uk/integrator/api-reference/) returns centiles and SDS against children's growth measurements in the form of a structured JSON `Measurement` object. Most users want to chart these.
+The API and the charting component are built to work together but ship separately. The [API calculation endpoint](https://growth.rcpch.ac.uk/integrator/api-reference/) returns centiles and SDS for a child's growth measurements as a structured JSON `Measurement` object. The [React Component Library](https://github.com/rcpch/digital-growth-charts-react-component-library) takes that response as a prop and renders it as a familiar growth chart.
 
-The [RCPCH Digital Growth Charts React Component Library](https://github.com/rcpch/digital-growth-charts-react-component-library) is written in typescript and react and accepts the RCPCH Digital Growth Charts API response as a prop. There is a [Storybook](https://live--6732292d6f3624b0036f84b4.chromatic.com/) and an [interactive demonstration](https://growth.rcpch.ac.uk/).
+To see it in action, browse the [Storybook](./chart-component-storybook.md) or try the [interactive demonstration](https://growth.rcpch.ac.uk/). The component supports a range of [use cases](https://growth.rcpch.ac.uk/products/react-component/#why-a-chart-library), and the charts can be tailored for families and children or for clinicians, from health visitors and midwives to paediatric endocrinology growth specialists.
 
-The RCPCH Digital Growth Charts React Component Library has a list of [features](https://growth.rcpch.ac.uk/products/react-component/#why-a-chart-library) for a diverse range of use cases. The charts can be customized to be viewed by families and children, or by clinicians, from health visitors and midwives, to paediatric endocrinology growth specialists.
-
-Currently the RCPCH Digital Growth Charts React Component Library do not support mobile screens. It is likely that chart visualisation will need to be reimagined for the smaller screen. This is on the RCPCH roadmap.
+The component does not yet support mobile screens; chart visualisation will need to be reimagined for smaller displays, and this is on the RCPCH roadmap.
 
 ### React
 
-The best way to implement the RCPCH Digital Growth Charts React Component Library is to embed it in a react application. The library is hosted on [npm](https://www.npmjs.com/package/@rcpch/digital-growth-charts-react-component-library) and can be added to the dependencies in the `package.json` of your application. There is a working [RCPCH Digital Growth Charts React client](https://growth.rcpch.ac.uk/) which includes a simple data entry form and RCPCH Digital Growth Charts React Component Library implementation which can be used as a starter if required. The client calls the API and passes the response into the RCPCH Digital Growth Charts React Component Library for charting. The code can be found on [Github](https://github.com/rcpch/digital-growth-charts-react-client).
+The component is best embedded in a React application. It is published on [npm](https://www.npmjs.com/package/@rcpch/digital-growth-charts-react-component-library) and added to your `package.json` dependencies. Your app calls the API and passes the response into the component for charting.
 
-The RCPCH Digital Growth Charts React Component Library is written in [React 18.2](https://18.react.dev/) and will be periodically updated to support later versions of React as they are published.
+For a head start, the [RCPCH Digital Growth Charts React client](https://growth.rcpch.ac.uk/) is a working reference implementation with a simple data-entry form; its [source is on GitHub](https://github.com/rcpch/digital-growth-charts-react-client) and can be used as a starter.
+
+The component is built for [React 18.2](https://18.react.dev/) and is periodically updated to support later versions of React as they are released.
+
+#### Props
+
+A single `<RCPCHChart>` instance renders one chart. To show more than one chart (for example height *and* weight), render one instance per chart.
+
+The table below lists the props accepted by `<RCPCHChart>`. The authoritative definition lives in the component source at [`RCPCHChart.types.ts`](https://github.com/rcpch/digital-growth-charts-react-component-library/blob/live/src/RCPCHChart/RCPCHChart.types.ts), and the [Storybook](./chart-component-storybook.md) has live, interactive examples.
+
+| Prop | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `title` | `string` | Yes | - | Title shown at the top of the chart. |
+| `measurementMethod` | `'height' \| 'weight' \| 'ofc' \| 'bmi'` | Yes | - | The measurement to plot. |
+| `reference` | `'uk-who' \| 'turner' \| 'trisomy-21' \| 'cdc' \| 'trisomy-21-aap' \| 'who'` | Yes | - | The growth reference dataset to chart against. |
+| `sex` | `'male' \| 'female'` | Yes | - | The child's sex. |
+| `measurements` | `ClientMeasurementObject` | Yes | - | The API response data, keyed by measurement method. |
+| `exportChartCallback` | `(svg?: any) => any` | Yes | - | Called with the chart SVG when an export is triggered. |
+| `allowDuplicates` | `boolean` | No | `false` | Whether to plot measurements that share the same age and value. |
+| `midParentalHeightData` | `MidParentalHeightObject` | No | - | Mid-parental height data to overlay on height charts. |
+| `enableZoom` | `boolean` | No | `true` | Allow the user to zoom and pan the chart. |
+| `chartType` | `'centile' \| 'sds'` | No | `'centile'` | Whether to render a centile or an SDS chart. |
+| `enableExport` | `boolean` | No | `true` | Show the export control and enable SVG export. |
+| `clinicianFocus` | `boolean \| null` | No | `true` | Optimise the chart for clinicians; set to `false` for a simpler family-facing view. |
+| `theme` | `'monochrome' \| 'traditional' \| 'tanner1' \| 'tanner2' \| 'tanner3' \| 'custom'` | No | `'monochrome'` | The visual theme. Select `custom` to apply `customThemeStyles`. |
+| `height` | `number` | No | `800` | Chart height in pixels. |
+| `width` | `number` | No | `1000` | Chart width in pixels. |
+| `logoVariant` | `'top' \| 'bottom' \| 'legend'` | No | `'top'` | Placement of the RCPCH logo or acknowledgement. |
+| `customThemeStyles` | `object` | No | - | Per-element style overrides applied when `theme` is `custom` (see below). |
+
+When `theme` is set to `custom`, `customThemeStyles` lets you override individual style groups: `chartStyle`, `axisStyle`, `gridlineStyle`, `measurementStyle`, `centileStyle`, `sdsStyle` and `referenceStyle`. Any group you omit falls back to the monochrome defaults.
 
 #### Versioning
 
-The charts are versioned using the [semver](https://semver.org/) system. Documentation is published with each new release, though breaking changes are uncommon. Note users will need to update and rebuild their application as and when new releases are published.
+The charts use [semver](https://semver.org/) versioning, with documentation published for each release. Breaking changes are uncommon, but you will need to update and rebuild your application when new releases are published.
 
 #### Styling
 
-The charts are deliberately shipped with a monochrome theme. In addition to this RCPCH offer four other themes (Traditional, Tanner 1, Tanner 2, Tanner 3), but custom styles can be applied to the base monochrome theme to alter most aspects of the look and feel.  There is extensive documentation in the [Storybook docs](https://live--6732292d6f3624b0036f84b4.chromatic.com/?path=/docs/rcpchchart--docs) on which props the charts accept and how to wire the charts up to your React project.
+The charts ship with a monochrome theme by default. RCPCH also provide four other themes (Traditional, Tanner 1, Tanner 2, Tanner 3), and a `custom` theme lets you override most aspects of the look and feel. The [Storybook docs](./chart-component-storybook.md) document every prop the charts accept and how to wire them into your React project.
 
-Note that the RCPCH logo and chart version appears by default in the top left hand corner. For implementers who prefer less prominence of the logo, an RCPCH acknowledgement statement can be used instead at the foot of the chart using the `logoVariant` prop.
+The RCPCH logo and chart version appear in the top left corner by default. To reduce the logo's prominence, the `logoVariant` prop can show an RCPCH acknowledgement statement at the foot of the chart instead.
 
-##### Theme Builder 🎨 - NEW IN 2025
+##### Theme Builder
 
-For those who want to customize the chart, the style props can be overridden if the `custom` theme option is selected. This exposes a variety of styles, from font and colour to line and background colour. Use the Storybook Theme Builder to customize the elements you need and click to save the settings object to the clipboard to be attached to the `customThemeStyles` prop. <br/>
+Select the `custom` theme to override style props such as fonts, colours, lines and backgrounds. The Storybook Theme Builder lets you adjust each element visually, then copies the resulting settings object to your clipboard to pass to the `customThemeStyles` prop. <br/>
 ![theme-builder](../_assets/_images/theme-builder.png)
 
 ### What if I can't use React?
 
-It is common in healthcare environments not to be able to use frameworks like React. For this reason RCPCH have published the charts on [jsdeliver](https://www.jsdelivr.com/package/npm/@rcpch/digital-growth-charts-react-component-library) and [unpkg](https://unpkg.com/@rcpch/digital-growth-charts-react-component-library@latest/build/rcpch-digital-growth-charts.umd.js). This allows implementers to import the javascript in the head tag of their page. This gives access to the `RCPCHGrowthCharts` wrapper which accepts all the props detailed above for instantiating a single chart, as well as the id of the div in the DOM where the charts are to be located, within the `render` attribute.
+Many healthcare environments cannot use frameworks like React. For these cases the charts are also published on [jsDelivr](https://www.jsdelivr.com/package/npm/@rcpch/digital-growth-charts-react-component-library) and [unpkg](https://unpkg.com/@rcpch/digital-growth-charts-react-component-library@latest/build/rcpch-digital-growth-charts.umd.js), so you can import the JavaScript directly in the `<head>` of your page. This exposes the `RCPCHGrowthCharts` wrapper, which accepts the same props as above plus the `id` of the DOM element where the charts should render.
 
 ```html
 <!doctype html>

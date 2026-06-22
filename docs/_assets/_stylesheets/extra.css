@@ -217,3 +217,95 @@ img {
   box-shadow: 0px 0px 0px #ccc;
   border: none !important;
 }
+
+/* CONTRAST IMPROVEMENTS
+   The site background is pure white, which leaves Material's default tables,
+   content tabs and code surfaces looking faint and hard to read. The rules
+   below add subtle borders and tinted surfaces so these elements stand out. */
+
+:root {
+  /* Light blue-grey surface tints derived from the RCPCH brand blues. */
+  --rcpch-surface-tint: #f2f5fb;
+  --rcpch-surface-tint-strong: #e4ebf7;
+  --rcpch-border-color: #d0d9e8;
+}
+
+/* DATA TABLES */
+
+.md-typeset table:not([class]) {
+  border: 1px solid var(--rcpch-border-color);
+  border-radius: 0.2rem;
+}
+
+/* Tint and separate the header row from the body. */
+.md-typeset table:not([class]) th {
+  background-color: var(--rcpch-surface-tint-strong);
+  color: #0d0d58;
+  border-bottom: 2px solid var(--md-primary-fg-color);
+}
+
+/* Zebra striping for body rows to aid horizontal scanning. */
+.md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background-color: var(--rcpch-surface-tint);
+}
+
+.md-typeset table:not([class]) td {
+  border-top: 1px solid var(--rcpch-border-color);
+}
+
+/* CONTENT TABS (pymdownx.tabbed, alternate_style) */
+
+/* Give the whole tab set a defined edge and a tinted content panel. */
+.md-typeset .tabbed-set {
+  border: 1px solid var(--rcpch-border-color);
+  border-radius: 0.2rem;
+}
+
+.md-typeset .tabbed-labels {
+  background-color: var(--rcpch-surface-tint);
+  box-shadow: 0 -0.05rem 0 var(--rcpch-border-color) inset;
+}
+
+.md-typeset .tabbed-content {
+  padding: 0.6rem 0.8rem;
+}
+
+/* Inactive tab labels: readable but clearly secondary. */
+.md-typeset .tabbed-labels > label {
+  color: #4d4d4d;
+  font-weight: 600;
+}
+
+/* Active tab label: brand blue with a matching underline. */
+.js .md-typeset .tabbed-labels > label:hover,
+.md-typeset .tabbed-set > input:checked + label {
+  color: var(--md-primary-fg-color);
+}
+
+.md-typeset .tabbed-set > input:checked + label {
+  background-color: #ffffff;
+}
+
+/* CODE BLOCKS & INLINE CODE */
+
+/* Add a hairline border so code blocks read as distinct on the white page. */
+.md-typeset .highlight {
+  border: 1px solid var(--rcpch-border-color);
+  border-radius: 0.2rem;
+}
+
+/* Strengthen the inline code surface (but not code blocks, which keep their
+   own background) so short code spans stand out a little more. */
+.md-typeset :not(pre) > code {
+  background-color: var(--rcpch-surface-tint-strong);
+}
+
+/* Keep printed output clean: drop the screen tints for PDF export. */
+@media print {
+  .md-typeset table:not([class]) th,
+  .md-typeset table:not([class]) tbody tr:nth-child(even),
+  .md-typeset .tabbed-labels,
+  .md-typeset :not(pre) > code {
+    background-color: transparent !important;
+  }
+}

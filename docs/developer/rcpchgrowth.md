@@ -287,7 +287,6 @@ If the BMI centile is above 95%, a correction is applied:
 ![formula](https://latex.codecogs.com/svg.image?BMIPercentile = 90 + 10\Phi \frac{BMI-P95}{sigma}
 ![formula](https://latex.codecogs.com/svg.image?BMIZ = \Phi^{-1}\frac{BMIPercentile}{100}
 
-
 ##### Steps
 
 The functions called by the Measurement class are ```sds_for_measurement```, or its inverse ```measurement_from_sds```, found in the ```global_functions.py``` file.

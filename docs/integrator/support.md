@@ -17,30 +17,30 @@ To obtain the information you need for the best use of the RCPCH dGC platform de
 
 <div class="grid cards" markdown>
 
--   :material-code-tags:{ .lg .middle } __Integrator__
+- :material-code-tags:{ .lg .middle } __Integrator__
 
-    *I am a developer looking to integrate Digital Growth Charts into an app, EPR, or other existing system.*
+  *I am a developer looking to integrate Digital Growth Charts into an app, EPR, or other existing system.*
 
-    [:octicons-arrow-right-24: Integrators](../integrator/getting-started.md){ .md-button .md-button--primary }
+  [:octicons-arrow-right-24: Integrators](../integrator/getting-started.md){ .md-button .md-button--primary }
 
--   :material-stethoscope:{ .lg .middle } __Clinician__
+- :material-stethoscope:{ .lg .middle } __Clinician__
 
-    *I am a clinician wanting to find out more about Digital Growth Charts and how I can get them at my place of work.*
+  *I am a clinician wanting to find out more about Digital Growth Charts and how I can get them at my place of work.*
 
-    [:octicons-arrow-right-24: Clinicians](../clinician/faqs-for-clinicians.md){ .md-button .md-button--primary }
+  [:octicons-arrow-right-24: Clinicians](../clinician/faqs-for-clinicians.md){ .md-button .md-button--primary }
 
--   :fontawesome-brands-github:{ .lg .middle } __Contributor__
+- :fontawesome-brands-github:{ .lg .middle } __Contributor__
 
-    *I want to know how to set up a development environment and start improving the Digital Growth Charts platform.*
+  *I want to know how to set up a development environment and start improving the Digital Growth Charts platform.*
 
-    [:octicons-arrow-right-24: Contributors](../developer/start-here.md){ .md-button .md-button--primary }
+  [:octicons-arrow-right-24: Contributors](../developer/start-here.md){ .md-button .md-button--primary }
 
--   :material-safety-goggles:{ .lg .middle } __Clinical Safety Officer__
+- :material-safety-goggles:{ .lg .middle } __Clinical Safety Officer__
 
-    *I'm a Clinical Safety Officer looking for DCB0129 and other compliance information.*
+  *I'm a Clinical Safety Officer looking for DCB0129 and other compliance information.*
 
-    </br>
-    [:octicons-arrow-right-24: Clinical Safety Management File](../safety/overview.md){ .md-button .md-button--primary }
+  </br>
+  [:octicons-arrow-right-24: Clinical Safety Management File](../safety/overview.md){ .md-button .md-button--primary }
 
 </div>
 

@@ -24,3 +24,30 @@ plugins:
   # Allow missing language tags on fenced code blocks (many snippets may omit them).
   md040:
     enabled: false
+
+  # This project uses fenced code blocks throughout. Disable the code-block-style
+  # consistency check: pymarkdown does not understand pymdownx container syntax
+  # (`!!!` admonitions, `===` content tabs), so it misreads their 4-space-indented
+  # bodies - including nested fenced blocks - as indented code blocks and emits
+  # false positives. Keeping the fenced markup and disabling the rule avoids churn.
+  md046:
+    enabled: false
+
+  # Every page carries a YAML front-matter `title:` for navigation/SEO as well as
+  # a content `# H1`. pymarkdown's front-matter extension counts the title as the
+  # document's top-level heading, so the page H1 looks like a duplicate. This is
+  # the intended MkDocs/Material pattern, so disable the single-H1 check.
+  md025:
+    enabled: false
+
+  # Headings frequently end with a Material icon shortcode (e.g.
+  # `## Open Source :material-open-source-initiative:`). The trailing colon of the
+  # shortcode trips the trailing-punctuation rule, so disable it for this repo.
+  md026:
+    enabled: false
+
+  # Reusable snippet fragments in `docs/_assets/_snippets/` are included into pages
+  # via `--8<--` and intentionally start with body content rather than an H1, so the
+  # first-line-heading rule does not apply to them.
+  md041:
+    enabled: false

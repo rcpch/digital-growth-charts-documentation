@@ -6,7 +6,7 @@ set -e  # Exit on error
 # scripts may need to be made executable on some platforms before they can be run
 # chmod +x s/spellcheck
 
-# Runs codespell inside the mkdocs docker container.
+# Runs codespell inside the zensical docker container.
 # Usage:
 #   s/spellcheck              # checks default paths
 #   s/spellcheck <paths...>   # checks only the given paths/files
@@ -19,9 +19,9 @@ CONFIG_FILE_IN_CONTAINER=/app/.codespellrc
 COMPOSE_FILE="$REPO_ROOT/docker-compose.yml"
 
 if [ "$#" -gt 0 ]; then
-  docker compose -f "$COMPOSE_FILE" --project-directory "$REPO_ROOT" run --rm mkdocs \
+  docker compose -f "$COMPOSE_FILE" --project-directory "$REPO_ROOT" run --rm zensical \
     codespell --config "$CONFIG_FILE_IN_CONTAINER" "$@"
 else
-  docker compose -f "$COMPOSE_FILE" --project-directory "$REPO_ROOT" run --rm mkdocs \
+  docker compose -f "$COMPOSE_FILE" --project-directory "$REPO_ROOT" run --rm zensical \
     codespell --config "$CONFIG_FILE_IN_CONTAINER" "${DEFAULT_PATHS[@]}"
 fi

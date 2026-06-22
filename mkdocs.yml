@@ -39,9 +39,11 @@ nav:
       - "integrator/making-api-calls.md"
       - "integrator/api-reference.md"
       - "integrator/using-the-chart-component.md"
+      - "integrator/chart-component-storybook.md"
       - "integrator/support.md"
       - "integrator/client-specification.md"
       - "integrator/turner-down-syndrome.md"
+      - "integrator/snomed-codes.md"
       - "integrator/faqs-for-integrators.md"
   - Clinicians:
       - "clinician/how-the-api-works.md"
@@ -165,9 +167,6 @@ plugins:
   #         - safety/*.md
   #         - technical/*.md
   #
-  # - macros:               # https://github.com/zensical/backlog/issues/16
-  #     module_name: main
-  #
   # - with-pdf:             # https://github.com/zensical/backlog/issues/25
   #     cover_title: RCPCH Digital Growth Charts
   #     cover_subtitle: Complete Documentation Manual
@@ -180,6 +179,9 @@ markdown_extensions:
   - admonition
   - attr_list
   - md_in_html #insiders
+  # Jinja2 templating in Markdown (e.g. {{ repository_name }} in products/*.md).
+  # Shipped in Zensical 0.0.40 - https://github.com/zensical/backlog/issues/16
+  - zensical.extensions.macros
   - pymdownx.details
   - pymdownx.emoji:
       emoji_generator: !!python/name:zensical.extensions.emoji.to_svg
@@ -192,6 +194,8 @@ markdown_extensions:
       auto_append:
         - includes/_abbreviations.md # adds abbreviations snippets to ALL pages
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - toc:
       permalink: true
 

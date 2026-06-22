@@ -75,6 +75,6 @@ Alongside the API, RCPCH offer a charting component built to receive the results
 We have plans to incorporate other growth references and tools to the platform in the future.
 
 !!! info "Get involved in setting our roadmap"
-    You can create GitHub Issues which can help set the agenda for the features we will develop next in the API. [See our Issues on GitHub :simple-github: ](https://github.com/rcpch/digital-growth-charts-server/issues)
+    You can create GitHub Issues which can help set the agenda for the features we will develop next in the API. [See our Issues on GitHub :simple-github:](https://github.com/rcpch/digital-growth-charts-server/issues)
 
     You can also join our online forum community to learn more about Growth Charts and discuss the future of the API. [Join our community :simple-discourse: ](https://forum.rcpch.tech).

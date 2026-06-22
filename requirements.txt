@@ -10,9 +10,10 @@ zensical
 # Re-enable when the feature is added
 # mkdocs-git-committers-plugin-2
 
-# for the feature which enables 'foldable' admonition text (used for large code blocks)
-# Follow this issue: https://github.com/zensical/backlog/issues/16
-# mkdocs-macros-plugin
+# Jinja2 templating in Markdown (e.g. {{ repository_name }} badges in products/*.md)
+# Now built into Zensical as the `zensical.extensions.macros` markdown extension
+# (shipped in Zensical 0.0.40): https://github.com/zensical/backlog/issues/16
+# No separate package required - enabled in mkdocs.yml under markdown_extensions.
 
 # for the PDF export feature
 # NOTE FOR FUTURE (added 2026.03.05): Zensical does not support this plugin
@@ -40,4 +41,11 @@ codespell
 
 # markdown linting
 pymarkdownlnt
+
+# self-hosted PDF export of the Clinical Safety and Medical Device sections
+# (see pdf-export/build-safety-pdf.py and s/build-pdf). Replaces the suspended
+# mkdocs-with-pdf plugin for the safety documentation only. WeasyPrint's native
+# libraries (libpango etc.) are already installed in the Dockerfile.
+weasyprint
+beautifulsoup4
 

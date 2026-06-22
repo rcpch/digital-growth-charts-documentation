@@ -6,14 +6,13 @@ reviewers: Dr Example Writer, Dr Second Checker
 ---
 
 If the `<h1>` title is omitted, Zensical will use the `title:` attribute in the Nav and on the page
+
 # Title of the page (can be different to the Nav Title)
 
 Content goes here
 
 !!! warning
     This is an 'admonition' - it's a good way to bring a small section of content to life. There are a range of variations on the icon and colour used, the documentation is here <https://squidfunk.github.io/mkdocs-material/reference/admonitions/>
-
-
 
 <!-- text in a HTML comment area is not shown
 You can use this for internal notes, TODO lists, etc

@@ -24,25 +24,25 @@ It's important to understand the three parts of the dGC platform that are in pla
 cd YourCodeProjects
 ```
 
-2. Clone the React Client repo
+1. Clone the React Client repo
 
 ```console
 git clone https://github.com/rcpch/digital-growth-charts-react-client.git
 ```
 
-3. Build the Docker image
+1. Build the Docker image
 
 ```console
 s/docker-rebuild
 ```
 
-4. Start the Docker container
+1. Start the Docker container
 
 ```console
 s/docker-start
 ```
 
-5. Open the React Client in your browser
+1. Open the React Client in your browser
 
 ```console
 open http://localhost:3000

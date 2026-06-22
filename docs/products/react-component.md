@@ -6,7 +6,7 @@ audience: developers, integrators, implementers
 
 {% set repository_name="rcpch/digital-growth-charts-react-component-library" -%}
 [digital-growth-charts-react-component-library](https://github.com/rcpch/digital-growth-charts-react-component-library) is a React 18.2 Typescript component library which 'knows' how to display the results from the REST API, as a familiar digital growth chart.<br/>
-[![Storybook](https://raw.githubusercontent.com/storybookjs/brand/refs/heads/main/badge/badge-storybook.svg 'Storybook')](https://live--6732292d6f3624b0036f84b4.chromatic.com/)
+[![Storybook](https://raw.githubusercontent.com/storybookjs/brand/refs/heads/main/badge/badge-storybook.svg 'Storybook')](../integrator/chart-component-storybook.md)
 ![NPM Version](https://img.shields.io/npm/v/%40rcpch%2Fdigital-growth-charts-react-component-library?style=flat-square&labelColor=%2311a7f2&color=%230d0d58)
 ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/rcpch/digital-growth-charts-react-component-library?style=flat-square&labelColor=%2311a7f2&color=%230d0d58)
 ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-pr/rcpch/digital-growth-charts-react-component-library?style=flat-square&labelColor=%2311a7f2&color=%230d0d58)
@@ -19,8 +19,8 @@ audience: developers, integrators, implementers
 
 ## Features
 
-* Calculation and display of height, weight, BMI, head circumference, and BMI centiles.
-* Support for Down syndrome and Turner syndrome. **Now includes CDC (US) reference and Down Syndrome (AAP - USA) as of November 2024** *Note these are still under testing*
+* Calculation and display of height, weight, BMI, and head circumference centiles.
+* Support for Down syndrome and Turner syndrome including CDC (US) reference and Down Syndrome (AAP - USA) reference.
 * Automatic gestational age correction, throughout the life course.
 * Zoomable, scrollable charts.
 * Event logging - clinical events can be associated with measurements.
@@ -37,35 +37,7 @@ audience: developers, integrators, implementers
 
 You can use the component as-is in a React app, or include it in plain HTML or any other JavaScript framework.
 
-## Supported Features
-
-* Corrected/Chronological age with toggle
-* Zoom with zoom reset (optional prop)
-* Event logging - events associated with measurements
-* Bone ages
-* Mid-parental heights with mid-parental centile lines (at +2 and -2 SDS)
-
-### Version 7 new features
-
-* Update to react 18.2
-* Centile label toggle
-* React testing with Jest
-* Deprecate styles in favour of themes (custom theme can be supplied)
-* **In 7.1, includes CDC (US) reference as of November 2024**
-* **In 7.2, includes Down Syndrome (AAP - US) reference as of November 2024**
-
-### Version 6 new features
-
-* Rework the data structure to match that from API to prevent persisting data in the component in future
-* BMI SDS lines
-* SDS charts
-* Save to clipboard
-
-### New in 6.1
-
-* Dates included in tooltips
-* `clinicianFocus` (optional prop) to toggle between advice strings aimed at clinicians or those aimed at families / children & young people
-* Toggle button to allow user to constrain viewable chart to measurements or view the whole chart
+For a full history of what changed in each release, see the [changelog and releases on GitHub](https://github.com/rcpch/digital-growth-charts-react-component-library/releases).
 
 ## Background
 

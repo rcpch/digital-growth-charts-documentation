@@ -4,8 +4,6 @@ reviewers: Dr Marcus Baw
 audience: clinical-safety, implementers
 ---
 
-
-
 The Digital Growth Charts API server and associated user interface libraries (together termed the RCPCH dGC Platform) are a Medical Device as determined under the [Medical Devices Regulations 2002](https://www.legislation.gov.uk/uksi/2002/618/regulation/2/made), *Regulation 2 (1) "medical device" (a) (i)* in that it "is intended by the manufacturer to be used for human beings for the purpose of diagnosis, prevention, monitoring, treatment or alleviation of disease".
 
 !!! success "MHRA Medical Device Registration and GMDN Nomenclature"
@@ -25,10 +23,3 @@ Determination of the class of medical device applicable was performed using the 
 ## UK Responsible Person
 
 - [Information of Responsible Persons](https://www.gov.uk/guidance/regulating-medical-devices-in-the-uk#responsible)
-
-## References
-
-- [EU Exit and post-transition guidance, Regulation of Medical Devices Webinar - October 2020, webinar by MHRAgovuk on YouTube](https://www.youtube.com/watch?v=Q_g8xonsLpQ)
-- [EU Medical Device Regulation (MDR)]()
-- [EU Declaration of Conformity]()
-- [CE Marking]()

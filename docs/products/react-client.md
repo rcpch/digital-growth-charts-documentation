@@ -21,7 +21,7 @@ audience: developers, integrators, implementers
 docs/_assets/_snippets/htn-award.md
 --8<--
 
-This client, written in the React framework, demonstrates the React Chart Component library interoperating with the dGC API. These two are all you need to integrate our RCPCH Digital Growth Charts platform in your EPR. 
+This client, written in the React framework, demonstrates the React Chart Component library interoperating with the dGC API. These two are all you need to integrate our RCPCH Digital Growth Charts platform in your EPR.
 
 We have built the best of growth chart theory and practice into the React client, including guidance given to us by the RCPCH Digital Growth Charts Project Board, and accepted best practice from the days of paper growth charts.
 
