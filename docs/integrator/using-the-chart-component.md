@@ -2,6 +2,10 @@
 title: Using the Chart Component
 reviewers: Dr Simon Chapman, Dr Marcus Baw
 audience: integrators, implementers, technical-architects
+tags:
+  - React
+  - Growth Charts
+  - Integration
 ---
 
 ## Installing the RCPCH Digital Growth Charts React Component

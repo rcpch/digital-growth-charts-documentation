@@ -2,6 +2,10 @@
 title: API Reference
 reviewers: Dr Marcus Baw, Dr Simon Chapman, Dr Anchit Chandran
 audience: integrators, implementers, technical-architects
+tags:
+  - API
+  - API Reference
+  - Integration
 ---
 # API Reference
 

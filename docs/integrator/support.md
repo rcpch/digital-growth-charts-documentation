@@ -2,6 +2,9 @@
 title: Support
 reviewers: Dr Marcus Baw, Dr Anchit Chandran
 audience: integrators, implementers, technical-architects
+tags:
+  - Support
+  - Integration
 ---
 
 # Support

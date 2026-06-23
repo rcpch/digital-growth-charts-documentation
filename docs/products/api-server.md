@@ -2,6 +2,9 @@
 title: dGC API Server
 reviewers: Dr Marcus Baw
 audience: developers, integrators, implementers
+tags:
+  - API
+  - Docker
 ---
 
 {% set repository_name="rcpch/digital-growth-charts-server" -%}

@@ -2,6 +2,8 @@
 title: Awards, Press, Blogs
 reviewers: Dr Marcus Baw
 audience: all
+tags:
+  - Press and Awards
 ---
 
 # Awards, Press, Blogs, and other Mentions of the digital Growth Charts Project

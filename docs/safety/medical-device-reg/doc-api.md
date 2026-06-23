@@ -2,6 +2,8 @@
 title: Declaration of Conformity
 reviewers: Dr Marcus Baw
 audience: clinical-safety, implementers
+tags:
+  - Medical Device Regulation
 ---
 
 # Declaration of Conformity (API Server)

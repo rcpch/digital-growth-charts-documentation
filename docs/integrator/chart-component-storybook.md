@@ -2,6 +2,10 @@
 title: Chart Component Storybook
 reviewers: Dr Marcus Baw, Dr Simon Chapman
 audience: integrators, implementers, technical-architects, developers
+tags:
+  - React
+  - Growth Charts
+  - Integration
 ---
 
 # Chart Component Storybook

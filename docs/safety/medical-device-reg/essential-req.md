@@ -2,6 +2,8 @@
 title: MHRA Essential Requirements
 reviewers: Dr Marcus Baw, Dr Simon Chapman
 audience: clinical-safety, implementers
+tags:
+  - Medical Device Regulation
 ---
 
 !!! info "MHRA Medical device essential requirements - general"

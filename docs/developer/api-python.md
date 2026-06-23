@@ -2,6 +2,9 @@
 title: Python development
 reviewers: Dr Marcus Baw, Dr Anchit Chandran
 audience: developers
+tags:
+  - Python
+  - API
 ---
 
 # Running locally with Python

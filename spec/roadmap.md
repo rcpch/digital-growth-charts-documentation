@@ -2,9 +2,13 @@
 
 The bulk of the 2026 documentation review is complete and is captured in [PR #161](https://github.com/rcpch/digital-growth-charts-documentation/pull/161). What remains is grouped below: work that is blocked on an upstream dependency, and improvements deferred to a future cycle.
 
+## Completed
+
+- [x] Apply page-level tags via frontmatter across the docs for an extra layer of search discoverability (the first half of <https://github.com/rcpch/digital-growth-charts-documentation/issues/73>). Zensical now supports frontmatter `tags`, which render at the foot of each page and are indexed into search (<https://zensical.org/docs/setup/tags/>). The tag vocabulary and convention are documented in `docs/developer/writing-documentation.md`.
+
 ## Blocked Upstream
 
-- [ ] Add Tags to the documentation site, applied via page frontmatter and indexed into a tags page, for an extra layer of discoverability (<https://github.com/rcpch/digital-growth-charts-documentation/issues/73>). Blocked until Zensical supports the `material/tags` plugin (tracking: <https://github.com/zensical/backlog/issues/38>).
+- [ ] Add a tags index/listing page that aggregates all tags into a browsable `tags.md` (the second half of <https://github.com/rcpch/digital-growth-charts-documentation/issues/73>). Page-level tags themselves now ship via frontmatter (see the Completed section), but tag *listings* are still not supported by Zensical (tracking: <https://github.com/zensical/backlog/issues/38>). Add the index page once Zensical supports it.
 
 ## Future Improvements
 

@@ -2,6 +2,9 @@
 title: React Chart Component
 reviewers: Dr Marcus Baw, Dr Simon Chapman, Dr Anchit Chandran
 audience: developers, integrators, implementers
+tags:
+  - React
+  - Growth Charts
 ---
 
 {% set repository_name="rcpch/digital-growth-charts-react-component-library" -%}

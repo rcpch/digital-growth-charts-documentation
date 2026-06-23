@@ -2,6 +2,9 @@
 title: RCPCHGrowth Package
 reviewers: Dr Marcus Baw, Dr Simon Chapman, Dr Anchit Chandran
 audience: developers, researchers, academics
+tags:
+  - Python
+  - Research
 ---
 
 {% set repository_name="rcpch/rcpchgrowth-python" -%}

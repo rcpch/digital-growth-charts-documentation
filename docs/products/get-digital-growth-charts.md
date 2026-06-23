@@ -2,6 +2,9 @@
 title: Get Digital Growth Charts
 reviewers: Dr Marcus Baw, Dr Anchit Chandran
 audience: implementers, clinicians
+tags:
+  - Getting Started
+  - Pricing
 ---
 
 ## Are paper growth charts holding up digital transformation?

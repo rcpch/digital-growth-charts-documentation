@@ -2,6 +2,8 @@
 title: Frequently Asked Questions
 reviewers: Dr Anchit Chandran, Dr Marcus Baw
 audience: parents
+tags:
+  - FAQ
 ---
 
 ## I didn’t breastfeed, or I stopped early – are these charts still right for my baby?

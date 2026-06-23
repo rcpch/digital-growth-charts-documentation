@@ -2,6 +2,9 @@
 title: Client Specification
 reviewers: Dr Marcus Baw, Dr Simon Chapman, Dr Anchit Chandran
 audience: integrators, implementers, technical-architects
+tags:
+  - Integration
+  - API
 ---
 
 In this document, we have collated the exact specification mandated by the Digital Growth Charts Project Board for Digital Growth Charts. Much of the specification is inherited from the preceding paper growth charts, so clinicians have immediate familiarity using the digital version.

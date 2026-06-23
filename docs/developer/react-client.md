@@ -2,6 +2,8 @@
 title: React Client
 reviewers: Dr Simon Chapman, Dr Marcus Baw
 audience: developers
+tags:
+  - React
 ---
 
 ## Developer documentation

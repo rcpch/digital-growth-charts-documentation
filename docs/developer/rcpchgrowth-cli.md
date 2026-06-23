@@ -2,6 +2,9 @@
 title: RCPCHGrowth CLI
 reviewers: Dr Marcus Baw, Dr Simon Chapman
 audience: developers
+tags:
+  - Command Line
+  - Python
 ---
 
 # Developing the RCPCH CLI tools

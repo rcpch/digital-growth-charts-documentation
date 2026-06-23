@@ -2,6 +2,9 @@
 title: DTAC
 reviewers: Dr Marcus Baw, Magda Umerska, Adele Picken
 audience: clinical-safety, implementers
+tags:
+  - DTAC
+  - Clinical Safety
 ---
 
 # Digital Technology Assessment Criteria (DTAC)

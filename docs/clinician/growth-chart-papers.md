@@ -2,6 +2,9 @@
 title: Growth Chart Papers
 author: Dr Marcus Baw
 audience: clinicians, health-staff, researchers
+tags:
+  - Growth References
+  - Research
 ---
 
 # Growth chart papers

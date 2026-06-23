@@ -2,6 +2,8 @@
 title: Clinical Risk Management Plan
 reviewers: Dr Marcus Baw
 audience: clinical-safety
+tags:
+  - Clinical Safety
 ---
 
 # Clinical Risk Management Plan

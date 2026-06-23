@@ -2,6 +2,8 @@
 title: Writing Documentation
 reviewers: Dr Marcus Baw, Dr Anchit Chandran
 audience: developers
+tags:
+  - Contributing
 ---
 
 # Writing dGC Documentation
@@ -137,6 +139,30 @@ title: Some Page Title
 reviewers: Dr Marcus Baw, Dr Simon Chapman, Other Reviewer ...
 ---
 ```
+
+### Tags
+
+Pages can be categorised with **tags** in the YAML front matter. Zensical renders these tags at the foot of the page and indexes them into the site search, giving readers an extra layer of discoverability on top of the navigation tree and full-text search.
+
+```yaml hl_lines="4 5 6 7"
+---
+title: Some Page Title
+reviewers: Dr Marcus Baw
+tags:
+  - API
+  - Integration
+---
+```
+
+To keep tags useful, please reuse the **controlled vocabulary** already in use across the docs rather than inventing new, one-off tags. The current vocabulary is:
+
+`API`, `API Reference`, `Integration`, `SNOMED CT`, `Growth Charts`, `Growth References`, `Centiles`, `Date and Age Calculations`, `React`, `Python`, `Docker`, `Flutter`, `Command Line`, `Testing`, `Versioning`, `Contributing`, `Getting Started`, `FAQ`, `Clinical Safety`, `Hazards`, `Medical Device Regulation`, `DTAC`, `Data Protection`, `Privacy`, `Security`, `Licensing`, `Legal`, `Pricing`, `Research`, `Support`, `Team`, `Press and Awards`, `Videos`, `Overview`, `Deprecated`.
+
+Aim for two to four tags per page that describe its **subject matter**. If a page genuinely needs a new tag, add it here too so the vocabulary stays consistent.
+
+!!! note "Tag index page"
+
+    Zensical does not yet support a generated tags *index/listing* page (a single page that lists every tag and its pages). When [that feature ships](https://github.com/zensical/backlog/issues/38) we can add a `tags.md` listing page.
 
 ## Markdown Linting and Spellchecking
 
