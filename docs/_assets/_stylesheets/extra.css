@@ -309,3 +309,32 @@ img {
     background-color: transparent !important;
   }
 }
+
+/* TAGS
+   Zensical renders frontmatter `tags` as pills at the foot of each page. On our
+   light scheme the default surface (`--md-default-fg-color--lightest`) is so
+   pale it reads as white, so give each tag a subtle RCPCH-tinted background and
+   a hairline border to make the bounding box obvious. We also inject a leading
+   `#` icon - reusing the theme's built-in `--md-tag-icon` glyph - on every tag
+   so they're instantly recognisable as tags (the icon otherwise only renders
+   for tags with an explicitly configured identifier). */
+.md-typeset .md-tag {
+  background-color: var(--rcpch-surface-tint-strong);
+  border: 1px solid var(--rcpch-border-color);
+}
+
+.md-typeset .md-tag::before {
+  content: "";
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  background-color: var(--md-primary-fg-color);
+  -webkit-mask-image: var(--md-tag-icon);
+  mask-image: var(--md-tag-icon);
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}

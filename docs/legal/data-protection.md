@@ -2,6 +2,9 @@
 title: Data Protection
 reviewers: Dr Marcus Baw, Dr Anchit Chandran
 audience: clinicians, caldicott-guardians, data-protection-officers, developers
+tags:
+  - Data Protection
+  - Legal
 ---
 
 # Data Protection Considerations

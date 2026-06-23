@@ -2,6 +2,9 @@
 title: RCPCHGrowth and Research
 reviewers: Dr Simon Chapman
 audience: researchers
+tags:
+  - Research
+  - Python
 ---
 
 # How to Use RCPCHgrowth in Research

@@ -2,6 +2,10 @@
 title: Getting Started
 reviewers: Dr Marcus Baw, Dr Anchit Chandran, Michael Barton
 audience: integrators, implementers, technical-architects
+tags:
+  - Getting Started
+  - Integration
+  - API
 ---
 # Getting Started with Digital Growth Charts
 

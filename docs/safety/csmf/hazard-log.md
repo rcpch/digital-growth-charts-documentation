@@ -2,6 +2,9 @@
 title: Hazard Log
 reviewers: Dr Marcus Baw
 audience: clinical-safety
+tags:
+  - Clinical Safety
+  - Hazards
 ---
 
 # Digital Growth Charts Hazard Log

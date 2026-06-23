@@ -2,6 +2,9 @@
 title: Flask/Python Client (deprecated)
 reviewers: Dr Marcus Baw, Dr Anchit Chandran
 audience: developers, implementers, integrators
+tags:
+  - Python
+  - Deprecated
 ---
 
 # Flask/Python ( :warning: deprecated)

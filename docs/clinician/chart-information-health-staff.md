@@ -2,6 +2,9 @@
 title: Information for Health Staff
 reviewers: Dr Marcus Baw, Dr Anchit Chandran
 audience: clinicians, health-staff
+tags:
+  - Growth Charts
+  - Centiles
 ---
 
 # Chart information for Health staff

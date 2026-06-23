@@ -2,6 +2,10 @@
 title: Privacy Notice
 reviewers: Dr Marcus Baw, Dr Anchit Chandran, Adele Picken
 audience: caldicott-guardians, implementers, developers
+tags:
+  - Privacy
+  - Data Protection
+  - Legal
 ---
 
 # Privacy Notice

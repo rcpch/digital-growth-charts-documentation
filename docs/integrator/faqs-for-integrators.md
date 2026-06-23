@@ -2,6 +2,9 @@
 title: FAQs for Integrators
 reviewers: Dr Marcus Baw, Dr Anchit Chandran
 audience: integrators, implementers, technical-architects
+tags:
+  - FAQ
+  - Integration
 ---
 
 # FAQs for Integrators

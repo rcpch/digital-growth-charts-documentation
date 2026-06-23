@@ -2,6 +2,8 @@
 title: Clinical Risk Management System
 reviewers: Dr Marcus Baw
 audience: clinical-safety
+tags:
+  - Clinical Safety
 ---
 
 # Clinical Risk Management System

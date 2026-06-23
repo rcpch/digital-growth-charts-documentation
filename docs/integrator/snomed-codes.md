@@ -2,6 +2,9 @@
 title: SNOMED CT Codes for Storing Results
 reviewers: Dr Marcus Baw
 audience: integrators, implementers, technical-architects
+tags:
+  - SNOMED CT
+  - Integration
 ---
 
 # SNOMED CT codes for storing growth results

@@ -2,6 +2,9 @@
 title: Docker development
 reviewers: Dr Marcus Baw, Dr Sean Cusack, Dr Anchit Chandran
 audience: developers
+tags:
+  - Docker
+  - API
 ---
 
 # Developing locally in a Docker container

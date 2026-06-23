@@ -2,6 +2,9 @@
 title: React Chart Component
 reviewers: Dr Marcus Baw, Dr Simon Chapman, Dr Anchit Chandran
 audience: developers
+tags:
+  - React
+  - Growth Charts
 ---
 
 ## Getting started

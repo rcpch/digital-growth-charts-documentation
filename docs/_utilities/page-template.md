@@ -3,6 +3,11 @@
 # it can be a useful place to store document metadata
 title: This Title is Shown in the Left Sidebar Nav (can be different to Page Title)
 reviewers: Dr Example Writer, Dr Second Checker
+# tags add an extra layer of search discoverability - reuse the controlled
+# vocabulary documented in developer/writing-documentation.md
+tags:
+  - Example Tag
+  - Another Tag
 ---
 
 If the `<h1>` title is omitted, Zensical will use the `title:` attribute in the Nav and on the page

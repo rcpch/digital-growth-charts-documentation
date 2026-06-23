@@ -2,6 +2,8 @@
 title: Versioning
 reviewers: Dr Marcus Baw, Dr Anchit Chandran
 audience: developers
+tags:
+  - Versioning
 ---
 
 # Versioning the API Server's code

@@ -2,6 +2,9 @@
 title: Data Security and Protection Toolkit
 reviewers: Dr Marcus Baw, Dr Anchit Chandran
 audience: data-protection-officers, clinical-safety, implementers
+tags:
+  - Data Protection
+  - Security
 ---
 
 # Data Security and Protection Toolkit

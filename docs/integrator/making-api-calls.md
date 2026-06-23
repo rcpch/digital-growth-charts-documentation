@@ -2,6 +2,9 @@
 title: Making API Calls
 reviewers: Dr Marcus Baw, Dr Simon Chapman
 audience: integrators, implementers, technical-architects
+tags:
+  - API
+  - Integration
 ---
 
 # Making calls to the Digital Growth Charts API
@@ -103,7 +106,7 @@ You should get a nicely formatted JSON response object:
 
 The response object from the API contains dates without times in the format `YYYY-MM-DD`. This is the format that the digital growth charts react component library expects. If the output of the API is passed directly to the charts they will render the measurements automatically. RCPCH recommend that the response is persisted, so that an API call is only required for each new measurement.
 
-If in the process of serializing or deserializing the response, the date format is changed, RCPCH advise ensuring that the dates do not change format. In case this happens, the charting component is optimized to process common date types, but will log this as a warning in the console. Any unparseable dates will log as errors.
+If in the process of serializing or deserializing the response, the date format is changed, RCPCH advise ensuring that the dates do not change format. In case this happens, the charting component is optimized to process common date types, but will log this as a warning in the console. Any un-parseable dates will log as errors.
 
 ## Optional parameters and advanced features
 

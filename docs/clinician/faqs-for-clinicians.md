@@ -2,6 +2,8 @@
 title: FAQs for Clinicians
 reviewers: Dr Marcus Baw, Dr Anchit Chandran
 audience: clinicians, health-staff
+tags:
+  - FAQ
 ---
 
 # Frequently Asked Questions for Clinicians

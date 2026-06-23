@@ -2,6 +2,8 @@
 title: React Demo Client
 reviewers: Dr Marcus Baw, Dr Anchit Chandran
 audience: developers, integrators, implementers
+tags:
+  - React
 ---
 
 # React Demo Client

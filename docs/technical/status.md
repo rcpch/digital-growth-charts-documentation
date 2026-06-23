@@ -2,6 +2,8 @@
 title: Service Status
 reviewers: Dr Marcus Baw, Dr Anchit Chandran
 audience: all
+tags:
+  - Support
 ---
 
 # dGC Service Status

@@ -2,6 +2,8 @@
 title: Third Party Tools Safety
 reviewers: Dr Marcus Baw
 audience: clinical-safety, developers
+tags:
+  - Clinical Safety
 ---
 
 # Third Party Tools Safety

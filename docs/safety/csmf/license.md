@@ -2,11 +2,14 @@
 title: CSMS License
 reviewers: Dr Marcus Baw
 audience: clinical-safety, implementers
+tags:
+  - Clinical Safety
+  - Licensing
 ---
 
 # License file for the RCPCH dGC Clinical Safety Management File
 
-This clinical safety management file is unusual in that it is in a public repository. Having completely open clinical safety documention is a good way to increase transparency and to demonstrate genuine attention to clinical safety issues.
+This clinical safety management file is unusual in that it is in a public repository. Having completely open clinical safety documentation is a good way to increase transparency and to demonstrate genuine attention to clinical safety issues.
 
 We are happy for it to be reused by others implementing open source projects. If you do reuse any part of this work, you **must** attribute the Royal College of Paediatrics and Child Health, and follow the other terms of this license. If you are a commercial organisation wishing to use this documentation then we may consider dual-licensing to allow for this. Please contact us.
 

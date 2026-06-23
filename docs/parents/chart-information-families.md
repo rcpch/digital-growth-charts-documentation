@@ -2,6 +2,8 @@
 title: Information for Parents
 reviewers: Dr Marcus Baw, Dr Anchit Chandran
 audience: parents, carers, families
+tags:
+  - Growth Charts
 ---
 
 # Information for Parents

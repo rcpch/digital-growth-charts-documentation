@@ -2,6 +2,8 @@
 title: Pricing
 reviewers: Dr Marcus Baw, Dr Simon Chapman, Dr Anchit Chandran
 audience: implementers, integrators, developers
+tags:
+  - Pricing
 ---
 
 # Pricing and Commercial Information
