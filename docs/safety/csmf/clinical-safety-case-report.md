@@ -82,7 +82,7 @@ More detail of the individual risks and descriptions of the pre- and post-mitiga
 
 If the API does not respond, then centile measurements and graphical growth charts will be unavailable. Possible causes include failure of internet connectivity (at the implementing site, at the supplier/integrator, or at the Microsoft Azure UK data centre), failure of internal networking within the Azure cloud platform, failure of proxying through the Azure API Management platform, or failure of the API server WebApp platform or application code.
 
-The API server runs on high-availability Microsoft Azure public cloud infrastructure and is hardened to above industry standard.
+The API server runs on high-availability Microsoft Azure public cloud infrastructure and is hardened to above industry standard. The technical causes within the RCPCH's control are mitigated by an automated test suite and peer review of the server code before deployment, version-locked dependencies, and the service-level agreements covering the Azure App Service and API Management platforms; connectivity failures at the implementing site or integrator are outside RCPCH control and are addressed within the implementer's own DCB0160 assessment. A full mapping of each possible cause to its mitigation is recorded in the hazard issue.
 
 The Project Board felt the unavailability of the API would be unlikely to cause any form of harm to a patient because there are immediately available fallback methods such as manual calculation on printed paper charts.
 
