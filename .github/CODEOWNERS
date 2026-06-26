@@ -1,0 +1,18 @@
+# Code owners for the RCPCH Digital Growth Charts documentation.
+#
+# The Clinical Safety Officer / PRRC is the required reviewer for the clinical
+# safety, medical-device and quality-management documentation, and for the QMS
+# process configuration (issue templates, labels and this file).
+#
+# This auto-requests review from the owner on any matching change. Review is
+# *enforced* only when branch protection on `live` has "Require review from
+# Code Owners" enabled. See https://growth.rcpch.ac.uk/safety/qms/
+
+# Clinical safety, medical-device regulation and quality-management documents
+/docs/safety/                       @pacharanero
+
+# QMS process configuration
+/.github/CODEOWNERS                 @pacharanero
+/.github/labels.yml                 @pacharanero
+/.github/ISSUE_TEMPLATE/            @pacharanero
+/.github/workflows/                 @pacharanero

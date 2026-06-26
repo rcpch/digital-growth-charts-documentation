@@ -1,4 +1,4 @@
-# This file contains definitions for the Hazard Log labels
+# This file contains definitions for the Hazard Log labels and the QMS process labels
 # Reference: DCB0129: Clinical Risk Management: its Application in the Manufacture of Health IT Systems
 # https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dcb0129-clinical-risk-management-its-application-in-the-manufacture-of-health-it-systems
 # Implementation Guidance https://digital.nhs.uk/binaries/content/assets/legacy/pdf/0129242018impguid.pdf
@@ -83,3 +83,50 @@
 - name: "risk-level-5-unacceptable"
   description: "Unacceptable level of risk"
   color: "B60205"
+
+# QMS process labels
+# Used by the GitHub Issue templates in .github/ISSUE_TEMPLATE/ to track the
+# quality-management processes described at https://growth.rcpch.ac.uk/safety/qms/
+- name: "complaint"
+  description: "A complaint or item of feedback about the dGC Platform (QMS feedback handling)."
+  color: "1D76DB"
+
+- name: "capa"
+  description: "A Corrective and/or Preventive Action."
+  color: "0052CC"
+
+- name: "serious-incident"
+  description: "A serious incident requiring assessment for MHRA vigilance reporting."
+  color: "D73A4A"
+
+- name: "design-input"
+  description: "A formal design input (requirement) for a feature or significant change."
+  color: "006B75"
+
+- name: "internal-audit"
+  description: "Planning and record of an internal audit of the QMS."
+  color: "5319E7"
+
+- name: "audit-finding"
+  description: "A single finding arising from an internal audit."
+  color: "F9D0C4"
+
+- name: "management-review"
+  description: "Planning and record of a periodic management review of the QMS."
+  color: "8B5CF6"
+
+- name: "non-conformity"
+  description: "A non-conformity against the QMS, a standard, or a requirement."
+  color: "E99695"
+
+- name: "quality-objective"
+  description: "A measurable quality objective and its status."
+  color: "C2E0C6"
+
+- name: "pms"
+  description: "Post-Market Surveillance activity, finding or trend."
+  color: "BFD4F2"
+
+- name: "regulatory"
+  description: "Regulatory or standards change relevant to the QMS or device."
+  color: "FEF2C0"
