@@ -204,6 +204,27 @@ Security issues may be responsibly disclosed to <growth.digital@rcpch.ac.uk> for
 
 Internally we treat security issues with the highest priority. Once the 'acute phase' of any security threat is handled, we will then follow the Safety Incident Management Process, usually converting to a public GitHub Issue.
 
+## ISO 14971 Alignment
+
+Our risk management is conducted natively in **DCB0129** terms, using the DCB0129 5×5 severity/likelihood scales and risk-acceptability matrix, because DCB0129 is the standard expected by our primary (UK/NHS) audience. **ISO 14971:2019** is the international standard for the application of risk management to medical devices, referenced by the UK Medical Devices Regulations 2002 and by our [Quality Management System](../qms.md).
+
+The two are not in conflict: they describe the same risk-management lifecycle, and the DCB0129 scales satisfy ISO 14971's requirement to define explicit criteria for risk estimation and acceptability. Rather than re-frame our risk documents, we map our existing DCB0129 process onto the ISO 14971 process below.
+
+| ISO 14971:2019 activity | How it is satisfied in our DCB0129 process |
+| ----------------------- | ------------------------------------------ |
+| Risk management plan | This [Clinical Risk Management Plan](#purpose) and the [Clinical Risk Management System](clinical-risk-mgmt-system.md) |
+| Intended use / reasonably foreseeable misuse | [Intended Purpose](intended-purpose.md) statement |
+| Identification of hazards | Hazard identification workshops; the [Hazard Log](hazard-log.md) |
+| Estimation of risk(s) | DCB0129 **severity (1–5) × likelihood (1–5)** recorded per hazard |
+| Risk evaluation (acceptability) | DCB0129 risk-acceptability **matrix** (Levels 1–5) |
+| Risk control | Mitigations recorded against each hazard in the Hazard Log |
+| Residual risk evaluation | Post-mitigation severity/likelihood recorded per hazard |
+| Overall residual risk acceptability | Benefit–risk argument in the [Clinical Safety Case Report](clinical-safety-case-report.md) |
+| Risk management report | [Clinical Safety Case Report](clinical-safety-case-report.md) |
+| Production & post-production information | [Post-Market Surveillance](pms-plan.md) plan |
+
+Software-specific risk management additionally follows IEC 62304 (software safety **Class B**); see [Software Lifecycle](software-lifecycle.md).
+
 ## Clinical Safety Competence and Training
 
 ### Overview

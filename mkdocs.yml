@@ -72,11 +72,16 @@ nav:
       - "developer/contributing.md"
   - Clinical Safety:
       - "safety/overview.md"
+      - Quality Management System: "safety/qms.md"
       - Clinical Safety File:
           - "safety/csmf/clinical-risk-mgmt-system.md"
           - "safety/csmf/clinical-risk-mgmt-plan.md"
+          - "safety/csmf/intended-purpose.md"
           - "safety/csmf/clinical-safety-case-report.md"
           - "safety/csmf/hazard-log.md"
+          - "safety/csmf/software-lifecycle.md"
+          - "safety/csmf/clinical-evaluation.md"
+          - "safety/csmf/pms-plan.md"
           - "safety/csmf/third-party-tools-safety-assmt.md"
           - "safety/csmf/license.md"
       - DTAC:
