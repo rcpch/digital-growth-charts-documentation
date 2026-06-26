@@ -8,13 +8,13 @@ tags:
 
 # Declaration of Conformity (API Server)
 
-## EU DECLARATION OF CONFORMITY
+## UK DECLARATION OF CONFORMITY
 
 1. ### Unique identification of the product
 
 The Royal College of Paediatrics and Child Health Digital Growth Charts Application Programming Interface **Server**, all versions. <https://github.com/rcpch/digital-growth-charts-server>
 
-1. ### Name and address of the manufacturer or his authorised representative
+1. ### Name and address of the manufacturer or the UK Responsible Person
 
 The Royal College of Paediatrics and Child Health (RCPCH), 5-11 Theobalds Road, London, WC1X 8SH (telephone: +44 (0)20 7092 6000).
 
@@ -28,11 +28,13 @@ There is no image, this is an entirely software product, with no dedicated hardw
 
 Server application code is located at <https://github.com/rcpch/digital-growth-charts-server>
 
-1. ### The object of the declaration described in point 4 is in conformity with the relevant Union harmonisation legislation
+1. ### The object of the declaration described in point 4 is in conformity with the relevant UK legislation
 
-* Regulation (EU) 2017/745 - Medical Devices
+* The Medical Devices Regulations 2002 (SI 2002/618), as amended.
 
-1. ### References to the relevant harmonised standards used, or references to the specifications in relation to which conformity is declared
+The RCPCH Digital Growth Charts API Server is a **Class I** medical device, UKCA-marked under the above Regulations and registered with the MHRA (GMDN 65712). As a Class I device, conformity is self-declared by the manufacturer and no UK Approved Body assessment is required.
+
+1. ### References to the relevant designated standards used, or references to the specifications in relation to which conformity is declared
 
 1. ### Technical file
 
@@ -42,7 +44,7 @@ The complete unabridged technical file, all documentation, instructions for use,
 | --------------------------- | ------------------------------------------------------------------------------- |
 | Signed for and on behalf of | The Royal College of Paediatrics and Child Health                               |
 | Place of Issue              | Cawood, North Yorkshire, UK                                                     |
-| Date of Issue               | 7th May 2021                                                                    |
+| Date of Issue               | 26th June 2026                                                                  |
 | Name                        | Dr Marcus Baw                                                                   |
 | Position                    | Lead Developer, Clinical Safety Officer, GP and EM Clinician.                   |
 | Signature                   | ![doc-signature](../../_assets/_images/marcus-signature-only-used-for-docs.jpg) |

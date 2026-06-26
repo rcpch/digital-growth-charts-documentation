@@ -6,11 +6,11 @@ tags:
   - Medical Device Regulation
 ---
 
-# Technical Documentation for EU Medical Device Regulation
+# Technical Documentation for UK Medical Device Regulation
 
 ## Digital Growth Charts Project
 
-1. ### Your name and address, or those of any authorised representatives
+1. ### Your name and address, or those of any UK Responsible Person
 
 The Royal College Of Paediatrics and Child Health (RCPCH), 5-11 Theobalds Road, London, WC1X 8SH (telephone: +44 (0)20 7092 6000).
 
@@ -34,7 +34,7 @@ The product was designed and developed entirely remotely by a geographically dis
 
 The 'place of manufacture' of the product could be most accurately said to be the code collaboration platform [GitHub](https://github.com/), and the primary tooling used in the manufacture was Microsoft Visual Studio Code.
 
-1. ### The name and address of any notified body involved in assessing the conformity of the product
+1. ### The name and address of any Approved Body involved in assessing the conformity of the product
 
 **Not Applicable** due to the Class I designation of the Device
 
@@ -42,9 +42,9 @@ The 'place of manufacture' of the product could be most accurately said to be th
 
 **Not Applicable** due to the Class I designation of the Device
 
-1. ### The EU declaration of conformity
+1. ### The UK declaration of conformity
 
-See [Declaration of Confomity](doc-api.md)
+See [Declaration of Conformity](doc-api.md)
 
 1. ### Label and instructions of use
 
@@ -52,7 +52,11 @@ All instructions for use are contained within [this documentation website](https
 
 1. ### A statement of relevant regulations to which the product complies
 
-* Regulation (EU) 2017/745 - Medical Devices
+* The Medical Devices Regulations 2002 (SI 2002/618), as amended.
+
+!!! note "EU market — a future consideration"
+
+    The device is currently placed on the Great Britain market under the UK Medical Devices Regulations 2002 as a **Class I** device, UKCA-marked and registered with the MHRA. Conformity with the EU Medical Device Regulation (Regulation (EU) 2017/745) — under which this software would likely be classified higher (Class IIa or above) and require assessment by an EU Notified Body — is a future consideration for any EU-market deployment and is not currently in scope.
 
 1. ### Identification of technical standards with which compliance is claimed
 
@@ -76,6 +80,6 @@ There are no technical standards pertaining directly to the manufacture of this 
 
     Automated tests on the programs are run on every code change. If the tests fail then the new code cannot be incorporated into the program, and the previous version will remain in place.
 
-    Tests can be viewed in the `test/` directory within each repository.
+    Tests can be viewed in the `tests/` directory within each repository.
 
     All repositories are listed at <https://github.com/rcpch>
