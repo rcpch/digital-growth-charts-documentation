@@ -53,7 +53,7 @@ nav:
       - "clinician/growth-chart-papers.md"
       - "clinician/faqs-for-clinicians.md"
   - Researchers:
-       - "researchers/introduction.md"
+      - "researchers/introduction.md"
   - Parents:
       - "parents/chart-information-families.md"
       - "parents/faqs-parents.md"
@@ -214,6 +214,18 @@ extra_css:
 # footer links and variables
 extra:
   # pdf_export: !ENV [ENABLE_PDF_EXPORT, false]  # suspended: with-pdf plugin not yet compatible with Zensical
+
+  # Social sharing cards (Open Graph / Twitter Card)
+  # Generates preview images for links shared on social media, Slack, Discord, etc.
+  social_cards:
+    enabled: true
+    override:
+      - icon: fontawesome/solid/heart-pulse
+        color: "#005eb8" # RCPCH blue
+      - icon: material/library
+        color: "#005eb8"
+    directory: assets/social_cards
+
   social:
     - icon: fontawesome/brands/discourse
       link: https://forum.rcpch.tech
