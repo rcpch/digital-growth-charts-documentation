@@ -80,7 +80,9 @@ More detail of the individual risks and descriptions of the pre- and post-mitiga
 
 #### Description of initial Risk and mitigation steps
 
-The API server runs on high-availability Microsoft Azure public cloud infrastructure and is hardened to above industry standard.
+If the API does not respond, then centile measurements and graphical growth charts will be unavailable. Possible causes include failure of internet connectivity (at the implementing site, at the supplier/integrator, or at the Microsoft Azure UK data centre), failure of internal networking within the Azure cloud platform, failure of proxying through the Azure API Management platform, or failure of the API server WebApp platform or application code.
+
+The API server runs on high-availability Microsoft Azure public cloud infrastructure and is hardened to above industry standard. The technical causes within the RCPCH's control are mitigated by an automated test suite and peer review of the server code before deployment, version-locked dependencies, and the service-level agreements covering the Azure App Service and API Management platforms; connectivity failures at the implementing site or integrator are outside RCPCH control and are addressed within the implementer's own DCB0160 assessment. A full mapping of each possible cause to its mitigation is recorded in the hazard issue.
 
 The Project Board felt the unavailability of the API would be unlikely to cause any form of harm to a patient because there are immediately available fallback methods such as manual calculation on printed paper charts.
 
@@ -90,40 +92,90 @@ Minor
 
 #### Likelihood
 
-Medium
+Low
 
 #### Residual Risk Level
 
+1 - Acceptable
+
 #### Outcome
 
-                                    |                      | Level 1 - Acceptable  |
-
-| | RCPCH endeavours to ensure that implementer organisations have appropriate support in order to reduce the risk of errors in passing data to the API | Level 1 - Transferred |
-| Misuse of the API code by external organisations
+The residual risk is rated **Level 1 - Acceptable**. No further risk control measures are required. Implementers are advised to retain access to printed reference charts as a fallback.
 
 ---
 
 ### Hazard: Wrong data is _entered into_ the Digital Growth Chart API
 
+<https://github.com/rcpch/digital-growth-charts-documentation/issues/48>
+
 #### Description of initial Risk and mitigation steps
 
-In both the above scenarios, our Project Board of clinical paediatrics and growth experts agreed that the absolute risk of directly attributable harm to a child is rather low, because of the multiple clinical practice safeguards that exist whether the growth chart is paper, PDF or digital.
+Incorrect data could be sent to the API, which would cause the API to return incorrect results, with the potential for an aberrant clinical decision to be made on the basis of those results. The possible causes all originate _outside_ of the API — for example a client user-interface error that allows the wrong data to be entered, a poor UI design that makes common errors difficult to spot, or an internal client data-transfer error that sends incorrect data to the API _despite_ correct data being entered in the UI.
+
+The RCPCH does **not** control the client software which uses the API. All dGC client software is **itself** subject to NHS Clinical Safety standards (DCB0160), and this risk must also be considered within the implementer's **own** Hazard Log and Clinical Safety Case.
+
+As with most of the Growth Chart Hazards, the potential harm is that a child either does not receive intervention when it _should_, or receives inappropriate intervention when it _should not_. In both these scenarios, our Project Board of clinical paediatrics and growth experts agreed that the absolute risk of directly attributable harm to a child is rather low, because of the multiple clinical practice safeguards that exist whether the growth chart is paper, PDF or digital. Because growth is slow, decisions about monitoring and intervention are usually based on multiple measurements over a period of time, with constant 'clinical correlation' between the chart findings and the presentation and appearance of the patient. A single erroneous reading is therefore unlikely to result in an incorrect clinical decision; indeed, a single outlying point that is at odds with the preceding trend itself alerts clinical suspicion, so the chart plot is part of the long-established clinical error-rejection mechanism that predates digital charting and APIs.
 
 #### Severity
 
+Minor
+
 #### Likelihood
+
+Low
 
 #### Residual Risk Level
 
+1 - Acceptable
+
 #### Outcome
 
-RCPCH endeavours to ensure that implementer organisations have appropriate support in order to reduce the risk of errors in passing data to the API, however much of the implementation risk must necessarily be passed on to the DCB0160 clinical safety assessment.
+The residual risk is rated **Level 1 - Acceptable**. RCPCH endeavours to ensure that implementer organisations have appropriate support in order to reduce the risk of errors in passing data to the API; however, much of the implementation risk must necessarily be transferred to the implementer's DCB0160 clinical safety assessment.
+
+---
+
+### Hazard: Wrong units of measurement are used for the data sent to the API
+
+<https://github.com/rcpch/digital-growth-charts-documentation/issues/88>
+
+#### Description of initial Risk and mitigation steps
+
+If the API receives data in the wrong units, the result of the calculation could be wrong or misleading. For example, a weight measured in grams but sent to the API as kilograms would produce a very high weight centile, and a height measured in metres but sent as centimetres would produce a very low height centile. This would have to occur as part of a mis-implementation by the supplier or implementing organisation, or a significant user error, and the erroneous value would not necessarily be distinguishable from a correct one in the user interface. In a worst case, this could lead to unnecessary monitoring or treatment prompted by concern about a markedly outlying single measurement.
+
+The following mitigations are in place:
+
+- **Technical** — the API rejects significantly outlying data in the request. The validation ranges are defined in the `rcpchgrowth` Python library ([validation_constants.py](https://github.com/rcpch/rcpchgrowth-python/blob/live/rcpchgrowth/constants/validation_constants.py)); for example, a height passed as `1.15` (metres) is rejected with the error "Height/length must be passed in cm, not metres".
+- **Implementation guidance** — the RCPCH [demonstration user interface](https://growth.rcpch.ac.uk/) validates outlying values and raises errors for obviously incorrect input. Implementers are encouraged to use the open-source demo as 'live-code documentation' and as a framework to start from.
+- **Interface** — an extremely outlying result is markedly divergent from the existing growth trajectory on the chart, which should raise concern. The UI is clearly labelled with the units required.
+- **Training** — clinicians are trained not to take action on the basis of a single outlying growth result, and on the correct units to use (cm for length/height/OFC, kg for weight).
+
+With thanks to John Meredith of Digital Health and Care Wales, whose request for clarification prompted the creation of this Hazard.
+
+#### Severity
+
+Minor
+
+#### Likelihood
+
+Low
+
+#### Residual Risk Level
+
+1 - Acceptable
+
+#### Outcome
+
+The residual risk is rated **Level 1 - Acceptable**. The combination of technical error-rejection, implementation guidance, clear interface labelling and clinical training reduces the post-mitigation risk to an acceptable level. Much of the residual implementation risk is transferred to the implementer's DCB0160 clinical safety assessment.
 
 ---
 
 ### Hazard: Incorrect centile data is _returned by_ the API
 
+<https://github.com/rcpch/digital-growth-charts-documentation/issues/49>
+
 #### Description of initial Risk and mitigation steps
+
+The API could return incorrect centile data, presenting the user with an incorrect set of centiles and creating the potential for an inappropriate clinical decision to be made if the incorrect data were not recognised as such.
 
 Prior to deployment of the Digital Growth Charts, significant 'static' software testing was performed, to ensure that the complex statistical calculations returned by the API had been confirmed to have a very high degree of conformity to previous statistical Centile calculation engines, across a synthetic 'test harness' of approximately 4000 children's data. It is worth noting that the agreement between the systems was to 4 decimal places, the small variation between these is accounted for by the fact that statistics uses complex modelling of curves and interpolation, so it is impossible to get perfect alignment between two systems written in different languages (in this case, R and Python).
 
@@ -141,21 +193,45 @@ Very Low
 
 #### Residual Risk Level
 
+2 - Acceptable
+
 #### Outcome
+
+The residual risk is rated **Level 2 - Acceptable**. The extensive static and end-to-end testing supervised by Prof Tim Cole reduces the likelihood of an incorrect centile being returned to Very Low, and no further risk control measures are required.
 
 ---
 
 ### Hazard: Misuse of the API code by external organisations
 
+<https://github.com/rcpch/digital-growth-charts-documentation/issues/50>
+
 #### Description of initial Risk and mitigation steps
+
+The dGC code is open source, which means an external organisation could decide to self-host the API and make an error in its implementation or deployment, leading to erroneous results. The motivation for self-hosting might, for example, be to avoid the API subscription fees. Implementing digital growth charts is technically difficult, and even a technically competent organisation could make elementary errors in clinical interpretation, or accidentally skew the statistical model that generates the Growth Chart response data, returning erroneous data that could mislead clinicians in their management of a patient and lead to suboptimal care.
+
+Based on discussions across the Hazard Log, the Project Board did not think it plausible that the death of a patient could occur from this kind of error; in their extensive paediatric careers they had not experienced harm of a high severity occurring solely from aberrant growth chart data.
+
+The following mitigations are in place:
+
+- The RCPCH offers a commercial support tier that provides a warranted on-premise deployment for organisations that wish to run a safe, dedicated API server on their own infrastructure.
+- The dGC documentation warns strongly, in a number of places, against self-hosting of the API, and explains the reasoning in detail.
+- Beyond this, the residual risk occurs completely outside the control of the RCPCH. Closing the source of the application would remove the ability for others to host it, but would also have very serious side-effects, curtailing the open transparency, auditability and safety profile of the project. Closing the source code is therefore not considered an appropriate mitigation.
 
 #### Severity
 
+Minor
+
 #### Likelihood
+
+Medium
 
 #### Residual Risk Level
 
+2 - Acceptable
+
 #### Outcome
+
+The residual risk is rated **Level 2 - Acceptable**. The risk arises from third-party use that is expressly outwith the intended commercial use of the platform (see [Intended Use](#intended-use)); it is mitigated by the availability of a warranted on-premise deployment tier and by strong documentation warnings against self-hosting.
 
 ---
 
