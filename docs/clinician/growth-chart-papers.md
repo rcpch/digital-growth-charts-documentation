@@ -16,7 +16,6 @@ This page lists key publications that underpin UK-WHO growth chart design, imple
 | Year | Authors | Title | Journal | DOI |
 |---|---|---|---|---|
 | 2023 | Hui LL, Schooling CM, Cowell CT, et al. | World variation in head circumference for children from birth to 5 years and a comparison with the WHO standards | Archives of Disease in Childhood | [10.1136/archdischild-2022-324661](https://doi.org/10.1136/archdischild-2022-324661) |
-| 2026 | RCPCH Digital Growth Charts Team | Short stature in children: how to assess and when to refer | Pulse Today | [https://www.pulsetoday.co.uk/clinical-feature/clinical-areas/paediatrics/short-stature-in-children-how-to-assess-and-when-to-refer](https://www.pulsetoday.co.uk/clinical-feature/clinical-areas/paediatrics/short-stature-in-children-how-to-assess-and-when-to-refer) |
 | 2017 | Wright CM, Kuperminc M, Blackmore AM, et al. | Validation of US cerebral palsy growth charts using a UK cohort | Developmental Medicine and Child Neurology | [10.1111/dmcn.13495](https://doi.org/10.1111/dmcn.13495) |
 | 2017 | Wright CM, Lakshman R, Emmett PM, Ong KK, ALSPAC Study Team. | Does measurement technique explain the mismatch between European head size and WHO charts? | Archives of Disease in Childhood | [10.1136/archdischild-2016-311888](https://doi.org/10.1136/archdischild-2016-311888) |
 | 2016 | Levin D, Alberman E, Popat H, et al. | Fit to WHO weight standard of European infants over time | Archives of Disease in Childhood | [10.1136/archdischild-2015-309594](https://doi.org/10.1136/archdischild-2015-309594) |
