@@ -5,14 +5,15 @@
 # Usage: s/version++ [major|minor|patch]
 #
 # This script:
-# 1. Ensures you're on main with a clean working tree
+# 1. Ensures you're on live with a clean working tree
 # 2. Creates an annotated tag with today's date (YYYY.MM.DD format)
-# 3. Pushes the tag to origin
+# 3. Handles multiple releases on the same day with suffixes (-a, -b, -c)
+# 4. Pushes the tag to origin
 #
 # The tag triggers the release workflow to build the PDF documentation.
 #
 # Arguments:
-#   major, minor, patch - optional, for tracking significance in commit message
+#   major, minor, patch - records significance in commit message
 #   (defaults to minor for documentation updates)
 
 set -euo pipefail
@@ -31,6 +32,12 @@ case "$bump" in
     echo ""
     echo "Creates a dated version tag for documentation releases."
     echo "Tag format: YYYY.MM.DD (e.g., 2026.07.05)"
+    echo "Multiple releases on same day get suffixes: 2026.07.05-a, 2026.07.05-b"
+    echo ""
+    echo "Bump levels:"
+    echo "  major - Breaking changes, major restructure"
+    echo "  minor - New content, features (default)"
+    echo "  patch - Small fixes, typos"
     exit 0
     ;;
   *)
@@ -58,24 +65,39 @@ fi
 
 # Generate today's date in YYYY.MM.DD format
 today=$(date +%Y.%m.%d)
-tag_name="${today}"
+base_tag="${today}"
 
-# Check if tag already exists
-if git rev-parse "v${tag_name}" >/dev/null 2>&1; then
-  echo "Warning: Tag v${tag_name} already exists." >&2
-  echo "" >&2
-  echo "This usually means multiple releases on the same day." >&2
-  echo "Consider using a suffix like v${tag_name}-a, v${tag_name}-b, etc." >&2
-  echo "" >&2
-  read -p "Continue anyway? [y/N] " -n 1 -r
-  echo
-  if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-    exit 1
+# Check for existing tags today and determine suffix
+suffix=""
+suffixes=("" "-a" "-b" "-c" "-d" "-e" "-f" "-g" "-h" "-i" "-j")
+suffix_index=0
+
+for try_suffix in "${suffixes[@]}"; do
+  tag_name="${base_tag}${try_suffix}"
+  if ! git rev-parse "v${tag_name}" >/dev/null 2>&1; then
+    suffix="$try_suffix"
+    break
   fi
+  suffix_index=$((suffix_index + 1))
+done
+
+if [[ -z "$suffix" ]]; then
+  echo "Error: Too many releases on same day (used all suffixes a-j)" >&2
+  echo "Consider using a different approach for this release." >&2
+  exit 1
+fi
+
+tag_name="${base_tag}${suffix}"
+
+# Create human-readable suffix description
+if [[ -z "$suffix" ]]; then
+  suffix_note=""
+else
+  suffix_note=" (${suffix#-} release)"
 fi
 
 # Create commit with bump level in message
-commit_msg="docs(release): v${tag_name} (${bump})"
+commit_msg="docs(release): v${tag_name} (${bump})${suffix_note}"
 
 echo "Creating release commit: ${commit_msg}"
 git commit --allow-empty -m "${commit_msg}"
@@ -91,7 +113,9 @@ git push origin "v${tag_name}"
 
 echo ""
 echo "✓ Release v${tag_name} created and pushed successfully"
+echo "  Bump level: ${bump}${suffix_note}"
 echo ""
 echo "Next steps:"
 echo "  - Monitor the release workflow: https://github.com/rcpch/digital-growth-charts-documentation/actions"
 echo "  - Verify the tag: git show v${tag_name}"
+echo "  - View release: https://github.com/rcpch/digital-growth-charts-documentation/releases/tag/v${tag_name}"
