@@ -4,8 +4,8 @@ not page.is_homepage %} {% set title = config.site_name ~ " - " ~ page.title |
 striptags %} {% if page.meta and page.meta.description %} {% set description =
 page.meta.description %} {% endif %} {% endif %}
 
-<!-- Use a dedicated social share image (create this at 1200×630px) -->
-{% set image = config.site_url ~ '/_assets/_images/social-share-card.png' %}
+<!-- Use a dedicated social share image (1200×630px) -->
+{% set image = config.site_url ~ '/_assets/_images/social-share-card.svg' %}
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />

@@ -1,0 +1,68 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#ffffff"/>
+
+  <!-- RCPCH Blue Header Bar -->
+  <rect width="1200" height="120" fill="#005eb8"/>
+
+  <!-- Growth Chart Grid Lines (subtle background pattern) -->
+  <g opacity="0.1" stroke="#005eb8" stroke-width="2">
+    <line x1="100" y1="200" x2="1100" y2="200"/>
+    <line x1="100" y1="300" x2="1100" y2="300"/>
+    <line x1="100" y1="400" x2="1100" y2="400"/>
+    <line x1="100" y1="500" x2="1100" y2="500"/>
+
+    <line x1="200" y1="150" x2="200" y2="550"/>
+    <line x1="400" y1="150" x2="400" y2="550"/>
+    <line x1="600" y1="150" x2="600" y2="550"/>
+    <line x1="800" y1="150" x2="800" y2="550"/>
+    <line x1="1000" y1="150" x2="1000" y2="550"/>
+  </g>
+
+  <!-- Stylized Growth Curves -->
+  <path d="M 150 450 Q 400 400, 600 350 T 1050 250"
+        fill="none" stroke="#005eb8" stroke-width="4" opacity="0.6"/>
+  <path d="M 150 480 Q 400 430, 600 380 T 1050 280"
+        fill="none" stroke="#005eb8" stroke-width="4" opacity="0.4"/>
+  <path d="M 150 420 Q 400 370, 600 320 T 1050 220"
+        fill="none" stroke="#005eb8" stroke-width="4" opacity="0.4"/>
+
+  <!-- Main Title -->
+  <text x="600" y="75"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="48"
+        font-weight="bold"
+        fill="#ffffff"
+        text-anchor="middle">
+    RCPCH Digital Growth Charts
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="520"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="36"
+        fill="#005eb8"
+        text-anchor="middle">
+    Complete Documentation Platform
+  </text>
+
+  <!-- Tagline -->
+  <text x="600" y="570"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="24"
+        fill="#666666"
+        text-anchor="middle">
+    UK-WHO Growth Charts • API Integration • Clinical Safety
+  </text>
+
+  <!-- RCPCH Logo Placeholder (circle with text) -->
+  <circle cx="100" cy="60" r="35" fill="#ffffff" opacity="0.9"/>
+  <text x="100" y="68"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="14"
+        font-weight="bold"
+        fill="#005eb8"
+        text-anchor="middle">
+    RCPCH
+  </text>
+</svg>
