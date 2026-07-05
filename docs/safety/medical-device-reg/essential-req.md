@@ -48,13 +48,49 @@ The manufacturer will need to determine which apply to their software by reviewi
 
 ## This information comprises the details on the label and the data in the instructions for use
 
-**13.3** The label must bear the following particulars.
+**13.3** The label must bear the following particulars. For this software device the "label" comprises the identifying information presented in this documentation and in the API/service metadata; particulars that concern physical product attributes are recorded as not applicable.
 
-**13.6** Where appropriate, the instructions for use must contain the following particulars:
+**(a)** the name or trade name and address of the manufacturer — _applies._ The manufacturer is the RCPCH, identified in this documentation.
 
-**(c)** if the device must be installed with or connected to other medical devices or equipment in order to operate as required for its intended purpose, sufficient details of its characteristics to identify the correct devices or equipment to use in order to obtain a safe combination;
+**(b)** the details strictly necessary to identify the device and the contents of the packaging, especially for the users — _applies._ The device is identified as the RCPCH Digital Growth Charts Platform, with the specific software version exposed through the API and its OpenAPI specification.
 
-**d)** all the information needed to verify whether the device is properly installed and can operate correctly and safely, plus details of the nature and frequency of the maintenance and calibration needed to ensure that the devices operate properly and safely at all times;
+**(c)** where appropriate, the word 'STERILE' — _not applicable to software._
+
+**(d)** where appropriate, the batch code (preceded by 'LOT') or the serial number — _not applicable in the physical sense; the software version identifier provides the equivalent traceability._
+
+**(e)** where appropriate, an indication of the date by which the device should be used safely, expressed as the year and month — _not applicable to software._
+
+**(f)** where appropriate, an indication that the device is for single use — _not applicable to software._
+
+**(g)** if the device is custom-made, the words 'custom-made device' — _not applicable._
+
+**(h)** if the device is intended for clinical investigations, the words 'exclusively for clinical investigations' — _not applicable._
+
+**(i)** any special storage and/or handling conditions — _not applicable to software._
+
+**(j)** any special operating instructions — _applies._ Provided in this documentation, which constitutes the Instructions for Use.
+
+**(k)** any warnings and/or precautions to take — _applies._ Provided in the [Intended Use](../csmf/clinical-safety-case-report.md#intended-use) section, the associated disclaimer, and throughout this documentation.
+
+**(l)** the year of manufacture for active devices (this indication may be included in the version or release identifier) — _applies via the release and version history recorded in the change-control system._
+
+**(m)** where applicable, the method of sterilisation — _not applicable to software._
+
+**(n)** where the device incorporates, as an integral part, a medicinal substance or a human blood derivative, the relevant statement — _not applicable._
+
+**13.6** Where appropriate, the instructions for use must contain the following particulars. For this software device the documentation site constitutes the instructions for use. Only the particulars relevant to a software device with a measuring function are reproduced below.
+
+**(a)** the details referred to in Section 13.3 (other than those, such as the batch code, that relate only to a physical label) — _applies;_ provided through this documentation.
+
+**(b)** the performances referred to in Section 3 and any undesirable side-effects — _applies;_ the intended performance is the calculation and display of growth-related parameters, as described in the System Definition and Intended Use sections of the [Clinical Safety Case Report](../csmf/clinical-safety-case-report.md).
+
+**(c)** if the device must be installed with or connected to other medical devices or equipment in order to operate as required for its intended purpose, sufficient details of its characteristics to identify the correct devices or equipment to use in order to obtain a safe combination — _applies;_ the platform is intended to be integrated within host systems (EPRs, EHRs and PHRs), and integration guidance is provided in the implementer documentation.
+
+**(d)** all the information needed to verify whether the device is properly installed and can operate correctly and safely, plus details of the nature and frequency of the maintenance and calibration needed to ensure that the devices operate properly and safely at all times — _applies;_ covered by the implementer and API documentation.
+
+**(q)** the degree of accuracy claimed for devices with a measuring function — _applies;_ the platform has a measuring function, and its accuracy is evidenced by the static validation of the calculation engine against a synthetic test harness of approximately 4000 children's data, supervised by Prof Tim Cole, as described in the [Clinical Safety Case Report](../csmf/clinical-safety-case-report.md) (hazard "Incorrect centile data is _returned by_ the API").
+
+The intervening particulars (e)–(p), which concern matters such as implantation, reuse, sterile packaging, radiation emission, and incorporated medicinal or animal-derived substances, are not applicable to this software device.
 
 ## The following are possibly applicable to software devices
 
