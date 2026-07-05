@@ -57,28 +57,28 @@ For key publications on UK-WHO growth chart development, implementation, and val
 
 ## Frequently Asked Questions
 
-### When to weigh?
+### When should I weigh a child?
 
 Weigh babies in the first week as part of feeding assessment. Once feeding is established, weigh at around 8, 12 and 16 weeks and 1 year during routine immunisations.
 
-If concerned about [faltering growth](https://pathways.nice.org.uk/pathways/faltering-growth#content=view-node%3Anodes-monitoring), measure more often but no more than:
+If concerned about [faltering growth](https://pathways.nice.org.uk/pathways/faltering-growth#content=view-node%3Anodes-monitoring), measure more often **but no more than**:
 
 - Daily if less than 1 month old
 - Weekly between 1–6 months old
 - Fortnightly between 6–12 months
 - Monthly from 1 year of age
 
-### When to measure length or height?
+### When should I measure length or height?
 
 Measure length or height whenever concerned about a child's weight gain, growth or general health. Measure length until age 2; measure height after age 2. Height is usually slightly less than length.
 
-### How to assess weight loss after birth?
+### How should weight loss after birth be monitored?
 
 Most babies lose weight in the first 3-4 days but regain birth weight by 3 weeks. Assess carefully if weight loss exceeds 10% or recovery is slow.
 
 Calculate percentage weight loss:
 
-![formula](https://latex.codecogs.com/svg.image?%
+![formula](https://latex.codecogs.com/svg.image?%5Cfrac%7B%5Ctext%7Bweight%20loss%7D%7D%7B%5Ctext%7Bbirth%20weight%7D%7D%20%5Ctimes%20100)
 
 For example, a child born at 3.500kg who drops to 3.150kg at 5 days has lost 350g or 10%; in a baby born at 3.000kg, a 300g loss is 10%.
 
