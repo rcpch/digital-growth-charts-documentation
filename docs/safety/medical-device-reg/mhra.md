@@ -24,4 +24,4 @@ Determination of the class of medical device applicable was performed using the 
 
 ## UK Responsible Person
 
-- [Information of Responsible Persons](https://www.gov.uk/guidance/regulating-medical-devices-in-the-uk#responsible)
+A [UK Responsible Person](https://www.gov.uk/guidance/regulating-medical-devices-in-the-uk#responsible) is required only for manufacturers established **outside** the UK who wish to place a medical device on the Great Britain market. The RCPCH is established in the United Kingdom and therefore acts as the manufacturer, registering the device directly with the MHRA. A separate UK Responsible Person is **not applicable**.
