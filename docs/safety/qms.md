@@ -71,12 +71,12 @@ All controlled documents — this manual, the clinical safety file, and the tech
 
 - Changes are proposed by **Pull Request** and require **at least one approving review** before merge to the protected `live` branch.
 - The **Git commit history is the complete, immutable change record** for every controlled document; history is not rewritten on `live`.
-- **Records** (hazards, incidents, complaints, decisions) are kept as GitHub Issues and commits and are retained indefinitely.
+- **Records** (hazards, incidents, complaints, CAPAs, audits and management reviews) are created from the [QMS Issue templates](https://github.com/rcpch/digital-growth-charts-documentation/tree/live/.github/ISSUE_TEMPLATE), identified by [QMS process labels](https://github.com/rcpch/digital-growth-charts-documentation/blob/live/.github/labels.yml), kept as GitHub Issues and commits, and retained indefinitely. Records are **public by default**; where a record would contain sensitive or patient-identifiable information (for example within a serious-incident investigation), that specific content is restricted and handled case by case.
 
 This replaces traditional manual document controls, as described in the [Clinical Risk Management Plan](csmf/clinical-risk-mgmt-plan.md#document-controls).
 
-!!! note "Planned formalisation"
-    A `CODEOWNERS` rule requiring PRRC review for safety- and regulatory-critical documents, and a set of QMS GitHub Issue templates (complaint, CAPA, design-input, serious-incident, audit, management-review, hazard), are planned as the next increment of QMS formalisation. The underlying controls — mandatory review on `live` and open Issue-based records — are already in force.
+!!! note "Process controls"
+    A [`CODEOWNERS`](https://github.com/rcpch/digital-growth-charts-documentation/blob/live/.github/CODEOWNERS) rule requests **PRRC review** for changes to the safety, regulatory and QMS-process files, and a set of [QMS Issue templates](https://github.com/rcpch/digital-growth-charts-documentation/tree/live/.github/ISSUE_TEMPLATE) — complaint, CAPA, design-input, serious-incident, internal-audit, audit-finding, management-review and hazard — gives each quality process a consistent, labelled record. The CODEOWNERS gate is *enforced* when branch protection on `live` has "Require review from Code Owners" enabled; in all cases it auto-requests the PRRC's review, and mandatory review on `live` is already in force.
 
 ## Design and development
 
@@ -94,16 +94,30 @@ Suppliers whose products could affect device quality, safety or availability are
 
 Feedback and complaints arrive through open GitHub Issues, the [RCPCH forum](https://forum.rcpch.tech), and direct implementer communication, and are handled under the [Post-Market Surveillance](csmf/pms-plan.md) plan. Serious incidents are assessed for MHRA reportability by the PRRC under the [incident process](csmf/clinical-risk-mgmt-plan.md#safety-incident-management-process). Clinical performance is appraised in the [Clinical Evaluation Report](csmf/clinical-evaluation.md).
 
+## Scheduled QMS activities
+
+The QMS runs to a defined rhythm. Each recurring activity has an owner and a record; the records are GitHub Issues raised from the corresponding [Issue template](https://github.com/rcpch/digital-growth-charts-documentation/tree/live/.github/ISSUE_TEMPLATE).
+
+| Activity | Frequency | Owner | Record |
+| -------- | --------- | ----- | ------ |
+| Management review | At least annually, and after any significant quality event | CSO / PRRC | Management Review Issue |
+| Internal audit | At least annually | QMS Administrator (independent of the area audited) | Internal Audit + Audit Finding Issues |
+| Supplier / SOUP review | At least annually, and on any supplier change | Technical Lead | [Third Party Tools register](csmf/third-party-tools-safety-assmt.md) + management review |
+| Hazard Log review | Every release, and on any new or changed hazard | CSO / PRRC | Hazard Issues; [Clinical Safety Case Report](csmf/clinical-safety-case-report.md) |
+| Post-Market Surveillance review | Continuous, formally appraised at each management review | CSO / PRRC | [PMS plan](csmf/pms-plan.md) + management review |
+| CAPA review | Continuous; status reviewed at each management review | CSO / PRRC | CAPA Issues |
+| Quality-objectives review | At each management review | CSO / PRRC | Management Review Issue |
+
 ## Management review
 
-A formal management review is conducted at least **annually**, and following any significant quality event. It reviews the quality policy and objectives, audit findings, complaints and PMS data, supplier status, regulatory changes, and actions from the previous review.
+A formal management review is conducted at least **annually**, and following any significant quality event. It reviews the quality policy and objectives, audit findings, complaints and PMS data, supplier status, regulatory changes, open CAPAs, and actions from the previous review. Each review is planned and recorded using the [Management Review Issue template](https://github.com/rcpch/digital-growth-charts-documentation/blob/live/.github/ISSUE_TEMPLATE/management-review.md), whose agenda enumerates the ISO 13485 §5.6 inputs; the completed, closed Issue is the record of the review, and follow-up actions are raised as CAPA or design-input Issues.
 
 !!! note "First management review"
     A management review has not yet been formally conducted; the **first is planned**, and this QMS manual is being prepared for presentation to it.
 
 ## Internal audit
 
-Internal audit verifies that the QMS conforms to ISO 13485 and is effectively implemented. The RCPCH already audits its software and quality process on an ongoing, informal basis (for example through continuous open code review and the static test harness); this manual **formalises that practice** into a documented annual audit cycle, with findings recorded as GitHub Issues and non-conformities driving corrective action.
+Internal audit verifies that the QMS conforms to ISO 13485 and is effectively implemented. The RCPCH already audits its software and quality process on an ongoing, informal basis (for example through continuous open code review and the static test harness); this manual **formalises that practice** into a documented annual audit cycle. Each audit is planned with the [Internal Audit Issue template](https://github.com/rcpch/digital-growth-charts-documentation/blob/live/.github/ISSUE_TEMPLATE/internal-audit.md) and conducted by someone independent of the area audited; each finding is recorded with the [Audit Finding template](https://github.com/rcpch/digital-growth-charts-documentation/blob/live/.github/ISSUE_TEMPLATE/audit-finding.md), and non-conformities drive a CAPA to resolution.
 
 ## ISO 13485:2016 clause mapping
 
@@ -112,11 +126,11 @@ Internal audit verifies that the QMS conforms to ISO 13485 and is effectively im
 | 4.1 General QMS requirements | This page |
 | 4.2.1–4.2.2 Documentation / quality manual | This page |
 | 4.2.3 Medical device file | [Technical Documentation](medical-device-reg/mdr-technical-docs.md), [Essential Requirements](medical-device-reg/essential-req.md) |
-| 4.2.4 Document control | [Document and record control](#document-and-record-control); branch protection on `live` |
-| 4.2.5 Record control | GitHub Issues; Git commit history |
+| 4.2.4 Document control | [Document and record control](#document-and-record-control); branch protection and `CODEOWNERS` review gate on `live` |
+| 4.2.5 Record control | GitHub Issues (QMS templates + process labels); Git commit history |
 | 5.1 / 5.3 Management commitment & quality policy | [Quality policy and objectives](#quality-policy-and-objectives) |
 | 5.2 Customer focus | [Post-Market Surveillance](csmf/pms-plan.md) |
-| 5.4 Planning | [Quality objectives](#quality-policy-and-objectives); management review |
+| 5.4 Planning | [Quality objectives](#quality-policy-and-objectives); [Scheduled QMS activities](#scheduled-qms-activities) |
 | 5.5 Responsibility & authority | [Organisational roles](#organisational-roles) |
 | 5.6 Management review | [Management review](#management-review) |
 | 6.2 Human resources | [Competence and training](#competence-and-training) |
@@ -133,7 +147,7 @@ Internal audit verifies that the QMS conforms to ISO 13485 and is effectively im
 | 8.2.6 Monitoring & measurement of product | Static test harness; [Software Lifecycle](csmf/software-lifecycle.md#verification-and-validation-summary) |
 | 8.3 Control of nonconforming product | CI test gates; [incident process](csmf/clinical-risk-mgmt-plan.md#safety-incident-management-process) |
 | 8.4 Analysis of data | [PMS plan](csmf/pms-plan.md); management review |
-| 8.5 Improvement (CAPA) | [PMS plan](csmf/pms-plan.md); management review |
+| 8.5 Improvement (CAPA) | [PMS plan](csmf/pms-plan.md); CAPA Issues; management review |
 
 ## Review of this manual
 

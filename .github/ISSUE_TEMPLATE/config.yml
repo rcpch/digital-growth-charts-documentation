@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: RCPCH Digital Growth Charts forum
+    url: https://forum.rcpch.tech
+    about: Ask a question, request support, or discuss the dGC Platform with the team and community.
+  - name: Quality Management System
+    url: https://growth.rcpch.ac.uk/safety/qms/
+    about: Read how these issue types fit into the QMS before raising one.
