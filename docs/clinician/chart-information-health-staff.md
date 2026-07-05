@@ -13,14 +13,17 @@ tags:
 
 The UK–WHO growth chart combines World Health Organization (WHO) standards with UK 1990 preterm and birth data:
 
-- The chart for birth measurements (23–42 weeks gestation) is based on British children measured around 1990.
-- The chart from 2 weeks to 4 years of age is based on the WHO growth standard, derived from measurements of healthy, non-deprived, breast-fed children of mothers who did not smoke.
-- The UK 1990 growth reference for children is used from 4 years - 20 years.
-- The charts depict a healthy pattern of growth that is desirable for all children, whether breast-fed or formula-fed, and of whichever ethnic origin.
+| Age range | Data source |
+|-----------|-------------|
+| Preterm and birth measurements (23–42 weeks gestation) | UK90 (British children measured around 1990) |
+| 2 weeks to 4 years | WHO growth standard from healthy, breast-fed children |
+| 4 years to 20 years | UK 1990 growth reference |
+
+The principal aim of the charts is to show healthy growth patterns for all children regardless of feeding method or ethnicity.
 
 ## Reason for combining UK 1990 and WHO 2006
 
-Though the UK 1990 data spans 23 weeks gestation to 20 years old, it also includes children who were bottle-fed and breast-fed. Thus, the breast-fed cohort from the WHO 2006 cohort were deemed more accurate and replaced the UK 1990 for the 2 week to 4 year age groups. As the UK 1990 data are no longer used for children in this age bracket, they have been omitted to create a continuous data set.
+The UK 1990 data includes both breast-fed and bottle-fed children. The WHO 2006 cohort of exclusively breast-fed children provides more accurate growth standards for ages 2 weeks to 4 years.
 
 The final dataset has 4 parts:
 
@@ -29,7 +32,7 @@ The final dataset has 4 parts:
 3. WHO 2006 children (< 4 years)
 4. UK 1990 children (4 years - 20 years)
 
-Where datasets overlap, there are 2 ages at the junction, one from each of UK90 and WHO 2006. There is a purposeful step at the junction between the data sets. There is an additional step at 2 y in height/length where children go from being measured lying down to standing up.
+There's a visible step in the charts at data set junctions, which is deliberate. Smoothing over this disjunction would require us to 'make up' data for that gap. Another step occurs at age 2 when children transition from lying to standing measurements.
 
 ## Instructions for the Down Syndrome charts
 
@@ -47,85 +50,104 @@ For key publications on UK-WHO growth chart development, implementation, and val
 
 --8<-- "docs/_assets/_snippets/centile-terminology.md"
 
-- Weight: use only Class III clinical electronic scales in metric setting.
-- Length: (before 2 years of age): proper equipment is essential (length board or mat). Measurers should be trained.
-- Height: (from 2 years): position head and feet as illustrated, with child standing as straight as possible. Measure height recorded to the last millimetre. A correctly installed stadiometer, or approved portable measuring device rigid rule with T piece, is the only equipment that can be reliably used.
-- Head circumference: use a narrow plastic or paper tape to measure where the head circumference is greatest.
+- **Weight**: use only Class III clinical electronic scales in metric setting.
+- **Length**: (before 2 years of age): proper equipment is essential (length board or mat). Staff performing the measurement should have received training on how to do it properly.
+- **Height**: (from 2 years): position head and feet as illustrated, with child standing as straight as possible. Measure height recorded to the last millimetre. A correctly installed stadiometer, or approved portable measuring device rigid rule with T piece, is the only equipment that can be reliably used.
+- **Head circumference**: use a narrow plastic or paper tape to measure where the head circumference is greatest.
 
 ## Frequently Asked Questions
 
 ### When to weigh?
 
-Babies should be weighed in the first week, as part of the assessment of feeding, and after as needed. Recovery of birthweight indicates that feeding is effective and the child is well. Once feeding is established, babies should usually be weighed at around 8, 12 and 16 weeks and 1 year at the time of routine immunisations.
+Weigh babies in the first week as part of feeding assessment. Once feeding is established, weigh at around 8, 12 and 16 weeks and 1 year during routine immunisations.
 
-Weights measured too close together may be misleading, but if there are concerns about [faltering growth](https://pathways.nice.org.uk/pathways/faltering-growth#content=view-node%3Anodes-monitoring), weight should be measured more often, but usually no more often than:
+If concerned about [faltering growth](https://pathways.nice.org.uk/pathways/faltering-growth#content=view-node%3Anodes-monitoring), measure more often but no more than:
 
-- daily if less than 1 month old.
-- weekly between 1–6 months old.
-- fortnightly between 6–12 months.
-- monthly from 1 year of age.
+- Daily if less than 1 month old
+- Weekly between 1–6 months old
+- Fortnightly between 6–12 months
+- Monthly from 1 year of age
 
 ### When to measure length or height?
 
-Length or height should be measured whenever there are any worries about a child’s weight gain, growth or general health. Measure length until age 2; measure height after age 2. A child’s height is usually slightly less than their length.
+Measure length or height whenever concerned about a child's weight gain, growth or general health. Measure length until age 2; measure height after age 2. Height is usually slightly less than length.
 
 ### How to assess weight loss after birth?
 
-Weight gain in the early days varies a lot from baby to baby, however, by 2 weeks of age most babies will be on a centile close to their birth centile. Most babies lose some weight in the first 3-4 days after birth, but most have regained birth weight by 3 weeks of age. Careful clinical assessment and evaluation of feeding technique is indicated when weight loss exceeds 10% or recovery of birth weight is slow.
+Most babies lose weight in the first 3-4 days but regain birth weight by 3 weeks. Assess carefully if weight loss exceeds 10% or recovery is slow.
 
-Calculating the percentage weight loss is a useful way to identify babies who need assessment.
-Percentage weight loss can be calculated as follows:
+Calculate percentage weight loss:
 
-![formula](https://latex.codecogs.com/svg.image?%\;Weight\;loss = \frac{Birth\;weight - Current\;weight}{Birth\;weight} \times 100%)
+![formula](https://latex.codecogs.com/svg.image?%
 
 For example, a child born at 3.500kg who drops to 3.150kg at 5 days has lost 350g or 10%; in a baby born at 3.000kg, a 300g loss is 10%.
 
 ### What is a normal rate of weight gain and growth?
 
-Babies do not all grow at the same rate, so a baby’s weight often does not follow a particular centile line, especially in the first year. Weight is most likely to track within one centile space (the gap between two centile lines, see diagram). In infancy, acute illness can lead to sudden weight loss and a weight centile fall, but on recovery the child’s weight usually returns to its normal centile within 2–3 weeks. However, a sustained drop through 2 or more weight centile spaces is unusual (fewer than 2% of infants), and should be carefully assessed by the primary care team, including measuring length/height.
+Babies grow at different rates. Weight often doesn't follow a particular centile line, especially in the first year. Weight usually tracks within one centile space.
 
-Because it is difficult to measure length and height accurately in pre-school children, successive measurements commonly show wide variation. If there are worries about growth, it is useful to measure occasionally over time; most healthy children will show a stable average position over time.
+Acute illness can cause sudden weight loss and centile falls, but weight typically returns to normal within 2–3 weeks. A sustained drop through 2 or more centile spaces is unusual (fewer than 2% of infants) and requires assessment.
 
-UK children have relatively large heads compared to the WHO standard, particularly after the age of 6 months. After the age of 6 weeks, a head circumference below the 2nd centile will be seen in only 1 in 250 children. A head circumference above the 99.6th centile, or crossing upwards through 2 centile spaces, should only cause concern if there is a continued rise after 6 months, or other signs or symptoms.
+Successive length/height measurements in pre-school children often show wide variation. Most healthy children show a stable average position over time.
+
+UK children have relatively large heads compared to WHO standards, particularly after 6 months. A head circumference below the 2nd centile occurs in only 1 in 250 children after 6 weeks. A head circumference above the 99.6th centile, or crossing upwards through 2 centile spaces, should only cause concern if there's a continued rise after 6 months, or other signs.
 
 ### Why do the length/height centiles change at 2 years?
 
-The growth standards show length data up to 2 years of age, and height from age 2 onwards. When a child is measured standing up, the spine is squashed a little, so their height is slightly less than their length; the centile lines shift down slightly at age 2 to allow for this. It is important this difference does not worry parents; what matters is whether the child continues to follow the same centile after the transition.
+Growth standards show length data up to 2 years and height from age 2 onwards. When measured standing, the spine compresses slightly, making height slightly less than length. Centile lines shift down at age 2 to allow for this.
 
 ### When is further assessment required in school aged children?
 
-If any of the following occur:
+Assess further if any of these occur:
 
-- Where weight or height or BMI is below the 0.4th centile, unless already fully investigated at an earlier age.
-- If the height centile is more than 3 centile spaces below the mid-parental centile.
-- A drop in height centile position of more than 2 centile spaces, as long as measurement error has been excluded.
-- Smaller centile falls or discrepancies between child’s and mid-parental centile, if seen in combination, or if associated with possible underlying disease.
-- If there are any other concerns about the child’s growth.
+- Weight, height or BMI below the 0.4th centile (unless already investigated)
+- Height centile more than 3 centile spaces below mid-parental centile
+- Drop in height centile position of more than 2 centile spaces (after excluding measurement error)
+- Smaller centile falls or discrepancies between child's and mid-parental centile, if in combination or associated with possible underlying disease
+- Any other concerns about the child's growth
 
 ### How do SDS charts work?
 
-Centiles are derived mathematically from standard deviation scores (SDS), also known as z scores. These values in turn are related to p values - the probability of finding a child with a given measurement in a sample. An SDS of 0 equates to the 50th centile, with positive values relating to centiles above this, and a negative value relating to centiles below. The benefit of reporting and charting SDS rather than centiles is that values can all be plotted on the same chart. It is important to note that plotting the z score against age must be against the _corrected_ age, not the _chronological_ one, as the chart otherwise becomes crowded and hard to interpret.
+Centiles derive from standard deviation scores (SDS or z scores). An SDS of 0 equals the 50th centile. Positive values relate to centiles above this; negative values relate to centiles below.
+
+SDS values can all be plotted on the same chart. When plotting z scores against age, use _corrected_ age, not _chronological_ age.
 
 ## Calculations as yet not implemented in the API
 
 ### Weight–height to BMI conversion chart
 
-![formula](<https://latex.codecogs.com/svg.image?BMI&space;=&space;weight;in;kg/(height;in;m)^2>)
-BMI indicates how heavy a child is relative to his or her height and is the simplest measure of thinness and fatness from the age of 2, when height can be measured fairly accurately. In a child over 2 years of age, the BMI centile is a better indicator of overweight or underweight than the weight centile; a child whose weight is average for their height will have a BMI between the 25th and 75th centiles, whatever their height centile. BMI above the 91st centile suggests that the child is overweight; a child above the 98th centile is very overweight (clinically obese). BMI below the 2nd centile is unusual and may reflect under-nutrition.
+![formula](https://latex.codecogs.com/svg.image?BMI = weight\;in\;kg/(height\;in\;m)^2)
+
+BMI indicates how heavy a child is relative to height. It's the simplest measure of thinness and fatness from age 2 when height can be measured accurately.
+
+In children over 2 years, BMI centile is a better indicator of overweight or underweight than weight centile:
+
+- Average weight for height: BMI between 25th and 75th centiles
+- Overweight: BMI above 91st centile
+- Very overweight (clinically obese): BMI above 98th centile
+- Under-nutrition: BMI below 2nd centile
 
 ### Percentage median BMI
 
-The child or young person's BMI is compared with the median value for age and sex and expressed as a percentage. It is used mainly for risk assessment in eating disorders.
+The child's BMI is compared with the median value for age and sex and expressed as a percentage. Used mainly for risk assessment in eating disorders.
 
 ### Mid-Parental Height
 
-When assessing a child's stature, comparing their height centile against that of their parents is helpful for clinicians, to find out if the child is short or tall for the family. How this is calculated has been debated in the medical literature and clinicians often use a simple calculation which involves adding 13 cm to a mother's height (for a boy) or subtracting 13 cm from a father's height (for a girl) and then taking the average of that and the other parent. The RCPCH charts have a calculator however that research on large numbers of children to shows a more accurate way: instead, an average is taken of the parents' height z-scores (standard deviation scores) and this is multiplied by a factor calculated from linear regression in a large cohort of children. This has the effect of correcting mid-parental particularly where there is a large difference in heights between parents. This is shown on the RCPCH paper growth charts in an inset on the top right-hand corner of the charts. The methodology is repeated in the digital growth chart calculations. For more information on this, see: [The strengths and limitations of parental heights as a predictor of attained height, Charlotte M Wright, Tim D Cheetham, Arch Dis Child 1999;81:257–260](https://pubmed.ncbi.nlm.nih.gov/10451401/)
+Comparing a child's height centile with their parents' heights helps clinicians assess if the child is short or tall for the family.
 
-An further improvement on the paper charts has been to render the mid-parental height centile rangesnext to the latest plotted measurements, rather than at the top.
+Clinicians often use a simple calculation: add 13 cm to mother's height (for a boy) or subtract 13 cm from father's height (for a girl), then average with the other parent.
+
+RCPCH charts use a more accurate method: average the parents' height z-scores (standard deviation scores) and multiply by a factor from linear regression in a large cohort. This corrects mid-parental height, particularly where there's a large difference between parents.
+
+This methodology is used in digital growth chart calculations. For more information, see: [The strengths and limitations of parental heights as a predictor of attained height, Charlotte M Wright, Tim D Cheetham, Arch Dis Child 1999;81:257–260](https://pubmed.ncbi.nlm.nih.gov/10451401/)
+
+A further improvement on paper charts renders mid-parental height centile ranges next to the latest plotted measurements, rather than at the top.
 
 ### Predicting adult height
 
-Parents like to know how tall their child will be as an adult. The child’s most recent height centile (aged 2–4 years) gives a good idea of this for healthy children. Plot this centile on the adult height predictor to the right of the height chart to find the average adult height for children on this centile. This will predict the child’s adult height based on their current height, but with a regression adjustment to allow for the tendency of very tall and short children to be less extreme in height as adults. Four out of five children will have adult heights that are within ± 6cm of this value.
+Parents often want to know how tall their child will be as an adult. The child's most recent height centile (aged 2–4 years) gives a good idea.
+
+Plot this centile on the adult height predictor to find the average adult height. This predicts adult height based on current height with regression adjustment for tall/short children becoming less extreme as adults. Four out of five children will have adult heights within ± 6cm of this value.
 
 !!! info
-Adult Height Prediction is an upcoming feature of the Digital Growth Chart API
+    Adult Height Prediction is an upcoming feature of the Digital Growth Chart API
