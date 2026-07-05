@@ -1,0 +1,97 @@
+#!/usr/bin/env bash
+#
+# Create a dated version tag for the documentation repo.
+#
+# Usage: s/version++ [major|minor|patch]
+#
+# This script:
+# 1. Ensures you're on main with a clean working tree
+# 2. Creates an annotated tag with today's date (YYYY.MM.DD format)
+# 3. Pushes the tag to origin
+#
+# The tag triggers the release workflow to build the PDF documentation.
+#
+# Arguments:
+#   major, minor, patch - optional, for tracking significance in commit message
+#   (defaults to minor for documentation updates)
+
+set -euo pipefail
+
+# CD to repo root
+cd "$(git rev-parse --show-toplevel)"
+
+# Default bump level
+bump="${1:-minor}"
+
+# Validate argument
+case "$bump" in
+  major|minor|patch) ;;
+  -h|--help)
+    echo "Usage: s/version++ [major|minor|patch]"
+    echo ""
+    echo "Creates a dated version tag for documentation releases."
+    echo "Tag format: YYYY.MM.DD (e.g., 2026.07.05)"
+    exit 0
+    ;;
+  *)
+    echo "Error: Unknown bump level '$bump'" >&2
+    echo "Usage: s/version++ [major|minor|patch]" >&2
+    exit 1
+    ;;
+esac
+
+# Preflight: must be on main
+if [[ "$(git branch --show-current)" != "live" ]]; then
+  echo "Error: Must be on 'live' branch to create a release tag." >&2
+  echo "Current branch: $(git branch --show-current)" >&2
+  exit 1
+fi
+
+# Preflight: clean working tree
+if [[ -n "$(git status --porcelain)" ]]; then
+  echo "Error: Working tree is not clean." >&2
+  echo "" >&2
+  echo "Commit or stash your changes first:" >&2
+  echo "  git status" >&2
+  exit 1
+fi
+
+# Generate today's date in YYYY.MM.DD format
+today=$(date +%Y.%m.%d)
+tag_name="${today}"
+
+# Check if tag already exists
+if git rev-parse "v${tag_name}" >/dev/null 2>&1; then
+  echo "Warning: Tag v${tag_name} already exists." >&2
+  echo "" >&2
+  echo "This usually means multiple releases on the same day." >&2
+  echo "Consider using a suffix like v${tag_name}-a, v${tag_name}-b, etc." >&2
+  echo "" >&2
+  read -p "Continue anyway? [y/N] " -n 1 -r
+  echo
+  if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    exit 1
+  fi
+fi
+
+# Create commit with bump level in message
+commit_msg="docs(release): v${tag_name} (${bump})"
+
+echo "Creating release commit: ${commit_msg}"
+git commit --allow-empty -m "${commit_msg}"
+
+# Create annotated tag
+echo "Creating annotated tag: v${tag_name}"
+git tag -a "v${tag_name}" -m "Documentation release ${tag_name}"
+
+# Push commit and tag
+echo "Pushing to origin..."
+git push origin live
+git push origin "v${tag_name}"
+
+echo ""
+echo "✓ Release v${tag_name} created and pushed successfully"
+echo ""
+echo "Next steps:"
+echo "  - Monitor the release workflow: https://github.com/rcpch/digital-growth-charts-documentation/actions"
+echo "  - Verify the tag: git show v${tag_name}"
