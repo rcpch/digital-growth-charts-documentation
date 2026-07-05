@@ -10,6 +10,76 @@ tags:
 
 Details for interested clinicians and statisticians.
 
+## Platform Architecture
+
+The RCPCH Digital Growth Charts platform comprises several interconnected components that work together to provide accurate growth calculations:
+
+```mermaid
+flowchart TD
+    subgraph Users["Users"]
+        A[Clinicians]
+        B[Researchers]
+        C[Developers]
+        D[Parents]
+    end
+
+    subgraph Frontend["Frontend Layer"]
+        E[Web Application]
+        F[React Component]
+        G[Mobile Apps]
+        H[Third-party Systems]
+    end
+
+    subgraph API["API Layer"]
+        I[REST API Server]
+        J[Authentication]
+        K[Rate Limiting]
+        L[Request Validation]
+    end
+
+    subgraph Core["Core Calculation Engine"]
+        M[LMS Calculator]
+        N[Interpolation Engine]
+        O[Reference Data]
+    end
+
+    subgraph Data["Data Layer"]
+        P[UK-WHO References]
+        Q[Special Conditions]
+        R[Audit Logs]
+    end
+
+    Users --> Frontend
+    Frontend --> API
+    API --> Core
+    Core --> Data
+    
+    style Users fill:#e1f5fe
+    style Frontend fill:#f3e5f5
+    style API fill:#e8f5e9
+    style Core fill:#fff3e0
+    style Data fill:#fce4ec
+```
+
+### Component Overview
+
+**Frontend Layer**: User interfaces including the web application, React component library, mobile apps, and third-party integrations.
+
+**API Layer**: RESTful API server handling authentication, rate limiting, request validation, and response formatting.
+
+**Core Calculation Engine**: The `rcpchgrowth` Python library implementing the LMS method with cubic interpolation for accurate centile calculations.
+
+**Data Layer**: Growth reference datasets (UK-WHO, UK90, condition-specific references) and audit logs for clinical safety.
+
+### Data Flow
+
+1. User enters measurement data (age, sex, height/weight/etc.)
+2. Frontend validates and sends request to API
+3. API authenticates and validates the request
+4. Core engine calculates centiles using LMS method
+5. Results returned with centile, SDS, and interpretation
+6. Data logged for audit and post-market surveillance
+
 ## Growth Charting Introduction
 
 The UK-WHO 0-4 year old charts were officially launched on May 11th 2009. Any child born after that date should be plotted on a UK-WHO growth chart. Children born before May 11th 2009 are plotted on British 1990 (UK90) charts and subsequent measurements must be plotted using those charts. After age 4, the two charts are the same.

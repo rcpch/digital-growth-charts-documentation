@@ -97,6 +97,7 @@ nav:
       - "legal/licensing-copyright.md"
       - "legal/data-protection.md"
       - "legal/privacy-notice.md"
+      - "legal/accessibility-statement.md"
   - Technical:
       - "technical/security.md"
       - "technical/data-security-protection-toolkit.md"
