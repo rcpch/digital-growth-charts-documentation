@@ -199,7 +199,11 @@ markdown_extensions:
       check_paths: true
       auto_append:
         - includes/_abbreviations.md # adds abbreviations snippets to ALL pages
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+          - name: mermaid
+            class: mermaid
+            format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - toc:
