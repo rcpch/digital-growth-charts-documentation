@@ -1,0 +1,30 @@
+# SPDX-FileCopyrightText: 2026 Royal College of Paediatrics and Child Health
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+name: Workflow security
+
+on:
+  push:
+    branches: [live]
+  pull_request:
+    branches: [live]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  workflow-security:
+    name: GitHub Actions security
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: taiki-e/install-action@fcf5432d9f50d67e37ee6e29bdb7a224ff67b4a7 # v2.86.8
+        with:
+          tool: zizmor@1.29.0
+          fallback: none
+      - run: zizmor --strict-collection .
+        env:
+          GH_TOKEN: ${{ github.token }}
