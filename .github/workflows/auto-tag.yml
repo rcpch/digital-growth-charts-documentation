@@ -18,13 +18,14 @@ on:
     branches: [live]
 
 permissions:
-  contents: write
-  id-token: write
+  contents: read
 
 jobs:
   tag:
     name: Detect release commit and create tag
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     outputs:
       tag: ${{ steps.extract.outputs.tag }}
       released: ${{ steps.extract.outputs.released }}
@@ -33,7 +34,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 2
-          persist-credentials: true
+          persist-credentials: false
 
       - name: Extract release tag from commit message
         id: extract
@@ -42,9 +43,10 @@ jobs:
 
           # Match patterns like:
           #   docs(release): v2026.07.05 (minor)
+          #   docs(release): v2026.07.05-a (patch) (a release)
           #   chore(release): v2026.07.05 (major)
-          if echo "$commit_msg" | grep -qE '(docs|chore)\(release\): v[0-9]{4}\.[0-9]{2}\.[0-9]{2}'; then
-            tag=$(echo "$commit_msg" | grep -oE 'v[0-9]{4}\.[0-9]{2}\.[0-9]{2}')
+          if echo "$commit_msg" | grep -qE '(docs|chore)\(release\): v[0-9]{4}\.[0-9]{2}\.[0-9]{2}(-[a-j])?'; then
+            tag=$(echo "$commit_msg" | grep -m1 -oE 'v[0-9]{4}\.[0-9]{2}\.[0-9]{2}(-[a-j])?')
             echo "Release commit detected: $tag"
             echo "tag=$tag" >> "$GITHUB_OUTPUT"
             echo "released=true" >> "$GITHUB_OUTPUT"
@@ -55,20 +57,26 @@ jobs:
 
       - name: Create and push tag
         if: steps.extract.outputs.released == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.extract.outputs.tag }}
         run: |
-          tag="${{ steps.extract.outputs.tag }}"
-
           # Check if tag already exists
-          if git rev-parse "refs/tags/$tag" >/dev/null 2>&1; then
-            echo "Tag $tag already exists - skipping."
+          if gh api "repos/${GITHUB_REPOSITORY}/git/ref/tags/${TAG}" >/dev/null 2>&1; then
+            echo "Tag $TAG already exists - skipping."
             exit 0
           fi
 
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git tag -a "$tag" -m "Documentation release $tag"
-          git push origin "$tag"
-          echo "Created and pushed tag: $tag"
+          tag_object=$(gh api --method POST "repos/${GITHUB_REPOSITORY}/git/tags" \
+            -f tag="$TAG" \
+            -f message="Documentation release $TAG" \
+            -f object="$GITHUB_SHA" \
+            -f type="commit" \
+            --jq .sha)
+          gh api --method POST "repos/${GITHUB_REPOSITORY}/git/refs" \
+            -f ref="refs/tags/$TAG" \
+            -f sha="$tag_object"
+          echo "Created tag: $TAG"
 
   release:
     # Run the release workflow to create GitHub Release and build PDF
@@ -76,6 +84,7 @@ jobs:
     needs: tag
     if: needs.tag.outputs.released == 'true'
     uses: ./.github/workflows/release.yml
+    permissions:
+      contents: write
     with:
       tag: ${{ needs.tag.outputs.tag }}
-    secrets: inherit

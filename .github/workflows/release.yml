@@ -14,48 +14,47 @@ on:
         required: true
         type: string
 
+permissions:
+  contents: read
+
 jobs:
   github-release:
     name: Create GitHub Release
     runs-on: ubuntu-latest
-    # Permissions inherited from auto-tag.yml via workflow_call
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ inputs.tag || github.ref }}
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Generate release notes from changelog
-        id: notes
+        env:
+          TAG: ${{ inputs.tag || github.ref_name }}
         run: |
-          tag="${{ inputs.tag || github.ref_name }}"
           # Extract notes between this tag and the previous one
           # For now, use a simple approach - can enhance with git-cliff later
           notes=$(git log --format="- %s" $(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo "")..HEAD 2>/dev/null | head -20)
 
           if [ -z "$notes" ]; then
-            notes="- Documentation release $tag"
+            notes="- Documentation release $TAG"
           fi
 
-          echo "notes<<EOF" >> "$GITHUB_OUTPUT"
-          echo "$notes" >> "$GITHUB_OUTPUT"
-          echo "EOF" >> "$GITHUB_OUTPUT"
+          {
+            printf '## Changes in %s\n\n' "$TAG"
+            printf '%s\n\n' "$notes"
+            printf '%s\n' '---'
+            printf '%s\n' '*This release was created automatically by the release workflow.*'
+          } > "$RUNNER_TEMP/release-notes.md"
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@01570a1f399634c31508b45e63156c03358519bb # v2.0.4
-        with:
-          name: "Documentation Release ${{ inputs.tag || github.ref_name }}"
-          body: |
-            ## Changes in ${{ inputs.tag || github.ref_name }}
-
-            ${{ steps.notes.outputs.notes }}
-
-            ---
-            *This release was created automatically by the release workflow.*
-          generate_release_notes: false
-          make_latest: true
-          prerelease: false
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.tag || github.ref_name }}
+        run: gh release create "$TAG" --title "Documentation Release $TAG" --notes-file "$RUNNER_TEMP/release-notes.md" --latest
 
   build-pdf:
     name: Build PDF Documentation
@@ -69,6 +68,7 @@ jobs:
         with:
           ref: ${{ inputs.tag || github.ref }}
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
@@ -94,10 +94,14 @@ jobs:
           fi
 
       - name: Upload PDF to Release
-        uses: softprops/action-gh-release@01570a1f399634c31508b45e63156c03358519bb # v2.0.4
-        with:
-          tag_name: ${{ inputs.tag || github.ref_name }}
-          files: |
-            pdf/*.pdf
-            docs/_assets/_pdfs/*.pdf
-          fail_on_unmatched_files: false
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.tag || github.ref_name }}
+        run: |
+          shopt -s nullglob
+          files=(pdf/*.pdf docs/_assets/_pdfs/*.pdf site/_assets/_pdfs/safety-documentation.pdf)
+          if (( ${#files[@]} == 0 )); then
+            echo "No PDF files found to upload."
+            exit 0
+          fi
+          gh release upload "$TAG" "${files[@]}"

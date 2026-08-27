@@ -6,11 +6,12 @@
 #
 # This script:
 # 1. Ensures you're on live with a clean working tree
-# 2. Creates an annotated tag with today's date (YYYY.MM.DD format)
+# 2. Creates a release commit with today's date (YYYY.MM.DD format)
 # 3. Handles multiple releases on the same day with suffixes (-a, -b, -c)
-# 4. Pushes the tag to origin
+# 4. Pushes the commit to live; auto-tag.yml creates the tag and release
 #
-# The tag triggers the release workflow to build the PDF documentation.
+# The release commit triggers auto-tag.yml, which creates the tag and invokes
+# the release workflow to build the PDF documentation.
 #
 # Arguments:
 #   major, minor, patch - records significance in commit message
@@ -63,31 +64,37 @@ if [[ -n "$(git status --porcelain)" ]]; then
   exit 1
 fi
 
+# Ensure the release starts from the shared live branch and includes tags created by CI.
+git fetch --quiet --tags origin live
+if [[ "$(git rev-parse HEAD)" != "$(git rev-parse origin/live)" ]]; then
+  echo "Error: Local 'live' must match 'origin/live' before creating a release." >&2
+  echo "Update the branch and try again." >&2
+  exit 1
+fi
+
 # Generate today's date in YYYY.MM.DD format
 today=$(date +%Y.%m.%d)
 base_tag="${today}"
 
 # Check for existing tags today and determine suffix
-suffix=""
 suffixes=("" "-a" "-b" "-c" "-d" "-e" "-f" "-g" "-h" "-i" "-j")
-suffix_index=0
+tag_name=""
 
 for try_suffix in "${suffixes[@]}"; do
-  tag_name="${base_tag}${try_suffix}"
-  if ! git rev-parse "v${tag_name}" >/dev/null 2>&1; then
-    suffix="$try_suffix"
+  candidate="${base_tag}${try_suffix}"
+  if ! git rev-parse --verify "refs/tags/v${candidate}" >/dev/null 2>&1; then
+    tag_name="$candidate"
     break
   fi
-  suffix_index=$((suffix_index + 1))
 done
 
-if [[ -z "$suffix" ]]; then
+if [[ -z "$tag_name" ]]; then
   echo "Error: Too many releases on same day (used all suffixes a-j)" >&2
   echo "Consider using a different approach for this release." >&2
   exit 1
 fi
 
-tag_name="${base_tag}${suffix}"
+suffix="${tag_name#${base_tag}}"
 
 # Create human-readable suffix description
 if [[ -z "$suffix" ]]; then
@@ -102,20 +109,15 @@ commit_msg="docs(release): v${tag_name} (${bump})${suffix_note}"
 echo "Creating release commit: ${commit_msg}"
 git commit --allow-empty -m "${commit_msg}"
 
-# Create annotated tag
-echo "Creating annotated tag: v${tag_name}"
-git tag -a "v${tag_name}" -m "Documentation release ${tag_name}"
-
-# Push commit and tag
+# Push the release commit. CI owns tag creation so there is one release path.
 echo "Pushing to origin..."
 git push origin live
-git push origin "v${tag_name}"
 
 echo ""
-echo "✓ Release v${tag_name} created and pushed successfully"
+echo "Release commit for v${tag_name} pushed successfully"
 echo "  Bump level: ${bump}${suffix_note}"
 echo ""
 echo "Next steps:"
 echo "  - Monitor the release workflow: https://github.com/rcpch/digital-growth-charts-documentation/actions"
-echo "  - Verify the tag: git show v${tag_name}"
+echo "  - Verify the tag after CI completes: git show v${tag_name}"
 echo "  - View release: https://github.com/rcpch/digital-growth-charts-documentation/releases/tag/v${tag_name}"
