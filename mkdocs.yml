@@ -79,6 +79,10 @@ nav:
           - "safety/csmf/intended-purpose.md"
           - "safety/csmf/clinical-safety-case-report.md"
           - "safety/csmf/hazard-log.md"
+          - Safety Investigations:
+              - "safety/investigations/index.md"
+              - "safety/investigations/pooled-term-data-discrepancy-report.md"
+              - "safety/investigations/trisomy-21-reference-mismatch-report.md"
           - "safety/csmf/software-lifecycle.md"
           - "safety/csmf/clinical-evaluation.md"
           - "safety/csmf/pms-plan.md"
