@@ -8,6 +8,11 @@ updates:
       day: "monday"
     cooldown:
       default-days: 7
+    # Upstream's stale v1 tag points to a 2021 commit, while its maintained v1
+    # branch points to our newer pinned SHA. Dependabot resolves the tag and
+    # proposes a downgrade, so track this action manually until issue #181.
+    ignore:
+      - dependency-name: "Azure/static-web-apps-deploy"
     groups:
       github-actions-minor-and-patch:
         applies-to: version-updates
