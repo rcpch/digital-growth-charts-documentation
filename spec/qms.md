@@ -91,6 +91,7 @@ The quality policy is reviewed at each management review meeting (see Section 5.
 Quality objectives are set and reviewed at management review. Current objectives are tracked as GitHub Issues labelled `quality-objective` in the management review Project.
 
 Minimum objectives:
+
 - Zero unmitigated high or unacceptable risks in the Hazard Log at any release
 - All serious incidents reported to MHRA within required timelines
 - Management review conducted at least annually
@@ -109,6 +110,7 @@ Minimum objectives:
 ### 5.4 Person Responsible for Regulatory Compliance (PRRC)
 
 Under UK MDR 2002, the PRRC is responsible for ensuring:
+
 - Technical documentation is prepared and kept up to date
 - Post-market surveillance obligations are fulfilled
 - Reporting obligations (vigilance, PSUR) are met
@@ -119,6 +121,7 @@ The PRRC is Marcus Baw. Contact: marcus@bawmedical.co.uk
 ### 5.5 Resource Management
 
 Staff involved in regulated activities must have documented qualifications relevant to their role. Records are maintained in `docs/training-records/`, with one file per person, recording:
+
 - Role and responsibilities
 - Relevant qualifications and experience
 - Training completed (with dates and evidence)
@@ -131,6 +134,7 @@ New starters with regulated responsibilities must complete onboarding before act
 Management review is conducted at least **annually**, or following any significant quality event (serious incident, major CAPA, significant regulatory change).
 
 **Process:**
+
 1. QMS Administrator opens a GitHub Issue using the `management-review` template at least 4 weeks in advance
 2. Review agenda is attached to the Issue
 3. Review is conducted (in person or remote); minutes are recorded
@@ -138,6 +142,7 @@ Management review is conducted at least **annually**, or following any significa
 5. Action items are created as linked GitHub Issues and tracked to closure
 
 **Mandatory agenda items:**
+
 - Quality policy review
 - Quality objectives — status and adequacy
 - Audit findings and status of corrective actions
@@ -186,6 +191,7 @@ Design and development activities follow IEC 62304 software lifecycle processes.
 ### 7.1 Design Planning
 
 Each significant development effort (new feature, major change, new product) begins with a design input Issue using the `design-input` template. This records:
+
 - Clinical or user need driving the change
 - Intended functionality
 - Relevant regulatory implications (classification, risk management, clinical evaluation impact)
@@ -198,6 +204,7 @@ Design planning is tracked in GitHub Projects.
 Design inputs are formal requirements derived from clinical need, user research, regulatory requirements, and risk management outputs. Each design input is a GitHub Issue labelled `design-input`.
 
 Design inputs must be:
+
 - Unambiguous and verifiable
 - Traceable to the clinical or user need
 - Reviewed and approved (PR or Issue comment from Technical Lead and Clinical Lead)
@@ -211,6 +218,7 @@ A release is a formal design output. The release notes must reference the design
 ### 7.4 Design Review
 
 Design reviews are conducted at:
+
 - Feature specification stage (before development begins)
 - Pre-release (before a tagged release)
 
@@ -219,6 +227,7 @@ Design reviews are recorded as comments on the relevant Issue or PR, with explic
 ### 7.5 Design Verification
 
 Verification demonstrates that design outputs meet design inputs. For SaMD this means:
+
 - Automated test suite (unit, integration, regression) — results recorded in CI/CD pipeline
 - Code review — PR review comments constitute the verification record
 - Clinical algorithm validation — results recorded in `docs/technical-file/verification/`
@@ -228,6 +237,7 @@ All verification must pass before a release is tagged.
 ### 7.6 Design Validation
 
 Validation demonstrates that the device meets user needs in its intended environment. Methods include:
+
 - Clinical user testing (usability evaluation under IEC 62366-1)
 - Real-world performance monitoring (post-market)
 - Clinical expert review
@@ -237,6 +247,7 @@ Validation records are in `docs/technical-file/validation/`.
 ### 7.7 Design Transfer
 
 Release process (transfer to production) is documented in `docs/technical-file/release-process.md`. It includes:
+
 - Pre-release checklist (all verification passed; Hazard Log reviewed; SAFETY.md version updated; release notes complete)
 - Deployment steps
 - Post-deployment smoke test
@@ -245,6 +256,7 @@ Release process (transfer to production) is documented in `docs/technical-file/r
 ### 7.8 Design Changes
 
 All changes to controlled source code or documentation are made via Pull Request. For changes with potential regulatory significance (intended use, safety-relevant functionality, clinical algorithm), the PR must:
+
 - Reference a design input Issue
 - Include an assessment of the impact on risk management and clinical evaluation
 - Be approved by the PRRC in addition to the Technical Lead
@@ -275,6 +287,7 @@ No release may proceed with unmitigated risks rated `high` or `unacceptable` wit
 Suppliers whose products or services could affect device quality are assessed and monitored. The approved supplier register is at `docs/supplier-register.md`.
 
 For SaMD, relevant suppliers include:
+
 - Cloud infrastructure provider (hosting, availability)
 - CI/CD platform
 - Third-party libraries with safety-relevant functions (algorithm dependencies)
@@ -293,6 +306,7 @@ Critical suppliers (those where failure could affect device safety or availabili
 A complaint is any expression of dissatisfaction with the device or any report of a potential safety issue, regardless of source.
 
 **Process:**
+
 1. Complaint received (GitHub Issue, email, user report, clinical incident)
 2. QMS Administrator opens a GitHub Issue using the `complaint` template within 2 working days
 3. Initial assessment: is this a reportable serious incident? (see Section 10.3)
@@ -306,6 +320,7 @@ A complaint is any expression of dissatisfaction with the device or any report o
 ### 10.2 Corrective and Preventive Action (CAPA)
 
 A CAPA is raised in response to:
+
 - Confirmed complaints indicating a systemic issue
 - Audit findings
 - Non-conformities identified in internal review
@@ -313,6 +328,7 @@ A CAPA is raised in response to:
 - Trend analysis indicating adverse signal
 
 **CAPA record (GitHub Issue using `capa` template) must contain:**
+
 - Description of the non-conformity or potential non-conformity
 - Root cause analysis
 - Corrective action (what will be done to fix the current problem)
@@ -327,11 +343,13 @@ CAPAs are reviewed at management review. Open CAPAs with overdue actions are esc
 ### 10.3 Vigilance — Serious Incident Reporting
 
 A serious incident is any malfunction or deterioration in characteristics or performance, or any inadequacy in labelling or instructions for use, which has led or could lead to:
+
 - Death
 - Serious deterioration in health
 - Serious public health threat
 
 Serious incidents must be reported to the MHRA. Timelines:
+
 - Serious public health threat: **2 calendar days**
 - Death or unanticipated serious deterioration in health: **10 calendar days**
 - Other serious incidents: **30 calendar days**
@@ -341,12 +359,14 @@ The PRRC is responsible for MHRA reporting. All incidents are recorded as GitHub
 ### 10.4 Post-Market Surveillance (PMS)
 
 The PMS plan is at `docs/post-market-surveillance/pms-plan.md`. It describes:
+
 - Data sources monitored (user feedback, GitHub Issues, clinical incident reports, published literature, comparable device data)
 - Monitoring frequency
 - Trend analysis methodology
 - Triggers for CAPA or risk management review
 
 A **Periodic Safety Update Report (PSUR)** is produced at least annually and committed to `docs/post-market-surveillance/YYYY-psur.md`. The PSUR covers:
+
 - Summary of PMS data collected
 - Conclusions on safety and performance
 - Any benefit-risk ratio changes
@@ -359,6 +379,7 @@ A **Periodic Safety Update Report (PSUR)** is produced at least annually and com
 Internal audits are conducted at least **annually** to verify that the QMS conforms to ISO 13485:2016 and is effectively implemented.
 
 **Process:**
+
 1. QMS Administrator opens a GitHub Issue using the `internal-audit` template at least 6 weeks in advance
 2. Audit scope and plan committed to `docs/audits/YYYY-audit-plan.md`
 3. Audit conducted; auditor must be independent of the area being audited
@@ -429,6 +450,7 @@ The following branch protection rules must be configured on the main branch to e
 A `CODEOWNERS` file must be maintained at the repository root specifying the PRRC as required reviewer for regulated documents.
 
 Example `CODEOWNERS` entry:
+
 ```
 SAFETY.md @pacharanero
 SAFETY-CASE.md @pacharanero
@@ -445,6 +467,7 @@ docs/clinical-evaluation/ @pacharanero
 This document is a controlled document under this QMS. Changes are made via Pull Request with PRRC approval.
 
 The QMS is reviewed:
+
 - At each management review
 - Following any significant regulatory change
 - Following any internal audit finding relating to the QMS itself
