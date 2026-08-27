@@ -36,6 +36,8 @@ The references included are:
 
 Data tables are stored in the `data_tables` folder as `.json`. There is a separate [repository](https://github.com/rcpch/growth-references) to store references from across the world. Currently, they are stored as `.csv` and `.json` file types.
 
+For detail on how the WHO reference is implemented — including the move to daily LMS values, the BMI measurement→SDS vs SDS→measurement asymmetry, and handling of the WHO 2006/2007 five-year boundary — see [WHO Reference Implementation](who-reference-implementation.md).
+
 ### Package Structure
 
 #### Constants
