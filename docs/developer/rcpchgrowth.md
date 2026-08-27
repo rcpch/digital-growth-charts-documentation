@@ -283,11 +283,11 @@ This latter calculation is done using the SciPy package.
 Note that CDC and WHO references outside of the UK context use only linear interpolation.
 
 The CDC BMI calculation has a complexity well described [here](https://www.cdc.gov/growthcharts/extended-bmi-data-files.htm). At higher BMI values (>95th centile) it introduces a new *sigma* value. Sigma is the dispersion parameter used in the calculation of BMI percentiles and z-scores above the 95th percentile (z-score 1.645), and is applied to calculations only for the extended BMI range in the CDC reference.
-![formula](https://latex.codecogs.com/svg.image?BMIZ=\frac{(BMI/M)^L-1}{L * S}
-![formula](https://latex.codecogs.com/svg.image?BMIPercentile = \Phi(BMIZ)
+<img src="https://latex.codecogs.com/svg.image?BMIZ%3D%5Cfrac%7B(BMI%2FM)%5EL-1%7D%7BL%5Ctimes%20S%7D" alt="BMI Z-score formula">
+<img src="https://latex.codecogs.com/svg.image?BMIPercentile%3D%5CPhi(BMIZ)" alt="BMI percentile formula">
 If the BMI centile is above 95%, a correction is applied:
-![formula](https://latex.codecogs.com/svg.image?BMIPercentile = 90 + 10\Phi \frac{BMI-P95}{sigma}
-![formula](https://latex.codecogs.com/svg.image?BMIZ = \Phi^{-1}\frac{BMIPercentile}{100}
+<img src="https://latex.codecogs.com/svg.image?BMIPercentile%3D90%2B10%5CPhi%5Cfrac%7BBMI-P95%7D%7B%5Csigma%7D" alt="Corrected BMI percentile formula">
+<img src="https://latex.codecogs.com/svg.image?BMIZ%3D%5CPhi%5E%7B-1%7D%5Cfrac%7BBMIPercentile%7D%7B100%7D" alt="Corrected BMI Z-score formula">
 
 ##### Steps
 

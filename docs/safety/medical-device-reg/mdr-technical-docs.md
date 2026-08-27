@@ -16,7 +16,7 @@ The Royal College Of Paediatrics and Child Health (RCPCH), 5-11 Theobalds Road, 
 
 1. ### A brief description of the product
 
-A web-based software program which allows communication between user and/or back-end applications/databases (API - application programming interface) intended to assist a clinician by calculating variation in children's growth parameters [e.g., height, weight, head circumference, body mass index (BMI)] based on input data (e.g., birth height and weight, gender, gestation). The information may be used to detect children developing underweight or overweight, with height abnormalities or other related disorders.
+A web-based software program which allows communication between user and/or back-end applications/databases (API - application programming interface) intended to assist a clinician by calculating variation in children's growth parameters (e.g., height, weight, head circumference, body mass index (BMI)) based on input data (e.g., birth height and weight, gender, gestation). The information may be used to detect children developing underweight or overweight, with height abnormalities or other related disorders.
 
 1. ### Identification of the product, for example, the product's serial number
 

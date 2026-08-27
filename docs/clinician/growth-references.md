@@ -51,7 +51,7 @@ NOTE: The UK-WHO Term reference is NOW DEPRECATED but still active on paper char
 | UK-WHO preterm |  height[^1] | 25 weeks - 42 weeks |
 | UK-WHO preterm |  weight[^1] | 23 weeks - 42 weeks |
 | UK-WHO preterm |  head circumference[^1] | 23 weeks - 42 weeks |
-| UK-WHO infant [^2] |  height or length / weight / BMI / head circumference | 2 weeks - 4 years |
+| UK-WHO infant[^2] |  height or length / weight / BMI / head circumference | 2 weeks - 4 years |
 | UK-WHO child |  height or length / weight / BMI | 4 - 20 years |
 | UK-WHO child |  head circumference (boys) | 4 - 18 years |
 | UK-WHO child |  head circumference (girls) | 4 - 17 years |
@@ -63,9 +63,9 @@ NOTE: The UK-WHO Term reference is NOW DEPRECATED but still active on paper char
 
 ### Context
 
-[^1]. Weight, and head circumference at birth (gestations 23 to 43 weeks) and length at birth (gestations 26 to 43 weeks), computed from UK 1990 reference database and shown by week - UK90 preterm reference
-[^2]. This is the WHO standard for weight, BMI and head circumference from 2 weeks to 4 years, for length 2 weeks to 2 years and height 2-4 years. It is shown by week to 13 weeks and then by calendar month. It is exactly the same data as the LMS data included in the Z-score tables accessed from the WHO website [WHO](https://www.who.int/tools/child-growth-standards), except there is no birthweight.
-[^3]. CDC: runs from 2y to 20 y. From 0-2y the CDC interposes its own version of WHO (2006).
+[^1]: Weight, and head circumference at birth (gestations 23 to 43 weeks) and length at birth (gestations 26 to 43 weeks), computed from UK 1990 reference database and shown by week - UK90 preterm reference
+[^2]: This is the WHO standard for weight, BMI and head circumference from 2 weeks to 4 years, for length 2 weeks to 2 years and height 2-4 years. It is shown by week to 13 weeks and then by calendar month. It is exactly the same data as the LMS data included in the Z-score tables accessed from the WHO website [WHO](https://www.who.int/tools/child-growth-standards), except there is no birthweight.
+[^3]: CDC: runs from 2y to 20 y. From 0-2y the CDC interposes its own version of WHO (2006).
     - height / weight / BMI centiles 0-2 y (CDC) with extended BMI centiles included (published 2022)
     - height / weight / head circumference 0-2 y (WHO - US)
     - preterm data for height / weight / head circumference exists as the Canadian Fenton reference. This has not been implemented
