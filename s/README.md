@@ -23,8 +23,8 @@ The `s/` directory contains some simple convenience scripts to speed up and stan
 - `s/spellcheck` runs `codespell` in Docker.
   - `./s/spellcheck` checks the default docs/spec paths.
   - `./s/spellcheck docs/about/team.md` checks a specific file.
-- `s/linkcheck` runs `mkdocs-linkcheck` in Docker.
-  - `./s/linkcheck` builds the site then checks local links in `site/`.
-  - `./s/linkcheck -r site` checks local + remote links.
+- `s/linkcheck` runs a clean Zensical build in strict mode to validate internal links and anchors.
+  - `./s/linkcheck` builds the site and fails if Zensical reports an issue.
+  - Additional arguments are passed to `zensical build`.
   - `./s/linkcheck --help` shows available options.
 - `s/build-pdf` produces the PDF version of the safety documentation.

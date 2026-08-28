@@ -4,14 +4,13 @@ set -v  # Enable verbose mode
 set -e  # Exit on error
 
 # scripts may need to be made executable on some platforms before they can be run
-# chmod +x s/check-links
+# chmod +x s/linkcheck
 
-# Runs mkdocs-linkcheck inside the mkdocs docker container.
+# Builds the site in strict mode to validate internal links and anchors.
 # Usage:
-#   s/check-links              # checks links in docs/
-#   s/check-links <args...>    # passes extra args to mkdocs-linkcheck
+#   s/linkcheck              # validates internal links and anchors
+#   s/linkcheck <args...>    # passes extra args to zensical build
 
-docker compose  run --rm \
-  mkdocs \
-  sh -c "mkdocs-linkcheck -r docs $*"
-
+docker compose run --rm \
+  zensical \
+  zensical build --clean --strict "$@"
