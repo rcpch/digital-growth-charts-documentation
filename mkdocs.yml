@@ -37,6 +37,7 @@ nav:
   - Integrators:
       - "integrator/getting-started.md"
       - "integrator/making-api-calls.md"
+      - "integrator/persisting-api-results.md"
       - "integrator/api-reference.md"
       - "integrator/using-the-chart-component.md"
       - "integrator/chart-component-storybook.md"
@@ -68,6 +69,7 @@ nav:
       - "developer/who-reference-implementation.md"
       - "developer/rcpchgrowth-cli.md"
       - "developer/versioning.md"
+      - "developer/five-repository-upgrade-runbook.md"
       - "developer/writing-documentation.md"
       - "developer/faqs-for-developers.md"
       - "developer/contributing.md"

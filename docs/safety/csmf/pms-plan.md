@@ -28,6 +28,7 @@ This plan applies to the RCPCH-operated dGC Platform as defined in the [Intended
 | **Security disclosures** — <growth.digital@rcpch.ac.uk> | Reactive | Responsible disclosure channel for security issues (see the [Clinical Risk Management Plan](clinical-risk-mgmt-plan.md#security-incident-management-process)). |
 | **State-of-the-art and literature review** | Proactive | Ongoing review of developments in growth-reference methodology and international standards, including activity concerning WHO growth references in the underlying [`rcpchgrowth`](../../developer/rcpchgrowth.md) library. |
 | **Service monitoring** | Proactive | Availability and operational monitoring of the API on Azure / Azure API Management. |
+| **Persisted calculation provenance** | Reactive + corrective | Implementers retain the growth reference, calculation-engine version/commit, and API-server version/commit with each result so potentially affected records can be identified and recalculated after a serious defect. |
 
 ## Process and cadence
 
@@ -36,6 +37,12 @@ This plan applies to the RCPCH-operated dGC Platform as defined in the [Intended
 3. **Assessment.** The CSO assesses whether a report indicates a new or changed hazard, a possible inaccuracy, or a reportable incident.
 4. **Action.** Outcomes may include: a code fix under change control; an update to the Hazard Log, Clinical Evaluation or this plan; or — where applicable — vigilance reporting (below).
 5. **Periodic review.** PMS data is reviewed in aggregate at each [management review](../qms.md#management-review), looking for trends not visible in individual reports.
+
+### Provenance And Recall Readiness
+
+API server 5.0.0 and later includes the calculation-engine and API-server package versions and full Git commits in each successful result. Together these fields act as the software equivalent of a Unique Device Identifier for the calculation event because they identify the exact code that produced it.
+
+Implementers are expected to [persist this provenance](../../integrator/persisting-api-results.md) unchanged alongside the source measurement and calculated result. If surveillance identifies a serious defect, the RCPCH can identify affected versions and notify implementers, who can query their records, recalculate affected measurements with corrected software, and preserve an audit trail. The RCPCH API is stateless and cannot perform this identification on an implementer's behalf.
 
 ## Triggers for escalation
 

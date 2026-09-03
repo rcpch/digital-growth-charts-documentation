@@ -7,3 +7,10 @@ site/
 # Python bytecode cache
 __pycache__/
 *.pyc
+
+# private local working files
+.private/
+
+# Playwright local state
+.playwright/
+.playwright-mcp/

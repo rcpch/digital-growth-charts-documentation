@@ -19,14 +19,14 @@ Supersedes the top-level `reference` field originally proposed in #37/#207/#217 
 "provenance": {
   "growth_reference": "uk-who",
   "calculation_engine": {
-    "name": "rcpchgrowth",
-    "version": "4.6.0",
-    "commit": "abc123...<40-char SHA>"
+    "name": "rcpch/rcpchgrowth-python",
+    "version": "4.6.2",
+    "commit": "f651cf4d94ad21472681b62997be86b082980736"
   },
   "api_server": {
-    "name": "digital-growth-charts-server",
-    "version": "4.4.0",
-    "commit": "def456...<40-char SHA>"
+    "name": "rcpch/digital-growth-charts-server",
+    "version": "5.0.0",
+    "commit": "7adef7a288e791902621b5cded96c5c7dfbb34a4"
   }
 }
 ```
@@ -45,6 +45,14 @@ Supersedes the top-level `reference` field originally proposed in #37/#207/#217 
 | `digital-growth-charts-react-component-library` (#217) | reads only, never manufactures or rewrites | `provenance` optional in the TS type (legacy compatibility); every field validated when present |
 
 Applies uniformly to single calculations, successful bulk items, and fictional-child measurements. Bulk error objects are unchanged. There is no request-body `reference` - the route remains the sole request-side selector.
+
+## Persistence And Post-Market Surveillance
+
+Implementers are expected to persist the complete provenance object unchanged alongside every stored source measurement and calculated result. The calculation-engine and API-server versions and full commits together act as the software equivalent of a Unique Device Identifier for the calculation event: they identify the exact code that produced it.
+
+This traceability is part of the post-market-surveillance and recall mechanism. If a serious defect is discovered, the RCPCH can identify affected software versions and notify implementers; implementers can query their stored results, identify affected measurements, recalculate them with corrected software, and retain an audit trail from the original result/provenance to the replacement result/provenance. Because the API is stateless, the RCPCH does not retain the patient measurements or calculation results and cannot identify affected records without implementer-side persistence.
+
+Historical provenance is immutable. It must not be shortened, inferred, manufactured from current configuration, or overwritten when any layer is upgraded. Pre-provenance results remain legacy results with unknown provenance.
 
 ## Turner naming
 

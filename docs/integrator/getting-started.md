@@ -13,6 +13,10 @@ The RCPCH Digital Growth Charts platform centres around a REST API which provide
 
 The next few pages will take you through the process of using the API. If you are an experienced user of REST APIs, this should be straightforward. We have deliberately designed this API to be simple and clear.
 
+!!! danger "Plan to retain calculation provenance"
+
+    Before building your integration, make sure your data model can persist the complete API `provenance` object alongside every stored measurement result. The engine and server versions and full commit hashes identify the exact code that produced the result and are essential to our post-market-surveillance and recall mechanism. Read [Persisting API Results And Provenance](persisting-api-results.md) before deciding how to store API responses.
+
 ## Sign up for a free tier API key
 
 To use the Digital Growth Charts API, you need to sign up for an account and obtain **API keys**.

@@ -25,7 +25,7 @@ The Digital Growth Charts API is 'Stateless' by design, meaning it does **not** 
 
 ### Persistence of results in Medical Records
 
-Because our API is stateless, any 'persistence' (data saving) **must** happen in **the application which is consuming the API**, which is the natural place to persist data anyway, since this client system is likely to be an existing GP system, hospital Electronic Patient Record, or Personal Health Record - which likely persists lots of data about the patient.
+Because our API is stateless, any 'persistence' (data saving) **must** happen in **the application which is consuming the API**, which is the natural place to persist data anyway, since this client system is likely to be an existing GP system, hospital Electronic Patient Record, or Personal Health Record - which likely persists lots of data about the patient. Persisted calculated results must retain their complete [API provenance](../integrator/persisting-api-results.md), which supports post-market surveillance and targeted recalculation without sending additional patient data to the RCPCH.
 
 ### Legal basis for Requester (client) persistence
 

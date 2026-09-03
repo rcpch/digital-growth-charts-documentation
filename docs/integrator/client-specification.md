@@ -17,6 +17,10 @@ In this document, we have collated the exact specification mandated by the Digit
 !!! tip "Implementation support service"
     The RCPCH can assist in both the technical implementation and clinical assurance of any new charts implementations. This ensures adherence to the Project Board specification, a clinically-safe User Interface, and increased likelihood of clinical-user acceptance. Please contact us to discuss your needs on <mailto:commercial@rcpch.ac.uk>.
 
+!!! danger "Retain provenance with every result"
+
+    A clinically safe client must preserve the complete API `provenance` object alongside every stored measurement result. These fields identify the exact calculation engine, API server, and source commits that produced the value, allowing affected records to be found and recalculated after a serious defect. Do not manufacture, rewrite, or discard provenance. See [Persisting API Results And Provenance](persisting-api-results.md).
+
 ### Understanding the UK-WHO dataset
 
 It is critically important to understand the dataset is **not** a simple 'lookup table' of height/weight against ages and centiles.

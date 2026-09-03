@@ -102,9 +102,13 @@ You should get a nicely formatted JSON response object:
 }
 ```
 
+!!! danger "Do not discard the provenance"
+
+    API server 5.0.0 and later includes a `provenance` object identifying the growth reference, calculation-engine version and commit, and API-server version and commit. If you store the calculated result, you are expected to store this complete object unchanged with the measurement. It is essential for identifying and recalculating affected records if post-market surveillance discovers a serious defect. See [Persisting API Results And Provenance](persisting-api-results.md) for the response shape and recall-readiness requirements.
+
 ### A note about dates
 
-The response object from the API contains dates without times in the format `YYYY-MM-DD`. This is the format that the digital growth charts react component library expects. If the output of the API is passed directly to the charts they will render the measurements automatically. RCPCH recommend that the response is persisted, so that an API call is only required for each new measurement.
+The response object from the API contains dates without times in the format `YYYY-MM-DD`. This is the format that the digital growth charts react component library expects. If the output of the API is passed directly to the charts they will render the measurements automatically. The RCPCH recommends persisting the complete response, including its provenance, so that each new measurement requires only one API call and the resulting calculation remains traceable.
 
 If in the process of serializing or deserializing the response, the date format is changed, RCPCH advise ensuring that the dates do not change format. In case this happens, the charting component is optimized to process common date types, but will log this as a warning in the console. Any un-parseable dates will log as errors.
 
