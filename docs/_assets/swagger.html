@@ -1,6 +1,92 @@
 <!DOCTYPE html>
 <head>
     <link type="text/css" rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css">
+    <style>
+        /* Style the embedded API reference to match the documentation site:
+           RCPCH brand blues, Montserrat body text, Roboto Mono code, a calmer
+           type scale, and the default purple inline code replaced. See #176. */
+        :root {
+            --rcpch-primary: #3366cc;
+            --rcpch-accent: #11a7f2;
+            --rcpch-navy: #0d0d58;
+            --rcpch-surface-tint: #f2f5fb;
+            --rcpch-border: #d0d9e8;
+        }
+
+        body {
+            font-family: Montserrat, sans-serif;
+            color: #1a1a2e;
+        }
+
+        /* Inline code: Swagger's default purple (#9012fe) on lilac, replaced
+           with the site's navy on blue-grey tint. The .markdown/.renderedMarkdown
+           qualifiers match the specificity of the Swagger UI rules being
+           overridden. */
+        .swagger-ui code,
+        .swagger-ui pre {
+            font-family: "Roboto Mono", monospace;
+        }
+        .swagger-ui .markdown code,
+        .swagger-ui .renderedMarkdown code,
+        .swagger-ui code {
+            color: var(--rcpch-navy);
+            background-color: var(--rcpch-surface-tint);
+            border: 1px solid var(--rcpch-border);
+            border-radius: 0.2rem;
+            padding: 0.1rem 0.3rem;
+            font-size: 13px;
+        }
+
+        /* Harmonise text sizes: Swagger renders description paragraphs and
+           list items noticeably smaller than its headings imply. */
+        .swagger-ui .op-description,
+        .swagger-ui .information-container p,
+        .swagger-ui .information-container li {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .swagger-ui .opblock .opblock-summary-description {
+            font-size: 14px;
+        }
+        .swagger-ui .opblock-description-wrapper p,
+        .swagger-ui .opblock-external-docs-wrapper p,
+        .swagger-ui .responses-inner p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Section headings in the brand navy rather than near-black. */
+        .swagger-ui .info .title,
+        .swagger-ui .opblock h3,
+        .swagger-ui h3,
+        .swagger-ui h4 {
+            color: var(--rcpch-navy);
+            font-family: Montserrat, sans-serif;
+        }
+        .swagger-ui .info .title {
+            font-size: 28px;
+        }
+
+        /* POST/GET/etc badges in RCPCH blue; small tags softened. */
+        .swagger-ui .opblock.opblock-post .opblock-summary-method {
+            background-color: var(--rcpch-primary);
+        }
+        .swagger-ui .opblock.opblock-get .opblock-summary-method {
+            background-color: var(--rcpch-accent);
+        }
+        .swagger-ui .btn.execute {
+            background-color: var(--rcpch-primary);
+            border-color: var(--rcpch-primary);
+            color: #fff;
+        }
+
+        /* Parameter/model names in navy instead of the default bright blue. */
+        .swagger-ui .parameter__name,
+        .swagger-ui .parameter__type,
+        .swagger-ui .prop-type {
+            color: var(--rcpch-navy);
+        }
+    </style>
 </head>
 <body>
     <div id="swagger-ui"></div>
