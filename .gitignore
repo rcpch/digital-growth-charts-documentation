@@ -1,16 +1,32 @@
-site/
-.vscode/
-.cache/
+# Zensical / MkDocs build output
+/site/
+/.cache/
+
+# Python (for venv, scripts, and build-pdf)
+__pycache__/
+*.py[cod]
+*.egg-info/
+/.venv/
+/.pytest_cache/
+/.coverage
+/.mypy_cache/
+
+# Local environment and secrets
+/.env
+/.env.*
+!/example.env
+
+# Editor / OS
+/.vscode/
 .DS_Store
 
+# Disposable agent and browser-automation artefacts
+/.claude/
+/.playwright/
+/.playwright-mcp/
+/playwright-report/
+/blob-report/
+/test-results/
 
-# Python bytecode cache
-__pycache__/
-*.pyc
-
-# private local working files
-.private/
-
-# Playwright local state
-.playwright/
-.playwright-mcp/
+# Retained local-only working files
+/.private/

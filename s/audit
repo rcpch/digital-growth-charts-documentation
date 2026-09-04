@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#
+# Audits the declared Python dependency set for published vulnerabilities using
+# pip-audit in the shared Docker Compose environment.
+
+set -euo pipefail
+cd "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+exec docker compose run --rm --build zensical pip-audit --strict -r requirements.txt "$@"

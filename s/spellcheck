@@ -1,27 +1,22 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#
+# Runs codespell against the documentation and configuration in the shared
+# Docker Compose environment. Optional arguments replace the default paths.
 
-set -v  # Enable verbose mode
-set -e  # Exit on error
-
-# scripts may need to be made executable on some platforms before they can be run
-# chmod +x s/spellcheck
-
-# Runs codespell inside the zensical docker container.
-# Usage:
-#   s/spellcheck              # checks default paths
-#   s/spellcheck <paths...>   # checks only the given paths/files
+set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$REPO_ROOT"
 
-DEFAULT_PATHS=(docs spec README.md mkdocs.yml)
+DEFAULT_PATHS=(docs spec README.md SAFETY.md SECURITY.md agent-instructions.md AGENTS.md CLAUDE.md mkdocs.yml)
 
 CONFIG_FILE_IN_CONTAINER=/app/.codespellrc
 COMPOSE_FILE="$REPO_ROOT/docker-compose.yml"
 
 if [ "$#" -gt 0 ]; then
-  docker compose -f "$COMPOSE_FILE" --project-directory "$REPO_ROOT" run --rm zensical \
+  exec docker compose -f "$COMPOSE_FILE" --project-directory "$REPO_ROOT" run --rm --build zensical \
     codespell --config "$CONFIG_FILE_IN_CONTAINER" "$@"
 else
-  docker compose -f "$COMPOSE_FILE" --project-directory "$REPO_ROOT" run --rm zensical \
+  exec docker compose -f "$COMPOSE_FILE" --project-directory "$REPO_ROOT" run --rm --build zensical \
     codespell --config "$CONFIG_FILE_IN_CONTAINER" "${DEFAULT_PATHS[@]}"
 fi

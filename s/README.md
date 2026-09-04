@@ -28,3 +28,10 @@ The `s/` directory contains some simple convenience scripts to speed up and stan
   - Additional arguments are passed to `zensical build`.
   - `./s/linkcheck --help` shows available options.
 - `s/build-pdf` produces the PDF version of the safety documentation.
+- `s/docs` is the canonical documentation-preview command and delegates to `s/up`.
+  - `./s/docs`
+  - `./s/docs -d` (detached)
+- `s/check-docs-nav` verifies that every Markdown page is either in navigation or recorded as an explicit exception.
+  - `./s/check-docs-nav`
+- `s/audit` resolves and checks the declared Python dependency set for published vulnerabilities.
+  - `./s/audit`

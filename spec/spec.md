@@ -42,7 +42,7 @@ The initial pages should assist users to find the part of the documentation that
 - Regulatory and compliance documentation (UKCA/MHRA, essential requirements, technical docs).
 - Legal/privacy/data protection documentation emphasizing a stateless API model.
 - Support pathways (forum, commercial support, contact channels).
-- Downloadable full documentation PDF (when PDF export enabled).
+- Downloadable safety-documentation PDF containing the controlled clinical-safety and medical-device sections.
 
 ## Key Assertions the Site Communicates
 
@@ -57,7 +57,7 @@ The initial pages should assist users to find the part of the documentation that
 - Tabbed navigation with expanded sidebar and anchor tracking.
 - Search, code copy/select helpers, and edit/view buttons for GitHub source.
 - Sortable tables and embedded assets (images, PDFs, iframes).
-- Optional plugins for git committers and PDF generation.
+- Self-hosted safety-documentation PDF generation using WeasyPrint.
 
 ## LLMs.txt Generation
 
@@ -65,7 +65,7 @@ The initial pages should assist users to find the part of the documentation that
 
 ## Hosting and Maintenance Expectations
 
-- Published at `https://growth.rcpch.ac.uk` with GitHub Pages published via GitHub Actions.
+- Published at `https://growth.rcpch.ac.uk` through Azure Static Web Apps. This is a documented project exception to the RCPCH house-style preference for GitHub Pages.
 - Documentation changes follow GitHub workflow with protected `live` branch.
 - Site supports local development via Docker Compose.
 
