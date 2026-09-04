@@ -18,6 +18,7 @@ tags:
 - Dr Charles van Lennep for many contributions to React code and building the React Native client.
 - Dr Anchit Chandran for proofreading, corrections, and contributions to the documentation.
 - 'William' Nai-Wei Wang for proofreading, corrections, and contributions to the documentation.
+- Dr Akanimoh Osutuk ([@FibrinLab](https://github.com/FibrinLab)) for input validation in the Python growth calculations library.
 
 Significant implementations and contributions have been made by our users. They are all acknowledged on Github, but include:
 
