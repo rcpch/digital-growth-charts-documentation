@@ -4,7 +4,7 @@
 #
 # Azure will also build a preview site for any PRs against live
 
-name: ALL-BRANCHES-ALL-PRs-build-and-deploy-to-azure.yml
+name: Deploy documentation to Azure
 
 on:
   push:
@@ -25,16 +25,11 @@ jobs:
     permissions:
       contents: read
       pull-requests: write # required for the staging URL comment
-    env:
-      ENABLE_PDF_EXPORT: 1 # Makes PDF export an option, default disabled, when building locally
-      ENABLE_GIT_COMMITTERS: True # Makes git-committers an option, default disabled, when building locally
     name: Build and Deploy to Azure
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          fetch-depth: 0 # required for git-revision and git-committers plugins to work properly in CI
           persist-credentials: false
-          submodules: true
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: "3.12" # Matching the Python version in the Dockerfile

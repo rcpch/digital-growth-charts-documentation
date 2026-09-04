@@ -1,13 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#
+# Stops the Docker Compose stack and removes its local images, but not volumes.
 
-set -v  # Enable verbose mode
-set -e  # Exit on error
+set -euo pipefail
 
-# scripts may need to be made executable on some platforms before they can be run
-# chmod +x <filename> is the command to do this on unixy systems
-
-# shuts down the Docker Compose setup AND deletes containers and images (but not volumes)
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$REPO_ROOT"
 COMPOSE_FILE="$REPO_ROOT/docker-compose.yml"
 
-docker compose -f "$COMPOSE_FILE" --project-directory "$REPO_ROOT" down --rmi local "$@" # removes the container and local images
+exec docker compose -f "$COMPOSE_FILE" --project-directory "$REPO_ROOT" down --rmi local "$@"

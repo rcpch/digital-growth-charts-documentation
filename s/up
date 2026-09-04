@@ -1,20 +1,19 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#
+# Starts the Docker Compose documentation server and opens it in a browser once
+# it is ready. Arguments are forwarded to `docker compose up`.
 
-set -v  # Enable verbose mode
-set -e  # Exit on error
+set -euo pipefail
 
-# UNIX based systems may require special permissions to run this file
-# run chmod +x s/<filename> to allow this
-
-# starts up the docker compose documentation server for development
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$REPO_ROOT"
 COMPOSE_FILE="$REPO_ROOT/docker-compose.yml"
 
 URL="http://localhost:8001/"
 
 open_browser() {
-	if [ -n "$BROWSER" ]; then
-		"$BROWSER" "$URL" >/dev/null 2>&1 &
+	if [ -n "${BROWSER:-}" ]; then
+		"${BROWSER}" "$URL" >/dev/null 2>&1 &
 		return 0
 	fi
 
@@ -63,4 +62,4 @@ PY
 # Open the browser once the server is reachable.
 ( wait_for_server && open_browser ) &
 
-docker compose -f "$COMPOSE_FILE" --project-directory "$REPO_ROOT" up "$@"
+exec docker compose -f "$COMPOSE_FILE" --project-directory "$REPO_ROOT" up "$@"

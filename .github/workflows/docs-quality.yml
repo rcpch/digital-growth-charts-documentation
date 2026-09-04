@@ -1,0 +1,36 @@
+# Runs documentation quality checks independently from deployment.
+
+name: Documentation quality
+
+on:
+  push:
+    branches: [live]
+  pull_request:
+    branches: [live]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  docs-quality:
+    name: Documentation quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Build documentation toolchain
+        run: docker compose build zensical
+      - name: Lint Markdown
+        run: ./s/lint
+      - name: Check spelling
+        run: ./s/spellcheck
+      - name: Check documentation navigation
+        run: ./s/check-docs-nav
+      - name: Validate links and build
+        run: ./s/linkcheck
+      - name: Build safety documentation PDF
+        run: ./s/build-pdf
+      - name: Audit Python dependencies
+        run: ./s/audit
