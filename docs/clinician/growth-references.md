@@ -1,5 +1,5 @@
 ---
-title: Reference Data
+title: Growth References
 reviewers: Dr Marcus Baw, Dr Simon Chapman, Dr Anchit Chandran
 audience: clinicians, health-staff
 tags:
@@ -9,83 +9,50 @@ tags:
 
 # Growth Chart References
 
-Growth Charts are built from reference data. A number of different datasets are available, and in the UK, we currently use a hybrid of two: the British 1990 or **UK 1990** dataset and the **World Health Organization (WHO)** dataset. The current UK charts are referred to as **UK-WHO**.
+Growth charts compare a child's measurements with a defined reference population. The Digital Growth Charts API selects the relevant LMS data for the requested growth reference, age, sex, and measurement method, then returns centiles or standard deviation scores (SDS).
 
-In general, datasets or growth references relate to the population of a geographical area (UK90, US Centers for Disease Control or CDC 2000), or are specific to a particular condition or disease state.
+This page covers only the growth references currently served by the API. The separate [`rcpch/growth-references`](https://github.com/rcpch/growth-references) repository contains the source-data collection and a broader catalogue, including references that the API does not expose.
 
-As part of this project, we have internationally catalogued the available datasets or growth references. The UK references are only usable under MRC licence. The WHO or CDC data are freely available open data.
+## References Available From The API
 
-Though not an exhaustive list, the aim is a repository for all LMS references - not only for growth, but for all other physiological parameters. This collection is incomplete at present. We welcome submissions to the repository to build the collection - please send [pull requests](https://github.com/rcpch/growth-references/pulls) or contact us on [growth.digital@rcpch.ac.uk](mailto:growth.digital@rcpch.ac.uk).
+The route shown below is the reference-specific part of the API path. Each family provides calculation, bulk-calculation, chart-coordinate, and fictional-child-data operations; see the [interactive API reference](../integrator/api-reference.md) for the current request and response schemas.
 
-The codebase we have built is capable of utilising any reference or dataset, but there might need to be small configurations necessary to allow for the differences between them.
+The request values for measurement method are `height`, `weight`, `bmi`, and `ofc`, where `ofc` means occipitofrontal circumference (head circumference).
 
-!!! info
-    We are working on a 'standard format' of JSON, which contains reference metadata alongside the LMS tables themselves, in a 'key-value' format that makes programmatic lookups consistent across different references. Along with the data file, we request the following: file name, parameters described, acknowledgement text, authors, publication / reference.
+| API reference | Route | Intended comparison | Measurement methods | Source collection |
+|---|---|---|---|---|
+| UK-WHO | `/growth/v1/uk-who` | General UK paediatric population | `height`, `weight`, `bmi`, `ofc` | [UK-WHO](https://github.com/rcpch/growth-references/tree/main/uk-who), [UK90](https://github.com/rcpch/growth-references/tree/main/uk90), and [WHO](https://github.com/rcpch/growth-references/tree/main/who2006) |
+| WHO | `/growth/v1/who` | WHO child growth standards and references | `height`, `weight`, `bmi`, `ofc` | [WHO](https://github.com/rcpch/growth-references/tree/main/who2006) |
+| CDC | `/growth/v1/cdc` | WHO/CDC hybrid used for US growth charts | `height`, `weight`, `bmi`, `ofc` | [CDC 2000](https://github.com/rcpch/growth-references/tree/main/cdc2000) and [WHO](https://github.com/rcpch/growth-references/tree/main/who2006) |
+| Trisomy 21 (UK and Ireland) | `/growth/v1/trisomy-21` | Children with a confirmed diagnosis of Down syndrome | `height`, `weight`, `bmi`, `ofc` | [UK reference](https://github.com/rcpch/growth-references/tree/main/trisomy21/UKReference) |
+| Trisomy 21 (AAP, US) | `/growth/v1/trisomy-21-aap` | Children with a confirmed diagnosis of Down syndrome | `height`, `weight`, `bmi`, `ofc` | [AAP reference](https://github.com/rcpch/growth-references/tree/main/trisomy21/AAP) |
+| Turner syndrome | `/growth/v1/turner` | Girls with a confirmed diagnosis of Turner syndrome | `height` only | [Turner reference](https://github.com/rcpch/growth-references/tree/main/turner) |
 
-## Reference Library
+!!! warning "Specialist references"
 
-| identifier | Age Range           | Description                                                                    | Country          |  Links                                                                   |
-| ---------- | ------------------- | ------------------------------------------------------------------------------ | ---------------- | ----------------------------------------------------------------------- |
-| cdc2000    |                     | length/height, weight & head circumference for ages 0 to 19.9y; BMI 2 to 19.9y | :us:             | [link](https://github.com/rcpch/growth-references/tree/main/cdc2000)     |
-| spirometry | 4 - 80 years        | FEV1, FVC, FEV1FVC & FEF2575                                                   | :gb:             | [link](https://github.com/rcpch/growth-references/tree/main/spirometry) |
-| down  |                     | Down Syndrome Growth Standards 2002                                               | :gb: :ie:        | [link](https://github.com/rcpch/growth-references/tree/main/trisomy21)  |
-| down  |                     | Down Syndrome Growth Standards 2015                                               | :us:        | [link](https://github.com/rcpch/growth-references/tree/main/trisomy21/AAP)  |
-| turner     |                     | Turner Syndrome, Heights 2002                                                  | :gb: :ie:        | [link](https://github.com/rcpch/growth-references/tree/main/turner)     |
-| uk-who     | 23 weeks - 20y      | UK90 and WHO Child Growth Standards                                            | :gb:             | [link](https://github.com/rcpch/growth-references/tree/main/uk-who)     |
-| uk90       | 23 weeks - 20 years | UK 1990 reference data, reanalysed 2009                                        | :gb:             | [link](https://github.com/rcpch/growth-references/tree/main/uk90)       |
-| who2006    |                     | WHO Child Growth Standards                                                     | :united_nations: | [link](https://github.com/rcpch/growth-references/blob/main/who2006/WHO2006.csv)    |
-| who2007    |                     | WHO Child Growth Standards                                                     | :united_nations: | [link](https://github.com/rcpch/growth-references/blob/main/who2006/WHO2007.csv)    |
+    Trisomy 21 and Turner syndrome references must only be used following a documented clinical diagnosis. See [Turner Syndrome and Down Syndrome implementation guidance](../integrator/turner-down-syndrome.md) for safe selection and display requirements.
 
----
+## How The UK-WHO Reference Is Combined
 
-NOTE: The UK-WHO Term reference is NOW DEPRECATED but still active on paper charts. It comprises average values at birth for weight, length and head circumference for all term births (gestations 37+0 to 42+6 weeks) computed from UK 1990 reference database .
+The UK-WHO API reference is a hybrid. It uses UK90 data around birth and in later childhood, with WHO standards through infancy and early childhood. The API selects the applicable table; clients should not select UK90, WHO 2006, or WHO 2007 independently when requesting UK-WHO calculations.
 
-## Age Thresholds by Reference
+| Phase | Measurements | Approximate range used by UK-WHO | Source |
+|---|---|---|---|
+| Preterm and birth | Height/length, weight, and head circumference | 23-42 weeks' gestation; height/length starts at 25 weeks | UK90 |
+| Infant and early childhood | Height/length, weight, BMI, and head circumference | 2 weeks to 4 years, with length changing to standing height at 2 years | WHO 2006 |
+| Later childhood | Height, weight, and BMI; head circumference to 18 years in boys and 17 years in girls | 4-20 years | UK90 |
 
-| reference table | measurement method | thresholds |
-| -------- | ---------- | --------- |
-| WHO 2006 | length / weight / head circumference / BMI | 0 - 5 y |
-| WHO 2007 | length / weight / head circumference / BMI | 5 - 19 y (weight 5-10y) |
-| WHO (US) | length / weight / head circumference | 0 -3 y |
-| CDC[^3]  | height / weight / bmi (extended) | 2 - 20y |
-| UK-WHO preterm |  height[^1] | 25 weeks - 42 weeks |
-| UK-WHO preterm |  weight[^1] | 23 weeks - 42 weeks |
-| UK-WHO preterm |  head circumference[^1] | 23 weeks - 42 weeks |
-| UK-WHO infant[^2] |  height or length / weight / BMI / head circumference | 2 weeks - 4 years |
-| UK-WHO child |  height or length / weight / BMI | 4 - 20 years |
-| UK-WHO child |  head circumference (boys) | 4 - 18 years |
-| UK-WHO child |  head circumference (girls) | 4 - 17 years |
-| Down Syndrome (UK) |  height / weight / BMI | 0 - 20 years |
-| Down Syndrome (UK) |  head circumference | 0 - 18 years |
-| Down Syndrome (AAP - US) |  height / head circumference | 1mth to 20 years |
-| Down Syndrome (AAP - US) |  weight / BMI | 0 to 20 years |
-| Turner |  height | 1 to 20 years |
+The pooled UK-WHO term reference used on paper charts is not exposed as a separate API reference. The distinction between pooled paper-chart birth values and the API's exact-gestation calculation is described in the [pooled term data discrepancy investigation](../safety/investigations/pooled-term-data-discrepancy-report.md).
 
-### Context
+## Source Data And Wider Catalogue
 
-[^1]: Weight, and head circumference at birth (gestations 23 to 43 weeks) and length at birth (gestations 26 to 43 weeks), computed from UK 1990 reference database and shown by week - UK90 preterm reference
-[^2]: This is the WHO standard for weight, BMI and head circumference from 2 weeks to 4 years, for length 2 weeks to 2 years and height 2-4 years. It is shown by week to 13 weeks and then by calendar month. It is exactly the same data as the LMS data included in the Z-score tables accessed from the WHO website [WHO](https://www.who.int/tools/child-growth-standards), except there is no birthweight.
-[^3]: CDC: runs from 2y to 20 y. From 0-2y the CDC interposes its own version of WHO (2006).
-    - height / weight / BMI centiles 0-2 y (CDC) with extended BMI centiles included (published 2022)
-    - height / weight / head circumference 0-2 y (WHO - US)
-    - preterm data for height / weight / head circumference exists as the Canadian Fenton reference. This has not been implemented
+The [`rcpch/growth-references`](https://github.com/rcpch/growth-references) repository is the place to browse the underlying files and the wider reference collection. It also contains material such as Bayley-Pinneau and spirometry references that is not served by the Digital Growth Charts API. Inclusion in that repository does not mean a reference is available or clinically assured through the API.
 
-### To be added
+For API behaviour, use the [interactive API reference](../integrator/api-reference.md) as the current service contract. For clinical implementation requirements, see the [client specification](../integrator/client-specification.md). Licensing and permitted use depend on the source reference; see [Licensing and Copyright](../legal/licensing-copyright.md) and the licence information accompanying the source data.
 
-1. **LMSdata_BP** systolic & diastolic blood pressure for ages 4 to 24 yr.
+## Further Reading
 
-### Citations
-
-1. Freeman JV, Cole TJ, Chinn S, Jones PRM, White EM, Preece MA. Cross sectional stature and weight reference curves for the UK, 1990. Arch Dis Child 1995;73:17-24.
-
-2. Cole TJ, Freeman JV, Preece MA. 1998. British 1990 growth reference centiles for weight, height, body mass index and head circumference fitted by maximum penalized likelihood. Stat Med 1998;17:407-29
-
-3. WHO Multicentre Growth Reference Study Group. WHO Child Growth Standards: Length/Height-for-age, Weight-for-age, Weight-for-length, Weight-for-height and Body Mass Index-for age. Methods and Development. 2006. ISBN 924 15 4 693X.
-
-4. WHO Multicentre Growth Reference Study Group. WHO Child Growth Standards: Head circumference-for-age, arm circumference-for-age, triceps skinfold-for-age and subscapular skinfold-for age. Methods and Development. 2007. ISBN 978 92 4 1547185.
-
-5. Down syndrome centiles - Styles ME, Cole TJ, Dennis J, Preece MA. New cross sectional stature, weight and head circumference references for Down’s syndrome in the UK and Republic of Ireland. Arch Dis Child 2002;87:104-8. BMI centiles added 11/11/2013
-
-6. Lyon AJ, Preece MA, Grant DB. Growth curve for girls with Turner syndrome. Arch Dis Child 1985;60:932-935.
-
-7. Zemel BS, Pipan M, Stallings VA, Hall W, Schgadt K, Freedman DS, Thorpe P. Growth Charts for Children with Down Syndrome in the U.S. Pediatrics, 2015.
+- [How the UK-WHO charts work](chart-information-health-staff.md)
+- [Growth chart papers](growth-chart-papers.md)
+- [Making API calls](../integrator/making-api-calls.md)
+- [Turner Syndrome and Down Syndrome implementation guidance](../integrator/turner-down-syndrome.md)
