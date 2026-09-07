@@ -310,6 +310,8 @@ When growth-reference identity or provenance is affected, regression coverage mu
 - Browser session caches can display stale dynamic release information while the deployed static site is current. Use a fresh browser context and inspect the authoritative release source.
 - Rolling back only the deployment does not remove an already published package or documentation release. Mark superseded artefacts accurately.
 - Documentation can accidentally describe a candidate as production or preserve obsolete integration advice after rollback. Effective status and version applicability must be explicit.
+- A CI visual-regression tool reporting a successful upload is not the same as a reviewed approval. Some configurations (for example Chromatic with `exitZeroOnChanges`/`exitOnceUploaded`) deliberately exit successfully once a build is uploaded, so unreviewed visual differences do not block CI on their own. A reviewer must open the tool's own review UI and explicitly accept or reject every new, changed, and deleted story; only an accepted change updates the baseline.
+- A cross-repository compatibility harness that prefers a local sibling checkout for developer convenience can silently test unpushed local work instead of the pinned/remote revision it will use in CI. Reproduce the CI path locally by forcing the harness's documented remote-only override before signing off, not only by trusting a local green run.
 
 ## Minimum Outputs
 

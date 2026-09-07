@@ -86,6 +86,12 @@ Run the Demo Client E2E harness against real API responses and a real browser. R
 
 Storybook and Chromatic add another useful testing layer. Stories built from reviewed, genuine API-shaped responses can expose incompatibilities originating in Python calculations, API response contracts, or React rendering, while Chromatic can make unintended visual changes easy to review. They complement the Python and API suites and the live E2E harness; they do not replace them, because fixture-backed stories do not prove that the selected Python and API versions are running together.
 
+!!! warning "A green Chromatic upload is not a reviewed approval"
+
+    Some Chromatic configurations (`exitZeroOnChanges`, `exitOnceUploaded`) deliberately exit successfully once a build is uploaded, so unreviewed visual differences do not block CI on their own. Open Chromatic's own **UI Tests** view and personally accept or reject every new, changed, and deleted story; only an accepted change updates the baseline. Record the Chromatic build URL in the upgrade record as durable review evidence, since CI status alone does not show what was actually reviewed.
+
+If a repository's compatibility harness prefers a local sibling checkout of another repository for developer convenience (for example, testing an unpushed candidate before it is pushed), it can silently keep testing that local work even after you believe you are reproducing CI. Before sign-off, force that harness's documented remote-only override so you exercise the same pinned/remote revision CI will use, and confirm the observed identity matches what you intended to test.
+
 Choose the smallest useful matrix:
 
 - The current supported stack, to confirm the baseline.
