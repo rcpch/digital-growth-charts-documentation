@@ -22,21 +22,21 @@ Use other pages within this repo to get ideas on the style and the features avai
 
 ### Continuous Integration via GitHub Actions
 
-Any changes to the `live` branch of the documentation repository trigger a [GitHub Action](https://github.com/rcpch/digital-growth-charts-documentation/blob/live/.github/workflows/ALL-BRANCHES-ALL-PRs-build-and-deploy-to-azure.yml). This runs Zensical in a temporary application container, builds the site from the Markdown source into a set of static HTML pages, and [publishes the site to Azure](https://growth.rcpch.ac.uk/), with a [backup in GitHub Pages](https://rcpch.github.io/digital-growth-charts-documentation/).
+Any changes to the `live` branch of the documentation repository trigger a [GitHub Action](https://github.com/rcpch/digital-growth-charts-documentation/blob/live/.github/workflows/deploy-docs.yml). This runs Zensical on a temporary GitHub-hosted runner, builds the site from the Markdown source into a set of static HTML pages, and [publishes the site to Azure](https://growth.rcpch.ac.uk/). Pull requests from branches in this repository that target `live` receive an Azure preview deployment; GitHub does not provide the required deployment secret to pull requests from forks.
 
 This occurs whether changes are made using online or local, offline editing methods.
 
 !!! note "GitHub Branch Protection"
 
-    Ensure you make Pull Requests to `prerelease`, or any other branch name of your choosing, but not `live`.
+    Make changes on `prerelease` or another branch rather than committing directly to `live`.
 
-    We have enabled GitHub branch protection to `live` so changes cannot be made directly there but **must** be made through an intermediate branch, and then Pull Requested into `live`.
+    We have enabled GitHub branch protection on `live`, so changes **must** be made on an intermediate branch and then proposed in a Pull Request targeting `live`.
 
 ### Online editing of the Markdown
 
 If you are new to Markdown editing, you can use GitHub's interface itself to edit online, by clicking the 'pencil' edit icon in the top right corner of any source code page. There are also external tools like [Prose.io](http://prose.io/) and [StackEdit](https://stackedit.io/) which give you a nice interface for editing MarkDown online, and will sync the changes with GitHub for you.
 
-We will need to review your changes before they are merged into the `live` branch, so please make a Pull Request to the `prerelease` branch, or any other branch of your choosing, and we will review it and merge it into `live` when ready.
+We will need to review your changes before they are merged into the `live` branch, so please make them on `prerelease` or another branch and open a Pull Request targeting `live`.
 
 Once merged, the changes will be automatically deployed to the live site, and you can see them at [growth.rcpch.ac.uk](https://growth.rcpch.ac.uk).
 
@@ -71,19 +71,16 @@ For all platforms we recommend using the `docker compose` setup, which will run 
 3. Start the Zensical development server using Docker Compose:
 
    ```console
-   docker compose up
+   ./s/docs
    ```
 
-### `git-committers` and `mkdocs-with-pdf` plugins
+### Suspended Plugins
 
-These plugins can add 10-15 seconds of build time to the site, so when developing locally, they are disabled by default. They are enabled by using environment variables, if you want to test that they work locally before pushing to the remote:
+Zensical does not yet support the previously used `git-committers` and `mkdocs-with-pdf` plugins. Their configuration remains commented out with links to the relevant upstream issues. The repository's supported PDF path is the self-hosted WeasyPrint exporter invoked by `./s/build-pdf`.
 
 ```console
-export ENABLE_GIT_COMMITTERS=true; zensical serve
-export ENABLE_PDF_EXPORT=true; zensical serve
+./s/build-pdf
 ```
-
-You should always build the site at least once with both PDF export and Git Committers enabled, to ensure there are no issues, before pushing to the remote.
 
 ## Adding a new page
 
@@ -190,20 +187,25 @@ This runs [Codespell](https://github.com/codespell-project/codespell) with a `.c
 
 ### Before pushing
 
-Before submitting a Pull Request, ensure both tools pass without errors:
+Before submitting a Pull Request, run the complete local quality suite:
 
 ```console
-./s/lint && ./s/spellcheck
+./s/lint
+./s/spellcheck
+./s/check-docs-nav
+./s/linkcheck
+./s/build-pdf
+./s/audit
 ```
 
-If either tool reports issues, fix them in your editor and re-run.
+If a check reports issues, fix them and re-run the relevant command.
 
 ## Publishing is automated
 
-When you push new changes to ANY branch of this repo, or it you open a Pull Request, Azure will automatically build a version of the site for review. You need to visit [this Static Web App deployment resource on the Azure portal](https://portal.azure.com/#@rcpch.ac.uk/resource/subscriptions/99e313f5-79fe-4480-b867-8daf2800cf22/resourceGroups/RCPCH-Dev-API-Growth/providers/Microsoft.Web/staticSites/documentation-demo-static-site/environments) to see the URL of the deployment, as it depends on the branch name. To obtain Azure access contact Marcus Baw of the RCPCH developer team.
+When you open or update a Pull Request from a branch in this repository that targets `live`, Azure automatically builds a preview site. The deployment workflow records the preview environment; team members with Azure access can also inspect it through the Static Web App resource. Pull requests from forks still run the read-only quality and workflow-security checks, but cannot receive an Azure preview because GitHub withholds the deployment secret.
 
-Therefore, you don't need to do `zensical build --clean` command manually or locally - it’s done for you if you push to branches or PRs on GitHub.
+Pull-request automation does not replace local validation. Run the documented quality suite before pushing so CI confirms an already-reviewed change rather than discovering routine errors remotely.
 
 ## Plugins
 
-Zensical supports many MkDocs-compatible plugins. We already use some to extend the capabilities of Markdown, making the documentation look nicer and function better.
+Zensical supports a defined set of Markdown extensions and native modules. The active set is declared in `mkdocs.yml`; do not enable a general MkDocs plugin unless current Zensical documentation confirms compatibility.

@@ -3,12 +3,9 @@
 services:
   zensical: # Digital Growth Charts Documentation
     build: .
-    environment:
-      - ENABLE_PDF_EXPORT=0 # PDF export suspended pending Zensical support
-      - ENABLE_GIT_COMMITTERS=False # git-committers suspended pending Zensical support
     volumes:
       - .:/app
     ports:
-      - 8001:8000 # Zensical will be accessible at localhost:8001
+      - 127.0.0.1:8001:8000 # Zensical will be accessible at localhost:8001
     command: sh -c "zensical serve --dev-addr=0.0.0.0:8000"
     restart: always

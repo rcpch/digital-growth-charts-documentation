@@ -11,7 +11,7 @@ repo_url: https://github.com/rcpch/digital-growth-charts-documentation
 repo_name: rcpch/documentation
 edit_uri: edit/live/docs
 
-# `mkdocs serve` serves the docs locally on this port (default 8000)
+# `zensical serve` serves the docs locally on this port (default 8000)
 # note that the docker-compose setup maps this port to 8001 so as not to clash with other services
 dev_addr: "127.0.0.1:8000"
 
@@ -116,10 +116,13 @@ nav:
 not_in_nav: |
   _assets/_snippets/dgc-platform-comprises.md
   _assets/_snippets/docs-contributions.md
+  _assets/_snippets/centile-terminology.md
   _assets/_snippets/htn-award.md
   _assets/_snippets/self-host-warning.md
   _assets/_snippets/api-baseurl.md
   _utilities/page-template.md
+  products/command-line-client(deprecated).md
+  products/flask(deprecated).md
 
 theme:
   variant: classic

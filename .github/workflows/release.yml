@@ -54,7 +54,12 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ inputs.tag || github.ref_name }}
-        run: gh release create "$TAG" --title "Documentation Release $TAG" --notes-file "$RUNNER_TEMP/release-notes.md" --latest
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release edit "$TAG" --title "Documentation Release $TAG" --notes-file "$RUNNER_TEMP/release-notes.md" --latest
+          else
+            gh release create "$TAG" --title "Documentation Release $TAG" --notes-file "$RUNNER_TEMP/release-notes.md" --latest
+          fi
 
   build-pdf:
     name: Build PDF Documentation
@@ -80,28 +85,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Build PDF
-        env:
-          ENABLE_PDF_EXPORT: true
-        run: |
-          # Build the full documentation PDF
-          # This uses the mkdocs-with-pdf plugin
-          zensical build --clean
+      - name: Install WeasyPrint system libraries
+        run: sudo apt-get update && sudo apt-get install -y libpango-1.0-0 libpangoft2-1.0-0
 
-          # Or use the dedicated PDF build script if available
-          if [ -f "s/build-pdf" ]; then
-            ./s/build-pdf
-          fi
+      - name: Build site and safety documentation PDF
+        run: |
+          zensical build --clean --strict
+          python pdf-export/build-safety-pdf.py
 
       - name: Upload PDF to Release
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ inputs.tag || github.ref_name }}
-        run: |
-          shopt -s nullglob
-          files=(pdf/*.pdf docs/_assets/_pdfs/*.pdf site/_assets/_pdfs/safety-documentation.pdf)
-          if (( ${#files[@]} == 0 )); then
-            echo "No PDF files found to upload."
-            exit 0
-          fi
-          gh release upload "$TAG" "${files[@]}"
+        run: gh release upload "$TAG" site/_assets/_pdfs/safety-documentation.pdf --clobber

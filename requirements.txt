@@ -1,7 +1,7 @@
 # Requirements for the dGC documentation
 
 # Zensical theme
-zensical
+zensical==0.0.59
 
 # for the feature which displays authors at the bottom of the page
 # NOTE FOR FUTURE (added 2026.03.05): Zensical does not support this plugin
@@ -37,15 +37,20 @@ zensical
 # mkdocs-llmstxt
 
 # spelling / common typo checks for docs
-codespell
+codespell==2.4.3
 
 # markdown linting
-pymarkdownlnt
+pymarkdownlnt==0.9.39
 
 # self-hosted PDF export of the Clinical Safety and Medical Device sections
 # (see pdf-export/build-safety-pdf.py and s/build-pdf). Replaces the suspended
 # mkdocs-with-pdf plugin for the safety documentation only. WeasyPrint's native
 # libraries (libpango etc.) are already installed in the Dockerfile.
-weasyprint
-beautifulsoup4
+weasyprint==69.0
+beautifulsoup4==4.15.0
 
+# navigation completeness checks
+PyYAML==6.0.3
+
+# dependency vulnerability auditing
+pip-audit==2.10.1

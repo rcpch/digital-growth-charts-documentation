@@ -9,7 +9,16 @@
 # Code Owners" enabled. See https://growth.rcpch.ac.uk/safety/qms/
 
 # Clinical safety, medical-device regulation and quality-management documents
+/SAFETY.md                         @pacharanero
 /docs/safety/                       @pacharanero
+/docs/legal/                        @pacharanero
+
+# Toolchain used to build the controlled safety-documentation PDF
+/pdf-export/                        @pacharanero
+/s/build-pdf                        @pacharanero
+/Dockerfile                         @pacharanero
+/docker-compose.yml                 @pacharanero
+/requirements.txt                   @pacharanero
 
 # QMS process configuration
 /.github/CODEOWNERS                 @pacharanero

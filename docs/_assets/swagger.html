@@ -37,6 +37,21 @@
             font-size: 13px;
         }
 
+        /* Response examples are code panels rather than inline code. Replace
+           Swagger's dark panel and its low-contrast, inline syntax colours. */
+        .swagger-ui .opblock-body pre.microlight {
+            color: var(--rcpch-navy) !important;
+            background-color: var(--rcpch-surface-tint) !important;
+        }
+        .swagger-ui .opblock-body pre.microlight span {
+            color: var(--rcpch-navy) !important;
+        }
+        .swagger-ui .opblock-body pre.microlight code {
+            background-color: transparent;
+            border: 0;
+            padding: 0;
+        }
+
         /* Harmonise text sizes: Swagger renders description paragraphs and
            list items noticeably smaller than its headings imply. */
         .swagger-ui .op-description,

@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+#
+# Fails when a documentation page is absent from both `nav` and
+# `not_in_nav`, or when either section names a Markdown file that does not exist.
+
+set -euo pipefail
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$REPO_ROOT"
+
+exec docker compose run --rm --build -T zensical python - <<'PY'
+from pathlib import Path
+import subprocess
+
+import yaml
+
+
+def markdown_paths(value):
+    if isinstance(value, str):
+        if value.endswith(".md"):
+            yield value
+    elif isinstance(value, list):
+        for item in value:
+            yield from markdown_paths(item)
+    elif isinstance(value, dict):
+        for item in value.values():
+            yield from markdown_paths(item)
+
+
+# BaseLoader is sufficient because this check only needs strings and collections,
+# and it deliberately treats Zensical's `!!python/name` extension tags as data.
+config = yaml.load(
+    Path("mkdocs.yml").read_text(encoding="utf-8"),
+    Loader=yaml.BaseLoader,
+)
+nav_paths = set(markdown_paths(config.get("nav", [])))
+excluded_paths = {
+    line.strip()
+    for line in config.get("not_in_nav", "").splitlines()
+    if line.strip()
+}
+configured_paths = nav_paths | excluded_paths
+documentation_files = subprocess.run(
+    [
+        "git",
+        "ls-files",
+        "--cached",
+        "--others",
+        "--exclude-standard",
+        "--",
+        "docs/*.md",
+        "docs/**/*.md",
+    ],
+    check=True,
+    capture_output=True,
+    text=True,
+).stdout.splitlines()
+actual_paths = {
+    Path(path).relative_to("docs").as_posix()
+    for path in documentation_files
+}
+
+missing = sorted(actual_paths - configured_paths)
+stale = sorted(configured_paths - actual_paths)
+
+if missing:
+    print("Documentation pages missing from nav/not_in_nav:")
+    for path in missing:
+        print(f"  {path}")
+
+if stale:
+    print("Configured documentation paths that do not exist:")
+    for path in stale:
+        print(f"  {path}")
+
+if missing or stale:
+    raise SystemExit(1)
+
+print(f"All {len(actual_paths)} documentation pages are accounted for.")
+PY
