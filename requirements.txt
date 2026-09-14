@@ -46,7 +46,7 @@ pymarkdownlnt==0.9.39
 # (see pdf-export/build-safety-pdf.py and s/build-pdf). Replaces the suspended
 # mkdocs-with-pdf plugin for the safety documentation only. WeasyPrint's native
 # libraries (libpango etc.) are already installed in the Dockerfile.
-weasyprint==69.0
+weasyprint==70.0
 beautifulsoup4==4.15.0
 
 # navigation completeness checks
