@@ -1,5 +1,5 @@
 # Base Docker image Official Python 3.12
-FROM python:3.12
+FROM python:3.14
 
 # Set 'build-time' environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
