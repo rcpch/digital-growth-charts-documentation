@@ -1,7 +1,7 @@
 # Requirements for the dGC documentation
 
 # Zensical theme
-zensical==0.0.59
+zensical==0.0.61
 
 # for the feature which displays authors at the bottom of the page
 # NOTE FOR FUTURE (added 2026.03.05): Zensical does not support this plugin
