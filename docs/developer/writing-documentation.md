@@ -202,7 +202,7 @@ If a check reports issues, fix them and re-run the relevant command.
 
 ## Publishing is automated
 
-When you open or update a Pull Request from a branch in this repository that targets `live`, Azure automatically builds a preview site. The deployment workflow records the preview environment; team members with Azure access can also inspect it through the Static Web App resource. Pull requests from forks still run the read-only quality and workflow-security checks, but cannot receive an Azure preview because GitHub withholds the deployment secret.
+When you open or update a Pull Request from a branch in this repository that targets `live`, Azure automatically builds a preview site. The deployment workflow records the preview environment; team members with Azure access can also inspect it through the Static Web App resource. Pull requests from forks and Dependabot still run the read-only quality and workflow-security checks, but cannot receive an Azure preview because GitHub withholds the deployment secret.
 
 Pull-request automation does not replace local validation. Run the documented quality suite before pushing so CI confirms an already-reviewed change rather than discovering routine errors remotely.
 
