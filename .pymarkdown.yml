@@ -51,3 +51,16 @@ plugins:
   # first-line-heading rule does not apply to them.
   md041:
     enabled: false
+
+  # PyMarkdown 0.9.40 introduced emphasis-style checks. Existing content uses
+  # both valid Markdown styles; standardise it separately rather than coupling
+  # broad prose churn to the dependency update.
+  md049:
+    enabled: false
+  md050:
+    enabled: false
+
+  # PyMarkdown 0.9.40 also introduced descriptive-link-text. Existing generic
+  # links need editorial review before this can become a blocking rule.
+  md059:
+    enabled: false

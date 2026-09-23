@@ -20,7 +20,7 @@ permissions:
 
 jobs:
   build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    if: github.event_name != 'pull_request' || github.event.action != 'closed'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -32,7 +32,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
-          python-version: "3.12" # Matching the Python version in the Dockerfile
+          python-version: "3.14" # Matching the Python version in the Dockerfile
       - name: Install WeasyPrint system libraries # required by the self-hosted safety PDF export
         run: sudo apt-get update && sudo apt-get install -y libpango-1.0-0 libpangoft2-1.0-0
       - run: pip install -r requirements.txt
@@ -52,6 +52,8 @@ jobs:
           api_location: "" # Api source code path relative to repository root - optional
           output_location: "site" # Built app content directory, relative to app_location - optional
           ###### End of Repository/Build Configurations ######
+        env:
+          SKIP_DEPLOY_ON_MISSING_SECRETS: true
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
@@ -65,3 +67,5 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_GENTLE_GLACIER_063C32703 }}
           action: "close"
+        env:
+          SKIP_DEPLOY_ON_MISSING_SECRETS: true
