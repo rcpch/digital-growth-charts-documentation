@@ -24,7 +24,7 @@ Legend: [~] in progress or partially complete, [ ] not started
 
 ## P3 - Site And Content
 
-- [ ] **DOC-2 - Add the now-supported tag index.** Implement and navigate a browsable tag listing using the support added in Zensical 0.0.58, remove the stale upstream-blocker note, and complete the remaining part of [issue #73](https://github.com/rcpch/digital-growth-charts-documentation/issues/73).
+- [ ] **DOC-2 - Add the now-supported tag index.** Implement and navigate a browsable tag listing using the support added in Zensical 0.0.58, remove the stale upstream-blocker note, and complete [issue #196](https://github.com/rcpch/digital-growth-charts-documentation/issues/196).
 - [~] **HS-8 - Complete the Zensical compatibility review.** Compare rendered output with and without the remaining Material-style `theme.features` and `palette` settings, then remove or document each setting.
 - [~] **HS-9 - Retire or formally supersede `spec/qms.md`.** The controlled quality manual is `docs/safety/qms.md`; the older draft still contains stale branch and path controls and requires quality-management review before deletion or formal archival.
 - [ ] **DOC-8 - Publish the benefits case.** Define the intended audience and evidence, then complete [issue #64](https://github.com/rcpch/digital-growth-charts-documentation/issues/64).
