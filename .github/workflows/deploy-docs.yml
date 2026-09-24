@@ -2,7 +2,8 @@
 # and pushes it to Azure from where it is deployed
 # to the LIVE site https://growth.rcpch.ac.uk/
 #
-# Azure will also build a preview site for any PRs against live
+# Azure also builds previews for non-Dependabot branches in this repository
+# when they open a pull request against live.
 
 name: Deploy documentation to Azure
 
@@ -20,7 +21,13 @@ permissions:
 
 jobs:
   build_and_deploy_job:
-    if: github.event_name != 'pull_request' || github.event.action != 'closed'
+    if: >-
+      github.event_name == 'push' ||
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'pull_request' &&
+      github.event.action != 'closed' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.pull_request.user.login != 'dependabot[bot]')
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -56,7 +63,11 @@ jobs:
           SKIP_DEPLOY_ON_MISSING_SECRETS: true
 
   close_pull_request_job:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    if: >-
+      github.event_name == 'pull_request' &&
+      github.event.action == 'closed' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.pull_request.user.login != 'dependabot[bot]'
     runs-on: ubuntu-latest
     permissions: {}
     name: Close Pull Request Job
