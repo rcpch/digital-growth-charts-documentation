@@ -153,13 +153,13 @@ tags:
 
 To keep tags useful, please reuse the **controlled vocabulary** already in use across the docs rather than inventing new, one-off tags. The current vocabulary is:
 
-`API`, `API Reference`, `Integration`, `SNOMED CT`, `Growth Charts`, `Growth References`, `Centiles`, `Date and Age Calculations`, `React`, `Python`, `Docker`, `Flutter`, `Command Line`, `Testing`, `Versioning`, `Contributing`, `Getting Started`, `FAQ`, `Clinical Safety`, `Hazards`, `Medical Device Regulation`, `DTAC`, `Data Protection`, `Privacy`, `Security`, `Licensing`, `Legal`, `Pricing`, `Research`, `Support`, `Team`, `Press and Awards`, `Videos`, `Overview`, `Deprecated`.
+`API`, `API Reference`, `Integration`, `SNOMED CT`, `Growth Charts`, `Growth References`, `Centiles`, `Date and Age Calculations`, `React`, `Python`, `Docker`, `Flutter`, `Command Line`, `Testing`, `Versioning`, `Contributing`, `Getting Started`, `FAQ`, `Clinical Safety`, `Hazards`, `Medical Device Regulation`, `DTAC`, `Data Protection`, `Privacy`, `Security`, `Licensing`, `Legal`, `Accessibility`, `WCAG`, `Compliance`, `Quality Management`, `Investigations`, `Post-market Surveillance`, `WHO`, `Pricing`, `Research`, `Support`, `Team`, `Press and Awards`, `Videos`, `Overview`, `Deprecated`.
 
 Aim for two to four tags per page that describe its **subject matter**. If a page genuinely needs a new tag, add it here too so the vocabulary stays consistent.
 
-!!! note "Tag index page"
+!!! info "Tag index page"
 
-    Zensical does not yet support a generated tags *index/listing* page (a single page that lists every tag and its pages). When [that feature ships](https://github.com/zensical/backlog/issues/38) we can add a `tags.md` listing page.
+    Zensical generates the [Browse by tag](../tags.md) page from the tags assigned in page front matter. The index updates automatically when pages or tags change.
 
 ## Markdown Linting and Spellchecking
 

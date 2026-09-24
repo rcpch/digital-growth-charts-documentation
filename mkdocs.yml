@@ -17,6 +17,7 @@ dev_addr: "127.0.0.1:8000"
 
 nav:
   - Home: "index.md"
+  - Browse by tag: "tags.md"
   - About:
       - "about/about.md"
       - "about/team.md"
@@ -156,6 +157,7 @@ theme:
 
 plugins:
   - search
+  - tags
   # Plugins below are suspended pending Zensical module system support.
   # Re-enable each once the corresponding Zensical issue is resolved.
   #
