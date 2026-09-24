@@ -92,7 +92,7 @@ The LMS method provides a way of obtaining normalised growth centiles from a ref
 
 ### How the LMS method is used
 
-- Using the LMS table, look up the age and sex-specific values of L, M and S for the relevant measurement (e.g. height). If the child's age falls between the tabulated ages, use _cubic interpolation_ to obtain values for the child's exact age.
+- Using the LMS table, look up the age and sex-specific values of L, M and S for the relevant measurement (e.g. height). If the child's age falls between the tabulated ages, use *cubic interpolation* to obtain values for the child's exact age.
 
 - To obtain the z-score, plug the LMS values with the child's measurement into the formula:
   <div class="latex">
@@ -126,7 +126,7 @@ In most situations, the decimal age of the child falls *between* the available d
 
 In most circumstances, *cubic* interpolation is used - this involves identifying 2 ages below and 2 ages above the child's age and substituting into the following equation:
 
-If _t₀_, _t₁_, _t₂_, _t₃_, _y₀_, _y₁_, _y₂_, _y₃_, are given, and _t₀_<_t₁_<_t₂_<_t₃_, _t_ is in the range of \[*t₁*, *t₂*\], the cubic interpolation of _y_ for _t_ is:
+If *t₀*, *t₁*, *t₂*, *t₃*, *y₀*, *y₁*, *y₂*, *y₃*, are given, and *t₀*<*t₁*<*t₂*<*t₃*, *t* is in the range of \[*t₁*, *t₂*\], the cubic interpolation of *y* for *t* is:
 
 <div class="latex">
 <img src="https://latex.codecogs.com/svg.latex?\inline&space;\bg_white&space;\large&space;y=\frac{y_{0}(t-t_{1})(t-t_{2})(t-t_{3})}{(t_{0}-t_{1})(t_{0}-t_{2})(t_{0}-t_{3})}&space;&plus;&space;\frac{y_{1}(t-t_{0})(t-t_{2})(t-t_{3})}{(t_{1}-t_{0})(t_{1}-t_{2})(t_{1}-t_{3})}&space;&plus;&space;\frac{y_{2}(t-t_{0})(t-t_{1})(t-t_{3})}{(t_{2}-t_{0})(t_{2}-t_{1})(t_{2}-t_{3})}&plus;\frac{y_{3}(t-t_{0})(t-t_{1})(t-t_{2})}{(t_{3}-t_{0})(t_{3}-t_{1})(t_{3}-t_{2})}" title="\large y=\frac{y_{0}(t-t_{1})(t-t_{2})(t-t_{3})}{(t_{0}-t_{1})(t_{0}-t_{2})(t_{0}-t_{3})} + \frac{y_{1}(t-t_{0})(t-t_{2})(t-t_{3})}{(t_{1}-t_{0})(t_{1}-t_{2})(t_{1}-t_{3})} + \frac{y_{2}(t-t_{0})(t-t_{1})(t-t_{3})}{(t_{2}-t_{0})(t_{2}-t_{1})(t_{2}-t_{3})}+\frac{y_{3}(t-t_{0})(t-t_{1})(t-t_{2})}{(t_{3}-t_{0})(t_{3}-t_{1})(t_{3}-t_{2})}" />

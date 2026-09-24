@@ -52,9 +52,9 @@ Adjusted: 17.99041752224504 y,
 
 - `birth_date` **(required)**: format `YYYY-MM-DD`
 - `observation_date` **(required)**: format `YYYY-MM-DD`
-- `gestation_weeks` _(optional)_: an integer, default `40`
-- `gestation_days` _(optional)_: an integer, default `0`
-- `-a` or `--adjustment` _(optional)_: if passed, the age will be returned, corrected for gestational age
+- `gestation_weeks` *(optional)*: an integer, default `40`
+- `gestation_days` *(optional)*: an integer, default `0`
+- `-a` or `--adjustment` *(optional)*: if passed, the age will be returned, corrected for gestational age
 
 Note: the command line will usually error if a leading 0 is supplied.
 
@@ -72,7 +72,7 @@ The following calculates a decimal age for a child born on 10th October 1759 and
 rcpchgrowth age-calculation 1759-10-10 1759-11-12 28 2 -a
 ```
 
-Below is the same calculation _without_ gestational age correction:
+Below is the same calculation *without* gestational age correction:
 
 ```console
 rcpchgrowth age-calculation 1759-10-10 1759-11-12 28 2
@@ -94,7 +94,7 @@ Note: these are argument-order sensitive.
 - `measurement_method` **(required)**: a string, one of `'height'`, '`weight`', `'bmi'` (Body Mass Index) or `'ofc'` (head circumference)
 - `sex` **(required)**: a string, one of `'male'` or `'female'`
 - `observation_value` **(required)**: a float
-- `-r` or `--reference` _(optional)_: a string, default is `'uk-who'`. Other options include `'trisomy-21'` or `'turners-syndrome'`
+- `-r` or `--reference` *(optional)*: a string, default is `'uk-who'`. Other options include `'trisomy-21'` or `'turners-syndrome'`
 
 #### Example
 
@@ -123,7 +123,7 @@ Note: these are argument-order sensitive.
 - `measurement_method` **(required)**: a string, one of `'height'`, '`weight`', `'bmi'` (Body Mass Index) or `'ofc'` (head circumference)
 - `sex` **(required)**: a string, one of `'male'` or `'female'`
 - `observation_value` **(required)**: a float
-- `-r` or `--reference` _(optional)_: a string, default is `'uk-who'`. Other options include `'trisomy-21'` or `'turners-syndrome'`
+- `-r` or `--reference` *(optional)*: a string, default is `'uk-who'`. Other options include `'trisomy-21'` or `'turners-syndrome'`
 
 #### Example
 
@@ -151,7 +151,7 @@ Note: these are argument-order sensitive.
 - `measurement_method` **(required)**: a string, one of `'height'`, '`weight`', `'bmi'` (Body Mass Index) or `'ofc'` (head circumference)
 - `sex` **(required)**: a string, one of `'male'` or `'female'`
 - `centile` **(required)**: a float
-- `-r` or `--reference` _(optional)_: a string, default is `'uk-who'`. Other options include `'trisomy-21'` or `'turners-syndrome'`
+- `-r` or `--reference` *(optional)*: a string, default is `'uk-who'`. Other options include `'trisomy-21'` or `'turners-syndrome'`
 
 #### Example
 

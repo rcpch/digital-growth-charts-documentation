@@ -22,7 +22,7 @@ Run all scripts from the root of the project, or they won't work.
 ## Running the dGC Server locally with Python
 
 !!! note
-    Some of this setup is obvious to experienced Python developers, but it's documented here so we all know the _same_ obvious :grin:. This helps us reduce development difficulty and speeds up onboarding of new team members.
+    Some of this setup is obvious to experienced Python developers, but it's documented here so we all know the *same* obvious :grin:. This helps us reduce development difficulty and speeds up onboarding of new team members.
 
 ### Managing Python versions, and dependencies such as libraries
 
@@ -44,7 +44,7 @@ Our solutions are:
 Please see this [StackOverflow post](https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe) to find out more about the differences.
 
 !!! info "Reason for not using `pyenv` on Windows"
-    `pyenv` does not directly support Windows. There _is_ a [Windows port](https://github.com/pyenv-win/pyenv-win) in development, however, it is simpler to just use `virtualenv` (and also leads to fewer headaches setting up the development environment!).
+    `pyenv` does not directly support Windows. There *is* a [Windows port](https://github.com/pyenv-win/pyenv-win) in development, however, it is simpler to just use `virtualenv` (and also leads to fewer headaches setting up the development environment!).
 
 ### Mac/Linux - installing `pyenv`
 
@@ -79,7 +79,7 @@ pyenv virtualenv 3.12.0 dgc-server
 ```
 
 !!! tip "Auto-selection of Python and virtualenv"
-    Using 'dgc-server' as the name will enable it to be automatically selected when navigating to this repo (but you _can_ call your own virtualenv whatever you like). This all works using the `.python-version` file in the project root. This can contain either a Python version name which `pyenv` recognises, or it can contain a virtualenv name, which `pyenv` will select for you (and this automatically selects the Python version too).
+    Using 'dgc-server' as the name will enable it to be automatically selected when navigating to this repo (but you *can* call your own virtualenv whatever you like). This all works using the `.python-version` file in the project root. This can contain either a Python version name which `pyenv` recognises, or it can contain a virtualenv name, which `pyenv` will select for you (and this automatically selects the Python version too).
 
     A helpful article about this is here: <https://realpython.com/intro-to-pyenv/#activating-your-versions>.
 

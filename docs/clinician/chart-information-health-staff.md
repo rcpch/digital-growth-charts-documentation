@@ -110,7 +110,7 @@ Assess further if any of these occur:
 
 Centiles derive from standard deviation scores (SDS or z scores). An SDS of 0 equals the 50th centile. Positive values relate to centiles above this; negative values relate to centiles below.
 
-SDS values can all be plotted on the same chart. When plotting z scores against age, use _corrected_ age, not _chronological_ age.
+SDS values can all be plotted on the same chart. When plotting z scores against age, use *corrected* age, not *chronological* age.
 
 ## Calculations as yet not implemented in the API
 

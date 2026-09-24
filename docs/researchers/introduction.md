@@ -19,7 +19,7 @@ The notebooks themselves are their own best documentation. To get them running t
 
 ### Python Environment
 
-Setting up a Python environment is discussed in detail [here](../developer/api-python#managing-python-versions)
+The [Python API development guide](../developer/api-python#managing-python-versions) explains how to set up a Python environment.
 
 Once a virtual environment has been created, RCPCHGrowth can be installed directly:
 
