@@ -147,6 +147,19 @@ img {
     max-width: 100%;
 }
 
+/* Zensical renders icon shortcodes as inline SVGs inside `.twemoji`. Its theme
+ * normally supplies these dimensions, but the standalone PDF does not load it. */
+.twemoji,
+.twemoji svg {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+}
+
+.twemoji {
+    vertical-align: -0.125em;
+}
+
 details {
     display: block;
 }
