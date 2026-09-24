@@ -84,15 +84,22 @@ Warning UI: an always-visible summary plus a collapsible "Technical details" sec
 
 Export (`exportChartCallback`) is explicitly out of scope - existing callback unchanged, no special handling for warnings in exported SVG.
 
-The exact warning UX/affordance level for legacy vs. unknown provenance is still open and expected to go through rounds of user testing. This does not block the Python/server work, only the final React major-version release.
+The initial guard shipped in component `v7.6.0`. Subsequent review concluded that a permanent warning for legacy-only data was not actionable; PR #268 therefore removed that warning while retaining legacy details whenever another provenance warning is present. Unknown values continue to produce a warning, and recognised mismatches continue to suppress only the affected measurements.
 
-## Sequencing note
+## Implementation and release evidence
 
-Python (#37) and server (#207) can both proceed now, independent of the React UX decisions above, since the wire contract (`provenance.growth_reference`, `.calculation_engine`, `.api_server`) is fully settled.
+| Layer | Implementation | Verification | Release status |
+|---|---|---|---|
+| Calculation engine | [`rcpchgrowth-python` PR #98](https://github.com/rcpch/rcpchgrowth-python/pull/98), merged as [`df13076`](https://github.com/rcpch/rcpchgrowth-python/commit/df13076bb00f23e7aa249e43c07979b64b32ecc6) | [`test_provenance.py`](https://github.com/rcpch/rcpchgrowth-python/blob/live/rcpchgrowth/tests/test_provenance.py) covers all six references, required fields and build identity; PR checks passed on Python 3.10-3.13 | First released in [`v4.6.0`](https://github.com/rcpch/rcpchgrowth-python/releases/tag/v4.6.0) on 2026-08-27; current server pin is `4.6.4` |
+| API server | [`digital-growth-charts-server` PR #280](https://github.com/rcpch/digital-growth-charts-server/pull/280), merged as [`8c22107`](https://github.com/rcpch/digital-growth-charts-server/commit/8c221071f43c92a97436d599e38f38962ae7a07d) | [`test_provenance.py`](https://github.com/rcpch/digital-growth-charts-server/blob/live/tests/test_provenance.py) covers all six routes, bulk and fictional-child output, schema constraints and pass-through identity; the 881-case regression suite retains the complete provenance structure | Implemented as server `5.0.0`; first tagged server release containing the control is [`v5.1.0`](https://github.com/rcpch/digital-growth-charts-server/tree/v5.1.0) |
+| Chart component | [`digital-growth-charts-react-component-library` PR #228](https://github.com/rcpch/digital-growth-charts-react-component-library/pull/228), merged as [`ea14a65`](https://github.com/rcpch/digital-growth-charts-react-component-library/commit/ea14a65cc36313fe308b735232ec85977013c344) | Unit, integration, Storybook and Chromatic checks cover matching, legacy, unknown, mismatched and mixed data in centile and SDS charts, including canonical Turner comparison | First released in [`v7.6.0`](https://github.com/rcpch/digital-growth-charts-react-component-library/releases/tag/v7.6.0); present in `v7.7.0` |
+| Legacy-warning policy correction | [`digital-growth-charts-react-component-library` PR #268](https://github.com/rcpch/digital-growth-charts-react-component-library/pull/268), merged as [`8184e51`](https://github.com/rcpch/digital-growth-charts-react-component-library/commit/8184e51441d29d42fac142293ebc5242de7132d5) | Component tests, Storybook and Chromatic passed | Merged after `v7.7.0`; not yet included in a published component release |
 
-## Open items for implementation PRs
+The planned sequential release order was not followed literally: component `v7.6.0` was published on 2026-09-03 shortly before the server provenance PR merged. This is an assurance-process deviation, not evidence that the released controls are absent. Integrators must deploy a provenance-producing API version before relying on the chart guard for newly calculated measurements.
 
-1. Exact `GrowthReferenceId` TypeScript type export location (agreed name: `GrowthReferenceId`, not `Reference` - that name is already used internally for curve-data).
-2. Mechanism for embedding the build SHA into the Python wheel and the FastAPI server (neither currently does this - needs a build-step decision, e.g. extending the existing `GITHUB_SHA` pattern already used server-side in `main.py` and `docker-compose.yml`).
-3. Screenshot evidence set required for the React PR: matching / legacy-only / mixed / unknown / mismatched provenance, at desktop and mobile widths.
-4. Final legacy/unknown warning copy and prominence - deferred to user testing.
+## Residual verification gaps
+
+- Add a React rerender test that changes the chart `reference` while measurements remain mounted, proving stale mismatched measurements are suppressed after a prop transition.
+- Add reviewed Storybook/Chromatic evidence for a mismatch in a custom measurement dimension.
+- Publish the component change from PR #268 before documenting its no-warning legacy behavior as released behavior.
+- Record Clinical Safety Officer review and residual-risk assessment on hazard #174 after the evidence above is complete. No risk label is reduced by this decision record.

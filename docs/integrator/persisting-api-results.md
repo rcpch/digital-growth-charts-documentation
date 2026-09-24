@@ -41,6 +41,8 @@ The growth reference identifies the clinical reference used. The package version
 
 The `api_server.version` value is the version of the server software. It is separate from the `v1` in the public `/growth/v1` API path, which identifies the HTTP API contract generation.
 
+The canonical `growth_reference` values are `uk-who`, `trisomy-21`, `trisomy-21-aap`, `turners-syndrome`, `cdc`, and `who`. This is the public calculation selector, not the name of an internal LMS table. The API server passes through the value produced by `rcpchgrowth`; it does not derive or replace it from the request route.
+
 Together, the calculation-engine and API-server identities act as the software equivalent of a **Unique Device Identifier for the calculation event**: they define the exact code that produced the result. This operational identifier supports traceability but does not replace any formal regulatory UDI obligations that apply to device labelling.
 
 ## Why You Must Keep It
@@ -78,6 +80,26 @@ Treat provenance as immutable historical evidence. A later application, chart-co
 Successful items returned by bulk calculations carry their own provenance and should be stored with their corresponding measurements. Inline bulk error objects are not calculation results and do not have calculation provenance.
 
 Responses created before provenance was introduced may not contain this object. Preserve those records as legacy results and do not manufacture provenance from the current application configuration or from an assumption about what was deployed at the time. Your system should be able to distinguish a legacy result with unknown provenance from a result carrying verified provenance.
+
+## Chart Compatibility And Migration
+
+Chart component `v7.6.0` and later compares each measurement's provenance with the chart reference. The current compatibility policy is:
+
+| Measurement provenance | Chart behavior |
+|---|---|
+| Present and matching | Render normally |
+| Missing from a legacy result | Render normally; preserve as unknown historical provenance rather than inventing a value |
+| Present with an unrecognised future value | Render the measurement with an unverified-reference warning |
+| Present with a recognised value that differs from the chart | Suppress that measurement's point, tooltip, SDS and centile, while retaining the reference curves and showing a strong warning |
+| Mixture of legacy and matching measurements | Render both; the mixture alone is not an error |
+
+The no-warning behavior for legacy-only data has been merged in [component PR #268](https://github.com/rcpch/digital-growth-charts-react-component-library/pull/268) but is newer than the currently published `v7.7.0`. Until a later release includes that change, published component versions may still warn for legacy measurements.
+
+The chart's legacy public prop remains `reference: 'turner'`, while API provenance uses the canonical value `turners-syndrome`. The component normalises this pair only for comparison. Do not rewrite persisted provenance or change the server response to `turner`.
+
+Changing the selected chart reference must invalidate or recompute every dependent measurement. Relabelling an existing result is unsafe because it does not change the LMS calculation that produced the centile or SDS. Cache keys must include the reference, and an older in-flight response must not replace measurements calculated for the newly selected reference.
+
+Applications migrating persisted pre-provenance data should retain those records as legacy data and recalculate from the original source measurement where verified provenance is required. Code examples, fixtures and new persisted records should use genuine provenance returned by the calculation response; tests must not manufacture a matching value merely to make a chart render.
 
 ## Recall-Readiness Check
 
