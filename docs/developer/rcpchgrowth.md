@@ -284,7 +284,7 @@ This latter calculation is done using the SciPy package.
 
 Note that CDC and WHO references outside of the UK context use only linear interpolation.
 
-The CDC BMI calculation has a complexity well described [here](https://www.cdc.gov/growthcharts/extended-bmi-data-files.htm). At higher BMI values (>95th centile) it introduces a new *sigma* value. Sigma is the dispersion parameter used in the calculation of BMI percentiles and z-scores above the 95th percentile (z-score 1.645), and is applied to calculations only for the extended BMI range in the CDC reference.
+The CDC BMI calculation is described in the [CDC extended BMI data documentation](https://www.cdc.gov/growthcharts/extended-bmi-data-files.htm). At higher BMI values (>95th centile) it introduces a new *sigma* value. Sigma is the dispersion parameter used in the calculation of BMI percentiles and z-scores above the 95th percentile (z-score 1.645), and is applied to calculations only for the extended BMI range in the CDC reference.
 <img src="https://latex.codecogs.com/svg.image?BMIZ%3D%5Cfrac%7B(BMI%2FM)%5EL-1%7D%7BL%5Ctimes%20S%7D" alt="BMI Z-score formula">
 <img src="https://latex.codecogs.com/svg.image?BMIPercentile%3D%5CPhi(BMIZ)" alt="BMI percentile formula">
 If the BMI centile is above 95%, a correction is applied:
@@ -313,9 +313,9 @@ There was much discussion about these at project board. Found in ```centile_band
 
 ##### Thresholds
 
-A list of all the reference thresholds can be found [here](https://growth.rcpch.ac.uk/clinician/growth-references/#reference-library).
+A list of all the reference thresholds is available in the [growth-reference library](https://growth.rcpch.ac.uk/clinician/growth-references/#reference-library).
 
-A discussion about suitable cut-offs to distinguish between impossible and unlikely values is well documented [here](https://github.com/rcpch/rcpchgrowth-python/issues/32).
+The rationale for cut-offs that distinguish impossible and unlikely values is documented in [rcpchgrowth-python issue #32](https://github.com/rcpch/rcpchgrowth-python/issues/32).
 
 An RCPCHGrowth base decision that all values should be returned to the user, no matter how improbable. This is because the python package maybe used in research where values of this nature maybe meaningful. In a clinical context however, through review of datasets and the literature (detailed in the issue), a decision was made to set absolute cut-offs for height, weight and head circumference at +/- 8 SDS, while BMI would have cut-offs of +/-15 SDS.
 

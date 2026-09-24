@@ -56,7 +56,7 @@ Given the complexity, we decided to create a React component library for develop
 
 For this reason, we have produced a permissively-licensed, open-source React component, which aims to simplify the process of creating a chart from the chart data received from the API. It makes the job of drawing a vector-graphic centile chart much easier.
 
-If you want to see how the library is implemented, we have built a full client for the RCPCHGrowth API in React, which uses this component library, and can be found [here](https://github.com/rcpch/digital-growth-charts-react-client).
+To see how the library is implemented, review the [Digital Growth Charts React client](https://github.com/rcpch/digital-growth-charts-react-client), which uses this component library.
 
 ### Why use React?
 

@@ -52,15 +52,14 @@ plugins:
   md041:
     enabled: false
 
-  # PyMarkdown 0.9.40 introduced emphasis-style checks. Existing content uses
-  # both valid Markdown styles; standardise it separately rather than coupling
-  # broad prose churn to the dependency update.
+  # Keep emphasis and strong markers consistent across prose and imported legal text.
   md049:
-    enabled: false
+    enabled: true
+    style: asterisk
   md050:
-    enabled: false
+    enabled: true
+    style: asterisk
 
-  # PyMarkdown 0.9.40 also introduced descriptive-link-text. Existing generic
-  # links need editorial review before this can become a blocking rule.
+  # Link labels must identify their destination without relying on surrounding prose.
   md059:
-    enabled: false
+    enabled: true

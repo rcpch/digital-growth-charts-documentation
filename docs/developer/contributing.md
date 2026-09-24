@@ -14,7 +14,7 @@ We're a friendly bunch, and happy to chat. You can get in touch with the primary
 
 - Fork the repository to your own GitHub account.
 
-- Set up your development environment (ideally using our instructions [here](api-python.md) for maximum compatibility with our own development environments).
+- Set up your development environment, ideally using our [Python API development instructions](api-python.md) for maximum compatibility with our own development environments.
 
 - Ideally, you should discuss the proposed change with our team, because we can only accept pull requests with an accepted need for a new feature or fix.
 
