@@ -27,7 +27,7 @@ The `s/` directory contains some simple convenience scripts to speed up and stan
   - `./s/linkcheck` builds the site and fails if Zensical reports an issue.
   - Additional arguments are passed to `zensical build`.
   - `./s/linkcheck --help` shows available options.
-- `s/build-pdf` produces the PDF version of the safety documentation.
+- `s/build-pdf` produces the complete-site and controlled safety-documentation PDFs.
 - `s/docs` is the canonical documentation-preview command and delegates to `s/up`.
   - `./s/docs`
   - `./s/docs -d` (detached)

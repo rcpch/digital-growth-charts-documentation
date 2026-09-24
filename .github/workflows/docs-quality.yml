@@ -30,7 +30,7 @@ jobs:
         run: ./s/check-docs-nav
       - name: Validate links and build
         run: ./s/linkcheck
-      - name: Build safety documentation PDF
+      - name: Build documentation PDFs
         run: ./s/build-pdf
       - name: Audit Python dependencies
         run: ./s/audit

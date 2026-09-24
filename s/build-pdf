@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 #
-# Builds the self-hosted Clinical Safety / Medical Device PDF.
+# Builds the self-hosted complete-site and Clinical Safety / Medical Device PDFs.
 #
 # It builds the site with Zensical, then runs the WeasyPrint exporter
-# (pdf-export/build-safety-pdf.py) against the freshly built HTML, both inside
+# (pdf-export/build-pdfs.py) against the freshly built HTML, both inside
 # the docker compose container so WeasyPrint and its native libraries are
 # available.
 #
-# Output: site/_assets/_pdfs/safety-documentation.pdf
+# Outputs:
+#   site/_assets/_pdfs/digital-growth-charts-documentation.pdf
+#   site/_assets/_pdfs/safety-documentation.pdf
 #
 # The Docker image supplies WeasyPrint and its native libraries.
 
@@ -18,4 +20,4 @@ cd "$REPO_ROOT"
 COMPOSE_FILE="$REPO_ROOT/docker-compose.yml"
 
 exec docker compose -f "$COMPOSE_FILE" --project-directory "$REPO_ROOT" run --rm --build zensical \
-  sh -c "zensical build --clean && python pdf-export/build-safety-pdf.py"
+  sh -c "zensical build --clean && python pdf-export/build-pdfs.py"

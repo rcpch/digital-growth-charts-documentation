@@ -1,5 +1,5 @@
-/* Print stylesheet for the self-hosted Clinical Safety / Medical Device PDF.
- * Used by pdf-export/build-safety-pdf.py via WeasyPrint. Intentionally
+/* Print stylesheet for the self-hosted documentation PDFs.
+ * Used by pdf-export/build-pdfs.py via WeasyPrint. Intentionally
  * standalone (does not depend on the Zensical theme CSS) so the printed
  * document is predictable and self-contained. */
 
@@ -8,7 +8,7 @@
     margin: 20mm 18mm 22mm 18mm;
 
     @top-right {
-        content: "RCPCH Digital Growth Charts - Safety Documentation";
+        content: string(document-header);
         font-family: "Helvetica Neue", Arial, sans-serif;
         font-size: 8pt;
         color: #6b6b6b;
@@ -41,6 +41,15 @@ html {
 
 body {
     margin: 0;
+}
+
+.document-header {
+    string-set: document-header content();
+    position: absolute;
+    height: 0;
+    overflow: hidden;
+    color: transparent;
+    font-size: 0;
 }
 
 /* Each source page starts on a fresh sheet. */
@@ -136,6 +145,33 @@ li {
 
 img {
     max-width: 100%;
+}
+
+/* Zensical renders icon shortcodes as inline SVGs inside `.twemoji`. Its theme
+ * normally supplies these dimensions, but the standalone PDF does not load it. */
+.twemoji,
+.twemoji svg {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+}
+
+.twemoji {
+    vertical-align: -0.125em;
+}
+
+details {
+    display: block;
+}
+
+.tabbed-set > input {
+    display: none;
+}
+
+.print-fallback {
+    border: 1px solid #cfcfcf;
+    padding: 8pt 10pt;
+    background: #fafafa;
 }
 
 /* ---- Tables ---- */

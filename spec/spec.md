@@ -28,7 +28,7 @@ The initial pages should assist users to find the part of the documentation that
 - Clinical Safety: CSMF documents, DTAC assessment, UK medical device registration, technical documentation, downloads.
 - Legal: disclaimer, licensing/copyright, data protection, privacy notice.
 - Technical: security, DSPT evidence, service status.
-- Contact: forum, commercial, and general enquiries.
+- Contact: forum, commercial and general enquiries, and documentation downloads.
 
 ## Core Content Features
 
@@ -43,6 +43,7 @@ The initial pages should assist users to find the part of the documentation that
 - Legal/privacy/data protection documentation emphasizing a stateless API model.
 - Support pathways (forum, commercial support, contact channels).
 - Downloadable safety-documentation PDF containing the controlled clinical-safety and medical-device sections.
+- Downloadable complete-site PDF generated from the published navigation for offline records.
 
 ## Key Assertions the Site Communicates
 
@@ -57,7 +58,7 @@ The initial pages should assist users to find the part of the documentation that
 - Tabbed navigation with expanded sidebar and anchor tracking.
 - Search, code copy/select helpers, and edit/view buttons for GitHub source.
 - Sortable tables and embedded assets (images, PDFs, iframes).
-- Self-hosted safety-documentation PDF generation using WeasyPrint.
+- Self-hosted complete-site and safety-documentation PDF generation using WeasyPrint.
 
 ## LLMs.txt Generation
 
