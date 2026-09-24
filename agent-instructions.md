@@ -17,7 +17,7 @@ This file is the entry point for AI coding agents. Read it before changing anyth
 
 - Treat `docs/safety/`, medical-device records, investigations, legal documents, and QMS configuration as controlled material. Preserve evidence and obtain the CODEOWNER review required by `.github/CODEOWNERS`.
 - Do not introduce or disclose real patient data, credentials, vulnerability details, or private working material.
-- Do not hand-edit generated `site/` output or the generated safety PDF. Edit the Markdown or exporter source and rebuild it.
+- Do not hand-edit generated `site/` output or generated PDFs. Edit the Markdown or exporter source and rebuild them.
 - Keep implementer guidance consistent with the API and calculation-engine repositories. Do not invent clinical behaviour, package versions, regulatory conclusions, or provenance values.
 - Use a descriptive branch and a pull request into `live`. Do not push directly to `live` or bypass its protection unless the repository owner explicitly authorises an exceptional release action.
 
@@ -28,7 +28,7 @@ This file is the entry point for AI coding agents. Read it before changing anyth
 - `./s/spellcheck` - check spelling.
 - `./s/check-docs-nav` - detect missing navigation entries and stale exceptions.
 - `./s/linkcheck` - run a clean strict Zensical build.
-- `./s/build-pdf` - generate the safety documentation PDF.
+- `./s/build-pdf` - generate the complete-site and controlled safety-documentation PDFs.
 - `./s/audit` - resolve and audit the declared Python dependencies for known vulnerabilities.
 
 ## Before Every Commit

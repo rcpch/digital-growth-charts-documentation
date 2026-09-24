@@ -42,9 +42,9 @@ codespell==2.4.3
 # markdown linting
 pymarkdownlnt==0.9.40
 
-# self-hosted PDF export of the Clinical Safety and Medical Device sections
-# (see pdf-export/build-safety-pdf.py and s/build-pdf). Replaces the suspended
-# mkdocs-with-pdf plugin for the safety documentation only. WeasyPrint's native
+# self-hosted complete-site and Clinical Safety / Medical Device PDF exports
+# (see pdf-export/build-pdfs.py and s/build-pdf). Replaces the suspended
+# mkdocs-with-pdf plugin. WeasyPrint's native
 # libraries (libpango etc.) are already installed in the Dockerfile.
 weasyprint==70.0
 beautifulsoup4==4.15.0
