@@ -15,7 +15,7 @@ tags:
 
     If your system stores a centile, SDS, or other calculated result from the Digital Growth Charts API, you are expected to store the complete `provenance` object **unchanged alongside that result and its source measurement**. Do not discard it, shorten its commit hashes, replace it with your configured version, or overwrite it when your software is upgraded.
 
-    This is a clinical-safety and post-market-surveillance requirement. It allows affected results to be found and recalculated if a serious error is ever discovered in a particular calculation-engine or API-server version.
+    This is a clinical-safety and post-market-surveillance requirement, somewhat equivalent to the bar code on a medicine package. It allows us to uniquely identify the exact calculation code that produced a result, so that affected results can be found and recalculated if a serious error is ever discovered in a particular calculation-engine or API-server version.
 
 ## What The API Returns
 
