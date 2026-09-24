@@ -15,11 +15,11 @@ There are as many ways to make an API call as there are software developers, but
 
 ## cURL
 
-`cURL` is a very simple and common tool for making web requests from the command line (also known as the 'terminal' or 'command prompt'). Official documentation for cURL can be found [here](https://everything.curl.dev).
+`cURL` is a very simple and common tool for making web requests from the command line (also known as the 'terminal' or 'command prompt'). See the official [cURL documentation](https://everything.curl.dev).
 
 ### Installing cURL
 
-Download cURL [here](https://curl.se/download.html). Scroll to the correction download for your Operating System.
+Download cURL from the [official cURL downloads page](https://curl.se/download.html). Scroll to the correct download for your operating system.
 
 !!! tip "Windows download, install, and usage"
 
@@ -172,7 +172,7 @@ curl --location --request POST 'https://api.rcpch.ac.uk/growth/v1/uk-who/calcula
 
 ## Postman :simple-postman:
 
-Postman is a tool for API development. The RCPCH team used Postman extensively during the API development and testing process. Download Postman [here](https://learning.postman.com/docs/getting-started/installation-and-updates/).
+Postman is a tool for API development. The RCPCH team used Postman extensively during the API development and testing process. Follow the [Postman installation instructions](https://learning.postman.com/docs/getting-started/installation-and-updates/).
 
 We have produced a set of Postman Collections and Environments which can help you explore the dGC API.
 
@@ -182,4 +182,4 @@ We have produced a set of Postman Collections and Environments which can help yo
 
 As we've specified our API documentation in the openAPI3 (formerly known as 'Swagger') format, we can auto-generate API documentation.
 
-The Swagger API reference is [here](api-reference.md).
+Open the [Swagger API reference](api-reference.md).

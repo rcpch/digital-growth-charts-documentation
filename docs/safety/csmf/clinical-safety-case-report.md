@@ -104,17 +104,17 @@ The residual risk is rated **Level 1 - Acceptable**. No further risk control mea
 
 ---
 
-### Hazard: Wrong data is _entered into_ the Digital Growth Chart API
+### Hazard: Wrong data is *entered into* the Digital Growth Chart API
 
 <https://github.com/rcpch/digital-growth-charts-documentation/issues/48>
 
 #### Description of initial Risk and mitigation steps
 
-Incorrect data could be sent to the API, which would cause the API to return incorrect results, with the potential for an aberrant clinical decision to be made on the basis of those results. The possible causes all originate _outside_ of the API — for example a client user-interface error that allows the wrong data to be entered, a poor UI design that makes common errors difficult to spot, or an internal client data-transfer error that sends incorrect data to the API _despite_ correct data being entered in the UI.
+Incorrect data could be sent to the API, which would cause the API to return incorrect results, with the potential for an aberrant clinical decision to be made on the basis of those results. The possible causes all originate *outside* of the API — for example a client user-interface error that allows the wrong data to be entered, a poor UI design that makes common errors difficult to spot, or an internal client data-transfer error that sends incorrect data to the API *despite* correct data being entered in the UI.
 
 The RCPCH does **not** control the client software which uses the API. All dGC client software is **itself** subject to NHS Clinical Safety standards (DCB0160), and this risk must also be considered within the implementer's **own** Hazard Log and Clinical Safety Case.
 
-As with most of the Growth Chart Hazards, the potential harm is that a child either does not receive intervention when it _should_, or receives inappropriate intervention when it _should not_. In both these scenarios, our Project Board of clinical paediatrics and growth experts agreed that the absolute risk of directly attributable harm to a child is rather low, because of the multiple clinical practice safeguards that exist whether the growth chart is paper, PDF or digital. Because growth is slow, decisions about monitoring and intervention are usually based on multiple measurements over a period of time, with constant 'clinical correlation' between the chart findings and the presentation and appearance of the patient. A single erroneous reading is therefore unlikely to result in an incorrect clinical decision; indeed, a single outlying point that is at odds with the preceding trend itself alerts clinical suspicion, so the chart plot is part of the long-established clinical error-rejection mechanism that predates digital charting and APIs.
+As with most of the Growth Chart Hazards, the potential harm is that a child either does not receive intervention when it *should*, or receives inappropriate intervention when it *should not*. In both these scenarios, our Project Board of clinical paediatrics and growth experts agreed that the absolute risk of directly attributable harm to a child is rather low, because of the multiple clinical practice safeguards that exist whether the growth chart is paper, PDF or digital. Because growth is slow, decisions about monitoring and intervention are usually based on multiple measurements over a period of time, with constant 'clinical correlation' between the chart findings and the presentation and appearance of the patient. A single erroneous reading is therefore unlikely to result in an incorrect clinical decision; indeed, a single outlying point that is at odds with the preceding trend itself alerts clinical suspicion, so the chart plot is part of the long-established clinical error-rejection mechanism that predates digital charting and APIs.
 
 #### Severity
 
@@ -169,7 +169,7 @@ The residual risk is rated **Level 1 - Acceptable**. The combination of technica
 
 ---
 
-### Hazard: Incorrect centile data is _returned by_ the API
+### Hazard: Incorrect centile data is *returned by* the API
 
 <https://github.com/rcpch/digital-growth-charts-documentation/issues/49>
 
@@ -179,7 +179,7 @@ The API could return incorrect centile data, presenting the user with an incorre
 
 Prior to deployment of the Digital Growth Charts, significant 'static' software testing was performed, to ensure that the complex statistical calculations returned by the API had been confirmed to have a very high degree of conformity to previous statistical Centile calculation engines, across a synthetic 'test harness' of approximately 4000 children's data. It is worth noting that the agreement between the systems was to 4 decimal places, the small variation between these is accounted for by the fact that statistics uses complex modelling of curves and interpolation, so it is impossible to get perfect alignment between two systems written in different languages (in this case, R and Python).
 
-This testing process was supervised directly by Prof Tim Cole, a distinguished UK Child Health statistician and the originator of using the LMS Method for centile charts. The degree of error in calculation was deemed to be clinically insignificant, representing around _one-ten-thousandth_ of a Centile percentage point, in a clinical measurement context in which significant variations are found simply in the measurement technique itself (for example weighing and measuring a moving baby).
+This testing process was supervised directly by Prof Tim Cole, a distinguished UK Child Health statistician and the originator of using the LMS Method for centile charts. The degree of error in calculation was deemed to be clinically insignificant, representing around *one-ten-thousandth* of a Centile percentage point, in a clinical measurement context in which significant variations are found simply in the measurement technique itself (for example weighing and measuring a moving baby).
 
 End-to-end testing of the platform was also manually performed to 'spot check' that the data entered for a generated synthetic child was corroborated against analogue calculations of centile values.
 

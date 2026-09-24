@@ -50,45 +50,45 @@ The manufacturer will need to determine which apply to their software by reviewi
 
 **13.3** The label must bear the following particulars. For this software device the "label" comprises the identifying information presented in this documentation and in the API/service metadata; particulars that concern physical product attributes are recorded as not applicable.
 
-**(a)** the name or trade name and address of the manufacturer — _applies._ The manufacturer is the RCPCH, identified in this documentation.
+**(a)** the name or trade name and address of the manufacturer — *applies.* The manufacturer is the RCPCH, identified in this documentation.
 
-**(b)** the details strictly necessary to identify the device and the contents of the packaging, especially for the users — _applies._ The device is identified as the RCPCH Digital Growth Charts Platform, with the specific software version exposed through the API and its OpenAPI specification.
+**(b)** the details strictly necessary to identify the device and the contents of the packaging, especially for the users — *applies.* The device is identified as the RCPCH Digital Growth Charts Platform, with the specific software version exposed through the API and its OpenAPI specification.
 
-**(c)** where appropriate, the word 'STERILE' — _not applicable to software._
+**(c)** where appropriate, the word 'STERILE' — *not applicable to software.*
 
-**(d)** where appropriate, the batch code (preceded by 'LOT') or the serial number — _not applicable in the physical sense; the software version identifier provides the equivalent traceability._
+**(d)** where appropriate, the batch code (preceded by 'LOT') or the serial number — *not applicable in the physical sense; the software version identifier provides the equivalent traceability.*
 
-**(e)** where appropriate, an indication of the date by which the device should be used safely, expressed as the year and month — _not applicable to software._
+**(e)** where appropriate, an indication of the date by which the device should be used safely, expressed as the year and month — *not applicable to software.*
 
-**(f)** where appropriate, an indication that the device is for single use — _not applicable to software._
+**(f)** where appropriate, an indication that the device is for single use — *not applicable to software.*
 
-**(g)** if the device is custom-made, the words 'custom-made device' — _not applicable._
+**(g)** if the device is custom-made, the words 'custom-made device' — *not applicable.*
 
-**(h)** if the device is intended for clinical investigations, the words 'exclusively for clinical investigations' — _not applicable._
+**(h)** if the device is intended for clinical investigations, the words 'exclusively for clinical investigations' — *not applicable.*
 
-**(i)** any special storage and/or handling conditions — _not applicable to software._
+**(i)** any special storage and/or handling conditions — *not applicable to software.*
 
-**(j)** any special operating instructions — _applies._ Provided in this documentation, which constitutes the Instructions for Use.
+**(j)** any special operating instructions — *applies.* Provided in this documentation, which constitutes the Instructions for Use.
 
-**(k)** any warnings and/or precautions to take — _applies._ Provided in the [Intended Use](../csmf/clinical-safety-case-report.md#intended-use) section, the associated disclaimer, and throughout this documentation.
+**(k)** any warnings and/or precautions to take — *applies.* Provided in the [Intended Use](../csmf/clinical-safety-case-report.md#intended-use) section, the associated disclaimer, and throughout this documentation.
 
-**(l)** the year of manufacture for active devices (this indication may be included in the version or release identifier) — _applies via the release and version history recorded in the change-control system._
+**(l)** the year of manufacture for active devices (this indication may be included in the version or release identifier) — *applies via the release and version history recorded in the change-control system.*
 
-**(m)** where applicable, the method of sterilisation — _not applicable to software._
+**(m)** where applicable, the method of sterilisation — *not applicable to software.*
 
-**(n)** where the device incorporates, as an integral part, a medicinal substance or a human blood derivative, the relevant statement — _not applicable._
+**(n)** where the device incorporates, as an integral part, a medicinal substance or a human blood derivative, the relevant statement — *not applicable.*
 
 **13.6** Where appropriate, the instructions for use must contain the following particulars. For this software device the documentation site constitutes the instructions for use. Only the particulars relevant to a software device with a measuring function are reproduced below.
 
-**(a)** the details referred to in Section 13.3 (other than those, such as the batch code, that relate only to a physical label) — _applies;_ provided through this documentation.
+**(a)** the details referred to in Section 13.3 (other than those, such as the batch code, that relate only to a physical label) — *applies;* provided through this documentation.
 
-**(b)** the performances referred to in Section 3 and any undesirable side-effects — _applies;_ the intended performance is the calculation and display of growth-related parameters, as described in the System Definition and Intended Use sections of the [Clinical Safety Case Report](../csmf/clinical-safety-case-report.md).
+**(b)** the performances referred to in Section 3 and any undesirable side-effects — *applies;* the intended performance is the calculation and display of growth-related parameters, as described in the System Definition and Intended Use sections of the [Clinical Safety Case Report](../csmf/clinical-safety-case-report.md).
 
-**(c)** if the device must be installed with or connected to other medical devices or equipment in order to operate as required for its intended purpose, sufficient details of its characteristics to identify the correct devices or equipment to use in order to obtain a safe combination — _applies;_ the platform is intended to be integrated within host systems (EPRs, EHRs and PHRs), and integration guidance is provided in the implementer documentation.
+**(c)** if the device must be installed with or connected to other medical devices or equipment in order to operate as required for its intended purpose, sufficient details of its characteristics to identify the correct devices or equipment to use in order to obtain a safe combination — *applies;* the platform is intended to be integrated within host systems (EPRs, EHRs and PHRs), and integration guidance is provided in the implementer documentation.
 
-**(d)** all the information needed to verify whether the device is properly installed and can operate correctly and safely, plus details of the nature and frequency of the maintenance and calibration needed to ensure that the devices operate properly and safely at all times — _applies;_ covered by the implementer and API documentation.
+**(d)** all the information needed to verify whether the device is properly installed and can operate correctly and safely, plus details of the nature and frequency of the maintenance and calibration needed to ensure that the devices operate properly and safely at all times — *applies;* covered by the implementer and API documentation.
 
-**(q)** the degree of accuracy claimed for devices with a measuring function — _applies;_ the platform has a measuring function. Arithmetic accuracy for a selected growth reference is evidenced by static validation of the calculation engine against a synthetic test harness of approximately 4000 children's data, supervised by Prof Tim Cole, as described in the [Clinical Safety Case Report](../csmf/clinical-safety-case-report.md) (hazard "Incorrect centile data is _returned by_ the API"). That harness does not establish that the same intended reference is selected throughout an integrating system; separate [growth-reference provenance controls](https://github.com/rcpch/digital-growth-charts-documentation/blob/live/spec/growth-reference-provenance-contract.md) verify identity through calculation, API serialization and chart presentation.
+**(q)** the degree of accuracy claimed for devices with a measuring function — *applies;* the platform has a measuring function. Arithmetic accuracy for a selected growth reference is evidenced by static validation of the calculation engine against a synthetic test harness of approximately 4000 children's data, supervised by Prof Tim Cole, as described in the [Clinical Safety Case Report](../csmf/clinical-safety-case-report.md) (hazard "Incorrect centile data is *returned by* the API"). That harness does not establish that the same intended reference is selected throughout an integrating system; separate [growth-reference provenance controls](https://github.com/rcpch/digital-growth-charts-documentation/blob/live/spec/growth-reference-provenance-contract.md) verify identity through calculation, API serialization and chart presentation.
 
 The intervening particulars (e)–(p), which concern matters such as implantation, reuse, sterile packaging, radiation emission, and incorporated medicinal or animal-derived substances, are not applicable to this software device.
 

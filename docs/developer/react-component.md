@@ -15,7 +15,7 @@ npm i --save @rcpch/digital-growth-charts-react-component-library
 
 ### Circular import errors
 
-Victory Charts are a dependency (see below), built on top of D3.js. On build, it is likely you will get an error relating to circular dependencies for some files in the d3-interpolate module. This issue is logged [here](https://github.com/d3/d3-interpolate/issues/58).
+Victory Charts are a dependency (see below), built on top of D3.js. On build, it is likely you will get an error relating to circular dependencies for some files in the d3-interpolate module. This issue is recorded in [d3-interpolate issue #58](https://github.com/d3/d3-interpolate/issues/58).
 
 ### Build error
 
@@ -58,7 +58,7 @@ To support this, a [Theme Builder](../integrator/chart-component-storybook.md) i
 
 Colleagues in health care environments are often not easily able to use React. A further option offered is to import React, React-Dom and the RCPCH Digital Growth Charts React Component Library in the head tag from a CDN.
 
-This is addressed [here](https://growth.rcpch.ac.uk/integrator/using-the-chart-component/#what-if-i-cant-use-react)
+This is addressed in the [chart component integration guidance](https://growth.rcpch.ac.uk/integrator/using-the-chart-component/#what-if-i-cant-use-react).
 
 ### Mid-Parental Height
 

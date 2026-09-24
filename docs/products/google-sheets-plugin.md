@@ -85,15 +85,15 @@ UK_WHO_SDS_CENTILE (
 
 | <div style="width: 200px"> Parameter name </div> | Details                                                                                                                                                                                                                                                                     |
 | ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `birth_date`                                     | _(datetime)_: the child's birth date (DD-MM-YYYY format)                                                                                                                                                                                                                    |
-| `observation_date`                               | _(datetime)_: the date when the observation was taken (DD-MM-YYYY format)                                                                                                                                                                                                   |
-| `gestation_weeks`                                | _(integer)_: the child's number of gestational weeks                                                                                                                                                                                                                        |
-| `gestation_days`                                 | _(integer)_: the child's number of gestational days                                                                                                                                                                                                                         |
-| `sex`                                            | _(string)_: the child's sex; must be one of `male`, `female`                                                                                                                                                                                                                |
-| `measurement_method`                             | _(string)_: the measurement method used; must be one of `height`,`weight`,`ofc`, `bmi`                                                                                                                                                                                      |
-| `observation_value`                              | _(number)_: the measured value of the chosen observation                                                                                                                                                                                                                    |
-| `data_to_return`                                 | _(string)_ _OPTIONAL_: specifies the desired calculations to return; default `both` (used if no value specified) returns in the following order: chronological SDS -> corrected SDS -> chronological centile -> corrected centile; must be one of `both`, `centiles`, `sds` |
-| `primary_api_key`                                | _(string)_: your `primary_api_key`. Please see [Getting Started integrating Digital Growth Charts](../integrator/getting-started.md) for details on acquiring your API key                                                                                                  |
+| `birth_date`                                     | *(datetime)*: the child's birth date (DD-MM-YYYY format)                                                                                                                                                                                                                    |
+| `observation_date`                               | *(datetime)*: the date when the observation was taken (DD-MM-YYYY format)                                                                                                                                                                                                   |
+| `gestation_weeks`                                | *(integer)*: the child's number of gestational weeks                                                                                                                                                                                                                        |
+| `gestation_days`                                 | *(integer)*: the child's number of gestational days                                                                                                                                                                                                                         |
+| `sex`                                            | *(string)*: the child's sex; must be one of `male`, `female`                                                                                                                                                                                                                |
+| `measurement_method`                             | *(string)*: the measurement method used; must be one of `height`,`weight`,`ofc`, `bmi`                                                                                                                                                                                      |
+| `observation_value`                              | *(number)*: the measured value of the chosen observation                                                                                                                                                                                                                    |
+| `data_to_return`                                 | *(string)* *OPTIONAL*: specifies the desired calculations to return; default `both` (used if no value specified) returns in the following order: chronological SDS -> corrected SDS -> chronological centile -> corrected centile; must be one of `both`, `centiles`, `sds` |
+| `primary_api_key`                                | *(string)*: your `primary_api_key`. Please see [Getting Started integrating Digital Growth Charts](../integrator/getting-started.md) for details on acquiring your API key                                                                                                  |
 
 #### Output
 
@@ -136,15 +136,15 @@ UK_WHO_CORRECTED_DECIMAL_AGE (
 
 | <div style="width: 200px"> Parameter name </div> | Details                                                                                                                                                                                                                                                                     |
 | ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `birth_date` | _(datetime)_: the child's birth date (DD-MM-YYYY format) |
-| `observation_date` | _(datetime)_: the date when the observation was taken (DD-MM-YYYY format) |
-| `gestation_weeks` | _(integer)_: the child's number of gestational weeks |
-| `gestation_days` | _(integer)_: the child's number of gestational days |
-| `sex` | _(string)_: the child's sex; must be one of `male`, `female` |
-| `measurement_method` | _(string)_: the measurement method used; must be one of `height`,`weight`,`ofc`, `bmi` |
-| `observation_value` | _(number)_: the measured value of the chosen observation |
-| `data_to_return` | _(string)_ _OPTIONAL_: specifies the desired calculations to return; default `both` (used if no value specified) returns in the following order: chronological SDS -> corrected SDS -> chronological centile -> corrected centile; must be one of `both`, `centiles`, `sds` |
-| `primary_api_key` | _(string)_: your `primary_api_key`. Please see [Getting Started integrating Digital Growth Charts](../integrator/getting-started.md) for details on acquiring your API key |
+| `birth_date` | *(datetime)*: the child's birth date (DD-MM-YYYY format) |
+| `observation_date` | *(datetime)*: the date when the observation was taken (DD-MM-YYYY format) |
+| `gestation_weeks` | *(integer)*: the child's number of gestational weeks |
+| `gestation_days` | *(integer)*: the child's number of gestational days |
+| `sex` | *(string)*: the child's sex; must be one of `male`, `female` |
+| `measurement_method` | *(string)*: the measurement method used; must be one of `height`,`weight`,`ofc`, `bmi` |
+| `observation_value` | *(number)*: the measured value of the chosen observation |
+| `data_to_return` | *(string)* *OPTIONAL*: specifies the desired calculations to return; default `both` (used if no value specified) returns in the following order: chronological SDS -> corrected SDS -> chronological centile -> corrected centile; must be one of `both`, `centiles`, `sds` |
+| `primary_api_key` | *(string)*: your `primary_api_key`. Please see [Getting Started integrating Digital Growth Charts](../integrator/getting-started.md) for details on acquiring your API key |
 
 #### Output
 

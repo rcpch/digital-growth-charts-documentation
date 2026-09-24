@@ -27,22 +27,22 @@ Our entire codebase is open for inspection by other specialists, in a manner sim
 
 ### DCB0129 and DCB0160 Compliance
 
-We comply with the requirements of DCB0129 and DCB0160, and for details you can go [here](../safety/csmf/clinical-risk-mgmt-system.md) to review our entire Clinical Safety Management File.
+We comply with the requirements of DCB0129 and DCB0160. Review the complete [Clinical Safety Management File](../safety/csmf/clinical-risk-mgmt-system.md) for details.
 
 ### Hazard Logs
 
-Our Hazard Logs are managed on GitHub in the open. Details of how this works are [here](../safety/csmf/hazard-log.md).
+Our Hazard Logs are managed on GitHub in the open, as described in the [Hazard Log guidance](../safety/csmf/hazard-log.md).
 
 ### Project Board
 
-The members of the Project Board, a clinical expert group who oversee and advise on the clinical aspects of the development and ongoing maintenance and operation of the dGC Platform, are listed [here](../about/team.md)
+The [project team page](../about/team.md) lists the members of the Project Board, a clinical expert group who oversee and advise on the clinical aspects of the development and ongoing maintenance and operation of the dGC Platform.
 
-The Project Board decided on all changes to the **nature** of Growth Charts which came into effect during the dGC project - such as the application of Gestational Age Correction _throughout_ the chart (instead of stopping at either 1 or 2 years of age, depending on the degree of prematurity, as was previously the case), and the abolition of the use of the averaged Term reference between 37 and 42 weeks.
+The Project Board decided on all changes to the **nature** of Growth Charts which came into effect during the dGC project - such as the application of Gestational Age Correction *throughout* the chart (instead of stopping at either 1 or 2 years of age, depending on the degree of prematurity, as was previously the case), and the abolition of the use of the averaged Term reference between 37 and 42 weeks.
 
 ### Digital Technology Assessment Criteria (DTAC)
 
-- DTAC is a UK(England)-only grouping of assessment criteria. It is relatively new, and aims to simply bring together and harmonise _existing_ assessment criteria for digital technologies. More information is available on [the NHSX website](https://www.nhsx.nhs.uk/key-tools-and-info/digital-technology-assessment-criteria-dtac/)
+- DTAC is a UK(England)-only grouping of assessment criteria. It is relatively new, and aims to simply bring together and harmonise *existing* assessment criteria for digital technologies. More information is available on [the NHSX website](https://www.nhsx.nhs.uk/key-tools-and-info/digital-technology-assessment-criteria-dtac/)
 
 - DTAC incorporates the DCB0129 and DCB0160 standards for clinical safety, which the RCPCH dGC platform is compliant with.
 
-More information on our DTAC compliance is [here](../safety/dtac.md)
+Read the [Digital Technology Assessment Criteria record](../safety/dtac.md) for more information on our DTAC compliance.

@@ -28,4 +28,4 @@ tags:
 
 ## Getting Started with integrating our API
 
-If you want to integrate the RCPCH Digital Growth Charts API into an application, then start [here](../integrator/getting-started.md).
+To integrate the RCPCH Digital Growth Charts API into an application, start with the [integration guide](../integrator/getting-started.md).
