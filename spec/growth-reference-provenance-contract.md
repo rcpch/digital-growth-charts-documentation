@@ -73,7 +73,7 @@ The chart component's public interface (`RCPCHChartProps`, chart prop names) mus
 | Provenance state | Rendering |
 |---|---|
 | Present and matches chart reference | Render normally |
-| Missing (legacy/persisted data) | Render normally, permanently visible "unverified legacy data" warning (not dismissible) |
+| Missing (legacy/persisted data) | Render normally, no warning of its own - a chart viewer cannot act on a permanent warning about it; still included in the technical details of a warning shown for another reason (see [rcpch/digital-growth-charts-react-component-library#217](https://github.com/rcpch/digital-growth-charts-react-component-library/issues/217#issuecomment-5582600992)) |
 | Present but unknown value | Render with "unverified reference" warning (not suppressed - suppression is reserved for a confirmed mismatch) |
 | Present and mismatched vs. chart reference | The one case that can be distinguished with certainty from legacy data: suppress only that measurement's points/tooltip/SDS/centile; reference curves still render; permanent strong warning |
 | Mixed legacy + matching data in one chart | Both render; the mixture itself is not an error |
