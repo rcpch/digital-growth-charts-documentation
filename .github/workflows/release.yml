@@ -88,13 +88,17 @@ jobs:
       - name: Install WeasyPrint system libraries
         run: sudo apt-get update && sudo apt-get install -y libpango-1.0-0 libpangoft2-1.0-0
 
-      - name: Build site and safety documentation PDF
+      - name: Build site and documentation PDFs
         run: |
           zensical build --clean --strict
-          python pdf-export/build-safety-pdf.py
+          python pdf-export/build-pdfs.py
 
-      - name: Upload PDF to Release
+      - name: Upload PDFs to Release
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ inputs.tag || github.ref_name }}
-        run: gh release upload "$TAG" site/_assets/_pdfs/safety-documentation.pdf --clobber
+        run: |
+          gh release upload "$TAG" \
+            site/_assets/_pdfs/safety-documentation.pdf \
+            site/_assets/_pdfs/digital-growth-charts-documentation.pdf \
+            --clobber

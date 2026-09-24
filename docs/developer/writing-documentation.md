@@ -76,7 +76,7 @@ For all platforms we recommend using the `docker compose` setup, which will run 
 
 ### Suspended Plugins
 
-Zensical does not yet support the previously used `git-committers` and `mkdocs-with-pdf` plugins. Their configuration remains commented out with links to the relevant upstream issues. The repository's supported PDF path is the self-hosted WeasyPrint exporter invoked by `./s/build-pdf`.
+Zensical does not yet support the previously used `git-committers` and `mkdocs-with-pdf` plugins. Their configuration remains commented out with links to the relevant upstream issues. The repository's supported PDF path is the self-hosted WeasyPrint exporter invoked by `./s/build-pdf`, which generates both the complete-site and controlled safety-documentation PDFs.
 
 ```console
 ./s/build-pdf

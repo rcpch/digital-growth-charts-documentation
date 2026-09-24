@@ -13,7 +13,7 @@
 /docs/safety/                       @pacharanero
 /docs/legal/                        @pacharanero
 
-# Toolchain used to build the controlled safety-documentation PDF
+# Toolchain used to build the complete-site and controlled safety-documentation PDFs
 /pdf-export/                        @pacharanero
 /s/build-pdf                        @pacharanero
 /Dockerfile                         @pacharanero
