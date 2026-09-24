@@ -59,8 +59,12 @@ A **serious incident** — any malfunction or inadequacy that has led, or could 
 
 ## Surveillance summary to date
 
-!!! success "No reported inaccuracies to date"
-    As at the date of the most recent commit to this document, there have been **no reports of inaccuracy, nor of any mathematical or methodological error**, in the growth-chart calculations produced by the RCPCH dGC Platform. The continuous static test harness has likewise reported no calculation regressions.
+!!! info "Reference-mismatch report and response"
+    A reported chart displayed female Trisomy 21 curves while its tooltip temporarily showed a result calculated against UK-WHO. The [technical investigation](../investigations/trisomy-21-reference-mismatch-report.md) reproduced both calculations and confirmed that each reference's LMS arithmetic was correct; the available evidence did not identify whether the mismatch originated in the host application, middleware, caching, asynchronous state or chart component. No adverse clinical decision was reported.
+
+The signal is recorded as [hazard #174](https://github.com/rcpch/digital-growth-charts-documentation/issues/174). The resulting action added immutable growth-reference and build provenance to calculation results, passed it through the API, and added chart-level handling for matching, legacy, unknown, mismatched and mixed data. The [growth-reference provenance contract](https://github.com/rcpch/digital-growth-charts-documentation/blob/live/spec/growth-reference-provenance-contract.md) records implementation PRs, release versions, automated evidence and remaining verification gaps. This is a reference-selection and presentation-consistency control, not a correction to LMS arithmetic.
+
+There have otherwise been no reports of methodological or mathematical error in the growth-chart calculations, and the continuous static test harness has reported no calculation regressions. Hazard #174 remains open for Clinical Safety Officer review and residual-risk assessment; the presence of merged controls does not by itself justify reducing its risk classification.
 
 This summary stands as the Platform's current periodic safety position. A consolidated periodic safety review will be produced at least annually as part of, or alongside, the management review, summarising surveillance data, conclusions on safety and performance, and any resulting actions.
 

@@ -39,7 +39,7 @@ The Platform's contribution is to make these references available **digitally an
 The clinical evidence for the Platform comes from four complementary sources:
 
 1. **Validity of the underlying references** — the references are themselves published, peer-reviewed clinical standards in routine national use; their clinical validity is established independently of this Platform.
-2. **Computational verification** — evidence that the software returns the values the references define (the test harness).
+2. **Computational and integration verification** — evidence that the software returns the values a selected reference defines (the test harness), plus separate provenance controls that verify consistent reference identity through calculation, serialization and presentation.
 3. **Expert clinical oversight** — governance of the choice and application of references by a standing expert clinical body.
 4. **Post-market experience** — real-world use and feedback (see [Post-Market Surveillance](pms-plan.md)).
 
@@ -48,6 +48,8 @@ The clinical evidence for the Platform comes from four complementary sources:
 ### 5.1 Computational fidelity — the static test harness
 
 The single most important piece of evidence is the **~4000-child static test harness**. Because the LMS calculation is deterministic, a fixed dataset of children with known expected outputs provides **mathematically reproducible** proof that the API returns the correct centile/SDS for each case. The harness runs in continuous integration, so any regression introduced by a code or dependency change is detected before release. This provides a level of objective, repeatable accuracy evidence that is difficult to achieve for many other classes of medical software (see [Software Lifecycle](software-lifecycle.md#verification-and-validation-summary)).
+
+The harness verifies arithmetic after a growth reference has been selected; it does not prove that a host application, cache, API response and chart all used the same intended reference. Following the reference-mismatch report recorded under [hazard #174](https://github.com/rcpch/digital-growth-charts-documentation/issues/174), every new calculation result carries reference provenance, the API preserves it, and the chart component compares it with the displayed chart reference. The [provenance contract](https://github.com/rcpch/digital-growth-charts-documentation/blob/live/spec/growth-reference-provenance-contract.md) records the released versions, automated verification and remaining evidence gaps.
 
 ### 5.2 Statistical and clinical validation
 
@@ -63,7 +65,7 @@ The entire codebase, including the calculation library, is open source. This ena
 
 ### 5.5 Post-market experience
 
-To date there have been **no reports of inaccuracy or of methodological or mathematical error** in the growth chart calculations. Feedback channels and the surveillance approach are described in the [Post-Market Surveillance](pms-plan.md) plan.
+There have been no reports of methodological or mathematical error in the underlying LMS calculations. One report showed a presentation mismatch: Trisomy 21 curves were displayed with a tooltip value calculated against UK-WHO. The investigation found correct arithmetic for each reference but could not assign the originating integration or state defect without raw request evidence. The report, hazard and resulting provenance controls are recorded in [Post-Market Surveillance](pms-plan.md).
 
 ## 6. Benefit–risk assessment
 

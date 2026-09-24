@@ -63,7 +63,7 @@ Clinical-safety activities are undertaken by competent staff (see the [Clinical 
 - No unmitigated high or unacceptable risks in the [Hazard Log](csmf/hazard-log.md) at any release.
 - All serious incidents assessed for MHRA reportability and reported within required timelines.
 - Management review and internal audit each conducted at least annually.
-- Calculation accuracy continuously evidenced by the static test harness, with zero unresolved calculation regressions at release.
+- Calculation accuracy continuously evidenced by the static test harness, with zero unresolved calculation regressions at release; separate integration controls must verify correct reference selection and consistent use of that reference through calculation, serialization and presentation.
 
 ## Document and record control
 
