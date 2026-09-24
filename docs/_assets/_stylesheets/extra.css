@@ -117,8 +117,8 @@
 .md-tabs__link[href$="/tags/"]::before {
   content: "";
   display: inline-block;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1rem;
+  height: 1rem;
   background-color: currentcolor;
   -webkit-mask: var(--rcpch-nav-tag-icon) center / contain no-repeat;
   mask: var(--rcpch-nav-tag-icon) center / contain no-repeat;
