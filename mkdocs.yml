@@ -112,6 +112,7 @@ nav:
   - Contact:
       - Contact: "contact/contact.md"
       - Downloads: "contact/downloads.md"
+  - Browse by tag: "tags.md"
 
 # `not_in_nav` will prevent annoying warnings in the server output like:
 #'The following pages exist in the docs directory, but are not included in the "nav" configuration:' warnings
@@ -151,11 +152,16 @@ theme:
     text: Montserrat
     code: Roboto Mono
 
+  icon:
+    tag:
+      default: fontawesome/solid/tag
+
   favicon: _assets/_images/dynamic-child-favicon.png
   logo: _assets/_images/rcpch_logo.png
 
 plugins:
   - search
+  - tags
   # Plugins below are suspended pending Zensical module system support.
   # Re-enable each once the corresponding Zensical issue is resolved.
   #

@@ -106,6 +106,25 @@
   font-weight: 600;
 }
 
+/* Keep the final tag-index tab compact while retaining its accessible label. */
+.md-tabs__link[href$="/tags/"] {
+  /* Font Awesome Free 7.3.1 `tag`, licensed CC BY 4.0. */
+  --rcpch-nav-tag-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M32.5 96v149.5c0 17 6.7 33.3 18.7 45.3l192 192c25 25 65.5 25 90.5 0l149.5-149.5c25-25 25-65.5 0-90.5l-192-192C279.2 38.7 263 32 246 32H96.5c-35.3 0-64 28.7-64 64m112 16a32 32 0 1 1 0 64 32 32 0 1 1 0-64'/%3E%3C/svg%3E");
+
+  font-size: 0;
+}
+
+.md-tabs__link[href$="/tags/"]::before {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-color: currentcolor;
+  -webkit-mask: var(--rcpch-nav-tag-icon) center / contain no-repeat;
+  mask: var(--rcpch-nav-tag-icon) center / contain no-repeat;
+  vertical-align: middle;
+}
+
 /* enlarges the logo image */
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg {
