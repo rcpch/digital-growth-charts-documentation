@@ -21,6 +21,14 @@ This file is the entry point for AI coding agents. Read it before changing anyth
 - Keep implementer guidance consistent with the API and calculation-engine repositories. Do not invent clinical behaviour, package versions, regulatory conclusions, or provenance values.
 - Use a descriptive branch and a pull request into `live`. Do not push directly to `live` or bypass its protection unless the repository owner explicitly authorises an exceptional release action.
 
+## Cross-Repository Impact
+
+The documentation repository is the final layer in the product chain: `rcpchgrowth-python` (calculations) → `digital-growth-charts-server` (API) → `digital-growth-charts-react-component-library` (charts) → `digital-growth-charts-react-client` (demo) → **this repository** (integration, safety, compatibility and release documentation). Use the [Five-Repository Upgrade Runbook](https://growth.rcpch.ac.uk/developer/five-repository-upgrade-runbook/) for coordinated upgrades.
+
+- Documentation about calculations, supported ages, errors, API fields, provenance, chart props, rendered behavior or version support must be checked against the owning repository and exact released/candidate version. Do not invent behavior or describe a candidate as production.
+- For an upgrade, keep compatibility and migration guidance synchronized with the versions actually tested across the Python, API, component and demo layers. Record affected repositories and candidates in the upgrade record; mark non-applicable layers explicitly.
+- After docs changes, run this repository's documented lint, navigation, link/build and artifact checks as applicable. A successful documentation build does not establish that the described runtime contract is current.
+
 ## Workflow
 
 - `./s/docs` - build and serve the site through Docker Compose, then open it locally.
