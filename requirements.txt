@@ -1,7 +1,7 @@
 # Requirements for the dGC documentation
 
 # Zensical theme
-zensical==0.0.69
+zensical==0.0.71
 
 # for the feature which displays authors at the bottom of the page
 # NOTE FOR FUTURE (added 2026.03.05): Zensical does not support this plugin
@@ -40,7 +40,7 @@ zensical==0.0.69
 codespell==2.4.3
 
 # markdown linting
-pymarkdownlnt==0.9.40
+pymarkdownlnt==0.9.41
 
 # self-hosted complete-site and Clinical Safety / Medical Device PDF exports
 # (see pdf-export/build-pdfs.py and s/build-pdf). Replaces the suspended
