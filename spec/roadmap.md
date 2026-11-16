@@ -2,7 +2,7 @@
 
 This roadmap records only outstanding or partially completed work. Completed work is preserved in Git history and the linked issues and pull requests rather than retained as a growing checklist here.
 
-Last reviewed: 2026-09-24
+Last reviewed: 2026-10-13
 
 Legend: [~] in progress or partially complete, [ ] not started
 
@@ -29,6 +29,7 @@ Legend: [~] in progress or partially complete, [ ] not started
 - [ ] **DOC-8 - Publish the benefits case.** Define the intended audience and evidence, then complete [issue #64](https://github.com/rcpch/digital-growth-charts-documentation/issues/64).
 - [ ] **DOC-11 - Publish the information-security flowchart.** Review the existing draft, publish an accessible maintained version, and complete [issue #129](https://github.com/rcpch/digital-growth-charts-documentation/issues/129).
 - [ ] **DOC-14 - Restore metadata on investigation reports.** Add reviewed frontmatter and controlled-vocabulary tags to the pooled-term and Trisomy 21 investigation reports added after the page-tagging review.
+- [ ] **DOC-15 - Publish the history of growth charts.** Implement the clinician-facing section defined in [the content specification](history-of-growth-charts.md), including the typed timeline, Tanner-Whitehouse treatment, evidence and rights ledgers, accessible visuals, and required historical and clinical review.
 
 ## Deliberate Exceptions And Deferred Work
 
