@@ -176,22 +176,24 @@ plugins:
       enable_creation_date: false
       type: date
   #
-  # - llmstxt:              # https://github.com/zensical/backlog/issues/92
-  #     full_output: llms-full.txt
-  #     sections:
-  #       documentation:
-  #         - index.md
-  #         - about/*.md
-  #         - clinician/*.md
-  #         - contact/*.md
-  #         - developer/*.md
-  #         - integrator/*.md
-  #         - legal/*.md
-  #         - parents/*.md
-  #         - products/*.md
-  #         - researchers/*.md
-  #         - safety/*.md
-  #         - technical/*.md
+  # llmstxt is supported natively by Zensical (since 0.0.67):
+  # https://zensical.org/docs/compatibility/mkdocs/plugins/#llmstxt
+  - llmstxt:
+      full_output: llms-full.txt
+      sections:
+        documentation:
+          - index.md
+          - about/*.md
+          - clinician/*.md
+          - contact/*.md
+          - developer/*.md
+          - integrator/*.md
+          - legal/*.md
+          - parents/*.md
+          - products/*.md
+          - researchers/*.md
+          - safety/*.md
+          - technical/*.md
   #
   # - with-pdf:             # https://github.com/zensical/backlog/issues/25
   #     cover_title: RCPCH Digital Growth Charts
