@@ -35,7 +35,7 @@ zensical==0.1.3
 codespell==2.4.3
 
 # markdown linting
-pymarkdownlnt==0.9.41
+pymarkdownlnt==0.9.42
 
 # self-hosted complete-site and Clinical Safety / Medical Device PDF exports
 # (see pdf-export/build-pdfs.py and s/build-pdf). Replaces the suspended
